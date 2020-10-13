@@ -1,0 +1,12 @@
+{
+  "name": "jumpstar",
+  "authors": [
+    {
+      "name": "Lewis Scott",
+      "email": "lscott19@mail.greenriver.edu"
+    }
+  ],
+  "require": {
+    "bcosca/fatfree-core": "dev-master"
+  }
+}
