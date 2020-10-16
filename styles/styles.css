@@ -6,3 +6,22 @@
     background-color: #0d4d80;
     color: white;
 }
+
+a:link {
+    color: white;
+    text-decoration: none;
+}
+
+a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: lightblue;
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
