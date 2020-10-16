@@ -22,7 +22,7 @@ session_start();
 // instantiates the base class of the fat
 // free framework
 // :: invokes static method
-$f3 = Base::instance();
+$f3 = \Base::instance();
 $f3->set('DEBUG', 3);
 
 // construct a new Database
@@ -46,8 +46,9 @@ $f3->route('GET /', function () {
 // this is the route to purpose question page
 // GET method when coming from home page
 // POST method when submitting form
-$f3->route('GET|POST /section1', function($f3){
+$f3->route('GET|POST /section1', function(){
     // if the form has been submitted
+    //echo "<h1>section1 page check</h1>";
     $view = new Template();
     echo $view->render('views/section1.html');
     //$GLOBALS['controller']->purpose();
