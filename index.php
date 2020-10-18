@@ -49,18 +49,48 @@ $f3->route('GET /', function () {
 $f3->route('GET|POST /section1', function(){
     // if the form has been submitted
     //echo "<h1>section1 page check</h1>";
+
+    //check if the form has been posted
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+        //validate the data
+        if(empty($_POST['a1'])){
+            echo "please answer question 1";
+        }
+        else if(empty($_POST['a2'])){
+            echo "please answer question 2";
+        }
+        else if(empty($_POST['a3'])){
+            echo "please answer question 3";
+        }
+        else {
+            //data is valid
+            $_SESSION['a1'] = $_POST['a1'];
+            $_SESSION['a11'] = $_POST['a11'];
+            $_SESSION['a12'] = $_POST['a12'];
+            $_SESSION['a13'] = $_POST['a13'];
+            $_SESSION['a14'] = $_POST['a14'];
+            $_SESSION['a141'] = $_POST['a141'];
+            $_SESSION['a2'] = $_POST['a2'];
+            $_SESSION['a21'] = $_POST['a21'];
+            $_SESSION['a22'] = $_POST['a22'];
+            $_SESSION['a23'] = $_POST['a23'];
+            $_SESSION['a24'] = $_POST['a24'];
+            $_SESSION['a241'] = $_POST['a241'];
+            $_SESSION['a3'] = $_POST['a3'];
+            $_SESSION['a31'] = $_POST['a31'];
+            $_SESSION['a32'] = $_POST['a32'];
+            $_SESSION['a33'] = $_POST['a33'];
+            $_SESSION['a34'] = $_POST['a34'];
+            $_SESSION['a341'] = $_POST['a341'];
+
+            //redirect to the analysis route
+            //$f3->reroute("analysis");
+        }}
+
     $view = new Template();
     echo $view->render('views/section1.html');
     //$GLOBALS['controller']->purpose();
-});
-
-// this is the route to profile info page
-// GET method when coming from persInfo page
-// POST method when submitting form
-$f3->route('GET|POST /profile', function($f3)
-{
-    $GLOBALS['controller']->profile();
-
 });
 
 // this is the route to interests page
@@ -85,3 +115,4 @@ $f3->route('GET /summary', function () {
 //Run fat free
 // -> runs class method instance method
 $f3->run();
+
