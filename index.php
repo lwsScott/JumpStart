@@ -16,6 +16,7 @@ require_once 'vendor/autoload.php';
 //require_once 'model/validation-functions.php';
 
 // start session
+//test git push
 session_start();
 
 //Create an instance of the Base class
