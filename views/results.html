@@ -1,62 +1,238 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Results</title>
+    <title>Section 1</title>
     <include href="includes/header.html"></include>
 </head>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
 <body>
 <include href="includes/navBar.html"></include>
 
 <div class="container">
+    <h1>Section 1 - The Long View</h1>
+    <hr>
 
-    <div class="row border rounded p-2 mt-2">
+    <form action="#" method="post" class="form-horizontal">
+        <div class="row">
+            <div class="col-8">
+                <h3>Purpose (Why We Do What We Do)</h3>
 
-        <h1>Results</h1>
-        <hr>
+                <div class="container">
+                    <label><strong>Question 1 -</strong> Do you have a written purpose statement?</label>
+                    <div class="form-check-inline">
+                        <input type="radio" id="a1a" name="a1" class="form-check-input" value="yes">
+                        <label class="form-check-label" for="a1a" id="q1a">Yes</label>
+                    </div>
+                    <div class="form-check-inline">
+                        <input type="radio" id="a1b" name="a1" class="form-check-input" value="no">
+                        <label class="form-check-label" for="a1b" id="q1b">No</label>
+                    </div>
+                </div>
 
-        <div class="col-12"></div>
+                <div class="form-group">
+                    <label for="a11" name="q11" id="q11">What is your purpose statement?</label>
+                    <textarea class="form-control" id="a11" name="a11" rows="3"></textarea>
+                </div>
 
-        <div class="col">
+                <div class="container pl-10">
+                    <div class="form-group">
+                        <div class="container">
+                            <label name="q12" id="q12">Does your team know and understand it?</label>
+                            <div class="form-check-inline">
+                                <input type="radio" id="a12a" name="a12" class="form-check-input" value="yes">
+                                <label class="form-check-label" for="a12a" id="q12a">Yes</label>
+                            </div>
+                            <div class="form-check-inline">
+                                <input type="radio" id="a12b" name="a12" class="form-check-input" value="no">
+                                <label class="form-check-label" for="a12a" id="q12b">No</label>
+                            </div>
+                        </div>
+                    </div>
 
-            <label for="purpose" class="control-label"><strong>Purpose (Why we do it)</strong></label>
-            <div class="" id="purpose">
-                <ul class="list-group">
-                    <li class="list-group-item">Written purpose statement: {{ @SESSION.user->getStatementYN() }}</li>
-                    <li class="list-group-item">Does your team know and understand it?: {{ @SESSION.user->getUnderstandYN() }}</li>
-                    <li class="list-group-item">Is it used in decision making?: {{ @SESSION.user->getDecisionYN() }}</li>
-                    <li class="list-group-item">Are you living it?: {{ @SESSION.user->getLivingYN() }}</li>
-                </ul>
+                    <div class="form-group">
+                        <div class="container">
+                            <label name="q13" id="q13">Is it used in decision making?</label>
+                            <div class="form-check-inline">
+                                <input type="radio" id="a13a" name="a13" class="form-check-input" value="yes">
+                                <label class="form-check-label" for="a13a" id="q13a">Yes</label>
+                            </div>
+                            <div class="form-check-inline">
+                                <input type="radio" id="a13b" name="a13" class="form-check-input" value="no">
+                                <label class="form-check-label" for="a13b" id="q13b">No</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="container">
+                            <label name="q14" id="q14">Are you living it?</label>
+                            <div class="form-check-inline">
+                                <input type="radio" id="a14a" name="a14" class="form-check-input" value="yes">
+                                <label class="form-check-label" for="a14a" id="q14a">Yes</label>
+                            </div>
+                            <div class="form-check-inline">
+                                <input type="radio" id="a14b" name="a14" class="form-check-input" value="no">
+                                <label class="form-check-label" for="a14a" id="q14b">No</label>
+                            </div>
+                        </div>
+                        <div class="container pl-20">
+                            <label for="a141" id="q141" id="q141">How are you not living it?</label>
+                            <textarea class="form-control" id="a141" name="a141" rows="3"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Mission (Who We Serve, What We Do, and How We Do It)</h3>
+
+                <div class="container">
+                    <label><strong>Question 2 -</strong> Do you have a written mission statement?</label>
+                    <div class="form-check-inline">
+                        <input type="radio" id="a2a" name="a2" class="form-check-input" value="yes">
+                        <label class="form-check-label" for="a2a" id="q2a">Yes</label>
+                    </div>
+                    <div class="form-check-inline">
+                        <input type="radio" id="a2b" name="a2" class="form-check-input" value="no">
+                        <label class="form-check-label" for="a2b" id="q2b">No</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="a21" name="q21" id="q21">What is your mission statement?</label>
+                    <textarea class="form-control" id="a21" name="a21" rows="3"></textarea>
+                </div>
+
+                <div class="container pl-10">
+                    <div class="form-group">
+                        <div class="container">
+                            <label name="q22" id="q22">Does your team know it?</label>
+                            <div class="form-check-inline">
+                                <input type="radio" id="a22a" name="a22" class="form-check-input" value="yes">
+                                <label class="form-check-label" for="a22a" id="q22a">Yes</label>
+                            </div>
+                            <div class="form-check-inline">
+                                <input type="radio" id="a22b" name="a22" class="form-check-input" value="no">
+                                <label class="form-check-label" for="a22b" id="q22b">No</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="container">
+                            <label name="q23" id="q23">Is it used in decision making?</label>
+                            <div class="form-check-inline">
+                                <input type="radio" id="a23a" name="a23" class="form-check-input" value="yes">
+                                <label class="form-check-label" for="a23a" id="q23a">Yes</label>
+                            </div>
+                            <div class="form-check-inline">
+                                <input type="radio" id="a23b" name="a23" class="form-check-input" value="no">
+                                <label class="form-check-label" for="a23b" id="q23b">No</label>
+                            </div>
+                        </div>
+                    </div><br>
+
+                    <div class="form-group">
+                        <div class="container">
+                            <label name="q24" id="q24">Are you living it?</label>
+                            <div class="form-check-inline">
+                                <input type="radio" id="a24a" name="a24" class="form-check-input" value="yes">
+                                <label class="form-check-label" for="a24a" id="q24a">Yes</label>
+                            </div>
+                            <div class="form-check-inline">
+                                <input type="radio" id="a24b" name="a24" class="form-check-input" value="no">
+                                <label class="form-check-label" for="a24b" id="q24b">No</label>
+                            </div>
+                        </div>
+                        <div class="container pl-20">
+                            <label for="a241" id="q241" name="q241">What part of the mission is missing?</label>
+                            <textarea class="form-control" id="a241" name="a241" rows="3"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Vision (What Are We Trying To Create?)</h3>
+
+                <div class="container">
+                    <label><strong>Question 3 -</strong> Do you have a written vision statement?</label>
+                    <div class="form-check-inline">
+                        <input type="radio" id="a3a" name="a3" class="form-check-input" value="yes">
+                        <label class="form-check-label" for="a3a" id="q3a">Yes</label>
+                    </div>
+                    <div class="form-check-inline">
+                        <input type="radio" id="a3b" name="a3" class="form-check-input" value="no">
+                        <label class="form-check-label" for="a3b" id="q3b">No</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="a31" name="q31" id="q31">What is your vision statement?</label>
+                    <textarea class="form-control" id="a31" name="q31" rows="3"></textarea>
+                </div>
+
+                <div class="container pl-10">
+                    <div class="form-group">
+                        <div class="container">
+                            <label name="q32" id="q32">Does your team know it?</label>
+                            <div class="form-check-inline">
+                                <input type="radio" id="a32a" name="a32" class="form-check-input" value="yes">
+                                <label class="form-check-label" for="a32a" id="q32a">Yes</label>
+                            </div>
+                            <div class="form-check-inline">
+                                <input type="radio" id="a32b" name="a32" class="form-check-input" value="no">
+                                <label class="form-check-label" for="a32b" id="q32b">No</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="container">
+                            <label name="q33" id="q33">Is it used in decision making?</label>
+                            <div class="form-check-inline">
+                                <input type="radio" id="a33a" name="a33" class="form-check-input" value="yes">
+                                <label class="form-check-label" for="a33a" id="q33a">Yes</label>
+                            </div>
+                            <div class="form-check-inline">
+                                <input type="radio" id="a33b" name="a33" class="form-check-input" value="no">
+                                <label class="form-check-label" for="a33b" id="q33b">No</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="container">
+                            <label name="q24" id="q34">Are you living it?</label>
+                            <div class="form-check-inline">
+                                <input type="radio" id="a34a" name="a34" class="form-check-input" value="yes">
+                                <label class="form-check-label" for="a34a" id="q34a">Yes</label>
+                            </div>
+                            <div class="form-check-inline">
+                                <input type="radio" id="a34b" name="a34" class="form-check-input" value="no">
+                                <label class="form-check-label" for="a34b" id="q34b">No</label>
+                            </div>
+                        </div>
+                        <div class="container pl-20">
+                            <label for="a341" id="q341" name="q341">What part of the vision is unrealized?</label>
+                            <textarea class="form-control" id="a341" name="a341" rows="3"></textarea>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <label for="mission" class="control-label"><strong>Mission (Who we serve, what we do, and how we do it)</strong></label>
-            <div class="" id="Mission">
-                <ul class="list-group">
-
-                </ul>
+            <div class="col-4">
+                <div class="container card bg-light rounded text-center">
+                    <p><strong>Note:</strong> Information entered is protected by our
+                        privacy policy. All answers are kept strictly confidential.</p>
+                </div>
             </div>
-
-
         </div>
 
-        <div class="col">
-
-
-
-
-            <!--possible logo -->
-
+        <div class="row">
+            <div class="col-12">
+                <div class="text-right">
+                    <button type="submit" class="btn btn-primary">Submit></button>
+                </div>
+            </div>
         </div>
-
-        <div class="col-12 mt-4 text-center">
-            <a href="#"  class="btn btn-primary btn-lg align-center" id="Home">Return to Main Page</a>
-        </div>
-    </div>
-
-
-
-
+    </form>
 </div>
 
 <include href="includes/footer.html"></include>
