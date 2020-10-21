@@ -10,6 +10,8 @@
 a:link {
     color: white;
     text-decoration: none;
+    background-color: #0d4d80;
+
 }
 
 a:visited {
@@ -24,4 +26,9 @@ a:hover {
 
 a:active {
     text-decoration: none;
+    background-color: #0d4d80;
+}
+
+nav {
+
 }
