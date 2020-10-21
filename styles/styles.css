@@ -11,7 +11,6 @@ a:link {
     color: white;
     text-decoration: none;
     background-color: #0d4d80;
-
 }
 
 a:visited {
@@ -20,15 +19,54 @@ a:visited {
 }
 
 a:hover {
-    color: lightblue;
+    color: #00a2d6;
     text-decoration: none;
 }
 
 a:active {
     text-decoration: none;
-    background-color: #0d4d80;
 }
 
-nav {
+navbar-dark {
+    background-color: #0d4d80;
 
+}
+
+#navbarBrand {
+
+}
+
+/* Style all font awesome icons */
+.fa {
+    padding: 15px;
+    font-size: 20px;
+    width: 40px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+    opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+/* youtube */
+.fa-youtube {
+    background: #bb0000;
+    color: white;
+}
+
+/* linkedin */
+.fa-linkedin {
+    background: #007bb5;
+    color: white;
 }
