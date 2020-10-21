@@ -16,7 +16,6 @@ require_once 'vendor/autoload.php';
 //require_once 'model/validation-functions.php';
 
 // start session
-//test git push
 session_start();
 
 //Create an instance of the Base class
@@ -53,7 +52,7 @@ $f3->route('GET|POST /section1', function(){
 
     //check if the form has been posted
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
-
+        echo "in Post";
         //validate the data
         if(empty($_POST['a1'])){
             echo "please answer question 1";
@@ -97,8 +96,10 @@ $f3->route('GET|POST /section1', function(){
 // this is the route to interests page
 // GET method when coming from profile page
 // POST method when submitting form
-$f3->route('GET|POST /interests', function($f3){
-    $GLOBALS['controller']->interests();
+$f3->route('GET|POST /results', function($f3){
+    $view = new Template();
+    echo $view->render('views/results.html');
+    //$GLOBALS['controller']->interests();
 });
 
 // this is the route to upload image page
