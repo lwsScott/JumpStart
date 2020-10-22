@@ -46,13 +46,14 @@ $f3->route('GET /', function () {
 // this is the route to purpose question page
 // GET method when coming from home page
 // POST method when submitting form
-$f3->route('GET|POST /section1', function(){
+$f3->route('GET|POST /section1', function($f3){
     // if the form has been submitted
     //echo "<h1>section1 page check</h1>";
 
     //check if the form has been posted
+    /*
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
-        echo "in Post";
+        //echo "in Post";
         //validate the data
         if(empty($_POST['a1'])){
             echo "please answer question 1";
@@ -64,6 +65,7 @@ $f3->route('GET|POST /section1', function(){
             echo "please answer question 3";
         }
         else {
+    */
             //data is valid
             $_SESSION['a1'] = $_POST['a1'];
             $_SESSION['a11'] = $_POST['a11'];
@@ -85,8 +87,10 @@ $f3->route('GET|POST /section1', function(){
             $_SESSION['a341'] = $_POST['a341'];
 
             //redirect to the analysis route
-            //$f3->reroute("analysis");
-        }}
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $f3->reroute("results");
+            }
+        //}}
 
     $view = new Template();
     echo $view->render('views/section1.html');
