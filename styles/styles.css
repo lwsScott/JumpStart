@@ -70,3 +70,7 @@ navbar-dark {
     background: #007bb5;
     color: white;
 }
+
+.formatHidden {
+    visibility: hidden;
+}
