@@ -72,3 +72,7 @@ a:active {
     background: #007bb5;
     color: white;
 }
+
+.formatHidden {
+    visibility: hidden;
+}
