@@ -10,7 +10,6 @@
 a:link {
     color: white;
     text-decoration: none;
-    background-color: #0d4d80;
 }
 
 a:visited {
@@ -27,13 +26,16 @@ a:active {
     text-decoration: none;
 }
 
-navbar-dark {
-    background-color: #0d4d80;
-
+.home {
+    width: 200px;
 }
 
-#navbarBrand {
+.navbar {
+    background-color: #00a2d6 ;
+}
 
+.dropdown-item {
+    background-color: #00a2d6 ;
 }
 
 /* Style all font awesome icons */
