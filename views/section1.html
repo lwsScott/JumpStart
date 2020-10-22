@@ -20,7 +20,7 @@
                 <div class="container">
                     <label><strong>Question 1 -</strong> Do you have a written purpose statement?</label>
                     <div class="form-check-inline">
-                        <input type="radio" id="a1a" name="a1" class="form-check-input" value="yes">
+                        <input type="radio" id="a1a" name="a1" class="form-check-input" value="yes" onchange="toggleVisibility()">
                         <label class="form-check-label" for="a1a" id="q1a">Yes</label>
                     </div>
                     <div class="form-check-inline">
@@ -29,7 +29,7 @@
                     </div>
                 </div>
 
-                <div class="formatHidden">
+                <div class="formatHidden" id="a1y">
                     <div class="form-group">
                         <label for="a11" name="q11" id="q11">What is your purpose statement?</label>
                         <textarea class="form-control" id="a11" name="a11" rows="3"></textarea>
@@ -72,11 +72,11 @@
                                     <label class="form-check-label" for="a14a" id="q14a">Yes</label>
                                 </div>
                                 <div class="form-check-inline">
-                                    <input type="radio" id="a14b" name="a14" class="form-check-input" value="no">
+                                    <input type="radio" id="a14b" name="a14" class="form-check-input" value="no" onchange="toggleVisibility()">
                                     <label class="form-check-label" for="a14a" id="q14b">No</label>
                                 </div>
                             </div>
-                            <div class="container pl-20 formatHidden">
+                            <div class="container pl-20 formatHidden" id="a14n">
                                 <label for="a141" id="q141" id="q141">How are you not living it?</label>
                                 <textarea class="form-control" id="a141" name="a141" rows="3"></textarea>
                             </div>
@@ -89,7 +89,7 @@
                 <div class="container">
                     <label><strong>Question 2 -</strong> Do you have a written mission statement?</label>
                     <div class="form-check-inline">
-                        <input type="radio" id="a2a" name="a2" class="form-check-input" value="yes">
+                        <input type="radio" id="a2a" name="a2" class="form-check-input" value="yes" onchange="toggleVisibility()">
                         <label class="form-check-label" for="a2a" id="q2a">Yes</label>
                     </div>
                     <div class="form-check-inline">
@@ -98,7 +98,7 @@
                     </div>
                 </div>
 
-                <div class="formatHidden">
+                <div class="formatHidden" id="a2y">
                     <div class="form-group">
                         <label for="a21" name="q21" id="q21">What is your mission statement?</label>
                         <textarea class="form-control" id="a21" name="a21" rows="3"></textarea>
@@ -141,11 +141,11 @@
                                     <label class="form-check-label" for="a24a" id="q24a">Yes</label>
                                 </div>
                                 <div class="form-check-inline">
-                                    <input type="radio" id="a24b" name="a24" class="form-check-input" value="no">
+                                    <input type="radio" id="a24b" name="a24" class="form-check-input" value="no" onchange="toggleVisibility()">
                                     <label class="form-check-label" for="a24b" id="q24b">No</label>
                                 </div>
                             </div>
-                            <div class="container pl-20 formatHidden">
+                            <div class="container pl-20 formatHidden" id="a24n">
                                 <label for="a241" id="q241" name="q241">What part of the mission is missing?</label>
                                 <textarea class="form-control" id="a241" name="a241" rows="3"></textarea>
                             </div>
@@ -158,7 +158,7 @@
                 <div class="container">
                     <label><strong>Question 3 -</strong> Do you have a written vision statement?</label>
                     <div class="form-check-inline">
-                        <input type="radio" id="a3a" name="a3" class="form-check-input" value="yes">
+                        <input type="radio" id="a3a" name="a3" class="form-check-input" value="yes" onchange="toggleVisibility()">
                         <label class="form-check-label" for="a3a" id="q3a">Yes</label>
                     </div>
                     <div class="form-check-inline">
@@ -167,7 +167,7 @@
                     </div>
                 </div>
 
-                <div class="formatHidden">
+                <div class="formatHidden" id="a3y">
                     <div class="form-group">
                         <label for="a31" name="q31" id="q31">What is your vision statement?</label>
                         <textarea class="form-control" id="a31" name="q31" rows="3"></textarea>
@@ -210,11 +210,11 @@
                                     <label class="form-check-label" for="a34a" id="q34a">Yes</label>
                                 </div>
                                 <div class="form-check-inline">
-                                    <input type="radio" id="a34b" name="a34" class="form-check-input" value="no">
+                                    <input type="radio" id="a34b" name="a34" class="form-check-input" value="no" onchange="toggleVisibility()">
                                     <label class="form-check-label" for="a34b" id="q34b">No</label>
                                 </div>
                             </div>
-                            <div class="container pl-20 formatHidden">
+                            <div class="container pl-20 formatHidden" id="a34n">
                                 <label for="a341" id="q341" name="q341">What part of the vision is unrealized?</label>
                                 <textarea class="form-control" id="a341" name="a341" rows="3"></textarea>
                             </div>
