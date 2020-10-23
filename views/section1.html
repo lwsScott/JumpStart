@@ -14,7 +14,13 @@
 
     <form action="#" method="post" class="form-horizontal">
         <div class="row">
+<<<<<<< HEAD
             <div class="col-8">
+=======
+            <div class="col-10">
+
+                <!-- The Purpose part of Section 1 -->
+>>>>>>> 8680c77c84ad9db7f29e80ef60ba43e259a0d8c8
                 <h3>Purpose (Why We Do What We Do)</h3>
 
                 <div class="container">
@@ -29,6 +35,7 @@
                     </div>
                 </div>
 
+<<<<<<< HEAD
                 <div class="form-group">
                     <label for="a11" name="q11" id="q11">What is your purpose statement?</label>
                     <textarea class="form-control" id="a11" name="a11" rows="3"></textarea>
@@ -45,10 +52,31 @@
                             <div class="form-check-inline">
                                 <input type="radio" id="a12b" name="a12" class="form-check-input" value="no">
                                 <label class="form-check-label" for="a12a" id="q12b">No</label>
+=======
+                <div class="formatHidden" id="a1y">
+                    <div class="form-group">
+                        <label for="a11" id="q11">What is your purpose statement?</label>
+                        <textarea class="form-control" id="a11" name="a11" rows="3">{{ $_SESSION['a11'] }}</textarea>
+                    </div>
+
+                    <div class="container pl-10">
+                        <div class="form-group">
+                            <div class="container">
+                                <label id="q12">Does your team know and understand it?</label>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="a12a" name="a12" class="form-check-input" value="yes">
+                                    <label class="form-check-label" for="a12a" id="q12a">Yes</label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="a12b" name="a12" class="form-check-input" value="no">
+                                    <label class="form-check-label" for="a12a" id="q12b">No</label>
+                                </div>
+>>>>>>> 8680c77c84ad9db7f29e80ef60ba43e259a0d8c8
                             </div>
                         </div>
                     </div>
 
+<<<<<<< HEAD
                     <div class="form-group">
                         <div class="container">
                             <label name="q13" id="q13">Is it used in decision making?</label>
@@ -59,10 +87,24 @@
                             <div class="form-check-inline">
                                 <input type="radio" id="a13b" name="a13" class="form-check-input" value="no">
                                 <label class="form-check-label" for="a13b" id="q13b">No</label>
+=======
+                        <div class="form-group">
+                            <div class="container">
+                                <label id="q13">Is it used in decision making?</label>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="a13a" name="a13" class="form-check-input" value="yes">
+                                    <label class="form-check-label" for="a13a" id="q13a">Yes</label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="a13b" name="a13" class="form-check-input" value="no">
+                                    <label class="form-check-label" for="a13b" id="q13b">No</label>
+                                </div>
+>>>>>>> 8680c77c84ad9db7f29e80ef60ba43e259a0d8c8
                             </div>
                         </div>
                     </div>
 
+<<<<<<< HEAD
                     <div class="form-group">
                         <div class="container">
                             <label name="q14" id="q14">Are you living it?</label>
@@ -73,6 +115,23 @@
                             <div class="form-check-inline">
                                 <input type="radio" id="a14b" name="a14" class="form-check-input" value="no">
                                 <label class="form-check-label" for="a14a" id="q14b">No</label>
+=======
+                        <div class="form-group">
+                            <div class="container">
+                                <label id="q14">Are you living it?</label>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="a14a" name="a14" class="form-check-input" value="yes">
+                                    <label class="form-check-label" for="a14a" id="q14a">Yes</label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="a14b" name="a14" class="form-check-input" value="no" onchange="toggleVisibility()">
+                                    <label class="form-check-label" for="a14a" id="q14b">No</label>
+                                </div>
+                            </div>
+                            <div class="container pl-20 formatHidden" id="a14n">
+                                <label for="a141" id="q141">How are you not living it?</label>
+                                <textarea class="form-control" id="a141" name="a141" rows="3">{{ $_SESSION['a141'] }}</textarea>
+>>>>>>> 8680c77c84ad9db7f29e80ef60ba43e259a0d8c8
                             </div>
                         </div>
                         <div class="container pl-20">
@@ -82,6 +141,7 @@
                     </div>
                 </div>
 
+                <!-- The Mission section of Section 1 -->
                 <h3>Mission (Who We Serve, What We Do, and How We Do It)</h3>
 
                 <div class="container">
@@ -103,6 +163,7 @@
 
                 <div class="container pl-10">
                     <div class="form-group">
+<<<<<<< HEAD
                         <div class="container">
                             <label name="q22" id="q22">Does your team know it?</label>
                             <div class="form-check-inline">
@@ -126,16 +187,66 @@
                             <div class="form-check-inline">
                                 <input type="radio" id="a23b" name="a23" class="form-check-input" value="no">
                                 <label class="form-check-label" for="a23b" id="q23b">No</label>
+=======
+                        <label for="a21" id="q21">What is your mission statement?</label>
+                        <textarea class="form-control" id="a21" name="a21" rows="3">{{ $_SESSION['a21'] }}</textarea>
+                    </div>
+
+                    <div class="container pl-10">
+                        <div class="form-group">
+                            <div class="container">
+                                <label id="q22">Does your team know it?</label>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="a22a" name="a22" class="form-check-input" value="yes">
+                                    <label class="form-check-label" for="a22a" id="q22a">Yes</label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="a22b" name="a22" class="form-check-input" value="no">
+                                    <label class="form-check-label" for="a22b" id="q22b">No</label>
+                                </div>
+>>>>>>> 8680c77c84ad9db7f29e80ef60ba43e259a0d8c8
                             </div>
                         </div>
                     </div><br>
 
+<<<<<<< HEAD
                     <div class="form-group">
                         <div class="container">
                             <label name="q24" id="q24">Are you living it?</label>
                             <div class="form-check-inline">
                                 <input type="radio" id="a24a" name="a24" class="form-check-input" value="yes">
                                 <label class="form-check-label" for="a24a" id="q24a">Yes</label>
+=======
+                        <div class="form-group">
+                            <div class="container">
+                                <label id="q23">Is it used in decision making?</label>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="a23a" name="a23" class="form-check-input" value="yes">
+                                    <label class="form-check-label" for="a23a" id="q23a">Yes</label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="a23b" name="a23" class="form-check-input" value="no">
+                                    <label class="form-check-label" for="a23b" id="q23b">No</label>
+                                </div>
+                            </div>
+                        </div><br>
+
+                        <div class="form-group">
+                            <div class="container">
+                                <label id="q24">Are you living it?</label>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="a24a" name="a24" class="form-check-input" value="yes">
+                                    <label class="form-check-label" for="a24a" id="q24a">Yes</label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="a24b" name="a24" class="form-check-input" value="no" onchange="toggleVisibility()">
+                                    <label class="form-check-label" for="a24b" id="q24b">No</label>
+                                </div>
+                            </div>
+                            <div class="container pl-20 formatHidden" id="a24n">
+                                <label for="a241" id="q241">What part of the mission is missing?</label>
+                                <textarea class="form-control" id="a241" name="a241" rows="3">{{ $_SESSION['a241'] }}</textarea>
+>>>>>>> 8680c77c84ad9db7f29e80ef60ba43e259a0d8c8
                             </div>
                             <div class="form-check-inline">
                                 <input type="radio" id="a24b" name="a24" class="form-check-input" value="no">
@@ -149,6 +260,7 @@
                     </div>
                 </div>
 
+                <!-- The Vision part of Section 1 -->
                 <h3>Vision (What Are We Trying To Create?)</h3>
 
                 <div class="container">
@@ -163,6 +275,7 @@
                     </div>
                 </div>
 
+<<<<<<< HEAD
                 <div class="form-group">
                     <label for="a31" name="q31" id="q31">What is your vision statement?</label>
                     <textarea class="form-control" id="a31" name="q31" rows="3"></textarea>
@@ -179,10 +292,31 @@
                             <div class="form-check-inline">
                                 <input type="radio" id="a32b" name="a32" class="form-check-input" value="no">
                                 <label class="form-check-label" for="a32b" id="q32b">No</label>
+=======
+                <div class="formatHidden" id="a3y">
+                    <div class="form-group">
+                        <label for="a31" id="q31">What is your vision statement?</label>
+                        <textarea class="form-control" id="a31" name="a31" rows="3">{{ $_SESSION['a31'] }}</textarea>
+                    </div>
+
+                    <div class="container pl-10">
+                        <div class="form-group">
+                            <div class="container">
+                                <label id="q32">Does your team know it?</label>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="a32a" name="a32" class="form-check-input" value="yes">
+                                    <label class="form-check-label" for="a32a" id="q32a">Yes</label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="a32b" name="a32" class="form-check-input" value="no">
+                                    <label class="form-check-label" for="a32b" id="q32b">No</label>
+                                </div>
+>>>>>>> 8680c77c84ad9db7f29e80ef60ba43e259a0d8c8
                             </div>
                         </div>
                     </div>
 
+<<<<<<< HEAD
                     <div class="form-group">
                         <div class="container">
                             <label name="q33" id="q33">Is it used in decision making?</label>
@@ -193,16 +327,47 @@
                             <div class="form-check-inline">
                                 <input type="radio" id="a33b" name="a33" class="form-check-input" value="no">
                                 <label class="form-check-label" for="a33b" id="q33b">No</label>
+=======
+                        <div class="form-group">
+                            <div class="container">
+                                <label id="q33">Is it used in decision making?</label>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="a33a" name="a33" class="form-check-input" value="yes">
+                                    <label class="form-check-label" for="a33a" id="q33a">Yes</label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="a33b" name="a33" class="form-check-input" value="no">
+                                    <label class="form-check-label" for="a33b" id="q33b">No</label>
+                                </div>
+>>>>>>> 8680c77c84ad9db7f29e80ef60ba43e259a0d8c8
                             </div>
                         </div>
                     </div>
 
+<<<<<<< HEAD
                     <div class="form-group">
                         <div class="container">
                             <label name="q24" id="q34">Are you living it?</label>
                             <div class="form-check-inline">
                                 <input type="radio" id="a34a" name="a34" class="form-check-input" value="yes">
                                 <label class="form-check-label" for="a34a" id="q34a">Yes</label>
+=======
+                        <div class="form-group">
+                            <div class="container">
+                                <label id="q34">Are you living it?</label>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="a34a" name="a34" class="form-check-input" value="yes">
+                                    <label class="form-check-label" for="a34a" id="q34a">Yes</label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="a34b" name="a34" class="form-check-input" value="no" onchange="toggleVisibility()">
+                                    <label class="form-check-label" for="a34b" id="q34b">No</label>
+                                </div>
+                            </div>
+                            <div class="container pl-20 formatHidden" id="a34n">
+                                <label for="a341" id="q341">What part of the vision is unrealized?</label>
+                                <textarea class="form-control" id="a341" name="a341" rows="3">{{ $_SESSION['a341'] }}</textarea>
+>>>>>>> 8680c77c84ad9db7f29e80ef60ba43e259a0d8c8
                             </div>
                             <div class="form-check-inline">
                                 <input type="radio" id="a34b" name="a34" class="form-check-input" value="no">
@@ -217,6 +382,7 @@
                 </div>
             </div>
 
+            <!-- The privacy disclaimer -->
             <div class="col-4">
                 <div class="container card bg-light rounded text-center">
                     <p><strong>Note:</strong> Information entered is protected by our
@@ -238,3 +404,4 @@
 <include href="includes/footer.html"></include>
 </body>
 </html>
+
