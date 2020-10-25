@@ -38,9 +38,9 @@ $f3->set('DEBUG', 3);
 // Define a default route
 $f3->route('GET /', function () {
     //echo '<h1>Initial home page check</h1>';
-    $view = new Template();
-    echo $view->render('views/home.html');
-    //$GLOBALS['controller']->home();
+    //$view = new Template();
+    //echo $view->render('views/home.html');
+    $GLOBALS['controller']->home();
 });
 
 // this is the route to purpose question page
@@ -92,9 +92,9 @@ $f3->route('GET|POST /section1', function($f3){
             }
         //}}
 
-    $view = new Template();
-    echo $view->render('views/section1.html');
-    //$GLOBALS['controller']->purpose();
+    //$view = new Template();
+    //echo $view->render('views/section1.html');
+    $GLOBALS['controller']->section1();
 });
 
 // this is the route to interests page
@@ -103,7 +103,7 @@ $f3->route('GET|POST /section1', function($f3){
 $f3->route('GET|POST /results', function($f3){
     $view = new Template();
     echo $view->render('views/results.html');
-    //$GLOBALS['controller']->interests();
+    //$GLOBALS['controller']->results();
 });
 
 // this is the route to upload image page

@@ -45,9 +45,30 @@ class JumpStartController
         echo $view->render('views/home.html');
     }
 
+
+    /**
+     * Display the section1 route
+     */
+    public function section1()
+    {
+        $view = new Template();
+        echo $view->render('views/section1.html');
+    }
+
+
+    /**
+     * Display the results route
+     */
+    public function results()
+    {
+        $view = new Template();
+        echo $view->render('views/results.html');
+    }
     /**
      * Process the view Recipes route
      */
+    /*Example for development
+    // TODO fix
     public function viewRecipes()
     {
         // get the recipes
@@ -61,6 +82,7 @@ class JumpStartController
         $view = new Template();
         echo $view->render('views/recipes.php');
     }
+    */
 
 
     /**
