@@ -33,7 +33,7 @@ $f3->set('DEBUG', 3);
 //$validator = new Validate();
 
 // create a new controller
-//$controller = new MemberController($f3, $validator);
+$controller = new JumpStartController($f3, $validator);
 
 // Define a default route
 $f3->route('GET /', function () {
@@ -101,9 +101,9 @@ $f3->route('GET|POST /section1', function($f3){
 // GET method when coming from profile page
 // POST method when submitting form
 $f3->route('GET|POST /results', function($f3){
-    $view = new Template();
-    echo $view->render('views/results.html');
-    //$GLOBALS['controller']->results();
+    //$view = new Template();
+    //echo $view->render('views/results.html');
+    $GLOBALS['controller']->results();
 });
 
 // this is the route to upload image page
