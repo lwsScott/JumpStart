@@ -67,6 +67,11 @@ $f3->route('GET|POST /section1', function($f3){
         else {
     */
             //data is valid
+
+
+            //redirect to the analysis route
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+
             $_SESSION['a1'] = $_POST['a1'];
             $_SESSION['a11'] = $_POST['a11'];
             $_SESSION['a12'] = $_POST['a12'];
@@ -86,8 +91,6 @@ $f3->route('GET|POST /section1', function($f3){
             $_SESSION['a34'] = $_POST['a34'];
             $_SESSION['a341'] = $_POST['a341'];
 
-            //redirect to the analysis route
-        if($_SERVER['REQUEST_METHOD'] == 'POST') {
             $f3->reroute("results");
             }
         //}}
