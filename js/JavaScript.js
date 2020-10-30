@@ -18,9 +18,9 @@ function toggleVisibility()
         document.getElementById('a7y').style.visibility = "visible";
     }
 
-    if (document.getElementById('a12b').checked)
+    if (document.getElementById('a11b').checked)
     {
-        document.getElementById('a12n').style.visibility = "visible";
+        document.getElementById('a11n').style.visibility = "visible";
     }
 
     if (document.getElementById('a13a').checked)
