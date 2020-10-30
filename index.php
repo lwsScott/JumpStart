@@ -27,10 +27,10 @@ $f3->set('DEBUG', 3);
 
 // construct a new Database
 // which creates a new PDO connection
-//$db = new Database();
+$db = new Database();
 
 // construct a new validator
-//$validator = new Validate();
+$validator = new Validate();
 
 // create a new controller
 $controller = new JumpStartController($f3, $validator);
@@ -68,36 +68,7 @@ $f3->route('GET|POST /section1', function($f3){
     */
             //data is valid
 
-
-            //redirect to the analysis route
-        if($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-            $_SESSION['a1'] = $_POST['a1'];
-            $_SESSION['a2'] = $_POST['a2'];
-            $_SESSION['a3'] = $_POST['a3'];
-            $_SESSION['a4'] = $_POST['a4'];
-            $_SESSION['a5'] = $_POST['a5'];
-            $_SESSION['a6'] = $_POST['a6'];
-            $_SESSION['a7'] = $_POST['a7'];
-            $_SESSION['a8'] = $_POST['a8'];
-            $_SESSION['a9'] = $_POST['a9'];
-            $_SESSION['a10'] = $_POST['a10'];
-            $_SESSION['a11'] = $_POST['a11'];
-            $_SESSION['a12'] = $_POST['a12'];
-            $_SESSION['a13'] = $_POST['a13'];
-            $_SESSION['a14'] = $_POST['a14'];
-            $_SESSION['a15'] = $_POST['a15'];
-            $_SESSION['a16'] = $_POST['a16'];
-            $_SESSION['a17'] = $_POST['a17'];
-            $_SESSION['a18'] = $_POST['a18'];
-
-            $f3->reroute("results");
-            }
-        //}}
-
-    //$view = new Template();
-    //echo $view->render('views/section1.html');
-    $GLOBALS['controller']->section1();
+    $GLOBALS['controller']->section1($f3);
 });
 
 // this is the route to interests page
