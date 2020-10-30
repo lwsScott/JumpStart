@@ -70,6 +70,8 @@ class JumpStartController
         $_SESSION['a17'] = "";
         $_SESSION['a18'] = "";
 
+        //echo "Here";
+        //var_dump($_SESSION);
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             $_SESSION['a1'] = $_POST['a1'];
@@ -91,196 +93,12 @@ class JumpStartController
             $_SESSION['a17'] = $_POST['a17'];
             $_SESSION['a18'] = $_POST['a18'];
 
+            $f3->reroute("results");
+
         } else {
             $view = new Template();
             echo $view->render('views/section1.html');
         }
-        //check if the form has been posted
-        /*
-        if($_SERVER['REQUEST_METHOD'] == 'POST'){
-            //echo "in Post";
-            //validate the data
-            if(empty($_POST['a1'])){
-                echo "please answer question 1";
-            }
-            else if(empty($_POST['a2'])){
-                echo "please answer question 2";
-            }
-            else if(empty($_POST['a3'])){
-                echo "please answer question 3";
-            }
-            else {
-
-        //data is valid
-        //redirect to the analysis route
-        if($_SERVER['REQUEST_METHOD'] == 'POST') {
-            //var_dump($_POST);
-            if (isset($_POST['a1'])) {
-                $_SESSION['a1'] = $_POST['a1'];
-            }
-            else {
-                $_POST['a1'] = "";
-
-            }
-            if (isset($_POST['a2'])) {
-                $_SESSION['a2'] = $_POST['a2'];
-            }
-            else {
-                $_POST['a2'] = "";
-
-            }
-            if (isset($_POST['a1'])) {
-                $_SESSION['a3'] = $_POST['a3'];
-            }
-            else {
-                $_POST['a3'] = "";
-
-            }
-            if (isset($_POST['a4'])) {
-                $_SESSION['a4'] = $_POST['a4'];
-            }
-            else {
-                $_POST['a4'] = "";
-
-            }
-            if (isset($_POST['a5'])) {
-                $_SESSION['a5'] = $_POST['a5'];
-            }
-            else {
-                $_POST['a5'] = "";
-
-            }
-            if (isset($_POST['a6'])) {
-                $_SESSION['a6'] = $_POST['a6'];
-            }
-            else {
-                $_POST['a6'] = "";
-
-            }
-            if (isset($_POST['a7'])) {
-                $_SESSION['a7'] = $_POST['a7'];
-            }
-            else {
-                $_POST['a7'] = "";
-
-            }
-            if (isset($_POST['a8'])) {
-                $_SESSION['a8'] = $_POST['a8'];
-            }
-            else {
-                $_POST['a8'] = "";
-
-            }
-            if (isset($_POST['a9'])) {
-                $_SESSION['a9'] = $_POST['a9'];
-            }
-            else {
-                $_POST['a9'] = "";
-
-            }
-            if (isset($_POST['a10'])) {
-                $_SESSION['a10'] = $_POST['a10'];
-            }
-            else {
-                $_POST['a10'] = "";
-
-            }
-            if (isset($_POST['a11'])) {
-                $_SESSION['a11'] = $_POST['a11'];
-            }
-            else {
-                $_POST['a11'] = "";
-
-            }
-            if (isset($_POST['a12'])) {
-                $_SESSION['a12'] = $_POST['a12'];
-            }
-            else {
-                $_POST['a12'] = "";
-
-            }
-            if (isset($_POST['a13'])) {
-                $_SESSION['a13'] = $_POST['a13'];
-            }
-            else {
-                $_POST['a13'] = "";
-
-            }
-            if (isset($_POST['a14'])) {
-                $_SESSION['a14'] = $_POST['a14'];
-            }
-            else {
-                $_POST['a14'] = "";
-
-            }
-            if (isset($_POST['a15'])) {
-                $_SESSION['a15'] = $_POST['a15'];
-            }
-            else {
-                $_POST['a15'] = "";
-
-            }
-            if (isset($_POST['a16'])) {
-                $_SESSION['a16'] = $_POST['a16'];
-            }
-            else {
-                $_POST['a16'] = "";
-
-            }
-            if (isset($_POST['a17'])) {
-                $_SESSION['a17'] = $_POST['a17'];
-            }
-            else {
-                $_POST['a17'] = "";
-
-            }
-            if (isset($_POST['a18'])) {
-                $_SESSION['a18'] = $_POST['a18'];
-            }
-            else {
-                $_POST['a18'] = "";
-
-            }
-            /*
-
-
-            $valid = true;
-            if ($valid) {
-                //echo '<h1>I made it here with valid data</h1>';
-                $a1 = $_SESSION['a1'];
-                $a2 = $_POST['a2'];
-                $a3 = $_POST['a3'];
-                $a4 = $_POST['a4'];
-                $a5 = $_POST['a5'];
-                $a6 = $_POST['a6'];
-                $a7 = $_POST['a7'];
-                $a8 = $_POST['a8'];
-                $a9 = $_POST['a9'];
-                $a10 = $_POST['a10'];
-                $a11 = $_POST['a11'];
-                $a12 = $_POST['a12'];
-                $a13 = $_POST['a13'];
-                $a14 = $_POST['a14'];
-                $a15 = $_POST['a15'];
-                $a16 = $_POST['a16'];
-                $a17 = $_POST['a17'];
-                $a18 = $_POST['a18'];
-                $userId = $_SESSION['userId'];
-
-                // construct a section1 object
-                $section1 = new Section1($a1, $a2, $a3, $a4, $a5, $a6, $a7, $a8, $a9, $a10, $a11, $a12,
-                    $a13, $a14, $a15, $a16, $a17, $a18, $userId);
-
-                $_SESSION['section1'] = $section1;
-                var_dump($section1);
-
-                // add the recipe to the database
-                //$GLOBALS['db']->addSection1($section1);
-                //$f3->reroute("results");
-            }
-            }
-
-        */
     }
 
     /**

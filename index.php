@@ -66,7 +66,6 @@ $f3->route('GET|POST /section1', function($f3){
         }
         else {
     */
-            //data is valid
 
     $GLOBALS['controller']->section1($f3);
 });
