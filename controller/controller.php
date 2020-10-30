@@ -49,10 +49,56 @@ class JumpStartController
     /**
      * Display the section1 route
      */
-    public function section1()
+    public function section1($f3)
     {
-        $view = new Template();
-        echo $view->render('views/section1.html');
+        //check if the form has been posted
+        /*
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            //echo "in Post";
+            //validate the data
+            if(empty($_POST['a1'])){
+                echo "please answer question 1";
+            }
+            else if(empty($_POST['a2'])){
+                echo "please answer question 2";
+            }
+            else if(empty($_POST['a3'])){
+                echo "please answer question 3";
+            }
+            else {
+        */
+        //data is valid
+
+        //redirect to the analysis route
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+        //var_dump($_POST);
+        $_SESSION['a1'] = $_POST['a1'];
+        $_SESSION['a2'] = $_POST['a11'];
+        $_SESSION['a3'] = $_POST['a12'];
+        $_SESSION['a4'] = $_POST['a13'];
+        $_SESSION['a5'] = $_POST['a14'];
+        $_SESSION['a6'] = $_POST['a141'];
+        $_SESSION['a7'] = $_POST['a2'];
+        $_SESSION['a8'] = $_POST['a21'];
+        $_SESSION['a9'] = $_POST['a22'];
+        $_SESSION['a10'] = $_POST['a23'];
+        $_SESSION['a11'] = $_POST['a24'];
+        $_SESSION['a12'] = $_POST['a241'];
+        $_SESSION['a13'] = $_POST['a3'];
+        $_SESSION['a14'] = $_POST['a31'];
+        $_SESSION['a16'] = $_POST['a32'];
+        $_SESSION['a17'] = $_POST['a33'];
+        $_SESSION['a18'] = $_POST['a34'];
+        $_SESSION['a341'] = $_POST['a341'];
+
+        $f3->reroute("results");
+        }
+        else {
+            $view = new Template();
+            echo $view->render('views/section1.html');
+
+        }
+
     }
 
 
@@ -169,7 +215,7 @@ class JumpStartController
 
                 //Set an error variable in the F3 hive
                 $valid = false;
-                $this->_f3->set('errors["firstName"]', "cant be empty");
+                $this->_f3->set('errors["firstName"]',  "Please provide a first name");
                 //echo "firstname no done";
             }
 
@@ -177,27 +223,27 @@ class JumpStartController
 
                 //Set an error variable in the F3 hive
                 $valid = false;
-                $this->_f3->set('errors["lastName"]', "cant be empty");
+                $this->_f3->set('errors["lastName"]',  "Please provide a last name");
                 //echo "last name not done";
             }
 
             if (!$this->_validator->validPhone($_POST['phone'])) {
                 $valid = false;
-                $this->_f3->set('errors["phone"]', "must be a number");
+                $this->_f3->set('errors["phone"]', "Please provide a valid phone number");
                 //echo "phone not done";
             }
 
             if (!$this->_validator->validEmail($_POST['email'])) {
                 $valid = false;
                 //Set an error variable in the F3 hive
-                $this->_f3->set('errors["email"]', "must be a correct format");
+                $this->_f3->set('errors["email"]', "Please provide a valid e-mail");
                 //echo "email false";
             }
 
             if (!$this->_validator->validName($_POST['username'])) {
                 $valid = false;
                 //Set an error variable in the F3 hive
-                $this->_f3->set('errors["username"]', "cant be empty");
+                $this->_f3->set('errors["username"]', "Please provide a valid username");
                 //echo "username false";
             }
             //echo $_SESSION['nameAvail'];
@@ -218,13 +264,14 @@ class JumpStartController
             if ($_POST['password'] != $_POST['confirm']) {
                 $valid = false;
                 //Set an error variable in the F3 hive
-                $this->_f3->set('errors["confirm"]', "need the same as password");
+                $this->_f3->set('errors["confirm"]', "Passwords don't match");
                 //echo "confirm password false";
             }
 
-            // check if premium user selected
+            // check if type of user selected
+            // not used for now
             if (isset($_POST['membership'])) {
-                $this->_f3->set('membership', $_POST['membership']);
+                $this->_f3->set('membership', $_POST['membershi    p']);
                 $permission = 'upload';
             }
             //echo "I made it here";
