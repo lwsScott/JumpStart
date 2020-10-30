@@ -8,29 +8,29 @@ function toggleVisibility()
         document.getElementById('a1y').style.visibility = "visible";
     }
 
-    if (document.getElementById('a14b').checked)
+    if (document.getElementById('a5b').checked)
     {
-        document.getElementById('a14n').style.visibility = "visible";
+        document.getElementById('a5n').style.visibility = "visible";
     }
 
-    if (document.getElementById('a2a').checked)
+    if (document.getElementById('a7a').checked)
     {
-        document.getElementById('a2y').style.visibility = "visible";
+        document.getElementById('a7y').style.visibility = "visible";
     }
 
-    if (document.getElementById('a24b').checked)
+    if (document.getElementById('a12b').checked)
     {
-        document.getElementById('a24n').style.visibility = "visible";
+        document.getElementById('a12n').style.visibility = "visible";
     }
 
-    if (document.getElementById('a3a').checked)
+    if (document.getElementById('a13a').checked)
     {
-        document.getElementById('a3y').style.visibility = "visible";
+        document.getElementById('a13y').style.visibility = "visible";
     }
 
-    if (document.getElementById('a34b').checked)
+    if (document.getElementById('a17b').checked)
     {
-        document.getElementById('a34n').style.visibility = "visible";
+        document.getElementById('a17n').style.visibility = "visible";
     }
 
 }
