@@ -2,8 +2,8 @@
 /*
  * Lewis Scott
  * 4/17/20
- * filename https://lscott.greenriverdev.com/328/dating/index.php
- * Index page for dating website
+ * filename https://lscott.greenriverdev.com/355/JumpStart/index.php
+ * Index page for JumpStart website
  * provides routes to the controller
  */
 //Turn on error reporting

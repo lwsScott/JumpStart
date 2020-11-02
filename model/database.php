@@ -44,6 +44,14 @@ class Database
             {
                 require_once '/home2/dhaasgre/config.php';
             }
+            else if ($_SERVER['USER'] == 'chyanggr')
+            {
+                require_once '/home2/chyanggr/config.php';
+            }
+            else if ($_SERVER['USER'] == 'rbarban1')
+            {
+                require_once '/home/rbarban1/config.php';
+            }
 
             //Create a new PDO connection
             $this->_dbh = new PDO(DB_DSN, DB_USERNAME, DB_PASSWORD);

@@ -383,7 +383,7 @@ class JumpStartController
             // check if type of user selected
             // not used for now
             if (isset($_POST['membership'])) {
-                $this->_f3->set('membership', $_POST['membershi    p']);
+                $this->_f3->set('membership', $_POST['membership']);
                 $permission = 'upload';
             }
             //echo "I made it here";
