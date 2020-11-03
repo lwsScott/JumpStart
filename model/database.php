@@ -76,8 +76,10 @@ class Database
         //$userId = $_SESSION['userId'];
         //echo $userId;
         //1. Define the query
-        $sql = "INSERT INTO section1 (a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18)
-                VALUES (:a1, :a2, :a3, :a4, :a5, :a6, :a7, :a8, :a9, :a10, :a11, :a12, :a13, :a14, :a15, :a16, :a17, :a18)";
+        $sql = "INSERT INTO section1 (a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, 
+                        a13, a14, a15, a16, a17, a18, userId)
+                VALUES (:a1, :a2, :a3, :a4, :a5, :a6, :a7, :a8, :a9, :a10, :a11, :a12, 
+                        :a13, :a14, :a15, :a16, :a17, :a18, :userId)";
         //var_dump($sql);
         //2. Prepare the statement
         $statement = $this->_dbh->prepare($sql);
@@ -100,6 +102,7 @@ class Database
         $a16 = $section1->getA16();
         $a17 = $section1->getA17();
         $a18 = $section1->getA18();
+        $userId = $section1->getUserId();
 
 
         //3. Bind the parameters
@@ -121,6 +124,7 @@ class Database
         $statement->bindParam(':a16',$a16, PDO::PARAM_STR);
         $statement->bindParam(':a17',$a17, PDO::PARAM_STR);
         $statement->bindParam(':a18',$a18, PDO::PARAM_STR);
+        $statement->bindParam(':userId',$userId, PDO::PARAM_STR);
 
         //$statement->bindParam(':image', $recipe->getImage());
 

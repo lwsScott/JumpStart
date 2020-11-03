@@ -50,22 +50,6 @@ $f3->route('GET|POST /section1', function($f3){
     // if the form has been submitted
     //echo "<h1>section1 page check</h1>";
 
-    //check if the form has been posted
-    /*
-    if($_SERVER['REQUEST_METHOD'] == 'POST'){
-        //echo "in Post";
-        //validate the data
-        if(empty($_POST['a1'])){
-            echo "please answer question 1";
-        }
-        else if(empty($_POST['a2'])){
-            echo "please answer question 2";
-        }
-        else if(empty($_POST['a3'])){
-            echo "please answer question 3";
-        }
-        else {
-    */
 
     $GLOBALS['controller']->section1($f3);
 });
@@ -79,10 +63,10 @@ $f3->route('GET|POST /results', function($f3){
     $GLOBALS['controller']->results();
 });
 
-// this is the route to upload image page
+// this is the route to login page
 // POST method when submitting form
-$f3->route('GET|POST /image', function(){
-    $GLOBALS['controller']->image();
+$f3->route('GET|POST /login', function($f3){
+    $GLOBALS['controller']->login($f3);
 });
 
 // Define a summary route

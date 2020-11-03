@@ -190,7 +190,7 @@ class JumpStartController
                 $a17 = $_SESSION['a17'];
                 $a18 = $_SESSION['a18'];
                 //$userId = $_SESSION['userId'];
-                $userId = "me";
+                $userId = $_SESSION['un'];
 
 
                 // construct a section1 object
@@ -246,24 +246,53 @@ class JumpStartController
     /**
      *  Provides a login form and validates
      */
-    public function login()
+    public function login($f3)
     {
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            // initialize variables
-            $username = "";
-            $err = false;
-            //echo "made it to the post method on login<br>";
+        $_SESSION['err'] = false;
+        $err = false; //initialize variable before the if statement
 
-            // if the form has been submitted
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            //echo "made it to post login";
+            $_SESSION['err'] = false;
+            $err = false; //initialize variable before the if statement
+            $username = ""; //for first time seeing login page -
+            //var_dump($_SESSION);
+            //if the form has been submitted
             if (!empty($_POST)) {
-                // Get the username and password
+                //echo "made it";
+                //get username and password
                 $username = $_POST['username'];
                 $password = $_POST['password'];
-                $_SESSION['username'] = $username;
 
+                //echo $username. " ". $password;
+                //Dummy variables --- make a separate file with these variables and require it for a login
+                $user = "jumpstart";
+                $pass = "Jumpstart2020";
+
+                //store username in session array
+                $_SESSION['un'] = $username;
+                // var_dump($_SESSION);
+                if ($username == $user && $password == $pass) {
+                    //redirect to home page
+                    //echo "made it";
+                    //$page = isset($_SESSION['page']) ? $_SESSION['page'] : "index";
+                    //$page = "index.php";
+                    //header("location: $page");
+                    $view = new Template();
+                    echo $view->render('views/home.html');
+                } else {
+                    //set error to true
+                    $_SESSION['err'] = true;
+                    $err = true;
+                    // display login
+                    $view = new Template();
+                    echo $view->render('views/login.php');
+                }
+            }
+            /*
                 // get the userId of the user from the database
                 // and set the session variable
-                $userId = $GLOBALS['db']->getUserId($username, $password);
+                //$userId = $GLOBALS['db']->getUserId($username, $password);
 
                 // get the userId from the database
                 //$user = 'myuser';
@@ -271,10 +300,6 @@ class JumpStartController
                 if (!empty($userId) && $userId > 0) {
                     // store userId in the session array
                     $_SESSION['userId'] = $userId;
-
-                    // get the user permission
-                    $permission = $GLOBALS['db']->getPermission($userId);
-                    $_SESSION['permission'] = $permission;
 
                     // redirect user to either the page they came from or index.php
                     $page = isset($_SESSION['page']) ? $_SESSION['page'] : "index.php";
@@ -284,12 +309,13 @@ class JumpStartController
                     $_SESSION['err'] = true;
                     $err = true;
                 }
-            }
+                */
+        } else {
+            // display login
+            //var_dump($_SESSION);
+            $view = new Template();
+            echo $view->render('views/login.php');
         }
-        // display login
-        $view = new Template();
-        echo $view->render
-        ('views/login.php');
     }
 
     /**
@@ -302,7 +328,6 @@ class JumpStartController
         echo $view->render
         ('views/logout.php');
     }
-
 
     /**
      * view users
@@ -339,20 +364,7 @@ class JumpStartController
                 //echo "last name not done";
             }
 
-            if (!$this->_validator->validPhone($_POST['phone'])) {
-                $valid = false;
-                $this->_f3->set('errors["phone"]', "Please provide a valid phone number");
-                //echo "phone not done";
-            }
-
-            if (!$this->_validator->validEmail($_POST['email'])) {
-                $valid = false;
-                //Set an error variable in the F3 hive
-                $this->_f3->set('errors["email"]', "Please provide a valid e-mail");
-                //echo "email false";
-            }
-
-            if (!$this->_validator->validName($_POST['username'])) {
+                       if (!$this->_validator->validName($_POST['username'])) {
                 $valid = false;
                 //Set an error variable in the F3 hive
                 $this->_f3->set('errors["username"]', "Please provide a valid username");
