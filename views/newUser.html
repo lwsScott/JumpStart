@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>New User</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <include href="includes/header.html"></include>
+</head>
+<body>
+<!--Add User page-->
+
+<include href="includes/navBar.html"></include>
+<div class="container card rounded">
+    <h1>New User</h1>
+    <form id="af" action="#" method="post" class="form-horizontal">
+        <div class="row">
+            <div class="col-7">
+                <fieldset class="form-group">
+
+                    <!-- get username -->
+                    <div class="form-group">
+                        <label for="username"><strong>Username</strong></label>
+                        <input class="form-control" type="text" name="username" id="username"
+                               value="<check if='{{ !empty(@username) }}'>{{ @username }}</check>">
+                        <!-- Response -->
+                        <div id="uname_response"></div>
+                        <span class="err">
+                        <check if="{{ isset(@errors['username']) }}">
+                            {{ @errors['username'] }}
+                        </check>
+                    </span>
+
+                    </div>
+
+                    <!-- get password -->
+                    <div class="form-group">
+                        <label for="password"><strong>Password</strong></label>
+                        <input class="form-control" type="password" name="password" id="password"
+                               value="<check if='{{ !empty(@password) }}'>{{ @password }}</check>">
+                        <span class="err">
+                        <check if="{{ isset(@errors['password']) }}">
+                            {{ @errors['password'] }}
+                        </check>
+                    </span>
+                        <span class="errJ" id="errPassword">Required</span>
+                    </div>
+
+                    <!-- confirm password -->
+                    <div class="form-group">
+                        <label for="confirm"><strong>Confirm Password</strong></label>
+                        <input class="form-control" type="password" name="confirm" id="confirm"
+                               value="<check if='{{ !empty(@confirm) }}'>{{ @confirm }}</check>">
+                        <span class="err">
+                        <check if="{{ isset(@errors['confirm']) }}">
+                            {{ @errors['confirm'] }}
+                        </check>
+                    </span>
+                        <span class="errJ" id="errConfirm">Required match password</span>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary mb-3">Submit</button>
+    </form>
+</div>
+<include href="includes/footer.html"></include>
+
+<!-- check username availability -->
+<script src="js/user.js"></script>
+</body>
+</html>
+
+
+
