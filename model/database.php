@@ -186,6 +186,43 @@ class Database
         $result = $statement->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
+
+    /**
+     * Get the User ID given a username and password
+     * @param $username the username
+     * @param $password the password
+     * @return mixed|string the userId if true, else an error message
+     */
+    function getUserId($username, $password)
+    {
+        //echo $username . "and" . $password. "<br>";
+
+        //1. Define the query
+        $sql = "SELECT userId FROM playbookUsers
+                WHERE username = '$username' && password = '$password'";
+
+        //2. Prepare the statement
+        $statement = $this->_dbh->prepare($sql);
+        //var_dump($statement);
+        //3. Bind the parameters
+
+        //4. Execute the statement
+        $statement->execute();
+
+        //5. Get the result
+        $result = $statement->fetchColumn();
+        //var_dump($result);
+        //foreach ($result as $row) {
+        //    echo $row;
+        //}
+        if ($result) {
+            return $result;
+        } else {
+            return "Incorrect login credentials provided";
+        }
+    }
+
+
     /**
      * Get user details
      * @param $userId the user to get details

@@ -1,7 +1,7 @@
 <?php
 /*
  * Lewis Scott
- * 4/17/20
+ * 10/17/20
  * filename https://lscott.greenriverdev.com/355/JumpStart/index.php
  * Index page for JumpStart website
  * provides routes to the controller
@@ -81,11 +81,13 @@ $f3->route('GET|POST /newUser', function($f3){
     $GLOBALS['controller']->newUser($f3);
 });
 
-//Define a route that displays user detail
+//Define a route that displays users
 $f3->route('GET|POST /viewUsers', function(){
 
     $GLOBALS['controller']->viewUsers();
 });
+
+
 // Define a summary route
 $f3->route('GET /summary', function () {
     $GLOBALS['controller']->summary();

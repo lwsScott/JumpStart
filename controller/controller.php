@@ -189,7 +189,7 @@ class JumpStartController
                 $a17 = $_SESSION['a17'];
                 $a18 = $_SESSION['a18'];
                 //$userId = $_SESSION['userId'];
-                $userId = $_SESSION['un'];
+                $userId = $_SESSION['userId'];
 
 
                 // construct a section1 object
@@ -202,11 +202,7 @@ class JumpStartController
                 // add the recipe to the database
                 $GLOBALS['db']->addSection1($section1);
                 $f3->reroute("results");
-
-
-                //$f3->reroute("results");
             }
-
         } else {
             $view = new Template();
             echo $view->render('views/section1.html');
@@ -247,73 +243,51 @@ class JumpStartController
      */
     public function login($f3)
     {
-        $_SESSION['err'] = false;
-        $err = false; //initialize variable before the if statement
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                // initialize variables
+                $username = "";
+                $err = false;
+                //echo "made it to the post method on login<br>";
 
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            //echo "made it to post login";
-            $_SESSION['err'] = false;
-            $err = false; //initialize variable before the if statement
-            $username = ""; //for first time seeing login page -
-            //var_dump($_SESSION);
-            //if the form has been submitted
-            if (!empty($_POST)) {
-                //echo "made it";
-                //get username and password
-                $username = $_POST['username'];
-                $password = $_POST['password'];
+                // if the form has been submitted
+                if (!empty($_POST)) {
+                    // Get the username and password
+                    $username = $_POST['username'];
+                    $password = $_POST['password'];
+                    $_SESSION['username'] = $username;
 
-                //echo $username. " ". $password;
-                //Dummy variables --- make a separate file with these variables and require it for a login
-                $user = "jumpstart";
-                $pass = "Jumpstart2020";
+                    // get the userId of the user from the database
+                    // and set the session variable
+                    $userId = $GLOBALS['db']->getUserId($username, $password);
 
-                //store username in session array
-                $_SESSION['un'] = $username;
-                // var_dump($_SESSION);
-                if ($username == $user && $password == $pass) {
-                    //redirect to home page
-                    //echo "made it";
-                    //$page = isset($_SESSION['page']) ? $_SESSION['page'] : "index";
-                    //$page = "index.php";
-                    //header("location: $page");
-                    $view = new Template();
-                    echo $view->render('views/home.html');
-                } else {
-                    //set error to true
-                    $_SESSION['err'] = true;
-                    $err = true;
-                    // display login
-                    $view = new Template();
-                    echo $view->render('views/login.php');
+                    // get the userId from the database
+                    //$user = 'myuser';
+                    //$pass = 'password';
+                    if (!empty($userId) && $userId > 0) {
+                        // store userId in the session array
+                        $_SESSION['userId'] = $userId;
+
+                        // redirect user to either the page they came from or index.php
+                        //$page = isset($_SESSION['page']) ? $_SESSION['page'] : "index.php";
+                        //var_dump($page);
+                        //header("location: " . $page);
+                        $view = new Template();
+                        echo $view->render('views/home.html');
+                    } else {
+                        // set error flag to true
+                        $_SESSION['err'] = true;
+                        $err = true;
+                        // display login
+                        $view = new Template();
+                        echo $view->render
+                        ('views/login.php');
+                    }
                 }
-            }
-            /*
-                // get the userId of the user from the database
-                // and set the session variable
-                //$userId = $GLOBALS['db']->getUserId($username, $password);
-
-                // get the userId from the database
-                //$user = 'myuser';
-                //$pass = 'password';
-                if (!empty($userId) && $userId > 0) {
-                    // store userId in the session array
-                    $_SESSION['userId'] = $userId;
-
-                    // redirect user to either the page they came from or index.php
-                    $page = isset($_SESSION['page']) ? $_SESSION['page'] : "index.php";
-                    header("location: " . $page);
-                } else {
-                    // set error flag to true
-                    $_SESSION['err'] = true;
-                    $err = true;
-                }
-                */
-        } else {
+            } else {
             // display login
-            //var_dump($_SESSION);
             $view = new Template();
-            echo $view->render('views/login.php');
+            echo $view->render
+            ('views/login.php');
         }
     }
 
