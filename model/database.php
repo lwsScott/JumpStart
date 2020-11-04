@@ -15,10 +15,6 @@ error_reporting(E_ALL);
 //require '/home2/lscottgr/config.php';
 
 
-
-
-
-
 /*
  * Class Database
  * constructs database object
@@ -138,6 +134,83 @@ class Database
         //echo $id;
     }
 
+    /**
+     * Insert a new user into the database
+     * @param $newUser the user to add
+     */
+    function writeUser($newUser)
+    {
+        echo '<h1>database php called</h1>';
+
+        //1. Define the query
+        $sql = "INSERT INTO playbookUsers (username, password)
+                VALUES (:username, :password)";
+
+        //2. Prepare the statement
+        $statement = $this->_dbh->prepare($sql);
+
+
+        $userName = $newUser->getUsername();
+        $password = $newUser->getPassword();
+
+
+        //3. Bind the parameters
+        // $statement->bindParam(':sid', $user->get());
+        $statement->bindParam(':username', $userName, PDO::PARAM_STR);
+        $statement->bindParam(':password', $password, PDO::PARAM_STR);
+
+
+        //4. Execute the statement
+        $statement->execute();
+
+        //Get the key of the last inserted row
+        $id = $this->_dbh->lastInsertId();
+    }
+    /*
+     * The user's database
+     */
+    function getUser()
+    {
+        //1. Define the query
+        $sql = "SELECT * FROM playbookUsers";
+
+        //2. Prepare the statement
+        $statement = $this->_dbh->prepare($sql);
+
+        //3. Bind the parameters
+
+        //4. Execute the statement
+        $statement->execute();
+
+        //5. Get the result
+        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+    /**
+     * Get user details
+     * @param $userId the user to get details
+     * @return mixed the details
+     */
+    function getUserDetails($userId)
+    {
+        //1. Define the query
+        $sql = "SELECT * 
+                FROM playbookUsers
+                WHERE userId = $userId";
+
+        //2. Prepare the statement
+        $statement = $this->_dbh->prepare($sql);
+
+        //3. Bind the parameters
+        $statement->bindParam(':userId', $userId);
+
+        //4. Execute the statement
+        $statement->execute();
+
+        //5. Get the result
+        $result = $statement->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
 
 
 }

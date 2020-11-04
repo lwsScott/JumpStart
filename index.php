@@ -69,6 +69,23 @@ $f3->route('GET|POST /login', function($f3){
     $GLOBALS['controller']->login($f3);
 });
 
+// this is the route to logout page
+// POST method when submitting form
+$f3->route('GET|POST /logout', function($f3){
+    $GLOBALS['controller']->logout($f3);
+});
+
+// this is the route to newUser page
+// POST method when submitting form
+$f3->route('GET|POST /newUser', function($f3){
+    $GLOBALS['controller']->newUser($f3);
+});
+
+//Define a route that displays user detail
+$f3->route('GET|POST /viewUsers', function(){
+
+    $GLOBALS['controller']->viewUsers();
+});
 // Define a summary route
 $f3->route('GET /summary', function () {
     $GLOBALS['controller']->summary();

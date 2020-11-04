@@ -45,7 +45,6 @@ class JumpStartController
         echo $view->render('views/home.html');
     }
 
-
     /**
      * Display the section1 route
      */
@@ -348,35 +347,15 @@ class JumpStartController
         $valid = true;
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             //var_dump($_POST);
-            if (!$this->_validator->validName($_POST['firstName'])) {
-
-                //Set an error variable in the F3 hive
-                $valid = false;
-                $this->_f3->set('errors["firstName"]',  "Please provide a first name");
-                //echo "firstname no done";
-            }
-
-            if (!$this->_validator->validName($_POST['lastName'])) {
-
-                //Set an error variable in the F3 hive
-                $valid = false;
-                $this->_f3->set('errors["lastName"]',  "Please provide a last name");
-                //echo "last name not done";
-            }
-
-                       if (!$this->_validator->validName($_POST['username'])) {
-                $valid = false;
-                //Set an error variable in the F3 hive
-                $this->_f3->set('errors["username"]', "Please provide a valid username");
-                //echo "username false";
-            }
-            //echo $_SESSION['nameAvail'];
+            /*
+            echo $_SESSION['nameAvail'];
             if (($_SESSION['nameAvail'] != 'available')) {
                 $valid = false;
                 //Set an error variable in the F3 hive
                 $this->_f3->set('errors["username"]', "Username not available");
                 //echo "username false";
             }
+            */
 
             if (!$this->_validator->validName($_POST['password'])) {
                 $valid = false;
@@ -391,49 +370,20 @@ class JumpStartController
                 $this->_f3->set('errors["confirm"]', "Passwords don't match");
                 //echo "confirm password false";
             }
-
-            // check if type of user selected
-            // not used for now
-            if (isset($_POST['membership'])) {
-                $this->_f3->set('membership', $_POST['membership']);
-                $permission = 'upload';
-            }
             //echo "I made it here";
             //var_dump($valid);
 
-            // make the form stick
-            $this->_f3->set('firstName', $_POST['firstName']);
-            $this->_f3->set('lastName', $_POST['lastName']);
-            $this->_f3->set('phone', $_POST['phone']);
-            $this->_f3->set('email', $_POST['email']);
             $this->_f3->set('username', $_POST['username']);
             $this->_f3->set('password', $_POST['password']);
             $this->_f3->set('confirm', $_POST['confirm']);
 
             if ($valid) {
-                //echo "I made it here valid";
 
-                //echo "start store datebase";
-                $firstName = $_POST['firstName'];
-
-                //echo $firstName;
-                $lastName = $_POST['lastName'];
-                //echo $lastName;
-                $email = $_POST['email'];
-                $phone = $_POST['phone'];
                 $username = $_POST['username'];
                 $password = $_POST['password'];
 
                 // create the user object
-                // premium user if selected, standard user if not selected
-                if (isset($_POST['membership'])) {
-                    $newUser = new PremiumUser($firstName, $lastName, $email, $phone,
-                        $username, $password, $permission);
-                }
-                else {
-                    $newUser = new User($firstName, $lastName, $email, $phone,
-                        $username, $password);
-                }
+                $newUser = new User($username, $password);
 
                 // add into it
                 //var_dump($newUser);
