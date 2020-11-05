@@ -13,7 +13,8 @@
 <div class="container">
 
     <div class="jumbotron">
-        <h1 class="display-4">Client login</h1>
+        <h4 class="display-4">Client login</h4>
+        <p>Required for answering SWOT questions</p>
         <hr class="my-4">
     </div>
 

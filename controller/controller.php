@@ -46,10 +46,26 @@ class JumpStartController
     }
 
     /**
+     * Check for login
+     */
+    public function checkLogin()
+    {
+        //session_start();
+        if(!isset($_SESSION['userId']))
+        {
+            //$_SESSION['page'] = $_SESSION['SCRIPT_URI'];
+
+            //Redirect user to login page
+            header("location: login");
+        }
+    }
+
+    /**
      * Display the section1 route
      */
     public function section1($f3)
     {
+
         $_SESSION['a1'] = "";
         $_SESSION['a2'] = "";
         $_SESSION['a3'] = "";
@@ -204,6 +220,7 @@ class JumpStartController
                 $f3->reroute("section2");
             }
         } else {
+            $this->checkLogin();
             $view = new Template();
             echo $view->render('views/section1.html');
         }

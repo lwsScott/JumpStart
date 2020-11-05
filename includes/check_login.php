@@ -4,10 +4,10 @@ ini_set('display_errors', 1);
 error_reporting(E_ALL);
 //session_start();
 
-session_start();
+//session_start();
 //check user login
 
-if(!isset($_SESSION['un']))
+if(!isset($_SESSION['userId']))
 {
     $_SESSION['page'] = $_SESSION['SCRIPT_URI'];
 

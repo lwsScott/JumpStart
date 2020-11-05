@@ -56,7 +56,7 @@ $f3->route('GET /home', function () {
 $f3->route('GET|POST /section1', function($f3){
     // if the form has been submitted
     //echo "<h1>section1 page check</h1>";
-    $GLOBALS['controller']->section1($f3);
+        $GLOBALS['controller']->section1($f3);
 });
 
 // this is the route to section 2 page
