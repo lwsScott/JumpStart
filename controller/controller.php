@@ -210,6 +210,175 @@ class JumpStartController
     }
 
     /**
+     * Display the section2 route
+     */
+    public function section2($f3)
+    {
+        $_SESSION['b1'] = "";
+        $_SESSION['b2'] = "";
+        $_SESSION['b3'] = "";
+        $_SESSION['b4'] = "";
+        $_SESSION['b5'] = "";
+        $_SESSION['b6'] = "";
+        $_SESSION['b7'] = "";
+        $_SESSION['a8'] = "";
+        $_SESSION['a9'] = "";
+        $_SESSION['a10'] = "";
+        $_SESSION['a11'] = "";
+        $_SESSION['a12'] = "";
+        $_SESSION['a13'] = "";
+        $_SESSION['a14'] = "";
+        $_SESSION['a15'] = "";
+        $_SESSION['a16'] = "";
+        $_SESSION['a17'] = "";
+        $_SESSION['a18'] = "";
+
+        //echo "Here";
+        //var_dump($_SESSION);
+
+        // validate the data
+        // TODO really validate the data
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            if (isset($_POST['a1'])) {
+                $_SESSION['a1'] = $_POST['a1'];
+            } else {
+                $_SESSION['a1'] = "";
+            }
+            if (isset($_POST['a2'])) {
+                $_SESSION['a2'] = $_POST['a2'];
+            } else {
+                $_SESSION['a2'] = "";
+            }
+            if (isset($_POST['a3'])) {
+                $_SESSION['a3'] = $_POST['a3'];
+            } else {
+                $_SESSION['a3'] = "";
+            }
+            if (isset($_POST['a4'])) {
+                $_SESSION['a4'] = $_POST['a4'];
+            } else {
+                $_SESSION['a4'] = "";
+            }
+            if (isset($_POST['a5'])) {
+                $_SESSION['a5'] = $_POST['a5'];
+            } else {
+                $_SESSION['a5'] = "";
+            }
+            if (isset($_POST['a6'])) {
+                $_SESSION['a6'] = $_POST['a6'];
+            } else {
+                $_SESSION['a6'] = "";
+            }
+            if (isset($_POST['a7'])) {
+                $_SESSION['a7'] = $_POST['a7'];
+            } else {
+                $_SESSION['a7'] = "";
+            }
+            if (isset($_POST['a8'])) {
+                $_SESSION['a8'] = $_POST['a8'];
+            } else {
+                $_SESSION['a8'] = "";
+            }
+            if (isset($_POST['a9'])) {
+                $_SESSION['a9'] = $_POST['a9'];
+            } else {
+                $_SESSION['a9'] = "";
+            }
+            if (isset($_POST['a10'])) {
+                $_SESSION['a10'] = $_POST['a10'];
+            } else {
+                $_SESSION['a10'] = "";
+            }
+            if (isset($_POST['a11'])) {
+                $_SESSION['a11'] = $_POST['a11'];
+            } else {
+                $_SESSION['a11'] = "";
+            }
+            if (isset($_POST['a12'])) {
+                $_SESSION['a12'] = $_POST['a12'];
+            } else {
+                $_SESSION['a12'] = "";
+            }
+            if (isset($_POST['a13'])) {
+                $_SESSION['a13'] = $_POST['a13'];
+            } else {
+                $_SESSION['a13'] = "";
+            }
+            if (isset($_POST['a14'])) {
+                $_SESSION['a14'] = $_POST['a14'];
+            } else {
+                $_SESSION['a14'] = "";
+            }
+            if (isset($_POST['a15'])) {
+                $_SESSION['a15'] = $_POST['a15'];
+            } else {
+                $_SESSION['a15'] = "";
+            }
+            if (isset($_POST['a16'])) {
+                $_SESSION['a16'] = $_POST['a16'];
+            } else {
+                $_SESSION['a16'] = "";
+            }
+            if (isset($_POST['a17'])) {
+                $_SESSION['a17'] = $_POST['a17'];
+            } else {
+                $_SESSION['a17'] = "";
+            }
+            if (isset($_POST['a18'])) {
+                $_SESSION['a18'] = $_POST['a18'];
+            } else {
+                $_SESSION['a18'] = "";
+            }
+
+            // if valid is true
+            $valid = true;
+            if ($valid) {
+                //echo '<h1>I made it here with valid data</h1>';
+                $a1 = $_SESSION['a1'];
+                $a2 = $_SESSION['a2'];
+                $a3 = $_SESSION['a3'];
+                $a4 = $_SESSION['a4'];
+                $a5 = $_SESSION['a5'];
+                $a6 = $_SESSION['a6'];
+                $a7 = $_SESSION['a7'];
+                $a8 = $_SESSION['a8'];
+                $a9 = $_SESSION['a9'];
+                $a10 = $_SESSION['a10'];
+                $a11 = $_SESSION['a11'];
+                $a12 = $_SESSION['a12'];
+                $a13 = $_SESSION['a13'];
+                $a14 = $_SESSION['a14'];
+                $a15 = $_SESSION['a15'];
+                $a16 = $_SESSION['a16'];
+                $a17 = $_SESSION['a17'];
+                $a18 = $_SESSION['a18'];
+                //$userId = $_SESSION['userId'];
+                $userId = $_SESSION['un'];
+
+
+                // construct a section1 object
+                $section1 = new Section2($a1, $a2, $a3, $a4, $a5, $a6, $a7, $a8, $a9, $a10, $a11, $a12,
+                    $a13, $a14, $a15, $a16, $a17, $a18, $userId);
+
+                $_SESSION['section2'] = $section2;
+                //var_dump($section1);
+
+                // add the section to the database
+                $GLOBALS['db']->addSection2($section2);
+                $f3->reroute("results");
+
+
+                //$f3->reroute("results");
+            }
+        } else {
+            $view = new Template();
+            echo $view->render('views/section2.html');
+        }
+    }
+
+
+
+    /**
      * Display the results route
      */
     public function results()

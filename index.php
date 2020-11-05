@@ -49,10 +49,18 @@ $f3->route('GET /', function () {
 $f3->route('GET|POST /section1', function($f3){
     // if the form has been submitted
     //echo "<h1>section1 page check</h1>";
-
-
     $GLOBALS['controller']->section1($f3);
 });
+
+// this is the route to section 2 page
+// GET method when coming from home page
+// POST method when submitting form
+$f3->route('GET|POST /section2', function($f3){
+    // if the form has been submitted
+    //echo "<h1>section1 page check</h1>";
+    $GLOBALS['controller']->section2($f3);
+});
+
 
 // this is the route to interests page
 // GET method when coming from profile page
