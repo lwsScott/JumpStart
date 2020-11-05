@@ -14,6 +14,7 @@
         <th scope="col">STRENGTHS</th>
         <th scope="col">WEAKNESSES</th>
         <th scope="col">OPPORTUNITIES</th>
+        <th scope="col">THREATS</th>
     </tr>
     </thead>
     <tbody>
@@ -21,8 +22,13 @@
         <th scope="row">1</th>
         <td>Do you have a written purpose statement?</td>
         <td>{{@SESSION.a1}}</td><!-- Y-S, N-W -->
-        <td>We have a purpose</td>
-        <td>We have no purpose</td>
+        <td><check if="{{ $_SESSION['a1'] == 'yes' }}" >
+            We have a purpose
+        </check></td>
+        <td><check if="{{ $_SESSION['a1'] == 'no' }}" >
+            We have no purpose
+        </check></td>
+        <td></td>
         <td></td>
     </tr>
     <tr>
@@ -32,45 +38,67 @@
         <td></td>
         <td></td>
         <td></td>
+        <td></td>
     </tr>
     <tr>
         <th scope="row">3</th>
         <td>Does your team know and understand it?</td>
         <td>{{@SESSION.a3}}</td><!-- Y-S, N-W -->
-        <td>Team knows and understand purpose</td>
-        <td>Team is unfamiliar with our purpose</td>
+        <td><check if="{{ $_SESSION['a3'] == 'yes' }}" >
+            Team knows and understand purpose
+        </check></td>
+        <td><check if="{{ $_SESSION['a3'] == 'no' }}" >
+            Team is unfamiliar with our purpose
+        </check></td>
+        <td></td>
         <td></td>
     </tr>
     <tr>
         <th scope="row">4</th>
         <td>Is it used in decision making?</td>
         <td>{{@SESSION.a4}}</td><!-- Y-S, N-W -->
-        <td>Purpose is referred to and used in decision making</td>
-        <td>We don't use the purpose in decision making</td>
+        <td><check if="{{ $_SESSION['a4'] == 'yes' }}" >
+            Purpose is referred to and used in decision making
+        </check></td>
+        <td><check if="{{ $_SESSION['a4'] == 'no' }}" >
+            We don't use the purpose in decision making
+        </check></td>
+        <td></td>
         <td></td>
     </tr>
     <tr>
         <th scope="row">5</th>
         <td>Are you living it?</td>
         <td>{{@SESSION.a5}}</td><!-- Y-S, N-W -->
-        <td>We live our purpose in the business</td>
-        <td>We are not fully living our purpose in the business</td>
+        <td><check if="{{ $_SESSION['a5'] == 'yes' }}" >
+            We live our purpose in the business
+        </check></td>
+        <td><check if="{{ $_SESSION['a5'] == 'no' }}" >
+            We are not fully living our purpose in the business
+        </check></td>
+        <td></td>
         <td></td>
     </tr>
     <tr>
         <th scope="row">6</th>
         <td>How are you not living it?</td>
-        <td>{{@SESSION.a6}}</td><!-- W -->
+        <td></td><!-- W -->
         <td></td>
-        <td>The part(s) of the business we are not fully living:</td>
+        <td>The part(s) of the business we are not fully living:&nbsp&nbsp{{@SESSION.a6}}</td>
+        <td></td>
         <td></td>
     </tr>
     <tr>
         <th scope="row">7</th>
         <td>Do you have a written mission statement?</td>
         <td>{{@SESSION.a7}}</td><!-- Y-S, N-W -->
-        <td>We have a written mission statement</td>
-        <td>We don't have a written mission statement</td>
+        <td><check if="{{ $_SESSION['a7'] == 'yes' }}" >
+            We have a written mission statement
+        </check></td>
+        <td><check if="{{ $_SESSION['a7'] == 'no' }}" >
+            We don't have a written mission statement
+        </check></td>
+        <td></td>
         <td></td>
     </tr>
     <tr>
@@ -80,45 +108,67 @@
         <td></td>
         <td></td>
         <td></td>
+        <td></td>
     </tr>
     <tr>
         <th scope="row">9</th>
         <td>Does your team know it?</td>
         <td>{{@SESSION.a9}}</td><!-- Y-S, N-W -->
-        <td>Our team knows and understands our mission statement</td>
-        <td>Our team doesn't know/understand our mission statement</td>
+        <td><check if="{{ $_SESSION['a9'] == 'yes' }}" >
+            Our team knows and understands our mission statement
+        </check></td>
+        <td><check if="{{ $_SESSION['a9'] == 'no' }}" >
+            Our team doesn't know/understand our mission statement
+        </check></td>
+        <td></td>
         <td></td>
     </tr>
     <tr>
         <th scope="row">10</th>
         <td>Is it used in decision making?</td>
         <td>{{@SESSION.a10}}</td><!-- Y-S, N-W -->
-        <td>We use our mission in decision making</td>
-        <td>We don't use our mission in our decision making</td>
+        <td><check if="{{ $_SESSION['a10'] == 'yes' }}" >
+            We use our mission in decision making
+        </check></td>
+        <td><check if="{{ $_SESSION['a10'] == 'no' }}" >
+            We don't use our mission in our decision making
+        </check></td>
+        <td></td>
         <td></td>
     </tr>
     <tr>
         <th scope="row">11</th>
         <td>Are you living it?</td>
         <td>{{@SESSION.a11}}</td><!-- Y-S, N-W -->
-        <td>We are living our mission</td>
-        <td>We don't live our mission</td>
+        <td><check if="{{ $_SESSION['a11'] == 'yes' }}" >
+            We are living our mission
+        </check></td>
+        <td><check if="{{ $_SESSION['a11'] == 'no' }}" >
+            We don't live our mission
+        </check></td>
+        <td></td>
         <td></td>
     </tr>
     <tr>
         <th scope="row">12</th>
         <td>What part of the purpose is missing?</td>
-        <td>{{@SESSION.a12}}</td><!-- W -->
+        <td></td><!-- W -->
         <td></td>
-        <td>Our mission is not being lived as follows:</td>
+        <td>Our mission is not being lived as follows:&nbsp&nbsp{{@SESSION.a12}}</td>
+        <td></td>
         <td></td>
     </tr>
     <tr>
         <th scope="row">13</th>
         <td>Do you have a written vision statement?</td>
         <td>{{@SESSION.a13}}</td><!-- Y-S, N-W -->
-        <td>We have a written vision statement</td>
-        <td>We do not have a written vision statement</td>
+        <td><check if="{{ $_SESSION['a13'] == 'yes' }}" >
+            We have a written vision statement
+        </check></td>
+        <td><check if="{{ $_SESSION['a13'] == 'no' }}" >
+            We do not have a written vision statement
+        </check></td>
+        <td></td>
         <td></td>
     </tr>
     <tr>
@@ -128,20 +178,31 @@
         <td></td>
         <td></td>
         <td></td>
+        <td></td>
     </tr>
     <tr>
         <th scope="row">15</th>
         <td>Does your team know and understand it?</td>
         <td>{{@SESSION.a15}}</td><!-- Y-S, N-W -->
-        <td>Our team knows and understands our vision</td>
-        <td>Our team doesn't fully know/understand our vision</td>
+        <td><check if="{{ $_SESSION['a15'] == 'yes' }}" >
+            Our team knows and understands our vision
+        </check></td>
+        <td><check if="{{ $_SESSION['a15'] == 'no' }}" >
+            Our team does not fully know/understand our vision
+        </check></td>
+        <td></td>
         <td></td>
     </tr>
     <tr>
         <th scope="row">16</th>
         <td>Is it used in decision making?</td>
         <td>{{@SESSION.a16}}</td>
-        <td></td>
+        <td><check if="{{ $_SESSION['a16'] == 'yes' }}" >
+            We use our vision in our decision-making
+        </check></td>
+        <td><check if="{{ $_SESSION['a16'] == 'no' }}" >
+            We do not use our vision in our decision-making
+        </check></td>
         <td></td>
         <td></td>
     </tr>
@@ -149,16 +210,22 @@
         <th scope="row">17</th>
         <td>Has the vision been achieved?</td>
         <td>{{@SESSION.a17}}</td><!-- Y-S, N-W -->
-        <td>We use our vision in our decision making</td>
-        <td>We do not use our vision in our decision making</td>
+        <td><check if="{{ $_SESSION['a17'] == 'yes' }}" >
+            We use our vision in our decision making
+        </check></td>
+        <td><check if="{{ $_SESSION['a17'] == 'no' }}" >
+            We do not use our vision in our decision making
+        </check></td>
+        <td></td>
         <td></td>
     </tr>
     <tr>
         <th scope="row">18</th>
         <td>What part of the vision is unrealized?</td>
-        <td>{{@SESSION.a18}}</td><!-- W -->
+        <td></td><!-- W -->
         <td></td>
-        <td>Our vision has not been achieved as follows:</td>
+        <td>Our vision has not been achieved as follows:&nbsp&nbsp{{@SESSION.a18}}</td>
+        <td></td>
         <td></td>
     </tr>
     </tbody>

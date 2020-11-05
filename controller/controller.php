@@ -201,7 +201,7 @@ class JumpStartController
 
                 // add the recipe to the database
                 $GLOBALS['db']->addSection1($section1);
-                $f3->reroute("results");
+                $f3->reroute("section2");
             }
         } else {
             $view = new Template();
@@ -221,17 +221,40 @@ class JumpStartController
         $_SESSION['b5'] = "";
         $_SESSION['b6'] = "";
         $_SESSION['b7'] = "";
-        $_SESSION['a8'] = "";
-        $_SESSION['a9'] = "";
-        $_SESSION['a10'] = "";
-        $_SESSION['a11'] = "";
-        $_SESSION['a12'] = "";
-        $_SESSION['a13'] = "";
-        $_SESSION['a14'] = "";
-        $_SESSION['a15'] = "";
-        $_SESSION['a16'] = "";
-        $_SESSION['a17'] = "";
-        $_SESSION['a18'] = "";
+        $_SESSION['b8'] = "";
+        $_SESSION['b9'] = "";
+        $_SESSION['b10'] = "";
+        $_SESSION['b11'] = "";
+        $_SESSION['b12'] = "";
+        $_SESSION['b13'] = "";
+        $_SESSION['b14'] = "";
+        $_SESSION['b15'] = "";
+        $_SESSION['b16'] = "";
+        $_SESSION['b17'] = "";
+        $_SESSION['b17yn'] = "";
+        $_SESSION['b18'] = "";
+        $_SESSION['b18yn'] = "";
+        $_SESSION['b19'] = "";
+        $_SESSION['b19yn'] = "";
+        $_SESSION['b20'] = "";
+        $_SESSION['b20yn'] = "";
+        $_SESSION['b21'] = "";
+        $_SESSION['b21yn'] = "";
+        $_SESSION['b22'] = "";
+        $_SESSION['b22yn'] = "";
+        $_SESSION['b23'] = "";
+        $_SESSION['b23yn'] = "";
+        $_SESSION['b24'] = "";
+        $_SESSION['b24yn'] = "";
+        $_SESSION['b25'] = "";
+        $_SESSION['b25yn'] = "";
+        $_SESSION['b26'] = "";
+        $_SESSION['b26yn'] = "";
+        $_SESSION['b27'] = "";
+        $_SESSION['b27yn'] = "";
+        $_SESSION['b28'] = "";
+        $_SESSION['b28yn'] = "";
+        $_SESSION['b29'] = "";
 
         //echo "Here";
         //var_dump($_SESSION);
@@ -239,126 +262,184 @@ class JumpStartController
         // validate the data
         // TODO really validate the data
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            if (isset($_POST['a1'])) {
-                $_SESSION['a1'] = $_POST['a1'];
-            } else {
-                $_SESSION['a1'] = "";
+            if (isset($_POST['b1'])) {
+                $_SESSION['b1'] = $_POST['b1'];
             }
-            if (isset($_POST['a2'])) {
-                $_SESSION['a2'] = $_POST['a2'];
-            } else {
-                $_SESSION['a2'] = "";
+            if (isset($_POST['b2'])) {
+                $_SESSION['b2'] = $_POST['b2'];
             }
-            if (isset($_POST['a3'])) {
-                $_SESSION['a3'] = $_POST['a3'];
-            } else {
-                $_SESSION['a3'] = "";
+            if (isset($_POST['b3'])) {
+                $_SESSION['b3'] = $_POST['b3'];
             }
-            if (isset($_POST['a4'])) {
-                $_SESSION['a4'] = $_POST['a4'];
-            } else {
-                $_SESSION['a4'] = "";
+            if (isset($_POST['b4'])) {
+                $_SESSION['b4'] = $_POST['b4'];
             }
-            if (isset($_POST['a5'])) {
-                $_SESSION['a5'] = $_POST['a5'];
-            } else {
-                $_SESSION['a5'] = "";
+            if (isset($_POST['b5'])) {
+                $_SESSION['b5'] = $_POST['b5'];
             }
-            if (isset($_POST['a6'])) {
-                $_SESSION['a6'] = $_POST['a6'];
-            } else {
-                $_SESSION['a6'] = "";
+            if (isset($_POST['b6'])) {
+                $_SESSION['b6'] = $_POST['b6'];
             }
-            if (isset($_POST['a7'])) {
-                $_SESSION['a7'] = $_POST['a7'];
-            } else {
-                $_SESSION['a7'] = "";
+            if (isset($_POST['b7'])) {
+                $_SESSION['b7'] = $_POST['b7'];
             }
-            if (isset($_POST['a8'])) {
-                $_SESSION['a8'] = $_POST['a8'];
-            } else {
-                $_SESSION['a8'] = "";
+            if (isset($_POST['b8'])) {
+                $_SESSION['b8'] = $_POST['b8'];
             }
-            if (isset($_POST['a9'])) {
-                $_SESSION['a9'] = $_POST['a9'];
-            } else {
-                $_SESSION['a9'] = "";
+            if (isset($_POST['b9'])) {
+                $_SESSION['b9'] = $_POST['b9'];
             }
-            if (isset($_POST['a10'])) {
-                $_SESSION['a10'] = $_POST['a10'];
-            } else {
-                $_SESSION['a10'] = "";
+            if (isset($_POST['b10'])) {
+                $_SESSION['b10'] = $_POST['b10'];
             }
-            if (isset($_POST['a11'])) {
-                $_SESSION['a11'] = $_POST['a11'];
-            } else {
-                $_SESSION['a11'] = "";
+            if (isset($_POST['b11'])) {
+                $_SESSION['b11'] = $_POST['b11'];
             }
-            if (isset($_POST['a12'])) {
-                $_SESSION['a12'] = $_POST['a12'];
-            } else {
-                $_SESSION['a12'] = "";
+            if (isset($_POST['b12'])) {
+                $_SESSION['b12'] = $_POST['b12'];
             }
-            if (isset($_POST['a13'])) {
-                $_SESSION['a13'] = $_POST['a13'];
-            } else {
-                $_SESSION['a13'] = "";
+            if (isset($_POST['b13'])) {
+                $_SESSION['b13'] = $_POST['b13'];
             }
-            if (isset($_POST['a14'])) {
-                $_SESSION['a14'] = $_POST['a14'];
-            } else {
-                $_SESSION['a14'] = "";
+            if (isset($_POST['b14'])) {
+                $_SESSION['b14'] = $_POST['b14'];
             }
-            if (isset($_POST['a15'])) {
-                $_SESSION['a15'] = $_POST['a15'];
-            } else {
-                $_SESSION['a15'] = "";
+            if (isset($_POST['b15'])) {
+                $_SESSION['b15'] = $_POST['b15'];
             }
-            if (isset($_POST['a16'])) {
-                $_SESSION['a16'] = $_POST['a16'];
-            } else {
-                $_SESSION['a16'] = "";
+            if (isset($_POST['b16'])) {
+                $_SESSION['b16'] = $_POST['b16'];
             }
-            if (isset($_POST['a17'])) {
-                $_SESSION['a17'] = $_POST['a17'];
-            } else {
-                $_SESSION['a17'] = "";
+            if (isset($_POST['b17'])) {
+                $_SESSION['b17'] = $_POST['b17'];
             }
-            if (isset($_POST['a18'])) {
-                $_SESSION['a18'] = $_POST['a18'];
-            } else {
-                $_SESSION['a18'] = "";
+            if (isset($_POST['b17yn'])) {
+                $_SESSION['b17yn'] = $_POST['b17yn'];
+            }
+            if (isset($_POST['b18'])) {
+                $_SESSION['b18'] = $_POST['b18'];
+            }
+            if (isset($_POST['b18yn'])) {
+                $_SESSION['b18yn'] = $_POST['b18yn'];
+            }
+            if (isset($_POST['b19'])) {
+                $_SESSION['b19'] = $_POST['b19'];
+            }
+            if (isset($_POST['b19yn'])) {
+                $_SESSION['b19yn'] = $_POST['b19yn'];
+            }
+            if (isset($_POST['b20'])) {
+                $_SESSION['b20'] = $_POST['b20'];
+            }
+            if (isset($_POST['b20yn'])) {
+                $_SESSION['b20yn'] = $_POST['b20yn'];
+            }
+            if (isset($_POST['b21'])) {
+                $_SESSION['b21'] = $_POST['b21'];
+            }
+            if (isset($_POST['b21yn'])) {
+                $_SESSION['b21yn'] = $_POST['b21yn'];
+            }
+            if (isset($_POST['b22'])) {
+                $_SESSION['b22'] = $_POST['b22'];
+            }
+            if (isset($_POST['b22yn'])) {
+                $_SESSION['b22yn'] = $_POST['b22yn'];
+            }
+            if (isset($_POST['b23'])) {
+                $_SESSION['b23'] = $_POST['b23'];
+            }
+            if (isset($_POST['b23yn'])) {
+                $_SESSION['b23yn'] = $_POST['b23yn'];
+            }
+            if (isset($_POST['b24'])) {
+                $_SESSION['b24'] = $_POST['b24'];
+            }
+            if (isset($_POST['b24yn'])) {
+                $_SESSION['b24yn'] = $_POST['b24yn'];
+            }
+            if (isset($_POST['b25'])) {
+                $_SESSION['b25'] = $_POST['b25'];
+            }
+            if (isset($_POST['b25yn'])) {
+                $_SESSION['b25yn'] = $_POST['b25yn'];
+            }
+            if (isset($_POST['b26'])) {
+                $_SESSION['b26'] = $_POST['b26'];
+            }
+            if (isset($_POST['b26yn'])) {
+                $_SESSION['b26yn'] = $_POST['b26yn'];
+            }
+            if (isset($_POST['b27'])) {
+                $_SESSION['b27'] = $_POST['b27'];
+            }
+            if (isset($_POST['b27yn'])) {
+                $_SESSION['b27yn'] = $_POST['b27yn'];
+            }
+            if (isset($_POST['b28'])) {
+                $_SESSION['b28'] = $_POST['b28'];
+            }
+            if (isset($_POST['b28yn'])) {
+                $_SESSION['b28yn'] = $_POST['b28yn'];
+            }
+            if (isset($_POST['b29'])) {
+                $_SESSION['b29'] = $_POST['b29'];
             }
 
             // if valid is true
             $valid = true;
             if ($valid) {
                 //echo '<h1>I made it here with valid data</h1>';
-                $a1 = $_SESSION['a1'];
-                $a2 = $_SESSION['a2'];
-                $a3 = $_SESSION['a3'];
-                $a4 = $_SESSION['a4'];
-                $a5 = $_SESSION['a5'];
-                $a6 = $_SESSION['a6'];
-                $a7 = $_SESSION['a7'];
-                $a8 = $_SESSION['a8'];
-                $a9 = $_SESSION['a9'];
-                $a10 = $_SESSION['a10'];
-                $a11 = $_SESSION['a11'];
-                $a12 = $_SESSION['a12'];
-                $a13 = $_SESSION['a13'];
-                $a14 = $_SESSION['a14'];
-                $a15 = $_SESSION['a15'];
-                $a16 = $_SESSION['a16'];
-                $a17 = $_SESSION['a17'];
-                $a18 = $_SESSION['a18'];
+                $b1 = $_SESSION['b1'];
+                $b2 = $_SESSION['b2'];
+                $b3 = $_SESSION['b3'];
+                $b4 = $_SESSION['b4'];
+                $b5 = $_SESSION['b5'];
+                $b6 = $_SESSION['b6'];
+                $b7 = $_SESSION['b7'];
+                $b8 = $_SESSION['b8'];
+                $b9 = $_SESSION['b9'];
+                $b10 = $_SESSION['b10'];
+                $b11 = $_SESSION['b11'];
+                $b12 = $_SESSION['b12'];
+                $b13 = $_SESSION['b13'];
+                $b14 = $_SESSION['b14'];
+                $b15 = $_SESSION['b15'];
+                $b16 = $_SESSION['b16'];
+                $b17 = $_SESSION['b17'];
+                $b17yn = $_SESSION['b17yn'];
+                $b18 = $_SESSION['b18'];
+                $b18yn = $_SESSION['b18yn'];
+                $b19 = $_SESSION['b19'];
+                $b19yn = $_SESSION['b19yn'];
+                $b20 = $_SESSION['b20'];
+                $b20yn = $_SESSION['b20yn'];
+                $b21 = $_SESSION['b21'];
+                $b21yn = $_SESSION['b21yn'];
+                $b22 = $_SESSION['b22'];
+                $b22yn = $_SESSION['b22yn'];
+                $b23 = $_SESSION['b23'];
+                $b23yn = $_SESSION['b23yn'];
+                $b24 = $_SESSION['b24'];
+                $b24yn = $_SESSION['b24yn'];
+                $b25 = $_SESSION['b25'];
+                $b25yn = $_SESSION['b25yn'];
+                $b26 = $_SESSION['b26'];
+                $b26yn = $_SESSION['b26yn'];
+                $b27 = $_SESSION['b27'];
+                $b27yn = $_SESSION['b27yn'];
+                $b28 = $_SESSION['b28'];
+                $b28yn = $_SESSION['b28yn'];
+                $b29 = $_SESSION['b29'];
                 //$userId = $_SESSION['userId'];
                 $userId = $_SESSION['un'];
 
 
                 // construct a section1 object
-                $section1 = new Section2($a1, $a2, $a3, $a4, $a5, $a6, $a7, $a8, $a9, $a10, $a11, $a12,
-                    $a13, $a14, $a15, $a16, $a17, $a18, $userId);
+                $section2 = new Section2($b1, $b2, $b3, $b4, $b5, $b6, $b7, $b8, $b9, $b10, $b11, $b12,
+                    $b13, $b14, $b15, $b16, $b17, $b17yn, $b18, $b18yn, $b19, $b19yn, $b20, $b20yn,
+                    $b21, $b21yn, $b22, $b22yn, $b23, $b23yn, $b24, $b24yn, $b25, $b25yn, $b26, $b26yn,
+                    $b27, $b27yn, $b28, $b28yn, $b29, $userId);
 
                 $_SESSION['section2'] = $section2;
                 //var_dump($section1);

@@ -61,8 +61,8 @@ class Database
 
 
     /**
-     * Inserts a recipe into the database
-     * @param $recipe the recipe to add
+     * Inserts Section 1 answers into the database
+     * @param $section1 the section 1 answers to add
      */
     function addSection1($section1)
     {
@@ -120,6 +120,129 @@ class Database
         $statement->bindParam(':a16',$a16, PDO::PARAM_STR);
         $statement->bindParam(':a17',$a17, PDO::PARAM_STR);
         $statement->bindParam(':a18',$a18, PDO::PARAM_STR);
+        $statement->bindParam(':userId',$userId, PDO::PARAM_STR);
+
+        //$statement->bindParam(':image', $recipe->getImage());
+
+        //4. Execute the statement
+        $result = $statement->execute();
+        echo "Result: " . $result;
+
+        //Get the key of the last inserted row
+        $answerID = $this->_dbh->lastInsertId();
+        $_SESSION['answerID'] = $answerID;
+        //echo $id;
+    }
+
+    /**
+     * Inserts Section 1 answers into the database
+     * @param $section1 the section 1 answers to add
+     */
+    function addSection2($section2)
+    {
+        //var_dump($section1);
+
+        //var_dump($_SESSION);
+        //$userId = $_SESSION['userId'];
+        //echo $userId;
+        //1. Define the query
+        $sql = "INSERT INTO section2 (b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, 
+                        b13, b14, b15, b16, b17, b17yn, b18, b18yn, b19, b19yn, b20, b20yn,
+                        b21, b21yn, b22, b22yn, b23, b23yn, b24, b24yn, b25, b25yn, b26, 
+                        b26yn, b27, b27yn, b28, b28yn, b29, userId)
+                VALUES (:b1, :b2, :b3, :b4, :b5, :b6, :b7, :b8, :b9, :b10, :b11, :b12, 
+                        :b13, :b14, :b15, :b16, :b17, :b17yn, :b18, :b18yn, :b19, :b19yn, :b20, :b20yn,
+                        :b21, :b21yn, :b22, :b22yn, :b23, :b23yn, :b24, :b24yn, :b25, :b25yn, :b26, 
+                        :b26yn, :b27, :b27yn, :b28, :b28yn, :b29, :userId)";
+        //var_dump($sql);
+        //2. Prepare the statement
+        $statement = $this->_dbh->prepare($sql);
+        //var_dump($statement);
+        $b1 = $section2->getb1();
+        $b2 = $section2->getb2();
+        $b3 = $section2->getb3();
+        $b4 = $section2->getb4();
+        $b5 = $section2->getb5();
+        $b6 = $section2->getb6();
+        $b7 = $section2->getb7();
+        $b8 = $section2->getb8();
+        $b9 = $section2->getb9();
+        $b10 = $section2->getb10();
+        $b11 = $section2->getb11();
+        $b12 = $section2->getb12();
+        $b13 = $section2->getb13();
+        $b14 = $section2->getb14();
+        $b14 = $section2->getb14();
+        $b15 = $section2->getb15();
+        $b16 = $section2->getb16();
+        $b17 = $section2->getb17();
+        $b17yn = $section2->getb17yn();
+        $b18 = $section2->getb18();
+        $b18yn = $section2->getb18yn();
+        $b19 = $section2->getb19();
+        $b19yn = $section2->getb19yn();
+        $b21 = $section2->getb21();
+        $b21yn = $section2->getb21yn();
+        $b22 = $section2->getb22();
+        $b22yn = $section2->getb22yn();
+        $b23 = $section2->getb23();
+        $b23yn = $section2->getb23yn();
+        $b24 = $section2->getb24();
+        $b24yn = $section2->getb24yn();
+        $b25 = $section2->getb25();
+        $b25yn = $section2->getb25yn();
+        $b26 = $section2->getb26();
+        $b26yn = $section2->getb26yn();
+        $b27 = $section2->getb27();
+        $b27yn = $section2->getb27yn();
+        $b28 = $section2->getb28();
+        $b28yn = $section2->getb28yn();
+        $b29 = $section2->getb29();
+        $userId = $section2->getUserId();
+
+
+        //3. Bind the parameters
+        $statement->bindParam(':b1',$b1, PDO::PARAM_STR);
+        $statement->bindParam(':b2',$b2, PDO::PARAM_STR);
+        $statement->bindParam(':b3',$b3, PDO::PARAM_STR);
+        $statement->bindParam(':b4',$b4, PDO::PARAM_STR);
+        $statement->bindParam(':b5',$b5, PDO::PARAM_STR);
+        $statement->bindParam(':b6',$b6, PDO::PARAM_STR);
+        $statement->bindParam(':b7',$b7, PDO::PARAM_STR);
+        $statement->bindParam(':b8',$b8, PDO::PARAM_STR);
+        $statement->bindParam(':b9',$b9, PDO::PARAM_STR);
+        $statement->bindParam(':b10',$b10, PDO::PARAM_STR);
+        $statement->bindParam(':b11',$b11, PDO::PARAM_STR);
+        $statement->bindParam(':b12',$b12, PDO::PARAM_STR);
+        $statement->bindParam(':b13',$b13, PDO::PARAM_STR);
+        $statement->bindParam(':b14',$b14, PDO::PARAM_STR);
+        $statement->bindParam(':b15',$b15, PDO::PARAM_STR);
+        $statement->bindParam(':b16',$b16, PDO::PARAM_STR);
+        $statement->bindParam(':b17',$b17, PDO::PARAM_STR);
+        $statement->bindParam(':b17yn',$b17yn, PDO::PARAM_STR);
+        $statement->bindParam(':b18',$b18, PDO::PARAM_STR);
+        $statement->bindParam(':b18yn',$b18yn, PDO::PARAM_STR);
+        $statement->bindParam(':b19',$b19, PDO::PARAM_STR);
+        $statement->bindParam(':b19yn',$b19yn, PDO::PARAM_STR);
+        $statement->bindParam(':b20',$b20, PDO::PARAM_STR);
+        $statement->bindParam(':b20yn',$b20yn, PDO::PARAM_STR);
+        $statement->bindParam(':b21',$b21, PDO::PARAM_STR);
+        $statement->bindParam(':b21yn',$b21yn, PDO::PARAM_STR);
+        $statement->bindParam(':b22',$b22, PDO::PARAM_STR);
+        $statement->bindParam(':b22yn',$b22yn, PDO::PARAM_STR);
+        $statement->bindParam(':b23',$b23, PDO::PARAM_STR);
+        $statement->bindParam(':b23yn',$b23yn, PDO::PARAM_STR);
+        $statement->bindParam(':b24',$b24, PDO::PARAM_STR);
+        $statement->bindParam(':b24yn',$b24yn, PDO::PARAM_STR);
+        $statement->bindParam(':b25',$b25, PDO::PARAM_STR);
+        $statement->bindParam(':b25yn',$b25yn, PDO::PARAM_STR);
+        $statement->bindParam(':b26',$b26, PDO::PARAM_STR);
+        $statement->bindParam(':b26yn',$b26yn, PDO::PARAM_STR);
+        $statement->bindParam(':b27',$b27, PDO::PARAM_STR);
+        $statement->bindParam(':b27yn',$b27yn, PDO::PARAM_STR);
+        $statement->bindParam(':b28',$b28, PDO::PARAM_STR);
+        $statement->bindParam(':b28yn',$b28yn, PDO::PARAM_STR);
+        $statement->bindParam(':b29',$b29, PDO::PARAM_STR);
         $statement->bindParam(':userId',$userId, PDO::PARAM_STR);
 
         //$statement->bindParam(':image', $recipe->getImage());

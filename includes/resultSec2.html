@@ -20,79 +20,136 @@
     <tr>
         <th scope="row">1</th>
         <td>Do you have a USP for your business or USP's for different lines?</td>
-        <td>{{@SESSION.b1}}</td>
-        <td></td>
+        <td>{{@SESSION.b1}}</td><!-- Y-S, N-W -->
+        <td><check if="{{ $_SESSION['b1'] == 'yes' }}" >
+            We have relevant USP(s)
+        </check></td>
+        <td><check if="{{ $_SESSION['b1'] == 'no' }}" >
+            We do not have relevant USP(s)
+        </check></td>
         <td></td>
         <td></td>
     </tr>
     <tr>
         <th scope="row">2</th>
         <td>What is/are your USP/'s?</td>
-        <td>{{@SESSION.b2}}</td>
+        <td><check if="{{ $_SESSION['b1'] == 'yes' }}" >
+            {{@SESSION.b2}}
+        </check></td>
+        <td></td>
         <td></td>
         <td></td>
         <td></td>
     </tr>
     <tr>
         <th scope="row">3</th>
-        <td>Does the USP have a clear Promise framed in terms of benefits to the customer?</td>
-        <td>{{@SESSION.b3}}</td>
+        <td>Does the USP have a clear Promise framed in terms of benefits to
+            the customer?</td>
+        <td>{{@SESSION.b3}}</td><!-- Y-S, N-W,T -->
+        <td><check if="{{ $_SESSION['b3yn'] == 'yes' }}" >
+            Our USP is expressed in the terms of benefits to the customer
+        </check></td>
+        <td><check if="{{ $_SESSION['b3'] == 'no' }}" >
+            Our USP is not benefits based
+        </check></td>
         <td></td>
-        <td></td>
-        <td></td>
+        <td><check if="{{ $_SESSION['b17'] == 'no' }}" >
+            We might connect better with customers by revising our USP to focus
+            on benefits
+        </check></td>
     </tr>
     <tr>
         <th scope="row">4</th>
         <td>Does it resonate with your prospects?</td>
-        <td>{{@SESSION.b4}}</td>
-        <td></td>
+        <td>{{@SESSION.b4}}</td><!-- Y-S, N-W -->
+        <td><check if="{{ $_SESSION['b4'] == 'yes' }}" >
+            Our USP resonates with our prospects
+        </check></td>
+        <td><check if="{{ $_SESSION['b4'] == 'no' }}" >
+            Our USP needs revision, as it doesn't resonate with customers,
+            or we need to find out if it does
+        </check></td>
         <td></td>
         <td></td>
     </tr>
     <tr>
         <th scope="row">5</th>
         <td>Does your USP have an attractive guarantee?</td>
-        <td>{{@SESSION.b5}}</td>
-        <td></td>
+        <td>{{@SESSION.b5}}</td><!-- Y-S, N-W -->
+        <td><check if="{{ $_SESSION['b5'] == 'yes' }}" >
+            Our USP includes an attractive guarantee
+        </check></td>
+        <td><check if="{{ $_SESSION['b5'] == 'no' }}" >
+            By putting a guarantee in our USP, we might close more prospects
+        </check></td>
         <td></td>
         <td></td>
     </tr>
     <tr>
         <th scope="row">6</th>
         <td>Is the USP incorporated into marketing messages?</td>
-        <td>{{@SESSION.b6}}</td>
-        <td></td>
+        <td>{{@SESSION.b6}}</td><!-- Y-S, N-W -->
+        <td><check if="{{ $_SESSION['b6'] == 'yes' }}" >
+            Our marketing messages integrate our USP
+        </check></td>
+        <td><check if="{{ $_SESSION['b6'] == 'no' }}" >
+            We might capture more prospects by integrating our USP into our
+            marketing messages
+        </check></td>
         <td></td>
         <td></td>
     </tr>
     <tr>
         <th scope="row">7</th>
         <td>Do your sales people know it and use it?</td>
-        <td>{{@SESSION.b7}}</td>
-        <td></td>
-        <td></td>
+        <td>{{@SESSION.b7}}</td><!-- Y-S, N-W,O -->
+        <td><check if="{{ $_SESSION['b7'] == 'yes' }}" >
+            Our sales people know and use our USP
+        </check></td>
+        <td><check if="{{ $_SESSION['b7'] == 'no' }}" >
+            Our sales people don't know or use our USP. Find out why
+        </check></td>
+        <td><check if="{{ $_SESSION['b7'] == 'no' }}" >
+            We may close more business if our sales people know and use our USP
+        </check></td>
         <td></td>
     </tr>
     <tr>
         <th scope="row">8</th>
         <td>Does your team know it?</td>
-        <td>{{@SESSION.b8}}</td>
-        <td></td>
+        <td>{{@SESSION.b8}}</td><!-- Y-S, N-W -->
+        <td><check if="{{ $_SESSION['b8'] == 'yes' }}" >
+            Because our team knows our USP, we are more likely to deliver on it
+            consistently
+        </check></td>
+        <td><check if="{{ $_SESSION['b8'] == 'no' }}" >
+            Because our team doesn't know our USP, we can't expect them to deliver
+            on it consistently
+        </check></td>
         <td></td>
         <td></td>
     </tr>
     <tr>
         <th scope="row">9</th>
         <td>Do you consistntly deliver on the USP?</td>
-        <td>{{@SESSION.b9}}</td>
-        <td></td>
+        <td>{{@SESSION.b9}}</td><!-- Y-S, N-W -->
+        <td><check if="{{ $_SESSION['b9'] == 'yes' }}" >
+            We consistently deliver on our USP
+        </check></td>
+        <td><check if="{{ $_SESSION['b9'] == 'no' }}" >
+            Our USP promise lacks credibility because we don't deliver on it consistently
+        </check></td>
         <td></td>
         <td></td>
     </tr>
     <tr>
         <th scope="row">10</th>
         <td>What allows you to do so? (systems/training?)</td>
-        <td>{{@SESSION.b10}}</td>
+        <td></td><!-- Y-S,-->
+        <td><check if="{{ $_SESSION['b9'] == 'yes' }}" >
+            We deliver consistenly on our USP because of the following:
+            &nbsp&nbsp{{@SESSION.b10}}
+        </check></td>
         <td></td>
         <td></td>
         <td></td>
@@ -100,32 +157,49 @@
     <tr>
         <th scope="row">11</th>
         <td>What processes need to be addressed?</td>
-        <td>{{@SESSION.b11}}</td>
+        <td></td><!-- N-W -->
         <td></td>
+        <td><check if="{{ $_SESSION['b9'] == 'no' }}" >
+            To deliver consistently on our USP we must address processes as follows:
+            &nbsp&nbsp{{@SESSION.b11}}
+        </check></td>
         <td></td>
         <td></td>
     </tr>
     <tr>
         <th scope="row">12</th>
         <td>What training needs to be done?</td>
-        <td>{{@SESSION.b12}}</td>
+        <td></td><!-- N-W -->
         <td></td>
+        <td><check if="{{ $_SESSION['b9'] == 'no' }}" >
+            To deliver consistently on our USP training must be addressed as follows:
+            &nbsp&nbsp{{@SESSION.b12}}
+        </check></td>
         <td></td>
         <td></td>
     </tr>
     <tr>
         <th scope="row">13</th>
         <td>What management needs improving?</td>
-        <td>{{@SESSION.b13}}</td>
+        <td>{{@SESSION.b13}}</td><!-- N-W -->
         <td></td>
+        <td><check if="{{ $_SESSION['b9'] == 'no' }}" >
+            To deliver on our USP consistently, management needs to imporove as follows:
+            &nbsp&nbsp{{@SESSION.b13}}
+        </check></td>
         <td></td>
         <td></td>
     </tr>
     <tr>
         <th scope="row">14</th>
-        <td>Do you have written down the values of the organization?</td>
-        <td>{{@SESSION.b14}}</td>
-        <td></td>
+        <td>Have you written down the values of the organization?</td>
+        <td>{{@SESSION.b14}}</td><!-- Y-S, N-W -->
+        <td><check if="{{ $_SESSION['b14'] == 'yes' }}" >
+            We have written values that reflect the organization
+        </check></td>
+        <td><check if="{{ $_SESSION['b14'] == 'no' }}" >
+            We do not have written values, so we can't expect anyone to know them
+        </check></td>
         <td></td>
         <td></td>
     </tr>
@@ -133,16 +207,31 @@
         <th scope="row">15</th>
         <td>Are the values described in ways that help your people understand
             the behaviors that demonstrate those values?</td>
-        <td>{{@SESSION.b15}}</td>
-        <td></td>
+        <td>{{@SESSION.b15}}</td><!-- Y-S, N-W -->
+        <td><check if="{{ $_SESSION['b15'] == 'yes' }}" >
+            Our values are described behaviorally so our team knows how they
+            are expected to act
+        </check></td>
+        <td><check if="{{ $_SESSION['b15'] == 'no' }}" >
+            Because our values aren't described, our team doesn't know what
+            behaviours are expected of them
+        </check></td>
         <td></td>
         <td></td>
     </tr>
     <tr>
         <th scope="row">16</th>
-        <td>Is there a hierarchy to the values or have you at least identified the top 3?</td>
-        <td>{{@SESSION.b16}}</td>
-        <td></td>
+        <td>Is there a hierarchy to the values or have you at least identified
+            the top 3?</td>
+        <td>{{@SESSION.b16}}</td><!-- Y-S, N-W -->
+        <td><check if="{{ $_SESSION['b17yn'] == 'yes' }}" >
+            We do have a hierarchy of values so we can easily resolve any
+            perceived conflicts between them
+        </check></td>
+        <td><check if="{{ $_SESSION['b17yn'] == 'no' }}" >
+            We have no hierarchy to our values so our people don't have guidance
+            when there is a percieved conflict between our values
+        </check></td>
         <td></td>
         <td></td>
     </tr>
@@ -150,7 +239,12 @@
         <th scope="row">17</th>
         <td>Value 1</td>
         <td>{{@SESSION.b17}}</td>
-        <td></td>
+        <td><check if="{{ $_SESSION['b17yn'] == 'yes' }}" >
+            Lived
+        </check></td>
+        <td><check if="{{ $_SESSION['b17yn'] == 'no' }}" >
+            Not lived
+        </check></td>
         <td></td>
         <td></td>
     </tr>
@@ -158,7 +252,12 @@
         <th scope="row">18</th>
         <td>Value 2</td>
         <td>{{@SESSION.b18}}</td>
-        <td></td>
+        <td><check if="{{ $_SESSION['b18yn'] == 'yes' }}" >
+            Lived
+        </check></td>
+        <td><check if="{{ $_SESSION['b18yn'] == 'no' }}" >
+            Not lived
+        </check></td>
         <td></td>
         <td></td>
     </tr>
@@ -166,7 +265,12 @@
         <th scope="row">19</th>
         <td>Value 3</td>
         <td>{{@SESSION.b19}}</td>
-        <td></td>
+        <td><check if="{{ $_SESSION['b19yn'] == 'yes' }}" >
+            Lived
+        </check></td>
+        <td><check if="{{ $_SESSION['b19yn'] == 'no' }}" >
+            Not lived
+        </check></td>
         <td></td>
         <td></td>
     </tr>
@@ -174,7 +278,12 @@
         <th scope="row">20</th>
         <td>Value 4</td>
         <td>{{@SESSION.b20}}</td>
-        <td></td>
+        <td><check if="{{ $_SESSION['b20yn'] == 'yes' }}" >
+            Lived
+        </check></td>
+        <td><check if="{{ $_SESSION['b20yn'] == 'no' }}" >
+            Not lived
+        </check></td>
         <td></td>
         <td></td>
     </tr>
@@ -182,7 +291,12 @@
         <th scope="row">21/th>
         <td>Value 5</td>
         <td>{{@SESSION.b21}}</td>
-        <td></td>
+        <td><check if="{{ $_SESSION['b21yn'] == 'yes' }}" >
+            Lived
+        </check></td>
+        <td><check if="{{ $_SESSION['b21yn'] == 'no' }}" >
+            Not lived
+        </check></td>
         <td></td>
         <td></td>
     </tr>
@@ -190,7 +304,12 @@
         <th scope="row">22</th>
         <td>Value 6</td>
         <td>{{@SESSION.b22}}</td>
-        <td></td>
+        <td><check if="{{ $_SESSION['b22yn'] == 'yes' }}" >
+            Lived
+        </check></td>
+        <td><check if="{{ $_SESSION['b22yn'] == 'no' }}" >
+            Not lived
+        </check></td>
         <td></td>
         <td></td>
     </tr>
@@ -198,7 +317,12 @@
         <th scope="row">23</th>
         <td>Value 7</td>
         <td>{{@SESSION.b23}}</td>
-        <td></td>
+        <td><check if="{{ $_SESSION['b23yn'] == 'yes' }}" >
+            Lived
+        </check></td>
+        <td><check if="{{ $_SESSION['b23yn'] == 'no' }}" >
+            Not lived
+        </check></td>
         <td></td>
         <td></td>
     </tr>
@@ -206,7 +330,12 @@
         <th scope="row">24</th>
         <td>Value 9</td>
         <td>{{@SESSION.b24}}</td>
-        <td></td>
+        <td><check if="{{ $_SESSION['b24yn'] == 'yes' }}" >
+            Lived
+        </check></td>
+        <td><check if="{{ $_SESSION['b24yn'] == 'no' }}" >
+            Not lived
+        </check></td>
         <td></td>
         <td></td>
     </tr>
@@ -214,7 +343,12 @@
         <th scope="row">25/th>
         <td>Value 10</td>
         <td>{{@SESSION.b25}}</td>
-        <td></td>
+        <td><check if="{{ $_SESSION['b25yn'] == 'yes' }}" >
+            Lived
+        </check></td>
+        <td><check if="{{ $_SESSION['b25yn'] == 'no' }}" >
+            Not lived
+        </check></td>
         <td></td>
         <td></td>
     </tr>
@@ -222,7 +356,12 @@
         <th scope="row">26</th>
         <td>Value 11</td>
         <td>{{@SESSION.b26}}</td>
-        <td></td>
+        <td><check if="{{ $_SESSION['b26yn'] == 'yes' }}" >
+            Lived
+        </check></td>
+        <td><check if="{{ $_SESSION['b26yn'] == 'no' }}" >
+            Not lived
+        </check></td>
         <td></td>
         <td></td>
     </tr>
@@ -230,18 +369,37 @@
         <th scope="row">27</th>
         <td>Value 12</td>
         <td>{{@SESSION.b27}}</td>
-        <td></td>
+        <td><check if="{{ $_SESSION['b27yn'] == 'yes' }}" >
+            Lived
+        </check></td>
+        <td><check if="{{ $_SESSION['b27yn'] == 'no' }}" >
+            Not lived
+        </check></td>
         <td></td>
         <td></td>
     </tr>
     <tr>
         <th scope="row">28</th>
+        <td>Value 12</td>
+        <td>{{@SESSION.b28}}</td>
+        <td><check if="{{ $_SESSION['b28yn'] == 'yes' }}" >
+            Lived
+        </check></td>
+        <td><check if="{{ $_SESSION['b28yn'] == 'no' }}" >
+            Not lived
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <th scope="row">29</th>
         <td>To the extent that you are not living any of the values, what are
             the implications or consequences of that? (e.g. errors, low morale,
             low productivity, unhappy customers, lower performance, weak
             accountability, slow or no growth...?)</td>
-        <td>{{@SESSION.b28}}</td>
+        <td></td><!-- Y-S, N-W -->
         <td></td>
+        <td>Because we don't live those values, we experience the following problems:&nbsp&nbsp{{@SESSION.b29}} </td>
         <td></td>
         <td></td>
     </tr>
