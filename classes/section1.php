@@ -2,7 +2,7 @@
 /*
  * Analysis class for playbook website
  * 10/28/20
- * filename https://lscott.greenriverdev.com/355/JumpStart/classes/analysis.php
+ * filename https://lscott.greenriverdev.com/355/JumpStart/classes/section1.php
  * @author Lewis Scott
  * @version 1.0
  */

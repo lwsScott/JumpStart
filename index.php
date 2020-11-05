@@ -43,6 +43,13 @@ $f3->route('GET /', function () {
     $GLOBALS['controller']->home();
 });
 
+// Define a home route
+$f3->route('GET /home', function () {
+    //echo '<h1>Initial home page check</h1>';
+    //$view = new Template();
+    //echo $view->render('views/home.html');
+    $GLOBALS['controller']->home();
+});
 // this is the route to purpose question page
 // GET method when coming from home page
 // POST method when submitting form

@@ -431,8 +431,7 @@ class JumpStartController
                 $b28 = $_SESSION['b28'];
                 $b28yn = $_SESSION['b28yn'];
                 $b29 = $_SESSION['b29'];
-                //$userId = $_SESSION['userId'];
-                $userId = $_SESSION['un'];
+                $userId = $_SESSION['userId'];
 
 
                 // construct a section1 object
@@ -612,7 +611,8 @@ class JumpStartController
                 // add into it
                 //var_dump($newUser);
                 $GLOBALS['db']->writeUser($newUser);
-                $this->_f3->reroute('viewUsers');
+                $this->_f3->reroute('home');
+
             }
         }
         $view = new Template();
