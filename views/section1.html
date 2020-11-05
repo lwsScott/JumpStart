@@ -38,6 +38,7 @@
                     </div>
                     <div class="form-check-inline">
                         <input type="radio" id="a1b" name="a1" class="form-check-input" value="no"
+                               onchange="toggleVisibility()"
                         <check if="{{ $_SESSION['a1'] == 'no' }}" >
                             checked="checked"
                         </check>>
@@ -97,6 +98,7 @@
                                 <label id="q5">Are you living it?</label>
                                 <div class="form-check-inline">
                                     <input type="radio" id="a5a" name="a5" class="form-check-input" value="yes"
+                                           onchange="toggleVisibility()"
                                     <check if="{{ $_SESSION['a5'] == 'yes' }}" >
                                         checked="checked"
                                     </check>>
@@ -120,6 +122,7 @@
                 </div>
 
                 <!-- The Mission section of Section 1 -->
+                <br>
                 <h3>Mission (Who We Serve, What We Do, and How We Do It)</h3>
 
                 <div class="container">
@@ -134,6 +137,7 @@
                     </div>
                     <div class="form-check-inline">
                         <input type="radio" id="a7b" name="a7" class="form-check-input" value="no"
+                               onchange="toggleVisibility()"
                         <check if="{{ $_SESSION['a7'] == 'no' }}" >
                             checked="checked"
                         </check>>
@@ -193,6 +197,7 @@
                                 <label id="q11">Are you living it?</label>
                                 <div class="form-check-inline">
                                     <input type="radio" id="a11a" name="a11" class="form-check-input" value="yes"
+                                           onchange="toggleVisibility()"
                                     <check if="{{ $_SESSION['a11'] == 'yes' }}" >
                                         checked="checked"
                                     </check>>
@@ -216,6 +221,7 @@
                 </div>
 
                 <!-- The Vision part of Section 1 -->
+                <br>
                 <h3>Vision (What Are We Trying To Create?)</h3>
 
                 <div class="container">
@@ -230,6 +236,7 @@
                     </div>
                     <div class="form-check-inline">
                         <input type="radio" id="a13b" name="a13" class="form-check-input" value="no"
+                               onchange="toggleVisibility()"
                         <check if="{{ $_SESSION['a13'] == 'no' }}" >
                             checked="checked"
                         </check>>
@@ -289,6 +296,7 @@
                                 <label id="q17">Are you living it?</label>
                                 <div class="form-check-inline">
                                     <input type="radio" id="a17a" name="a17" class="form-check-input" value="yes"
+                                           onchange="toggleVisibility()"
                                     <check if="{{ $_SESSION['a17'] == 'yes' }}" >
                                         checked="checked"
                                     </check>>
@@ -313,6 +321,7 @@
             </div>
 
             <!-- The privacy disclaimer -->
+            <br>
             <div class="col-4">
                 <div class="container card bg-light rounded text-center">
                     <p><strong>Note:</strong> Information entered is protected by our
@@ -332,6 +341,7 @@
 </div>
 
 <script src="js/JavaScript.js"></script>
+<script src="js/clientSideValidation.js"></script>
 <include href="includes/footer.html"></include>
 </body>
 </html>
