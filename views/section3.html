@@ -1,0 +1,307 @@
+<!--
+  Chunhai Yang
+  11/4/20
+  JumpStart Team Project
+  Questions for Section 3 Playbook analysis
+  -->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Section 1</title>
+    <include href="includes/header.html"></include>
+</head>
+
+<body onload="toggleVisibility()">
+<include href="includes/navBar.html"></include>
+
+<div class="container">
+    <h1>Section 3 - Product or Service</h1>
+    <hr>
+
+    <form action="#" method="post" class="form-horizontal">
+        <div class="row">
+            <div class="col-10">
+
+                <!-- Questions for Section 3 -->
+                <!--First Question for Section 3 -->
+                <div class="container">
+                    <label>Does your product/service solve an identified problem or fill an identified need/desire
+                        of the market?And what is that problem/need/desire</label>
+                    <div class="form-check-inline">
+                        <input type="radio" id="c1a" name="c1" class="form-check-input" value="yes">
+
+                        <check if="{{ $_SESSION['c1'] == 'yes' }}" >
+                            checked="checked"
+                        </check>>
+                        <label class="form-check-label" for="c1a" id="c1y">Yes</label>
+                    </div>
+                    <div class="form-check-inline">
+                        <input type="radio" id="c1b" name="c1" class="form-check-input" value="no">
+                        <check if="{{ $_SESSION['c1'] == 'no' }}" >
+                            checked="checked"
+                        </check>>
+                        <label class="form-check-label" for="c1b" id="c1n">No</label>
+                    </div>
+                    <div class="form-check-inline">
+                        <input type="radio" id="c1c" name="c1" class="form-check-input" value="I don't know">
+                        <check if="{{ $_SESSION['c1'] == 'I don't know' }}" >
+                            checked="checked"
+                        </check>>
+                        <label class="form-check-label" for="c1c" id="c1dk">I Don't Know</label>
+                    </div>
+                </div>
+                <!--Second Question for Section 3 -->
+                <div class="container">
+                    <label>Do you have a sufficient range of offerings to meet customer needs?(e.g a bike shop should
+                        also sell helmets,gloves,sunglasses,shoes...An online marketing firm might offer SEO, Pay Per Click
+                        ,Design Services and Analytics services)if no, what else could you offer?</label>
+                    <div class="form-check-inline">
+                        <input type="radio" id="c2a" name="c2" class="form-check-input" value="yes">
+                        <check if="{{ $_SESSION['c2'] == 'yes' }}" >
+                            checked="checked"
+                        </check>>
+                        <label class="form-check-label" for="c2a" id="c2y">Yes</label>
+                    </div>
+                    <div class="form-check-inline">
+                        <input type="radio" id="c2b" name="c2" class="form-check-input" value="no">
+                        <check if="{{ $_SESSION['c2'] == 'no' }}" >
+                            checked="checked"
+                        </check>>
+                        <label class="form-check-label" for="c1b" id="c2n">No</label>
+                    </div>
+                    <div class="form-check-inline">
+                        <input type="radio" id="c2c" name="c2" class="form-check-input" value="I don't know">
+                        <check if="{{ $_SESSION['c2'] == 'I don't know' }}" >
+                            checked="checked"
+                        </check>>
+                        <label class="form-check-label" for="c2c" id="c2dk">I don't know</label>
+                    </div>
+                </div>
+                <!--3rd Question for Section 3 -->
+                <div class="container">
+                    <label>Do you have unnecessary or unprofitable offerings that provide no strategic value?Identify them?</label>
+                    <div class="form-check-inline">
+                        <input type="radio" id="c3a" name="c3" class="form-check-input" value="yes">
+                        <check if="{{ $_SESSION['c3'] == 'yes' }}" >
+                            checked="checked"
+                        </check>>
+                        <label class="form-check-label" for="c3a" id="c3y">Yes</label>
+                    </div>
+                    <div class="form-check-inline">
+                        <input type="radio" id="c3b" name="c3" class="form-check-input" value="no">
+                        <check if="{{ $_SESSION['c3'] == 'no' }}" >
+                            checked="checked"
+                        </check>>
+                        <label class="form-check-label" for="c3b" id="c3n">No</label>
+                    </div>
+                    <div class="form-check-inline">
+                        <input type="radio" id="c3c" name="c2" class="form-check-input" value="I don't know">
+                        <check if="{{ $_SESSION['c3'] == 'I don't know' }}" >
+                            checked="checked"
+                        </check>>
+                        <label class="form-check-label" for="c3c" id="c3dk">I don't know</label>
+                    </div>
+                    <div>
+                        <textarea class="form-control" id="c3t" name="c3t" rows="3">{{ $_SESSION['c3t'] }}</textarea>
+                    </div>
+                </div>
+                <!--4th Question for Section 3 -->
+                <div class="container">
+                    <label>Are your products/services at the quality level both you and your customers expect for the price
+                        ?If not, identify the specific gaps in quality or missing features</label>
+                    <div class="form-check-inline">
+                        <input type="radio" id="c4a" name="c4" class="form-check-input" value="yes">
+                        <check if="{{ $_SESSION['c4'] == 'yes' }}" >
+                            checked="checked"
+                        </check>>
+                        <label class="form-check-label" for="c4a" id="c4y">Yes</label>
+                    </div>
+                    <div class="form-check-inline">
+                        <input type="radio" id="c4b" name="c4" class="form-check-input" value="no">
+                        <check if="{{ $_SESSION['c4'] == 'no' }}" >
+                            checked="checked"
+                        </check>>
+                        <label class="form-check-label" for="c4b" id="c4n">No</label>
+                    </div>
+                    <div class="form-check-inline">
+                        <input type="radio" id="c4c" name="c4" class="form-check-input" value="I don't know">
+                        <check if="{{ $_SESSION['c4'] == 'I don't know' }}" >
+                            checked="checked"
+                        </check>>
+                        <label class="form-check-label" for="c4c" id="c4dk">I don't know</label>
+                    </div>
+                    <textarea class="form-control" id="c4t" name="c4t" rows="3">{{ $_SESSION['c4t'] }}</textarea>
+                </div>
+                <!--5th Question for Section 3 -->
+                <div class="container">
+                    <label>Do you know your gross margins on your different products/services?</label>
+                    <div class="form-check-inline">
+                        <input type="radio" id="c5a" name="c5" class="form-check-input" value="yes">
+                        <check if="{{ $_SESSION['c5'] == 'yes' }}" >
+                            checked="checked"
+                        </check>>
+                        <label class="form-check-label" for="c5a" id="c5y">Yes</label>
+                    </div>
+                    <div class="form-check-inline">
+                        <input type="radio" id="c5b" name="c5" class="form-check-input" value="no">
+                        <check if="{{ $_SESSION['c5'] == 'no' }}" >
+                            checked="checked"
+                        </check>>
+                        <label class="form-check-label" for="c5b" id="c5n">No</label>
+                    </div>
+                </div>
+                <!--6th Question for Section 3 -->
+                <div class="container">
+                    <label>Are your subcontractors and vendors at the skill and reliability level you desire?
+                        Identify those that are NOT.</label>
+                    <div class="form-check-inline">
+                        <input type="radio" id="c6a" name="c6" class="form-check-input" value="yes">
+                        <check if="{{ $_SESSION['c6'] == 'yes' }}" >
+                            checked="checked"
+                        </check>>
+                        <label class="form-check-label" for="c6a" id="c6y">Yes</label>
+                    </div>
+                    <div class="form-check-inline">
+                        <input type="radio" id="c6b" name="c4" class="form-check-input" value="no">
+                        <check if="{{ $_SESSION['c6'] == 'no' }}" >
+                            checked="checked"
+                        </check>>
+                        <label class="form-check-label" for="c6b" id="c6n">No</label>
+                    </div>
+                    <div class="form-check-inline">
+                        <input type="radio" id="c6c" name="c6" class="form-check-input" value="I don't know">
+                        <check if="{{ $_SESSION['c6'] == 'I don't know' }}" >
+                            checked="checked"
+                        </check>>
+                        <label class="form-check-label" for="c6c" id="c6dk">I don't know</label>
+                    </div>
+                    <textarea class="form-control" id="c6t" name="c6t" rows="3">{{ $_SESSION['c6t'] }}</textarea>
+                </div>
+                <!--7th Question for Section 3 -->
+                <h3>(FOR THOSE SELLING PHYSICAL GOODS)</h3>
+                <div class="container">
+                    <label>Are the materials that go into our products of the quality we expect? Identify
+                        those that are NOT</label>
+                    <div class="form-check-inline">
+                        <input type="radio" id="c7a" name="c6" class="form-check-input" value="yes">
+                        <check if="{{ $_SESSION['c7'] == 'yes' }}" >
+                            checked="checked"
+                        </check>>
+                        <label class="form-check-label" for="c7a" id="c7y">Yes</label>
+                    </div>
+                    <div class="form-check-inline">
+                        <input type="radio" id="c7b" name="c4" class="form-check-input" value="no">
+                        <check if="{{ $_SESSION['c7'] == 'no' }}" >
+                            checked="checked"
+                        </check>>
+                        <label class="form-check-label" for="c7b" id="c7n">No</label>
+                    </div>
+                    <div class="form-check-inline">
+                        <input type="radio" id="c7c" name="c6" class="form-check-input" value="I don't know">
+                        <check if="{{ $_SESSION['c7'] == 'I don't know' }}" >
+                            checked="checked"
+                        </check>>
+                        <label class="form-check-label" for="c7c" id="c7dk">I don't know</label>
+                    </div>
+                    <textarea class="form-control" id="c7t" name="c7t" rows="3">{{ $_SESSION['c7t'] }}</textarea>
+                </div>
+                <!--8th Question for Section 3 -->
+                <div class="container">
+                    <label>Are the suppliers of our materials reliable and stable? Identify those that are NOT</label>
+                    <div class="form-check-inline">
+                        <input type="radio" id="c8a" name="c8" class="form-check-input" value="yes">
+                        <check if="{{ $_SESSION['c8'] == 'yes' }}" >
+                            checked="checked"
+                        </check>>
+                        <label class="form-check-label" for="c8a" id="c8y">Yes</label>
+                    </div>
+                    <div class="form-check-inline">
+                        <input type="radio" id="c8b" name="c8" class="form-check-input" value="no">
+                        <check if="{{ $_SESSION['c8'] == 'no' }}" >
+                            checked="checked"
+                        </check>>
+                        <label class="form-check-label" for="c8b" id="c8n">No</label>
+                    </div>
+                    <div class="form-check-inline">
+                        <input type="radio" id="c8c" name="c8" class="form-check-input" value="I don't know">
+                        <check if="{{ $_SESSION['c8'] == 'I don't know' }}" >
+                            checked="checked"
+                        </check>>
+                        <label class="form-check-label" for="c8c" id="c8dk">I don't know</label>
+                    </div>
+                    <textarea class="form-control" id="c8t" name="c8t" rows="3">{{ $_SESSION['c8t'] }}</textarea>
+                </div>
+                <!--9th Question for Section 3 -->
+                <div class="container">
+                    <label>Are the prices and terms from those suppliers fair? Identify those that are NOT</label>
+                    <div class="form-check-inline">
+                        <input type="radio" id="c9a" name="c9" class="form-check-input" value="yes">
+                        <check if="{{ $_SESSION['c9'] == 'yes' }}" >
+                            checked="checked"
+                        </check>>
+                        <label class="form-check-label" for="c9a" id="c9y">Yes</label>
+                    </div>
+                    <div class="form-check-inline">
+                        <input type="radio" id="c9b" name="c9" class="form-check-input" value="no">
+                        <check if="{{ $_SESSION['c9'] == 'no' }}" >
+                            checked="checked"
+                        </check>>
+                        <label class="form-check-label" for="c9b" id="c9n">No</label>
+                    </div>
+                    <div class="form-check-inline">
+                        <input type="radio" id="c9c" name="c9" class="form-check-input" value="I don't know">
+                        <check if="{{ $_SESSION['c9'] == 'I don't know' }}" >
+                            checked="checked"
+                        </check>>
+                        <label class="form-check-label" for="c9c" id="c9dk">I don't know</label>
+                    </div>
+                    <textarea class="form-control" id="c9t" name="c9t" rows="3">{{ $_SESSION['c9t'] }}</textarea>
+                </div>
+                <!--10th Question for Section 3 -->
+                <h3><strong>Additional Considerations:</strong></h3>
+                <div class="container">
+                    <label>Are these any other elements of your product or service that you consider Strengths or Weakness,
+                        that present Opportunities or that pose Threats?</label>
+                    <div class="form-group">
+                        <label for="c10a" >Strengths</label>
+                        <textarea class="form-control" id="c10a" name="c10a" rows="3">{{ $_SESSION['c10a'] }}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="c10b" >Weaknesses</label>
+                        <textarea class="form-control" id="c10b" name="c10a" rows="3">{{ $_SESSION['c10b'] }}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="c10c" >Opportunities</label>
+                        <textarea class="form-control" id="c10c" name="c10a" rows="3">{{ $_SESSION['c10c'] }}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="c10d" >Threats</label>
+                        <textarea class="form-control" id="c10d" name="c10a" rows="3">{{ $_SESSION['c10d'] }}</textarea>
+                    </div>
+
+
+                    <!-- The privacy disclaimer -->
+                    <div class="col-4">
+                        <div class="container card bg-light rounded text-center">
+                            <p><strong>Note:</strong> Information entered is protected by our
+                                privacy policy. All answers are kept strictly confidential.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="text-right">
+                            <button type="submit" class="btn btn-primary">Continue</button>
+                        </div>
+                    </div>
+                </div>
+    </form>
+</div>
+
+<script src="js/JavaScript.js"></script>
+<include href="includes/footer.html"></include>
+</body>
+</html>
+
