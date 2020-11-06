@@ -1,0 +1,62 @@
+<!--
+    David Haas
+    11/6/20
+    filename https://jumpstart.greenriverdev.com/playbook/JumpStart/includes/footer.html
+    Displays results of section 10 answers to SWOT analysis
+  -->
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">SECTION 10</th>
+        <th scope="col">QUESTION</th>
+        <th scope="col">ANSWER</th>
+        <th scope="col">STRENGTHS</th>
+        <th scope="col">WEAKNESSES</th>
+        <th scope="col">OPPORTUNITIES</th>
+        <th scope="col">THREATS</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th scope="row">1</th>
+        <td>Up to 3 things you know work great that you know you should keep doing or
+        doing more of</td>
+        <td></td><!-- S -->
+        <td>Apart from anything else in this SWOT, we know the following items are
+            particular strengths:&nbsp&nbsp{{@SESSION.j1}}</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <th scope="row">2</th>
+        <td>Up to 3 things you should keep doing but improve</td>
+        <td></td><!-- O -->
+        <td></td>
+        <td></td>
+        <td>In addition to anything else in this SWOT, by improving the following items, we
+            could be generating better outcomes:&nbsp&nbsp{{@SESSION.j2}}</td>
+        <td></td>
+    </tr>
+    <tr>
+        <th scope="row">3</th>
+        <td>Up to 3 things you should stop doing altogether</td>
+        <td><!-- W -->
+        <td></td>
+        <td> The following 3 items are things we should discontinue:&nbsp&nbsp{{@SESSION.j3}}</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <th scope="row">4</th>
+        <td>Up to the 3 biggest risks facing your business right now or that you may
+        face soon</td>
+        <td></td><!-- O, T -->
+        <td></td>
+        <td></td>
+        <td></td>
+        Apart from anything else in this SWOT, we know the following items are present or will
+        present significant risk:&nbsp&nbsp{{@SESSION.j4}}</tr>
+    </tbody>
+</table>
