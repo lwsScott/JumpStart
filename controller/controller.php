@@ -231,7 +231,8 @@ class JumpStartController
      */
     public function section2($f3)
     {
-        $_SESSION['b1'] = "";
+        //echo "Here with GET";
+        $_SESSION['b1'] = "a";
         $_SESSION['b2'] = "";
         $_SESSION['b3'] = "";
         $_SESSION['b4'] = "";
@@ -281,6 +282,8 @@ class JumpStartController
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if (isset($_POST['b1'])) {
                 $_SESSION['b1'] = $_POST['b1'];
+            } else {
+                $_SESSION['b1'] = "";
             }
             if (isset($_POST['b2'])) {
                 $_SESSION['b2'] = $_POST['b2'];
@@ -403,6 +406,9 @@ class JumpStartController
                 $_SESSION['b29'] = $_POST['b29'];
             }
 
+            //var_dump($_SESSION);
+
+
             // if valid is true
             $valid = true;
             if ($valid) {
@@ -456,9 +462,11 @@ class JumpStartController
                     $b13, $b14, $b15, $b16, $b17, $b17yn, $b18, $b18yn, $b19, $b19yn, $b20, $b20yn,
                     $b21, $b21yn, $b22, $b22yn, $b23, $b23yn, $b24, $b24yn, $b25, $b25yn, $b26, $b26yn,
                     $b27, $b27yn, $b28, $b28yn, $b29, $userId);
-
+                //var_dump($_SESSION['b1']);
+                //echo $b1;
                 $_SESSION['section2'] = $section2;
-                //var_dump($section1);
+                var_dump($section2);
+                //var_dump($_SESSION);
 
                 // add the section to the database
                 $GLOBALS['db']->addSection2($section2);
@@ -468,6 +476,7 @@ class JumpStartController
                 //$f3->reroute("results");
             }
         } else {
+            $this->checkLogin();
             $view = new Template();
             echo $view->render('views/section2.html');
         }

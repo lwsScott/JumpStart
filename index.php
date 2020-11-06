@@ -69,8 +69,8 @@ $f3->route('GET|POST /section2', function($f3){
 });
 
 
-// this is the route to interests page
-// GET method when coming from profile page
+// this is the route to results page
+// GET method when coming from other section pages
 // POST method when submitting form
 $f3->route('GET|POST /results', function($f3){
     //$view = new Template();

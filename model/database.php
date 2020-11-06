@@ -158,46 +158,45 @@ class Database
         //2. Prepare the statement
         $statement = $this->_dbh->prepare($sql);
         //var_dump($statement);
-        $b1 = $section2->getb1();
-        $b2 = $section2->getb2();
-        $b3 = $section2->getb3();
-        $b4 = $section2->getb4();
-        $b5 = $section2->getb5();
-        $b6 = $section2->getb6();
-        $b7 = $section2->getb7();
-        $b8 = $section2->getb8();
+        $b1 = $section2->getB1();
+        $b2 = $section2->getB2();
+        $b3 = $section2->getB3();
+        $b4 = $section2->getB4();
+        $b5 = $section2->getB5();
+        $b6 = $section2->getB6();
+        $b7 = $section2->getB7();
+        $b8 = $section2->getB8();
         $b9 = $section2->getb9();
-        $b10 = $section2->getb10();
-        $b11 = $section2->getb11();
-        $b12 = $section2->getb12();
-        $b13 = $section2->getb13();
-        $b14 = $section2->getb14();
-        $b14 = $section2->getb14();
-        $b15 = $section2->getb15();
-        $b16 = $section2->getb16();
-        $b17 = $section2->getb17();
-        $b17yn = $section2->getb17yn();
-        $b18 = $section2->getb18();
-        $b18yn = $section2->getb18yn();
-        $b19 = $section2->getb19();
-        $b19yn = $section2->getb19yn();
-        $b21 = $section2->getb21();
-        $b21yn = $section2->getb21yn();
-        $b22 = $section2->getb22();
-        $b22yn = $section2->getb22yn();
-        $b23 = $section2->getb23();
-        $b23yn = $section2->getb23yn();
-        $b24 = $section2->getb24();
-        $b24yn = $section2->getb24yn();
-        $b25 = $section2->getb25();
-        $b25yn = $section2->getb25yn();
-        $b26 = $section2->getb26();
-        $b26yn = $section2->getb26yn();
-        $b27 = $section2->getb27();
-        $b27yn = $section2->getb27yn();
-        $b28 = $section2->getb28();
-        $b28yn = $section2->getb28yn();
-        $b29 = $section2->getb29();
+        $b10 = $section2->getB10();
+        $b11 = $section2->getB11();
+        $b12 = $section2->getB12();
+        $b13 = $section2->getB13();
+        $b14 = $section2->getB14();
+        $b15 = $section2->getB15();
+        $b16 = $section2->getB16();
+        $b17 = $section2->getB17();
+        $b17yn = $section2->getB17yn();
+        $b18 = $section2->getB18();
+        $b18yn = $section2->getB18yn();
+        $b19 = $section2->getB19();
+        $b19yn = $section2->getB19yn();
+        $b21 = $section2->getB21();
+        $b21yn = $section2->getB21yn();
+        $b22 = $section2->getB22();
+        $b22yn = $section2->getB22yn();
+        $b23 = $section2->getB23();
+        $b23yn = $section2->getB23yn();
+        $b24 = $section2->getB24();
+        $b24yn = $section2->getB24yn();
+        $b25 = $section2->getB25();
+        $b25yn = $section2->getB25yn();
+        $b26 = $section2->getB26();
+        $b26yn = $section2->getB26yn();
+        $b27 = $section2->getB27();
+        $b27yn = $section2->getB27yn();
+        $b28 = $section2->getB28();
+        $b28yn = $section2->getB28yn();
+        $b29 = $section2->getB29();
         $userId = $section2->getUserId();
 
 
@@ -249,7 +248,7 @@ class Database
 
         //4. Execute the statement
         $result = $statement->execute();
-        echo "Result: " . $result;
+        //echo "Result: " . $result;
 
         //Get the key of the last inserted row
         $answerID = $this->_dbh->lastInsertId();

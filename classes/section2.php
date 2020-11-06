@@ -62,12 +62,13 @@ class Section2
     private $_userId;
 
 
-    function construct($b1, $b2, $b3, $b4, $b5, $b6, $b7, $b8, $b9,
-                        $b10, $b11, $b12, $b13, $b14, $b15, $b16, $b17,
+    function __construct($b1, $b2, $b3, $b4, $b5, $b6, $b7, $b8, $b9,
+                        $b10, $b11, $b12, $b13, $b14, $b15, $b16, $b17, $b17yn,
                         $b18, $b18yn, $b19,  $b19yn, $b20, $b20yn, $b21,
                         $b21yn, $b22, $b22yn, $b23, $b23yn, $b24, $b24yn, $b25,
                         $b25yn, $b26, $b26yn,  $b27, $b27yn, $b28, $b28yn, $b29, $userId)
 {
+    echo "constructing section2";
     $this->_b1 = $b1;
     $this->_b2 = $b2;
     $this->_b3 = $b3;
@@ -85,6 +86,7 @@ class Section2
     $this->_b15 = $b15;
     $this->_b16 = $b16;
     $this->_b17 = $b17;
+    $this->_b17yn = $b17yn;
     $this->_b18 = $b18;
     $this->_b18yn = $b18yn;
     $this->_b19 = $b19;

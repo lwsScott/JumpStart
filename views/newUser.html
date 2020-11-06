@@ -37,11 +37,11 @@
                         <input class="form-control" type="password" name="password" id="password"
                                value="<check if='{{ !empty(@password) }}'>{{ @password }}</check>">
                         <span class="err">
-                        <check if="{{ isset(@errors['password']) }}">
-                            {{ @errors['password'] }}
-                        </check>
-                    </span>
-                        <span class="errJ" id="errPassword">Required</span>
+                            <check if="{{ isset(@errors['password']) }}">
+                                {{ @errors['password'] }}
+                            </check>
+                        </span>
+                        <!-- <span class="errJ" id="errPassword">Required</span>-->
                     </div>
 
                     <!-- confirm password -->
@@ -54,7 +54,7 @@
                             {{ @errors['confirm'] }}
                         </check>
                     </span>
-                        <span class="errJ" id="errConfirm">Required match password</span>
+                        <!-- <span class="errJ" id="errConfirm">Required match password</span>-->
                     </div>
                 </fieldset>
             </div>
