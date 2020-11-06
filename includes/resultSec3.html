@@ -1,0 +1,214 @@
+<!--
+    David Haas
+    11/5/20
+    filename https://jumpstart.greenriverdev.com/playbook/JumpStart/includes/footer.html
+    Displays results of section 3 answers to SWOT analysis
+  -->
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">SECTION 3</th>
+        <th scope="col">QUESTION</th>
+        <th scope="col">STRENGTHS</th>
+        <th scope="col">WEAKNESSES</th>
+        <th scope="col">OPPORTUNITIES</th>
+        <th scope="col">THREATS</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th scope="row">1</th>
+        <td>Does your product/service solve an identified problem or fill an identified
+        need/desire of the market? And what is that problem/need/desire?</td>
+        <td>{{@SESSION.c1}}</td><!-- Y-S, N-W, U-O,T -->
+        <td><check if="{{ $_SESSION['c1'] == 'yes' }}" >
+            Our product addresses the following problem(s), need(s) or desire(s):
+            &nbsp&nbsp{{@SESSION.c1a}}
+        </check></td>
+        <td><check if="{{ $_SESSION['c1'] == 'no' }}" >
+            Because we haven't targeted our offerings to meet a specific need, we are
+            missing opportunities. Ensuring there is a fit will help sales
+            &nbsp&nbsp{{@SESSION.c1b}}
+        </check></td>
+        <td><check if="{{ $_SESSION['c1'] == 'unknown' }}" >
+            We aren't clear on what problems, needs, desires our product(s) /service(s)
+            addresesBy getting clear we will be able to improve our offerings and our marketing
+        </check></td>
+        <td><check if="{{ $_SESSION['c1'] == 'unknown' }}" >
+            Because we aren't clear on what problems(s), need(s) or desire(s) we
+            address, we are vulnerable to compeitors offerings and marketing
+        </check></td>
+    </tr>
+    <tr>
+        <th scope="row">2</th>
+        <td>Do you have a sufficient range of offerings to meet customer needs? (e.g.: a bike
+        shop should also sell helmets, gloves, sunglasses, shoes...An online marketing firm
+        might offer SEO, Pay Per Click, Design Services and Analytics services) If no, what
+        else could you offer?</td>
+        <td>{{@SESSION.c2}}</td><!-- Y-S, N-W, U-O,T -->
+        <td><check if="{{ $_SESSION['c2'] == 'yes' }}" >
+            We have a sufficiently comprehensive set of offerings to satisfy our customer's needs
+        </check></td>
+        <td><check if="{{ $_SESSION['c2'] == 'no' }}" >
+            We don't offer all that we could/should including:&nbsp&nbsp{{@SESSION.c2a}}
+        </check></td>
+        <td><check if="{{ $_SESSION['c2'] == 'unknown' }}" >
+            Research may reveal additional revenue potential by serving our customers better
+        </check></td>
+        <td><check if="{{ $_SESSION['c2'] == 'unknown' }}" >
+            Because we don't offer all that we could/should, our customers could switch to
+            others who offer more
+        </check></td>
+    </tr>
+    <tr>
+        <th scope="row">3</th>
+        <td>Do you have unnecessary or unprofitable offerings that provide no strategic
+        value? Identify them.</td>
+        <td>{{@SESSION.c3}}</td><!-- Y-S, N-W, U-O -->
+        <td><check if="{{ $_SESSION['c3'] == 'yes' }}" >
+            The following offerings are unnecessary/unprofitable and provide no
+            strategic value:&nbsp&nbsp{{@SESSION.c3}}
+        </check></td>
+        <td><check if="{{ $_SESSION['c3'] == 'no' }}" >
+            We have no offerings that provide no strategic value or profit. Our USP
+            is not benefits based
+        </check></td>
+        <td><check if="{{ $_SESSION['c3'] == 'unknown' }}" >
+            We may be able to cut costs by identifying offerings that are unnecessary
+            unprofitable and non-strategic
+        </check></td>
+        <td></td>
+    </tr>
+    <tr>
+        <th scope="row">4</th>
+        <td>Are your products/services at the quality level both you and your
+        customers expect for the price? If not, identify the specific gaps in
+        quality or missing features</td>
+        <td>{{@SESSION.c4}}</td><!-- Y-S, N-W, U-O,T -->
+        <td><check if="{{ $_SESSION['c4'] == 'yes' }}" >
+            Our products/services meet our customer's quality
+        </check></td>
+        <td><check if="{{ $_SESSION['c4'] == 'no' }}" >
+            We are below the quality expectations of our clients in the following
+            ways:&nbsp&nbsp{{@SESSION.c4a}}
+        </check></td>
+        <td><check if="{{ $_SESSION['c4'] == 'unknown' }}" >
+            Research may reveal where we can better meet quality expectations
+        </check></td>
+        <td><check if="{{ $_SESSION['c4'] == 'unknown' }}" >
+            Because we don't know if we're meeting quality, we could risk losing
+            clients or losing the chance to deliver more to our customers
+        </check></td>
+    </tr>
+    <tr>
+        <th scope="row">5</th>
+        <td>Do you know your gross margins on your different products/services?</td>
+        <td>{{@SESSION.c5}}</td><!-- Y-S, N-W -->
+        <td><check if="{{ $_SESSION['c5'] == 'yes' }}" >
+            We are clear on our gross margins
+        </check></td>
+        <td><check if="{{ $_SESSION['c5'] == 'no' }}" >
+            Because we don't know our margins, we may not be optimizing the mix of
+            our offerings or our profits
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <th scope="row">6</th>
+        <td>Are your subcontractors and vendors at the skill and reliability level
+        you desire? Identify those that are NOT</td>
+        <td>{{@SESSION.c6}}</td><!-- Y-S, N-W, U-O,T -->
+        <td><check if="{{ $_SESSION['c6'] == 'yes' }}" >
+            Our subcontractos/ vendors are of the skill level and quality we look for
+        </check></td>
+        <td><check if="{{ $_SESSION['c6'] == 'no' }}" >
+            Right now, the following subcontractors/ vendors aren't at the skill or
+            quality level we need:&nbsp&nbsp{{@SESSION.c6a}}
+        </check></td>
+        <td><check if="{{ $_SESSION['c6'] == 'unknown' }}" >
+            By examining the skill/quality of subs/ vendors we may be able to improve
+            our delivery & profitability
+        </check></td>
+        <td><check if="{{ $_SESSION['c6'] == 'unknown' }}" >
+            Because we don't know the quality/skill of all subs/vendors, we leave
+            ourselves vulnerable to their weaknesses
+        </check></td>
+    </tr>
+    <tr>
+        <th scope="row">7</th>
+        <td>Are the materials that go into our products of the quality we expect?
+        Identify those that are NOT</td>
+        <td>{{@SESSION.c7}}</td><!-- Y-S, N-W, U-O,T -->
+        <td><check if="{{ $_SESSION['c7'] == 'yes' }}" >
+            Our products are made with materials of the right quality
+        </check></td>
+        <td><check if="{{ $_SESSION['c7'] == 'no' }}" >
+            Our materials need to be of the right quality and right now, the following:
+            &nbsp&nbsp{{@SESSION.c7a}}
+        </check></td>
+        <td><check if="{{ $_SESSION['c7'] == 'unknown' }}" >
+            By examining the quality of materials, we may be able to improve product
+            quality
+        </check></td>
+        <td><check if="{{ $_SESSION['c7'] == 'unknown' }}" >
+            Because we don't know the quality of all materials in our products, we
+            leave ourselves vulnerable to compeitiors
+        </check></td>
+    </tr>
+    <tr>
+        <th scope="row">8</th>
+        <td>Are the suppliers of our materials reliable and stable? Identify those
+        that are NOT</td>
+        <td>{{@SESSION.c8}}</td><!-- Y-S, N-W, U-O,T -->
+        <td><check if="{{ $_SESSION['c8'] == 'yes' }}" >
+            We have reliable and stable suppliers
+        </check></td>
+        <td><check if="{{ $_SESSION['c8'] == 'no' }}" >
+            Right now, the following suppliers aren't reliable or stable:
+            &nbsp&nbsp{{@SESSION.c8a}}
+        </check></td>
+        <td><check if="{{ $_SESSION['c8'] == 'unknown' }}" >
+            By examining the quality of suppliers we may be able to ensure
+            sustainability
+        </check></td>
+        <td><check if="{{ $_SESSION['c8'] == 'unknown' }}" >
+            Because we don't know the reliability and stability of all suppliers,
+            we leave ourselves vulnerable to their weaknesses
+        </check></td>
+    </tr>
+    <tr>
+        <th scope="row">9</th>
+        <td>Are the prices and terms from those suppliers fair? Identify those
+        that are NOT</td>
+        <td>{{@SESSION.c9}}</td><!-- Y-S, N-W, U-O,T -->
+        <td><check if="{{ $_SESSION['c9'] == 'yes' }}" >
+            Our terms and prices with suppliers are fair
+        </check></td>
+        <td><check if="{{ $_SESSION['c9'] == 'no' }}" >
+            Right now, the prices and terms with the  following suppliers aren't
+            fair:&nbsp&nbsp{{@SESSION.c9a}}
+        </check></td>
+        <td><check if="{{ $_SESSION['c9'] == 'unknown' }}" >
+            By examining the prices and term of suppliers we may be able to
+            negotiate better arrangements
+        </check></td>
+        <td><check if="{{ $_SESSION['c9'] == 'unknown' }}" >
+            Because we don't know the fairness of our prices and terms with all
+            suppliers, we could leave ourselves at a competitive disadvantage
+        </check></td>
+    </tr>
+    <tr>
+        <th scope="row">10</th>
+        <td>Are there any other elements of your product or service that you
+        consider Strengths or Weaknesses, that present Opportunities or that
+        pose Threats?</td>
+        <td></td>
+        <td>{{@SESSION.c10a}}</td>
+        <td>{{@SESSION.c10b}}</td>
+        <td>{{@SESSION.c10c}}</td>
+        <td>{{@SESSION.c10d}}</td>
+    </tr>
+    </tbody>
+</table>
