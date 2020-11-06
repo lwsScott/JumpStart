@@ -10,6 +10,7 @@
     <tr>
         <th scope="col">SECTION 2</th>
         <th scope="col">QUESTION</th>
+        <th scope="col">ANSWER</th>
         <th scope="col">STRENGTHS</th>
         <th scope="col">WEAKNESSES</th>
         <th scope="col">OPPORTUNITIES</th>
@@ -46,14 +47,14 @@
         <td>Does the USP have a clear Promise framed in terms of benefits to
             the customer?</td>
         <td>{{@SESSION.b3}}</td><!-- Y-S, N-W,T -->
-        <td><check if="{{ $_SESSION['b3yn'] == 'yes' }}" >
+        <td><check if="{{ $_SESSION['b3'] == 'yes' }}" >
             Our USP is expressed in the terms of benefits to the customer
         </check></td>
         <td><check if="{{ $_SESSION['b3'] == 'no' }}" >
             Our USP is not benefits based
         </check></td>
         <td></td>
-        <td><check if="{{ $_SESSION['b17'] == 'no' }}" >
+        <td><check if="{{ $_SESSION['b3'] == 'no' }}" >
             We might connect better with customers by revising our USP to focus
             on benefits
         </check></td>
