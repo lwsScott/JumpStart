@@ -65,7 +65,6 @@ class JumpStartController
      */
     public function section1($f3)
     {
-
         $_SESSION['a1'] = "";
         $_SESSION['a2'] = "";
         $_SESSION['a3'] = "";
@@ -217,7 +216,7 @@ class JumpStartController
 
                 // add the recipe to the database
                 $GLOBALS['db']->addSection1($section1);
-                $f3->reroute("section2");
+                $f3->reroute("results");
             }
         } else {
             $this->checkLogin();
@@ -232,7 +231,7 @@ class JumpStartController
     public function section2($f3)
     {
         //echo "Here with GET";
-        $_SESSION['b1'] = "a";
+        $_SESSION['b1'] = "";
         $_SESSION['b2'] = "";
         $_SESSION['b3'] = "";
         $_SESSION['b4'] = "";
@@ -482,7 +481,107 @@ class JumpStartController
         }
     }
 
+    /**
+     * Display the section1 route
+     */
+    public function section3($f3)
+    {
+        //echo "here in section3";
+        $_SESSION['c1'] = "";
+        $_SESSION['c2'] = "";
+        $_SESSION['c3'] = "";
+        $_SESSION['c4'] = "";
+        $_SESSION['c5'] = "";
+        $_SESSION['c6'] = "";
+        $_SESSION['c7'] = "";
+        $_SESSION['c8'] = "";
+        $_SESSION['c9'] = "";
+        $_SESSION['c10a'] = "";
+        $_SESSION['c10b'] = "";
+        $_SESSION['c10c'] = "";
+        $_SESSION['c10d'] = "";
 
+        // validate the data
+        // TODO really validate the data
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            if (isset($_POST['c1'])) {
+                $_SESSION['c1'] = $_POST['c1'];
+            }
+            if (isset($_POST['c2'])) {
+                $_SESSION['c2'] = $_POST['c2'];
+            }
+            if (isset($_POST['c3'])) {
+                $_SESSION['c3'] = $_POST['c3'];
+            }
+            if (isset($_POST['c4'])) {
+                $_SESSION['c4'] = $_POST['c4'];
+            }
+            if (isset($_POST['c5'])) {
+                $_SESSION['c5'] = $_POST['c5'];
+            }
+            if (isset($_POST['c6'])) {
+                $_SESSION['c6'] = $_POST['c6'];
+            }
+            if (isset($_POST['c7'])) {
+                $_SESSION['c7'] = $_POST['c7'];
+            }
+            if (isset($_POST['c8'])) {
+                $_SESSION['c8'] = $_POST['c8'];
+            }
+            if (isset($_POST['c9'])) {
+                $_SESSION['c9'] = $_POST['c9'];
+            }
+            if (isset($_POST['c10a'])) {
+                $_SESSION['c10a'] = $_POST['c10a'];
+            }
+            if (isset($_POST['c10b'])) {
+                $_SESSION['c10b'] = $_POST['c10b'];
+            }
+            if (isset($_POST['c10c'])) {
+                $_SESSION['c10c'] = $_POST['c1c'];
+            }
+            if (isset($_POST['c10d'])) {
+                $_SESSION['c10d'] = $_POST['c10d'];
+            }
+            // if valid is true
+            $valid = true;
+            if ($valid) {
+                //echo '<h1>I made it here with valid data</h1>';
+                $c1 = $_SESSION['c1'];
+                $c2 = $_SESSION['c2'];
+                $c3 = $_SESSION['c3'];
+                $c4 = $_SESSION['c4'];
+                $c5 = $_SESSION['c5'];
+                $c6 = $_SESSION['c6'];
+                $c7 = $_SESSION['c7'];
+                $c8 = $_SESSION['c8'];
+                $c9 = $_SESSION['c9'];
+                $c10a = $_SESSION['c10a'];
+                $c10b = $_SESSION['c10b'];
+                $c10c = $_SESSION['c10c'];
+                $c10d = $_SESSION['c10d'];
+
+                //$userId = $_SESSION['userId'];
+                $userId = $_SESSION['userId'];
+
+
+                // construct a section1 object
+                $section3 = new Section3($c1, $c2, $c3, $c4, $c5, $c6, $c7, $c8, $c9, $c10a,
+                    $c10b, $c10c, $c10d, $userId);
+
+                $_SESSION['section3'] = $section3;
+                //var_dump($section1);
+
+                // add the section to the database
+                $GLOBALS['db']->addSection3($section3);
+                $f3->reroute("results");
+            }
+        } else {
+            $this->checkLogin();
+            $view = new Template();
+            echo $view->render('views/section3.html');
+        }
+    }
 
     /**
      * Display the results route

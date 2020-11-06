@@ -35,7 +35,6 @@ class Database
             {
                 require_once '/home2/lscottgr/config.php';
             }
-
             else if ($_SERVER['USER'] == 'dhaasgre')
             {
                 require_once '/home2/dhaasgre/config.php';
@@ -249,6 +248,69 @@ class Database
         //4. Execute the statement
         $result = $statement->execute();
         //echo "Result: " . $result;
+
+        //Get the key of the last inserted row
+        $answerID = $this->_dbh->lastInsertId();
+        $_SESSION['answerID'] = $answerID;
+        //echo $id;
+    }
+
+    /**
+     * Inserts Section 3 answers into the database
+     * @param $section3 the section 3 answers to add
+     */
+    function addSection3($section3)
+    {
+        //var_dump($section1);
+
+        //var_dump($_SESSION);
+        //$userId = $_SESSION['userId'];
+        //echo $userId;
+        //1. Define the query
+        $sql = "INSERT INTO section3(c1, c2, c3, c4, c5, c6, c7, c8, c9, c10a, 
+                   c10b, c10c, c10d,  userId)
+                VALUES (:c1, :c2, :c3, :c4, :c5, :c6, :c7, :c8, :c9, :c101, :c10b, :c10c, :c10d, :userId)";
+        //var_dump($sql);
+        //2. Prepare the statement
+        $statement = $this->_dbh->prepare($sql);
+        //var_dump($statement);
+        $c1 = $section3->getC1();
+        $c2 = $section3->getC2();
+        $c3 = $section3->getC3();
+        $c4 = $section3->getC4();
+        $c5 = $section3->getC5();
+        $c6 = $section3->getC6();
+        $c7 = $section3->getC7();
+        $c8 = $section3->getC8();
+        $c9 = $section3->getC9();
+        $c10a = $section3->getC10a();
+        $c10b = $section3->getC10b();
+        $c10c = $section3->getC10c();
+        $c10d = $section3->getC10d();
+        $userId = $section3->getUserId();
+
+
+        //3. Bind the parameters
+        $statement->bindParam(':c1',$c1, PDO::PARAM_STR);
+        $statement->bindParam(':c2',$c2, PDO::PARAM_STR);
+        $statement->bindParam(':c3',$c3, PDO::PARAM_STR);
+        $statement->bindParam(':c4',$c4, PDO::PARAM_STR);
+        $statement->bindParam(':c5',$c5, PDO::PARAM_STR);
+        $statement->bindParam(':c6',$c6, PDO::PARAM_STR);
+        $statement->bindParam(':c7',$c7, PDO::PARAM_STR);
+        $statement->bindParam(':c8',$c8, PDO::PARAM_STR);
+        $statement->bindParam(':c9',$c9, PDO::PARAM_STR);
+        $statement->bindParam(':c10a',$c10a, PDO::PARAM_STR);
+        $statement->bindParam(':c10b',$c10b, PDO::PARAM_STR);
+        $statement->bindParam(':c10c',$c10c, PDO::PARAM_STR);
+        $statement->bindParam(':c10d',$c10d, PDO::PARAM_STR);
+        $statement->bindParam(':userId',$userId, PDO::PARAM_STR);
+
+        //$statement->bindParam(':image', $recipe->getImage());
+
+        //4. Execute the statement
+        $result = $statement->execute();
+        echo "Result: " . $result;
 
         //Get the key of the last inserted row
         $answerID = $this->_dbh->lastInsertId();

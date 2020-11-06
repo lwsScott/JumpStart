@@ -68,6 +68,13 @@ $f3->route('GET|POST /section2', function($f3){
     $GLOBALS['controller']->section2($f3);
 });
 
+// this is the route to section 3 page
+// GET method when coming from home page
+// POST method when submitting form
+$f3->route('GET|POST /section3', function($f3){
+    // if the form has been submitted
+    $GLOBALS['controller']->section3($f3);
+});
 
 // this is the route to results page
 // GET method when coming from other section pages
