@@ -268,8 +268,8 @@ class Database
         //echo $userId;
         //1. Define the query
         $sql = "INSERT INTO section3(c1, c2, c3, c4, c5, c6, c7, c8, c9, c10a, 
-                   c10b, c10c, c10d,  userId)
-                VALUES (:c1, :c2, :c3, :c4, :c5, :c6, :c7, :c8, :c9, :c101, :c10b, :c10c, :c10d, :userId)";
+                   c10b, c10c, c10d, userId)
+                VALUES (:c1, :c2, :c3, :c4, :c5, :c6, :c7, :c8, :c9, :c10a, :c10b, :c10c, :c10d, :userId)";
         //var_dump($sql);
         //2. Prepare the statement
         $statement = $this->_dbh->prepare($sql);
@@ -324,8 +324,6 @@ class Database
      */
     function writeUser($newUser)
     {
-        echo '<h1>database php called</h1>';
-
         //1. Define the query
         $sql = "INSERT INTO playbookUsers (username, password)
                 VALUES (:username, :password)";

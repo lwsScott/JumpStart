@@ -32,7 +32,7 @@
                     <div class="form-check-inline">
                         <input type="radio" id="a1a" name="a1" class="form-check-input" value="yes"
                                onchange="toggleVisibility()"
-                        <check if="{{ $_SESSION['a1'] == 'yes' }}" >
+                        <check if="{{ !empty(@a1) }}'>{{ @a1 == 'yes' }}" >
                             checked="checked"
                         </check>>
                         <label class="form-check-label" for="a1a" id="q1a">Yes</label>

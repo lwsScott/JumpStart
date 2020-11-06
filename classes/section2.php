@@ -68,7 +68,6 @@ class Section2
                         $b21yn, $b22, $b22yn, $b23, $b23yn, $b24, $b24yn, $b25,
                         $b25yn, $b26, $b26yn,  $b27, $b27yn, $b28, $b28yn, $b29, $userId)
 {
-    echo "constructing section2";
     $this->_b1 = $b1;
     $this->_b2 = $b2;
     $this->_b3 = $b3;

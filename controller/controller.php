@@ -65,6 +65,9 @@ class JumpStartController
      */
     public function section1($f3)
     {
+
+        //$GLOBALS['db']->getA1();
+        $this->_f3->set('a1', $GLOBALS['db']->getA1());
         $_SESSION['a1'] = "";
         $_SESSION['a2'] = "";
         $_SESSION['a3'] = "";
@@ -584,6 +587,201 @@ class JumpStartController
     }
 
     /**
+     * Display the section4 route
+     */
+    /*
+    public function section4($f3)
+    {
+        //echo "here in section3";
+        $_SESSION['d1'] = "";
+        $_SESSION['d1a'] = "";
+        $_SESSION['d2'] = "";
+        $_SESSION['d2a'] = "";
+        $_SESSION['d3'] = "";
+        $_SESSION['d3a'] = "";
+        $_SESSION['d4'] = "";
+        $_SESSION['d4a'] = "";
+        $_SESSION['d5'] = "";
+        $_SESSION['d6'] = "";
+        $_SESSION['d7'] = "";
+        $_SESSION['d8'] = "";
+        $_SESSION['d9'] = "";
+        $_SESSION['d10'] = "";
+        $_SESSION['d11'] = "";
+        $_SESSION['d12'] = "";
+        $_SESSION['d13'] = "";
+        $_SESSION['d14'] = "";
+        $_SESSION['d15'] = "";
+        $_SESSION['d16'] = "";
+        $_SESSION['d17'] = "";
+        $_SESSION['d18'] = "";
+        $_SESSION['d19'] = "";
+        $_SESSION['d20'] = "";
+        $_SESSION['d21'] = "";
+        $_SESSION['d22'] = "";
+        $_SESSION['d23'] = "";
+        $_SESSION['d24'] = "";
+        $_SESSION['d24'] = "";
+        $_SESSION['d25'] = "";
+        $_SESSION['d26'] = "";
+        $_SESSION['d27a'] = "";
+        $_SESSION['d27b'] = "";
+        $_SESSION['d27c'] = "";
+        $_SESSION['d27d'] = "";
+
+
+        // validate the data
+        // TODO really validate the data
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            if (isset($_POST['d1'])) {
+                $_SESSION['d1'] = $_POST['d1'];
+            }
+            if (isset($_POST['d1a'])) {
+                $_SESSION['d1a'] = $_POST['d1a'];
+            }
+            if (isset($_POST['d2'])) {
+                $_SESSION['d2'] = $_POST['d2'];
+            }
+            if (isset($_POST['d2a'])) {
+                $_SESSION['d2a'] = $_POST['d2a'];
+            }
+            if (isset($_POST['d3'])) {
+                $_SESSION['d3'] = $_POST['d3'];
+            }
+            if (isset($_POST['d3a'])) {
+                $_SESSION['d3a'] = $_POST['d3a'];
+            }
+            if (isset($_POST['d4'])) {
+                $_SESSION['d4'] = $_POST['d4'];
+            }
+            if (isset($_POST['d4a'])) {
+                $_SESSION['d4a'] = $_POST['d4a'];
+            }
+            if (isset($_POST['d5'])) {
+                $_SESSION['d5'] = $_POST['d5'];
+            }
+            if (isset($_POST['d6'])) {
+                $_SESSION['d6'] = $_POST['d6'];
+            }
+            if (isset($_POST['d7'])) {
+                $_SESSION['d7'] = $_POST['d7'];
+            }
+            if (isset($_POST['d8'])) {
+                $_SESSION['d8'] = $_POST['d8'];
+            }
+            if (isset($_POST['d9'])) {
+                $_SESSION['d9'] = $_POST['d9'];
+            }
+            if (isset($_POST['d10'])) {
+                $_SESSION['d10'] = $_POST['d10'];
+            }
+            if (isset($_POST['d11'])) {
+                $_SESSION['d11'] = $_POST['d11'];
+            }
+            if (isset($_POST['d12'])) {
+                $_SESSION['d12'] = $_POST['d12'];
+            }
+            if (isset($_POST['d13'])) {
+                $_SESSION['d13'] = $_POST['d13'];
+            }
+            if (isset($_POST['d10'])) {
+                $_SESSION['d10'] = $_POST['d10'];
+            }
+            if (isset($_POST['d11'])) {
+                $_SESSION['d11'] = $_POST['d11'];
+            }
+            if (isset($_POST['d12'])) {
+                $_SESSION['d12'] = $_POST['d12'];
+            }
+            if (isset($_POST['d13'])) {
+                $_SESSION['d13'] = $_POST['d13'];
+            }
+            if (isset($_POST['d14'])) {
+                $_SESSION['d14'] = $_POST['d14'];
+            }
+            if (isset($_POST['d15'])) {
+                $_SESSION['d15'] = $_POST['d15'];
+            }
+            if (isset($_POST['d16'])) {
+                $_SESSION['d16'] = $_POST['d16'];
+            }
+            if (isset($_POST['d17'])) {
+                $_SESSION['d17'] = $_POST['d17'];
+            }
+            if (isset($_POST['d18'])) {
+                $_SESSION['d18'] = $_POST['d18'];
+            }
+            if (isset($_POST['d19'])) {
+                $_SESSION['d11'] = $_POST['d11'];
+            }
+            if (isset($_POST['d19'])) {
+                $_SESSION['d19'] = $_POST['d19'];
+            }
+            if (isset($_POST['d20'])) {
+                $_SESSION['d20'] = $_POST['d20'];
+            }
+            if (isset($_POST['d21'])) {
+                $_SESSION['d20'] = $_POST['d20'];
+            }
+            if (isset($_POST['d20'])) {
+                $_SESSION['d20'] = $_POST['d20'];
+            }
+            if (isset($_POST['d20'])) {
+                $_SESSION['d20'] = $_POST['d20'];
+            }
+            if (isset($_POST['d20'])) {
+                $_SESSION['d20'] = $_POST['d20'];
+            }
+            if (isset($_POST['d20'])) {
+                $_SESSION['d20'] = $_POST['d20'];
+            }
+            if (isset($_POST['d20'])) {
+                $_SESSION['d20'] = $_POST['d20'];
+            }
+            if (isset($_POST['d20'])) {
+                $_SESSION['d20'] = $_POST['d20'];
+            }
+            // if valid is true
+            $valid = true;
+            if ($valid) {
+                //echo '<h1>I made it here with valid data</h1>';
+                $c1 = $_SESSION['c1'];
+                $c2 = $_SESSION['c2'];
+                $c3 = $_SESSION['c3'];
+                $c4 = $_SESSION['c4'];
+                $c5 = $_SESSION['c5'];
+                $c6 = $_SESSION['c6'];
+                $c7 = $_SESSION['c7'];
+                $c8 = $_SESSION['c8'];
+                $c9 = $_SESSION['c9'];
+                $c10a = $_SESSION['c10a'];
+                $c10b = $_SESSION['c10b'];
+                $c10c = $_SESSION['c10c'];
+                $c10d = $_SESSION['c10d'];
+
+                //$userId = $_SESSION['userId'];
+                $userId = $_SESSION['userId'];
+
+
+                // construct a section1 object
+                $section3 = new Section3($c1, $c2, $c3, $c4, $c5, $c6, $c7, $c8, $c9, $c10a,
+                    $c10b, $c10c, $c10d, $userId);
+
+                $_SESSION['section3'] = $section3;
+                //var_dump($section1);
+
+                // add the section to the database
+                $GLOBALS['db']->addSection3($section3);
+                $f3->reroute("results");
+            }
+        } else {
+            $this->checkLogin();
+            $view = new Template();
+            echo $view->render('views/section3.html');
+        }
+    }
+*/
+    /**
      * Display the results route
      */
     public function results()
@@ -694,7 +892,7 @@ class JumpStartController
     {
         $valid = true;
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            //var_dump($_POST);
+
             /*
             echo $_SESSION['nameAvail'];
             if (($_SESSION['nameAvail'] != 'available')) {
@@ -704,7 +902,6 @@ class JumpStartController
                 //echo "username false";
             }
             */
-
             if (!$this->_validator->validName($_POST['password'])) {
                 $valid = false;
                 //Set an error variable in the F3 hive
@@ -726,7 +923,6 @@ class JumpStartController
             $this->_f3->set('confirm', $_POST['confirm']);
 
             if ($valid) {
-
                 $username = $_POST['username'];
                 $password = $_POST['password'];
 
@@ -734,8 +930,36 @@ class JumpStartController
                 $newUser = new User($username, $password);
 
                 // add into it
-                //var_dump($newUser);
                 $GLOBALS['db']->writeUser($newUser);
+
+                $userId = $GLOBALS['db']->getUserId($username, $password);
+                // populate new database tables
+                // section1
+                // construct a section1 object
+                $section1 = new Section1("", "", "","", "","","","","",
+                    "","","","","","","","","", $userId);
+
+                $section2 = new Section2("", "", "","", "","","","","",
+                    "","","","","","","","","", "", "",
+                    "", "", "", "", "", "", "", "", "", "",
+                    "", "", "", "", "", "", "", "", "", "",
+                    "", $userId);
+
+                $section3 = new Section3("", "", "","", "","","","","",
+                    "","","","", $userId);
+
+
+                $_SESSION['section1'] = $section1;
+                $_SESSION['section2'] = $section2;
+                $_SESSION['section3'] = $section3;
+
+                //var_dump($section1);
+
+                // add the recipe to the database
+                $GLOBALS['db']->addSection1($section1);
+                $GLOBALS['db']->addSection2($section2);
+                $GLOBALS['db']->addSection3($section3);
+
                 $this->_f3->reroute('home');
 
             }
