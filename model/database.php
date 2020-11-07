@@ -355,6 +355,123 @@ class Database
     }
 
     /**
+     * Inserts Section 4 answers into the datadase
+     * @param $section4 the section 4 answers to add
+     */
+    function addSection4($section4, $change)
+    {
+
+        $userId = $_SESSION['userId'];
+        //echo $userId;
+        //1. Define the query
+        $sql = "INSERT INTO section4 (d1a, d2, d2a,  d3, d3a, d4, d4a, d5, d6, d7, d8, d9, d10, d11, d12, 
+                    d13, d14, d15, d16, d17, d18, d19, d20, d21, d22, d23, d24, d25, d26, 
+                    d27a, d27b, d27c, d28d, userId)
+            VALUES (:d1a, :d2, :d2a, :d3, :d3a, :d4, :d4a, :d5, :d6, :d7, :d8, :d9, :d10, :d11, :d12, 
+                    :d13, :d14, :d15, :d16, :d17, :d18, :d19, :d20, :d21, :d22, :d23, :d24, :d25, :d26, 
+                   :d27a, :d27b, :d27c, :d28d, :userId)";
+        //var_dump($sql);
+        //2. Prepare the statement
+        $statement = $this->_ddh->prepare($sql);
+        //var_dump($statement);
+        $d1 = $section4->getD1();
+        $d1a = $section4->getD1a();
+
+        $d2 = $section4->getD2();
+        $d2a = $section4->getD2a();
+
+        $d3 = $section4->getD3();
+        $d3a = $section4->getD3a();
+
+        $d4 = $section4->getD4();
+        $d4a = $section4->getD4a();
+
+        $d5 = $section4->getD5();
+        $d6 = $section4->getD6();
+        $d7 = $section4->getD7();
+        $d8 = $section4->getD8();
+        $d9 = $section4->getd9();
+        $d10 = $section4->getD10();
+        $d11 = $section4->getD11();
+        $d12 = $section4->getD12();
+        $d13 = $section4->getD13();
+        $d14 = $section4->getD14();
+        $d15 = $section4->getD15();
+        $d16 = $section4->getD16();
+        $d17 = $section4->getD17();
+        $d18 = $section4->getD18();
+        $d19 = $section4->getD19();
+        $d20 = $section4->getD20();
+        $d21 = $section4->getD21();
+        $d22 = $section4->getD22();
+        $d23 = $section4->getD23();
+        $d24 = $section4->getD24();
+        $d25 = $section4->getD25();
+        $d26 = $section4->getD26();
+        $d27a = $section4->getD27a();
+        $d27b = $section4->getD27b();
+        $d27c = $section4->getD27c();
+        $d27d = $section4->getD27d();
+
+        //$userId = $section4->getUserId();
+
+
+        //3. Bind the parameters
+        $statement->bindParam(':d1',$d1, PDO::PARAM_STR);
+        $statement->bindParam(':d1a',$d1a, PDO::PARAM_STR);
+
+        $statement->bindParam(':d2',$d2, PDO::PARAM_STR);
+        $statement->bindParam(':d2a',$d2a, PDO::PARAM_STR);
+
+        $statement->bindParam(':d3',$d3, PDO::PARAM_STR);
+        $statement->bindParam(':d3a',$d3a, PDO::PARAM_STR);
+
+        $statement->bindParam(':d4',$d4, PDO::PARAM_STR);
+        $statement->bindParam(':d4a',$d4a, PDO::PARAM_STR);
+
+        $statement->bindParam(':d5',$d5, PDO::PARAM_STR);
+        $statement->bindParam(':d6',$d6, PDO::PARAM_STR);
+        $statement->bindParam(':d7',$d7, PDO::PARAM_STR);
+        $statement->bindParam(':d8',$d8, PDO::PARAM_STR);
+        $statement->bindParam(':d9',$d9, PDO::PARAM_STR);
+        $statement->bindParam(':d10',$d10, PDO::PARAM_STR);
+        $statement->bindParam(':d11',$d11, PDO::PARAM_STR);
+        $statement->bindParam(':d12',$d12, PDO::PARAM_STR);
+        $statement->bindParam(':d13',$d13, PDO::PARAM_STR);
+        $statement->bindParam(':d14',$d14, PDO::PARAM_STR);
+        $statement->bindParam(':d15',$d15, PDO::PARAM_STR);
+        $statement->bindParam(':d16',$d16, PDO::PARAM_STR);
+        $statement->bindParam(':d17',$d17, PDO::PARAM_STR);
+        $statement->bindParam(':d18',$d18, PDO::PARAM_STR);
+        $statement->bindParam(':d19',$d19, PDO::PARAM_STR);
+        $statement->bindParam(':d20',$d20, PDO::PARAM_STR);
+        $statement->bindParam(':d21',$d21, PDO::PARAM_STR);
+        $statement->bindParam(':d22',$d22, PDO::PARAM_STR);
+        $statement->bindParam(':d23',$d23, PDO::PARAM_STR);
+        $statement->bindParam(':d24',$d24, PDO::PARAM_STR);
+        $statement->bindParam(':d25',$d25, PDO::PARAM_STR);
+        $statement->bindParam(':d26',$d26, PDO::PARAM_STR);
+        $statement->bindParam(':d27a',$d27a, PDO::PARAM_STR);
+        $statement->bindParam(':d27b',$d27b, PDO::PARAM_STR);
+        $statement->bindParam(':d27c',$d27c, PDO::PARAM_STR);
+        $statement->bindParam(':d27d',$d27d, PDO::PARAM_STR);
+
+        $statement->bindParam(':userId',$userId, PDO::PARAM_STR);
+
+        //$statement->bindParam(':image', $recipe->getImage());
+
+        //4. Execute the statement
+        $result = $statement->execute();
+        //echo "Result: " . $result;
+
+        //Get the key of the last inserted row
+        $answerID = $this->_ddh->lastInsertId();
+        $_SESSION['answerID'] = $answerID;
+        //echo $id;
+    }
+
+
+    /**
      * Insert a new user into the database
      * @param $newUser the user to add
      */

@@ -82,7 +82,7 @@ $f3->route('GET|POST /section3', function($f3){
 $f3->route('GET|POST /results', function($f3){
     //$view = new Template();
     //echo $view->render('views/results.html');
-    $GLOBALS['controller']->results();
+    $GLOBALS['controller']->results($f3);
 });
 
 // this is the route to login page
