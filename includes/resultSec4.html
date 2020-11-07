@@ -8,9 +8,6 @@
 <table class="table">
     <thead>
     <tr>
-        <th scope="col">SECTION 4</th>
-        <th scope="col">QUESTION</th>
-        <th scope="col">ANSWER</th>
         <th scope="col">STRENGTHS</th>
         <th scope="col">WEAKNESSES</th>
         <th scope="col">OPPORTUNITIES</th>
@@ -19,112 +16,95 @@
     </thead>
     <tbody>
     <tr>
-        <th scope="row">1</th>
-        <td>Do you have clearly identified segments that you target? If yes, identify
-            them</td>
-        <td>{{@SESSION.d1}}</td><!-- Y-S, N-W -->
-        <td><check if="{{ $_SESSION['d1'] == 'yes' }}" >
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @d1 == 'yes' }}" >
             We have clearly identified market segments that are:
-            &nbsp&nbsp{{@SESSION.d1a}}
+            &nbsp&nbsp{{ @d1a }}
         </check></td>
-        <td><check if="{{ $_SESSION['d1'] == 'no' }}" >
+        <td><check if="{{ @d1 == 'no' }}" >
             We don't have clearly identified target market segments
         </check></td>
         <td></td>
         <td></td>
     </tr>
     <tr>
-        <th scope="row">2</th>
-        <td>Do you know the pains/needs/desires of each? Which ones don't you know?
-        (if all, write "all")</td>
-        <td>{{@SESSION.d2}}</td><!-- Y-S, N-W -->
-        <td><check if="{{ $_SESSION['d2'] == 'yes' }}" >
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @d2 == 'yes' }}" >
             We are clear on the pains, needs, desires of each segment
         </check></td>
-        <td><check if="{{ $_SESSION['d2'] == 'no' }}" >
+        <td><check if="{{ @d2 == 'no' }}" >
             We don't the pains, needs, desires of the following segments:
-            &nbsp&nbsp{{@SESSION.d2a}}
+            &nbsp&nbsp{{ @d2a }}
         </check></td>
         <td></td>
         <td></td>
     </tr>
     <tr>
-        <th scope="row">3</th>
-        <td>Do you know which segments generate the most money?  Rank them:</td>
-        <td>{{@SESSION.d3}}</td><!-- Y-S, N-W,O,T -->
-        <td><check if="{{ $_SESSION['d3'] == 'yes' }}" >
-            We know that  the ranking of segments by revenue are:&nbsp&nbsp{{@SESSION.d3a}}
+        <!-- Y-S, N-W,O,T -->
+        <td><check if="{{ @d3 == 'yes' }}" >
+            We know that  the ranking of segments by revenue are:&nbsp&nbsp{{ @d3a }}
         </check></td>
-        <td><check if="{{ $_SESSION['d3'] == 'no' }}" >
+        <td><check if="{{ @d3 == 'no' }}" >
             We don't know which segments bring in the most money
         </check></td>
-        <td><check if="{{ $_SESSION['d3'] == 'no' }}" >
+        <td><check if="{{ @d3 == 'no' }}" >
             When we know which segments bring in the most and least $, we can adjust our
             marketing mix to optimize marketing $ by focusing on those we seem to attract
-            or on those we may be underserving
+            or on those we may be under-serving
         </check></td>
-        <td><check if="{{ $_SESSION['d3'] == 'no' }}" >
+        <td><check if="{{ @d3 == 'no' }}" >
             By not optimizing our marketing activities strategically, we may be wasting $
-            or losing customers to competitors by not adequately commuicating with them
+            or losing customers to competitors by not adequately communicating with them
         </check></td>
     </tr>
     <tr>
-        <th scope="row">4</th>
-        <td>Do you know which segments produce the most profitable customers? If so, rank
-        them</td>
-        <td>{{@SESSION.d4}}</td><!-- Y-S, N-W,O,T -->
-        <td><check if="{{ $_SESSION['d4'] == 'yes' }}" >
+        <!-- Y-S, N-W,O,T -->
+        <td><check if="{{ @d4 == 'yes' }}" >
             We know that the segments that produce the most profitable customers are, in
-            order:&nbsp&nbsp{{ $_SESSION['d4a'] }}
+            order:&nbsp&nbsp{{ @d4a }}
         </check></td>
-        <td><check if="{{ $_SESSION['d4'] == 'no' }}" >
+        <td><check if="{{ @d4 == 'no' }}" >
             We don't know which segments produce the most profitable customers
         </check></td>
-        <td><check if="{{ $_SESSION['d4'] == 'no' }}" >
+        <td><check if="{{ @d4 == 'no' }}" >
             By determining which segments produc the most profitable customers, we can
             focus our marketing efforts and $Research may reveal where we can better meet
             quality expectations
         </check></td>
-        <td><check if="{{ $_SESSION['d4'] == 'no' }}" >
+        <td><check if="{{ @d4 == 'no' }}" >
             Because we aren't strategically targeting prospects by profit potential, we
             may be losing high profit prospects to competitors
         </check></td>
     </tr>
     <tr>
-        <th scope="row">5</th>
-        <td>Do you have and use a written marketing plan?</td>
-        <td>{{@SESSION.d5}}</td><!-- Y-S, N-W -->
-        <td><check if="{{ $_SESSION['d5'] == 'yes' }}" >
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @d5 == 'yes' }}" >
             We have and use a written marketing plan
         </check></td>
-        <td><check if="{{ $_SESSION['d5'] == 'no' }}" >
+        <td><check if="{{ @d5 == 'no' }}" >
             We do not have or use a written marketing plan
         </check></td>
         <td></td>
         <td></td>
     </tr>
     <tr>
-        <th scope="row">6</th>
-        <td>If YES, does it distinguish between the different segments?</td>
-        <td>{{@SESSION.d6}}</td><!-- Y-S, N-W -->
-        <td><check if="{{ $_SESSION['d6'] == 'yes' }}" >
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @d6 == 'yes' }}" >
             Our marketing plan distinguishes among our different market segments
         </check></td>
-        <td><check if="{{ $_SESSION['d6'] == 'no' }}" >
+        <td><check if="{{ @d6 == 'no' }}" >
             Our markting plan fails to distinguish between our different segments
         </check></td>
         <td></td>
         <td></td>
     </tr>
     <tr>
-        <th scope="row">7</th>
-        <td>Does it specify tactics and media or locations?</td>
-        <td>{{@SESSION.d7}}</td><!-- Y-S, N-W -->
-        <td><check if="{{ $_SESSION['d7'] == 'yes' }}" >
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @d7 == 'yes' }}" >
             Our plan specifies the tactics will use and the media or locations in which
             our marketing appears?
         </check></td>
-        <td><check if="{{ $_SESSION['d7'] == 'no' }}" >
+        <td><check if="{{ @d7 == 'no' }}" >
             Our marketing plan doesn't sufficiently guide our actions as it doesn't
             specify the tactics we will use or the media or locations in which our
             marketing will appear
@@ -133,26 +113,22 @@
         <td></td>
     </tr>
     <tr>
-        <th scope="row">8</th>
-        <td>Does it include budgets?</td>
-        <td>{{@SESSION.d8}}</td><!-- Y-S, N-W -->
-        <td><check if="{{ $_SESSION['d8'] == 'yes' }}" >
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @d8 == 'yes' }}" >
             Our marketing plan includes budgets
         </check></td>
-        <td><check if="{{ $_SESSION['d8'] == 'no' }}" >
+        <td><check if="{{ @d8 == 'no' }}" >
             Our marketing plan doesn't have associated budgets
         </check></td>
         <td></td>
         <td></td>
     </tr>
     <tr>
-        <th scope="row">9</th>
-        <td>Does it outline timing?</td>
-        <td>{{@SESSION.d9}}</td><!-- Y-S, N-W -->
-        <td><check if="{{ $_SESSION['d9'] == 'yes' }}" >
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @d9 == 'yes' }}" >
             Our marketing plan outlines the timings of when the activities will happen
         </check></td>
-        <td><check if="{{ $_SESSION['d9'] == 'no' }}" >
+        <td><check if="{{ @d9 == 'no' }}" >
             Our marketing plan doesn't adequately give guidance on whan activies are
             to take place
         </check></td>
@@ -160,14 +136,11 @@
         <td></td>
     </tr>
     <tr>
-        <th scope="row">10</th>
-        <td>Does it include tracking of leads, conversion rates, purchaser transaction size,
-        and, if appropriate, time to sale?</td>
-        {{@SESSION.d10}}</td><!-- Y-S, N-W -->
-        <td><check if="{{ $_SESSION['d10'] == 'yes' }}" >
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @d10 == 'yes' }}" >
             Within our plan, we are ensuring that we track the relevant success metrics
         </check></td>
-        <td><check if="{{ $_SESSION['d10'] == 'no' }}" >
+        <td><check if="{{ @d10 == 'no' }}" >
             Because we have not included plans to track key metrics, our plan is incomplete
             as we have no way of determining its success
         </check></td>
@@ -175,13 +148,11 @@
         <td></td>
     </tr>
     <tr>
-        <th scope="row">11</th>
-        <td>Does the plan clearly assign responsibilities?</td>
-        <td>{{@SESSION.d11}}</td><!-- Y-S, N-W -->
-        <td><check if="{{ $_SESSION['d11'] == 'yes' }}" >
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @d11 == 'yes' }}" >
             Our marketing plan clearly assigns responsibilities
         </check></td>
-        <td><check if="{{ $_SESSION['d11'] == 'no' }}" >
+        <td><check if="{{ @d11 == 'no' }}" >
             Because, when everyone is responsible, no one is, our plan may fail because we
             haven't clearly assigned responsibilities
         </check></td>
@@ -189,15 +160,11 @@
         <td></td>
     </tr>
     <tr>
-        <th scope="row">12</th>
-        <td>Does the plan include the task of evaluation of results, so that we ensure we
-        stop doing or change the way we do what isn't working and continue doing or increase
-        what is working?</td>
-        <td>{{@SESSION.d12}}</td><!-- Y-S, N-W -->
-        <td><check if="{{ $_SESSION['d12'] == 'yes' }}" >
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @d12 == 'yes' }}" >
             Our plan includes time for evaluation so we can "stop, revise, continue, increase"
         </check></td>
-        <td><check if="{{ $_SESSION['d12'] == 'no' }}" >
+        <td><check if="{{ @d12 == 'no' }}" >
             Because the plan doesn't include time for evaluation, we may continue doing the
             ineffective and under-emphasizing things that are
         </check></td>
@@ -205,14 +172,12 @@
         <td></td>
     </tr>
     <tr>
-        <th scope="row">13</th>
-        <td>Does the plan address current and past customers?</td>
-        <td>{{@SESSION.d13}}</td><!-- Y-S, N-W -->
-        <td><check if="{{ $_SESSION['d13'] == 'yes' }}" >
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @d13 == 'yes' }}" >
             Our plan recognizes the importance of engaging current customers and reactivating
             past customers
         </check></td>
-        <td><check if="{{ $_SESSION['d13'] == 'no' }}" >
+        <td><check if="{{ @d13 == 'no' }}" >
             Our plan focuses only on new prospects, so we may be missing opportunities to
             engage current customers and reactivate past customers
         </check></td>
@@ -220,14 +185,11 @@
         <td></td>
     </tr>
     <tr>
-        <th scope="row">14</th>
-        <td><strong>BIG ONE:</strong> Do you actually use the plan to guide all your marketing
-            decisions and actions?</td>
-        <td>{{@SESSION.d14}}</td><!-- Y-S, N-W -->
-        <td><check if="{{ $_SESSION['d14'] == 'yes' }}" >
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @d14 == 'yes' }}" >
             We use our plan as the guide for all our marketing activities.
         </check></td>
-        <td><check if="{{ $_SESSION['d14'] == 'no' }}" >
+        <td><check if="{{ @d14 == 'no' }}" >
             While we have a plan, we don't (or don't consistently) use it as the guide for
             our marketing activities
         </check></td>
@@ -235,16 +197,12 @@
         <td></td>
     </tr>
     <tr>
-        <th scope="row">15</th>
-        <td>Is our customer experience process designed so that prospects and customers
-        have predictable, consistent positive experiences, that are aligned with the brand
-        across important touch points?</td>
-        <td>{{@SESSION.d15}}</td><!-- Y-S, N-W -->
-        <td><check if="{{ $_SESSION['d15'] == 'yes' }}" >
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @d15 == 'yes' }}" >
             We have a well defined customer experience process that consistently delivers
             positive experiences at all significant touch points
         </check></td>
-        <td><check if="{{ $_SESSION['d15'] == 'no' }}" >
+        <td><check if="{{ @d15 == 'no' }}" >
             We could be losing customers as we have not designed a customer experience
             process that consistently gives positive experiences at important touch points
         </check></td>
@@ -252,131 +210,109 @@
         <td></td>
     </tr>
     <tr>
-        <th scope="row">16</th>
-        <td>Have you explored the impact of changes to your prices (increases, decreases,
-        bundled pricing) in the last year?</td>
-        <td>{{@SESSION.d16}}</td><!-- Y-S, N-W,O,T -->
-        <td><check if="{{ $_SESSION['d16'] == 'yes' }}" >
+        <!-- Y-S, N-W,O,T -->
+        <td><check if="{{ @d16 == 'yes' }}" >
             We are confident in our pricing as we have explored the impact of price changes
             over the last year
         </check></td>
-        <td><check if="{{ $_SESSION['d16'] == 'no' }}" >
+        <td><check if="{{ @d16 == 'no' }}" >
             We haven't explored the impact of price changes (increase, decrease, bundled
             prices) over the last year
         </check></td>
-        <td><check if="{{ $_SESSION['d16'] == 'no' }}" >
+        <td><check if="{{ @d16 == 'no' }}" >
             We may be able improve both our profitability and customer quality by optimizing
             our pricing
         </check></td>
-        <td><check if="{{ $_SESSION['d16'] == 'no' }}" >
+        <td><check if="{{ @d16 == 'no' }}" >
             Because we haven't examined our pricing, we may be vulnerable to being caught
             by surprise by competitors?
         </check></td>
     </tr>
     <tr>
-        <th scope="row">17</th>
-        <td>Do you or members of your team have access to lists, relationships, or influencers
-        that you haven't yet tried to leverage, who are connected to 1+ of your segments?</td>
-        <td>{{@SESSION.d17}}</td><!-- Y-S,O -->
-        <td><check if="{{ $_SESSION['d17'] == 'yes' }}" >
+        <!-- Y-S,O -->
+        <td><check if="{{ @d17 == 'yes' }}" >
             We have access to lists, relationships or influencers that are connected to 1+ of
             our segments
         </check></td>
         <td></td>
-        <td><check if="{{ $_SESSION['d17'] == 'yes' }}" >
+        <td><check if="{{ @d17 == 'yes' }}" >
             We could reach new customers by leveraging the lists, relationships or influencers
             who are connected to 1+ of our segments
         </check></td>
         <td></td>
     </tr>
     <tr>
-        <th scope="row">18</th>
-        <td>Do you measure Customer Satisfaction (CSAT)?</td>
-        <td>{{@SESSION.d18}}</td><!-- Y-S, N-W -->
-        <td><check if="{{ $_SESSION['d18'] == 'yes' }}" >
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @d18 == 'yes' }}" >
             We measure CSAT, so we are more likely to assess potential loyalty and to
             identify ways to make improvements
         </check></td>
-        <td><check if="{{ $_SESSION['d18'] == 'no' }}" >
+        <td><check if="{{ @d18 == 'no' }}" >
             Because we don't measure CSAT, we risk losing clients and missing
-            oportunities to improve customer loyalty
+            opportunities to improve customer loyalty
         </check></td>
         <td></td>
         <td></td>
     </tr>
     <tr>
-        <th scope="row">19</th>
-        <td>Do you have people who sell (as opposed to or in addition to automated online
-        purchasing)?</td>
         <td>{{@SESSION.d19}}</td>
         <td></td>
         <td></td>
         <td></td>
-        <td></td>
     </tr>
     <tr>
-        <th scope="row">20</th>
-        <td>Do you have a documented sales process?</td>
-        <td>{{@SESSION.d20}}</td><!-- Y-S, N-W -->
-        <td><check if="{{ $_SESSION['d20'] == 'yes' }}" >
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @d20 == 'yes' }}" >
             We have a documented sales process, which lets us asses what works and what doesn't
         </check></td>
-        <td><check if="{{ $_SESSION['d20'] == 'no' }}" >
+        <td><check if="{{ @d20 == 'no' }}" >
             Because we don't have a documented sales process, we may not be able to identify
             where our sales efforts are working and not working?
         </check></td>
-        <td><check if="{{ $_SESSION['d20'] == 'no' }}" >
+        <td><check if="{{ @d20 == 'no' }}" >
             By documenting our sale process, we'll be able to more effectively train new
             sales people and diagnose where things are working or not working in sales
         </check></td>
         <td></td>
     </tr>
     <tr>
-        <th scope="row">21</th>
-        <td>Do you have a sales management process designed to improve accountability and
-        assess our people/activities?</td>
-        <td>{{@SESSION.d21}}</td><!-- Y-S, N-W -->
-        <td><check if="{{ $_SESSION['d21'] == 'yes' }}" >
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @d21 == 'yes' }}" >
             We have a sales management process that allows us to improve accountability
             and assess both our people and activities?
         </check></td>
-        <td><check if="{{ $_SESSION['d21'] == 'no' }}" >
+        <td><check if="{{ @d21 == 'no' }}" >
             Because we don't have a sales management process, we may not be getting the
-            best out of our people or good information about our sales effectivenss?
+            best out of our people or good information about our sales effectiveness?
         </check></td>
         <td></td>
         <td></td>
     </tr>
     <tr>
-        <th scope="row">22</th>
-        <td>Do you recruit sales/account people with an eye to a strong sales personality
-        and skills, rather than just experience?</td>
-        <td>{{@SESSION.d22}}</td><!-- Y-S, N-W,O,T -->
-        <td><check if="{{ $_SESSION['d22'] == 'yes' }}" >
+        <!-- Y-S, N-W,O,T -->
+        <td><check if="{{ @d22 == 'yes' }}" >
             We hire our sales/account people with an eye to a strong sales personality
             and skills
         </check></td>
-        <td><check if="{{ $_SESSION['d22'] == 'no' }}" >
+        <td><check if="{{ @d22 == 'no' }}" >
             By recruiting primarily on experience rather than personality and skills, we
             may be missing people with excellent potential
         </check></td>
-        <td><check if="{{ $_SESSION['d22'] == 'no' }}" >
+        <td><check if="{{ @d22 == 'no' }}" >
             By recruiting for skills and personality fit, we could reach more prospects
             through a strong sales force
         </check></td>
-        <td><check if="{{ $_SESSION['d22'] == 'no' }}" >
+        <td><check if="{{ @d22 == 'no' }}" >
             By failing to recruit for personality fit and skills, we could face competitors
             with superior sales people
         </check></td>
     </tr>
     <tr>
-        <th scope="row">23</th>
-        <td>Do you provide (internally or externally) solid sales training?</td>
-        <td>{{@SESSION.d23}}</td><!-- Y-S, N-W -->
-        <td><check if="{{ $_SESSION['d23'] == 'yes' }}" >
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @d23 == 'yes' }}" >
             We set our sales people up for success by providing solid sales training
         </check></td>
-        <td><check if="{{ $_SESSION['d23'] == 'no' }}" >
+        <td><check if="{{ @d23 == 'no' }}" >
             We do not provide solid sales training so our sales people may not be
             performing to their potential?
         </check></td>
@@ -384,33 +320,27 @@
         <td></td>
     </tr>
     <tr>
-        <th scope="row">24</th>
-        <td>Do you use a CRM process to ensure you stay on top of opportunities and track
-        results?</td>
-        <td>{{@SESSION.d24}}</td><!-- Y-S, N-W,O, NN -->
-        <td><check if="{{ $_SESSION['d24'] == 'yes' }}" >
+        <!-- Y-S, N-W,O, NN -->
+        <td><check if="{{ @d24 == 'yes' }}" >
             We use a CRM system to ensure we stay on top of opportunities and track results
         </check></td>
-        <td><check if="{{ $_SESSION['d24'] == 'no' }}" >
+        <td><check if="{{ @d24 == 'no' }}" >
             Because we don't use a CRM, we may lose track of opportunities, fail in timely
             follow up and have inaccurate data on our results
         </check></td>
-        <td><check if="{{ $_SESSION['d24'] == 'no' }}" >
+        <td><check if="{{ @d24 == 'no' }}" >
             There are CRM systems available that may help us streamline our sales process,
             ensure we stay on top of opportunities and track our results
         </check></td>
         <td></td>
     </tr>
     <tr>
-        <th scope="row">25</th>
-        <td>Have you researched your payment processing system to ensure it both has
-        the ability to scale, while providing reasonable fees/rates?</td>
-        <td>{{@SESSION.d25}}</td><!-- Y-S, N-W -->
-        <td><check if="{{ $_SESSION['d25'] == 'yes' }}" >
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @d25 == 'yes' }}" >
             We have a payment processing system that can grow with us while providing
             reasonable fees/rates?"
         </check></td>
-        <td><check if="{{ $_SESSION['d25'] == 'no' }}" >
+        <td><check if="{{ @d25 == 'no' }}" >
             We haven't researched to know if your payment processing system is best to
             scale with our growth and provides the most reasonable fees/rates?
         </check></td>
@@ -418,28 +348,21 @@
         <td></td>
     </tr>
     <tr>
-        <th scope="row">26</th>
-        <td>Is our online funnel/website conversion optimized?</td>
-        <td>{{@SESSION.d26}}</td><!-- Y-S, N-W, U-O -->
-        <td><check if="{{ $_SESSION['d26'] == 'yes' }}" >
+        <!-- Y-S, N-W, U-O -->
+        <td><check if="{{ @d26 == 'yes' }}" >
             Our online funnel and website are conversion optimized
         </check></td>
-        <td><check if="{{ $_SESSION['d26'] == 'no' }}" >
+        <td><check if="{{ @d26 == 'no' }}" >
             We have not optimized our online funnel or website for
             conversions, which means we may be losing sales
         </check></td>
-        <td><check if="{{ $_SESSION['d26'] == 'unknown' }}" >
+        <td><check if="{{ @d26 == 'unknown' }}" >
             By optimizing our website and funnels for conversion,
             we could potentially generate significantly increased sales?
         </check></td>
         <td></td>
     </tr>
     <tr>
-        <th scope="row">27</th>
-        <td>Are there any other elements of your marketing or sales that you consider
-        Strengths or Weakness, or do you know of Opportunities or Threats not
-        covered above?</td>
-        <td></td>
         <td>{{@SESSION.d27a}}</td>
         <td>{{@SESSION.d27b}}</td>
         <td>{{@SESSION.d27c}}</td>

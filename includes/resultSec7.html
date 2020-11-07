@@ -8,9 +8,6 @@
 <table class="table">
     <thead>
     <tr>
-        <th scope="col">SECTION 7</th>
-        <th scope="col">QUESTION</th>
-        <th scope="col">ANSWER</th>
         <th scope="col">STRENGTHS</th>
         <th scope="col">WEAKNESSES</th>
         <th scope="col">OPPORTUNITIES</th>
@@ -19,17 +16,15 @@
     </thead>
     <tbody>
     <tr>
-        <th scope="row">1</th>
-        <td>Do you have a process of regular annual strategic planning?</td>
-        <td>{{@SESSION.g1}}</td><!-- Y-S, N-W,O -->
-        <td><check if="{{ $_SESSION['g1'] == 'yes' }}" >
+        <!-- Y-S, N-W,O -->
+        <td><check if="{{ @g1 == 'yes' }}" >
             We do regular annual strategic planning
         </check></td>
-        <td><check if="{{ $_SESSION['g1'] == 'no' }}" >
+        <td><check if="{{ @g1 == 'no' }}" >
             We don't do annual strategic planning, which means we may easily lose
             focus or take too long to make progress
         </check></td>
-        <td><check if="{{ $_SESSION['g1'] == 'no' }}" >
+        <td><check if="{{ @g1 == 'no' }}" >
             By engaging in annual strategic planning, we are more likely to
             accelerate success, remain focused, develop discipline and create
             team loyalty
@@ -37,43 +32,36 @@
         <td></td>
     </tr>
     <tr>
-        <th scope="row">2</th>
-        <td>Do you involve your team in the strategic planning?</td>
-        <td>{{@SESSION.g2}}</td><!-- Y-S, N-W -->
-        <td><check if="{{ $_SESSION['g2'] == 'yes' }}" >
-            Because we involve the team in strategic planning, we are
-            likely to get more buy in and to surface the correct issues
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @g2 == 'yes' }}" >
+            Because we involve the team in strategic planning, we are likely to get
+            more buy in and to surface the correct issues
         </check></td>
-        <td><check if="{{ $_SESSION['g2'] == 'no' }}" >
-            Because we don't involve the team in strategic planning, we
-            may miss issues and lack full by-in
+        <td><check if="{{ @g2 == 'no' }}" >
+            Because we don't involve the team in strategic planning, we may miss
+            issues and lack full buy in
         </check></td>
         <td></td>
         <td></td>
     </tr>
     <tr>
-        <th scope="row">3</th>
-        <td>Does your strategic planning go beyond goal setting to identification
-        of specific tactics?</td>
-        <td>{{@SESSION.g3}}</td><!-- Y-S, N-W -->
-        <td><check if="{{ $_SESSION['g3'] == 'yes' }}" >
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @g3 == 'yes' }}" >
             We don't just set goals, but identify specific tactics
         </check></td>
-        <td><check if="{{ $_SESSION['g3'] == 'no' }}" >
+        <td><check if="{{ @g3 == 'no' }}" >
             In our strategic planning, we fail to identify specific tactics
         </check></td>
         <td></td>
         <td></td>
     </tr>
     <tr>
-        <th scope="row">4</th>
-        <td>Do you evaluate the success of your strategy through the year?</td>
-        <td>{{@SESSION.g4}}</td><!-- Y-S, N-W -->
-        <td><check if="{{ $_SESSION['g4'] == 'yes' }}" >
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @g4 == 'yes' }}" >
             Throughout the year, we evaluate the plan and the success of its
             implementation so as to make adjustments where warranted
         </check></td>
-        <td><check if="{{ $_SESSION['g4'] == 'no' }}" >
+        <td><check if="{{ @g4 == 'no' }}" >
             We do not evaluate the success of the plan & its implementation
             throughout the year,w hich means that we may not be making necessary
             adjustments along the way
@@ -82,42 +70,36 @@
         <td></td>
     </tr>
     <tr>
-        <th scope="row">5</th>
-        <td>Do you evaluate the success of your strategy at year end?</td>
-        <td>{{@SESSION.g5}}</td><!-- Y-S, N-W -->
-        <td><check if="{{ $_SESSION['g5'] == 'yes' }}" >
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @g5 == 'yes' }}" >
             We evaluate the success of the plan at the end of the year to help
             inform out next plan
         </check></td>
-        <td><check if="{{ $_SESSION['g5'] == 'no' }}" >
+        <td><check if="{{ @g5 == 'no' }}" >
             We fail to evaluate the success of our plan at year end
         </check></td>
         <td></td>
         <td></td>
     </tr>
     <tr>
-        <th scope="row">6</th>
-        <td>Are there clear accountabilities for the plan?</td>
-        <td>{{@SESSION.g6}}</td><!-- Y-S, N-W -->
-        <td><check if="{{ $_SESSION['g6'] == 'yes' }}" >
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @g6 == 'yes' }}" >
             Within the plan, we create clear accountabilities to increase the
             chances of success
         </check></td>
-        <td><check if="{{ $_SESSION['g6'] == 'no' }}" >
+        <td><check if="{{ @g6 == 'no' }}" >
             We fail to create clear accountabilities within our plan
         </check></td>
         <td></td>
         <td></td>
     </tr>
     <tr>
-        <th scope="row">7</th>
-        <td>Do you create quarterly or trimester action planning?</td>
-        <td>{{@SESSION.g7}}</td><!-- Y-S, N-W -->
-        <td><check if="{{ $_SESSION['g7'] == 'yes' }}" >
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @g7 == 'yes' }}" >
             To implement our strategic plan, we create quarterly or trimester
             action plans
         </check></td>
-        <td><check if="{{ $_SESSION['g7'] == 'no' }}" >
+        <td><check if="{{ @g7 == 'no' }}" >
             We fail to translate our strategic plan into quarterly or trimester
             action plans
         </check></td>
@@ -125,41 +107,35 @@
         <td></td>
     </tr>
     <tr>
-        <th scope="row">8</th>
-        <td>Do you schedule the specific tactics on the plan?</td>
-        <td>{{@SESSION.g8}}</td><!-- Y-S, N-W -->
-        <td><check if="{{ $_SESSION['g8'] == 'yes' }}" >
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @g8 == 'yes' }}" >
             To ensure tasks get done, we schedule the specific tasks
         </check></td>
-        <td><check if="{{ $_SESSION['g8'] == 'no' }}" >
+        <td><check if="{{ @g8 == 'no' }}" >
             Within our action plans, we fail to schedule the specific tasks
         </check></td>
         <td></td>
         <td></td>
     </tr>
     <tr>
-        <th scope="row">9</th>
-        <td>Do you assign the tasks and tactics to specific people?</td>
-        <td>{{@SESSION.g9}}</td><!-- Y-S, N-O -->
-        <td><check if="{{ $_SESSION['g9'] == 'yes' }}" >
+        <!-- Y-S, N-O -->
+        <td><check if="{{ @g9 == 'yes' }}" >
             We ensure tasks are assigned to specific people
         </check></td>
         <td></td>
-        <td><check if="{{ $_SESSION['g9'] == 'no' }}" >
+        <td><check if="{{ @g9 == 'no' }}" >
             Within our action plans, we fail to assign the tasks and tactics
             to specific people
         </check></td>
         <td></td>
     </tr>
     <tr>
-        <th scope="row">10</th>
-        <td>Do you ensure you have specific measures of success in your plan?</td>
-        <td>{{@SESSION.g10}}</td><!-- Y-S, N-W -->
-        <td><check if="{{ $_SESSION['g10'] == 'yes' }}" >
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @g10 == 'yes' }}" >
             In our action plan, we've identified specific measures to help us
             evaluate our success
         </check></td>
-        <td><check if="{{ $_SESSION['g10'] == 'no' }}" >
+        <td><check if="{{ @g10 == 'no' }}" >
             "In our action plan, we fail to identify specific measures that will
             tell us if we're successful or not
         </check></td>
@@ -167,15 +143,12 @@
         <td></td>
     </tr>
     <tr>
-        <th scope="row">11</th>
-        <td>Do you have regular meetings to ensure the plan is consistently and
-        successfully executed?</td>
-        <td>{{@SESSION.g11}}</td><!-- Y-S, N-W -->
-        <td><check if="{{ $_SESSION['g11'] == 'yes' }}" >
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @g11 == 'yes' }}" >
             We have weekly or biweekly meetings with those responsible to ensure
             the plan is consistently and successfully executed
         </check></td>
-        <td><check if="{{ $_SESSION['g11'] == 'no' }}" >
+        <td><check if="{{ @g11 == 'no' }}" >
             We do not hold regular meetings to ensure the action plan is
             successfully/consistently executed
         </check></td>
@@ -183,30 +156,24 @@
         <td></td>
     </tr>
     <tr>
-        <th scope="row">12</th>
-        <td>Do you evaluate the success of the plan and use that to inform your
-        next plan?</td>
-        <td>{{@SESSION.g12}}</td><!-- Y-S, N-O -->
-        <td><check if="{{ $_SESSION['g12'] == 'yes' }}" >
+        <!-- Y-S, N-O -->
+        <td><check if="{{ @g12 == 'yes' }}" >
             We evaluate the success of our action plan to inform our next plan
         </check></td>
         <td></td>
-        <td><check if="{{ $_SESSION['g12'] == 'no' }}" >
+        <td><check if="{{ @g12 == 'no' }}" >
             At the end of the quarter or trimester, we do not evaluate the
             success of the action plan to inform our next plan
         </check></td>
         <td></td>
     </tr>
     <tr>
-        <th scope="row">13</th>
-        <td>Do you plan your weeks and/or days to ensure you are focused on the
-        highest priority activities each day?</td>
-        <td>{{@SESSION.g13}}</td><!-- Y-S, N-W -->
-        <td><check if="{{ $_SESSION['g13'] == 'yes' }}" >
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @g13 == 'yes' }}" >
             I personally plan my weeks and days to ensure I stay focused on what
             matters most
         </check></td>
-        <td><check if="{{ $_SESSION['g13'] == 'no' }}" >
+        <td><check if="{{ @g13 == 'no' }}" >
             I plan my weeks/ days to ensure I stay focused on what matters most
         </check></td>
         <td></td>
