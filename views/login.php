@@ -19,19 +19,23 @@
     </div>
 
     <form action="login" method="post">
+
         <div class="form-group">
-            <label for="username" id="user">Username</label>
-            <input type="text" class="form-control" id="username" name="username"  value="<?php echo $username; ?>"> <!--makes the username "sticky"-->
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" name="username"
+                   value="<check if='{{ isset(@SESSION.username) }}'>{{ @SESSION.username }}</check>">
         </div>
+
         <div class="form-group">
-            <label for="password" id="pass">Password</label>
+            <label for="password">Password</label>
             <input type="password" class="form-control" id="password" name="password" >
         </div>
-        <check if="{{ isset(@SESSION.err) && @SESSION.err == true}}">
+        <check if="{{ isset(@SESSION.err) && @SESSION.err == 'true' }}">
             <span class="err">Incorrect login</span><br>
         </check>
-        <button type="submit" class="btn btn-primary" id="loginSubmit">Login</button>
-        <hr class="my-4">
+
+        <button type="submit" class="btn btn-primary mb-3">Login</button>
+
     </form>
 
     <!-- Request User Account-->

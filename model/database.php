@@ -63,18 +63,25 @@ class Database
      * Inserts Section 1 answers into the database
      * @param $section1 the section 1 answers to add
      */
-    function addSection1($section1)
+    function addSection1($section1, $change)
     {
         //var_dump($section1);
 
         //var_dump($_SESSION);
-        //$userId = $_SESSION['userId'];
-        //echo $userId;
+        $userId = $_SESSION['userId'];
         //1. Define the query
-        $sql = "INSERT INTO section1 (a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, 
+        if ($change == 'add') {
+            $sql = "INSERT INTO section1 (a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, 
                         a13, a14, a15, a16, a17, a18, userId)
                 VALUES (:a1, :a2, :a3, :a4, :a5, :a6, :a7, :a8, :a9, :a10, :a11, :a12, 
                         :a13, :a14, :a15, :a16, :a17, :a18, :userId)";
+        } elseif ($change == 'update') {
+            $sql = "UPDATE section1 SET a1 = :a1, a2 = :a2, a3 = :a3, a4 = :a4, a5 = :a5, a6 = :a6, a7 = :a7,
+                                        a8 = :a8, a9 = :a9, a10 = :a10, a11 = :a11, a12 = :a12, a13 = :a13, a14 = :a14, 
+                                        a15 = :a15, a16 = :a16, a17 = :a17, a18 = :a18
+                                        WHERE userId = :userId";
+
+        }
         //var_dump($sql);
         //2. Prepare the statement
         $statement = $this->_dbh->prepare($sql);
@@ -97,7 +104,7 @@ class Database
         $a16 = $section1->getA16();
         $a17 = $section1->getA17();
         $a18 = $section1->getA18();
-        $userId = $section1->getUserId();
+        //$userId = $_SESSION['userId'];
 
 
         //3. Bind the parameters
@@ -121,8 +128,8 @@ class Database
         $statement->bindParam(':a18',$a18, PDO::PARAM_STR);
         $statement->bindParam(':userId',$userId, PDO::PARAM_STR);
 
+        echo $sql;
         //$statement->bindParam(':image', $recipe->getImage());
-
         //4. Execute the statement
         $result = $statement->execute();
         echo "Result: " . $result;
@@ -134,15 +141,42 @@ class Database
     }
 
     /**
-     * Inserts Section 1 answers into the database
+     * Get a section to add to the database
+     * @param $userId the user id to get the section for
+     * @param $section the section to get
+     * @return the section
+     */
+    function getSection($userId, $section)
+    {
+        //1. Define the query
+        $sql = "SELECT * 
+                FROM $section
+                WHERE userId = $userId";
+        //echo $sql;
+        //2. Prepare the statement
+        $statement = $this->_dbh->prepare($sql);
+
+        //3. Bind the parameters
+        $statement->bindParam(':userId', $userId);
+
+        //4. Execute the statement
+        $statement->execute();
+
+        //5. Get the result
+        $result = $statement->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    /**
+     * Inserts Section 2 answers into the database
      * @param $section1 the section 1 answers to add
      */
-    function addSection2($section2)
+    function addSection2($section2, $change)
     {
         //var_dump($section1);
 
         //var_dump($_SESSION);
-        //$userId = $_SESSION['userId'];
+        $userId = $_SESSION['userId'];
         //echo $userId;
         //1. Define the query
         $sql = "INSERT INTO section2 (b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, 
@@ -179,6 +213,8 @@ class Database
         $b18yn = $section2->getB18yn();
         $b19 = $section2->getB19();
         $b19yn = $section2->getB19yn();
+        $b20 = $section2->getB20();
+        $b20yn = $section2->getB20yn();
         $b21 = $section2->getB21();
         $b21yn = $section2->getB21yn();
         $b22 = $section2->getB22();
@@ -196,7 +232,7 @@ class Database
         $b28 = $section2->getB28();
         $b28yn = $section2->getB28yn();
         $b29 = $section2->getB29();
-        $userId = $section2->getUserId();
+        //$userId = $section2->getUserId();
 
 
         //3. Bind the parameters
@@ -259,12 +295,12 @@ class Database
      * Inserts Section 3 answers into the database
      * @param $section3 the section 3 answers to add
      */
-    function addSection3($section3)
+    function addSection3($section3, $change)
     {
         //var_dump($section1);
 
         //var_dump($_SESSION);
-        //$userId = $_SESSION['userId'];
+        $userId = $_SESSION['userId'];
         //echo $userId;
         //1. Define the query
         $sql = "INSERT INTO section3(c1, c2, c3, c4, c5, c6, c7, c8, c9, c10a, 
@@ -287,7 +323,7 @@ class Database
         $c10b = $section3->getC10b();
         $c10c = $section3->getC10c();
         $c10d = $section3->getC10d();
-        $userId = $section3->getUserId();
+        //$userId = $section3->getUserId();
 
 
         //3. Bind the parameters

@@ -65,9 +65,31 @@ class JumpStartController
      */
     public function section1($f3)
     {
-
+        $results = $GLOBALS['db']->getSection($_SESSION['userId'], "section1");
+        //var_dump($results);
+        //var_dump($_SESSION['userId']);
         //$GLOBALS['db']->getA1();
-        $this->_f3->set('a1', $GLOBALS['db']->getA1());
+        $this->_f3->set('a1', $results['a1']);
+        $this->_f3->set('a2', $results['a2']);
+        $this->_f3->set('a3', $results['a3']);
+        $this->_f3->set('a4', $results['a4']);
+        $this->_f3->set('a5', $results['a5']);
+        $this->_f3->set('a6', $results['a6']);
+        $this->_f3->set('a7', $results['a7']);
+        $this->_f3->set('a8', $results['a8']);
+        $this->_f3->set('a9', $results['a9']);
+        $this->_f3->set('a10', $results['a10']);
+        $this->_f3->set('a11', $results['a11']);
+        $this->_f3->set('a12', $results['a12']);
+        $this->_f3->set('a13', $results['a13']);
+        $this->_f3->set('a14', $results['a14']);
+        $this->_f3->set('a15', $results['a15']);
+        $this->_f3->set('a16', $results['a16']);
+        $this->_f3->set('a17', $results['a17']);
+        $this->_f3->set('a18', $results['a18']);
+
+
+        /*
         $_SESSION['a1'] = "";
         $_SESSION['a2'] = "";
         $_SESSION['a3'] = "";
@@ -86,6 +108,7 @@ class JumpStartController
         $_SESSION['a16'] = "";
         $_SESSION['a17'] = "";
         $_SESSION['a18'] = "";
+        */
 
         //echo "Here";
         //var_dump($_SESSION);
@@ -206,7 +229,6 @@ class JumpStartController
                 $a16 = $_SESSION['a16'];
                 $a17 = $_SESSION['a17'];
                 $a18 = $_SESSION['a18'];
-                //$userId = $_SESSION['userId'];
                 $userId = $_SESSION['userId'];
 
 
@@ -218,7 +240,7 @@ class JumpStartController
                 //var_dump($section1);
 
                 // add the recipe to the database
-                $GLOBALS['db']->addSection1($section1);
+                $GLOBALS['db']->addSection1($section1, 'update');
                 $f3->reroute("results");
             }
         } else {
@@ -471,7 +493,7 @@ class JumpStartController
                 //var_dump($_SESSION);
 
                 // add the section to the database
-                $GLOBALS['db']->addSection2($section2);
+                $GLOBALS['db']->addSection2($section2, 'update');
                 $f3->reroute("results");
 
 
@@ -564,7 +586,6 @@ class JumpStartController
                 $c10c = $_SESSION['c10c'];
                 $c10d = $_SESSION['c10d'];
 
-                //$userId = $_SESSION['userId'];
                 $userId = $_SESSION['userId'];
 
 
@@ -576,7 +597,7 @@ class JumpStartController
                 //var_dump($section1);
 
                 // add the section to the database
-                $GLOBALS['db']->addSection3($section3);
+                $GLOBALS['db']->addSection3($section3, 'update');
                 $f3->reroute("results");
             }
         } else {
@@ -759,7 +780,6 @@ class JumpStartController
                 $c10c = $_SESSION['c10c'];
                 $c10d = $_SESSION['c10d'];
 
-                //$userId = $_SESSION['userId'];
                 $userId = $_SESSION['userId'];
 
 
@@ -819,7 +839,6 @@ class JumpStartController
                 // initialize variables
                 $username = "";
                 $err = false;
-                //echo "made it to the post method on login<br>";
 
                 // if the form has been submitted
                 if (!empty($_POST)) {
@@ -833,15 +852,13 @@ class JumpStartController
                     $userId = $GLOBALS['db']->getUserId($username, $password);
 
                     // get the userId from the database
-                    //$user = 'myuser';
-                    //$pass = 'password';
                     if (!empty($userId) && $userId > 0) {
                         // store userId in the session array
                         $_SESSION['userId'] = $userId;
-
+                        $_SESSION['err'] = false;
+                        $err = false;
                         // redirect user to either the page they came from or index.php
                         //$page = isset($_SESSION['page']) ? $_SESSION['page'] : "index.php";
-                        //var_dump($page);
                         //header("location: " . $page);
                         $view = new Template();
                         echo $view->render('views/home.html');
@@ -857,6 +874,7 @@ class JumpStartController
                 }
             } else {
             // display login
+            $_SESSION['err'] = false;
             $view = new Template();
             echo $view->render
             ('views/login.php');
@@ -933,6 +951,8 @@ class JumpStartController
                 $GLOBALS['db']->writeUser($newUser);
 
                 $userId = $GLOBALS['db']->getUserId($username, $password);
+                $_SESSION['userId'] = $userId;
+
                 // populate new database tables
                 // section1
                 // construct a section1 object
@@ -955,10 +975,10 @@ class JumpStartController
 
                 //var_dump($section1);
 
-                // add the recipe to the database
-                $GLOBALS['db']->addSection1($section1);
-                $GLOBALS['db']->addSection2($section2);
-                $GLOBALS['db']->addSection3($section3);
+                // add the section to the database
+                $GLOBALS['db']->addSection1($section1, 'add');
+                $GLOBALS['db']->addSection2($section2, 'add');
+                $GLOBALS['db']->addSection3($section3, 'add');
 
                 $this->_f3->reroute('home');
 
