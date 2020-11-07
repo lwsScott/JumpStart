@@ -1,0 +1,904 @@
+<!--
+  Chunhai Yang
+  11/4/20
+  JumpStart Team Project
+  Questions for Section 4 Playbook analysis
+  -->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Section 4</title>
+    <include href="includes/header.html"></include>
+</head>
+
+<body onload="toggleVisibility()">
+<include href="includes/navBar.html"></include>
+
+<div class="container">
+    <h1>Section 4:Promotion</h1>
+    <hr>
+
+    <form action="#" method="post" class="form-horizontal">
+        <div class="row">
+            <div class="col-10">
+
+                <!-- 1st Question of  Section 4 ID: d1 -->
+                <h3>Marketing</h3>
+
+                <div class="container">
+                    <label> Do you have clearly identified segments that you target?</label>
+                    <div class="form-check-inline">
+                        <input type="radio" id="d1a" name="d1" class="form-check-input" value="yes"
+                               onchange="toggleVisibility()"
+                        <check if="{{ $_SESSION['d1'] == 'yes' }}" >
+                            checked="checked"
+                        </check>>
+                        <label class="form-check-label" for="d1a" id="d1y">Yes</label>
+                    </div>
+                    <div class="form-check-inline">
+                        <input type="radio" id="d1b" name="d1" class="form-check-input" value="no"
+                        <check if="{{ $_SESSION['d1'] == 'no' }}" >
+                            checked="checked"
+                        </check>>
+                        <label class="form-check-label" for="d1b" id="d1n">No</label>
+                    </div>
+                </div>
+                <!-- If the above answer is Yes  then fill out in text field ID: d2-->
+                <div class="formatHidden" id="d2hi">
+                    <div class="form-group">
+                        <label for="d2" id="d2t">Identify them</label>
+                        <textarea class="form-control" id="d2" name="d2t" rows="3">{{ $_SESSION['d2'] }}</textarea>
+                    </div>
+                    <div class="container pl-10">
+                        <div class="form-group">
+                            <div class="container">
+                                <!-- Another question  ID: d3-->
+                                <label id="">Do you know the pains, needs desired of each?</label>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="d3a" name="d3" class="form-check-input" value="yes"
+                                    <check if="{{ $_SESSION['d3'] == 'yes' }}" >
+                                        checked="checked"
+                                    </check>>
+                                    <label class="form-check-label" for="d3a" id="d3y">Yes</label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="d3b" name="d3" class="form-check-input" value="no"
+                                    <check if="{{ $_SESSION['d3'] == 'no' }}" >
+                                        checked="checked"
+                                    </check>>
+                                    <label class="form-check-label" for="d3b" id="d3n">No</label>
+                                </div>
+                                <!-- Next Q   ID: d4 -->
+                                <label>which ones don't you know?(if all, write "all")</label>
+                                <textarea class="form-control" id="d4" name="d4t" rows="3">{{ $_SESSION['d4'] }}</textarea>
+                                <!-- Next Q   ID: d5-->
+                                <label> Which segments generate the most profit?</label>
+                                <textarea class="form-control" id="d5" name="d5t" rows="3">{{ $_SESSION['d5'] }}</textarea>
+                                <!-- Next Q   ID: d6-->
+                                <label> Which segments produce the most profitable customers?</label>
+                                <textarea class="form-control" id="d6" name="d6t" rows="3">{{ $_SESSION['d6'] }}</textarea>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="container">
+                            <!-- Next Q   ID: d7 -->
+                            <label> Do you have and use a written marketing plan?</label>
+                            <div class="form-check-inline">
+                                <input type="radio" id="d7a" name="d7" class="form-check-input" value="yes"
+                                       onchange="toggleVisibility()"
+                                <check if="{{ $_SESSION['d7'] == 'yes' }}" >
+                                    checked="checked"
+                                </check>>
+                                <label class="form-check-label" for="d7a" id="d7y">Yes</label>
+                            </div>
+                            <div class="form-check-inline">
+                                <input type="radio" id="d7b" name="d7" class="form-check-input" value="no"
+                                <check if="{{ $_SESSION['d7'] == 'no' }}" >
+                                    checked="checked"
+                                </check>>
+                                <label class="form-check-label" for="d7b" id="d7n">No</label>
+                            </div>
+                        </div>
+                        <!-- If answer is Yes, then next Q: d8  -->
+                        <div class="formatHidden" id="d7hi">
+                            <div class="form-group">
+                                <label >Does it distinguish between the different segments?</label>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="d8a" name="d8" class="form-check-input" value="yes"
+                                           onchange="toggleVisibility()"
+                                    <check if="{{ $_SESSION['d8'] == 'yes' }}" >
+                                        checked="checked"
+                                    </check>>
+                                    <label class="form-check-label" for="d8a" id="d8y">Yes</label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="d8b" name="d8" class="form-check-input" value="no"
+                                    <check if="{{ $_SESSION['d8'] == 'no' }}" >
+                                        checked="checked"
+                                    </check>>
+                                    <label class="form-check-label" for="d8b" id="d8n">No</label>
+                                </div>
+                            </div>
+                            <!--  Next Q:   ID:d9 -->
+                            <div class="form-group">
+                                <label>Does it specify tactics and media or locations?</label>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="d9a" name="d9" class="form-check-input" value="yes"
+                                           onchange="toggleVisibility()"
+                                    <check if="{{ $_SESSION['d9'] == 'yes' }}" >
+                                        checked="checked"
+                                    </check>>
+                                    <label class="form-check-label" for="d9a" id="d9y">Yes</label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="d9b" name="d9" class="form-check-input" value="no"
+                                    <check if="{{ $_SESSION['d9'] == 'no' }}" >
+                                        checked="checked"
+                                    </check>>
+                                    <label class="form-check-label" for="d9b" id="d9n">No</label>
+                                </div>
+                            </div>
+
+                            <!--  Next Q:   ID:d10 -->
+                            <div class="form-group">
+                                <label>Does it include budgets?</label>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="d10a" name="d10" class="form-check-input" value="yes"
+                                           onchange="toggleVisibility()"
+                                    <check if="{{ $_SESSION['d10'] == 'yes' }}" >
+                                        checked="checked"
+                                    </check>>
+                                    <label class="form-check-label" for="d10a" id="d10y">Yes</label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="d10b" name="d10" class="form-check-input" value="no"
+                                    <check if="{{ $_SESSION['d10'] == 'no' }}" >
+                                        checked="checked"
+                                    </check>>
+                                    <label class="form-check-label" for="d9b" id="d10n">No</label>
+                                </div>
+                            </div>
+                            <!--  Next Q:   ID:d11 -->
+                            <div class="form-group">
+                                <label>Does it outline timing?</label>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="d11a" name="d11" class="form-check-input" value="yes"
+                                           onchange="toggleVisibility()"
+                                    <check if="{{ $_SESSION['d11'] == 'yes' }}" >
+                                        checked="checked"
+                                    </check>>
+                                    <label class="form-check-label" for="d10a" id="d11y">Yes</label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="d11b" name="d11" class="form-check-input" value="no"
+                                    <check if="{{ $_SESSION['d11'] == 'no' }}" >
+                                        checked="checked"
+                                    </check>>
+                                    <label class="form-check-label" for="d11b" id="d11n">No</label>
+                                </div>
+                            </div>
+
+                            <!--  Next Q:   ID:d12 -->
+                            <div class="form-group">
+                                <label>Does it include tracking of leads,conversion rates,purchase or transaction size?
+                                    & if appropriate,time to sale</label>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="d12a" name="d12" class="form-check-input" value="yes"
+                                           onchange="toggleVisibility()"
+                                    <check if="{{ $_SESSION['d12'] == 'yes' }}" >
+                                        checked="checked"
+                                    </check>>
+                                    <label class="form-check-label" for="d12a" id="d12y">Yes</label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="d12b" name="d12" class="form-check-input" value="no"
+                                    <check if="{{ $_SESSION['d12'] == 'no' }}" >
+                                        checked="checked"
+                                    </check>>
+                                    <label class="form-check-label" for="d12b" id="d12n">No</label>
+                                </div>
+                            </div>
+
+                            <!--  Next Q:   ID:d13 -->
+                            <div class="form-group">
+                                <label>Does the plan clearly assign responsibilities?</label>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="d13a" name="d13" class="form-check-input" value="yes"
+                                           onchange="toggleVisibility()"
+                                    <check if="{{ $_SESSION['d13'] == 'yes' }}" >
+                                        checked="checked"
+                                    </check>>
+                                    <label class="form-check-label" for="d13a" id="d13y">Yes</label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="d13b" name="d13" class="form-check-input" value="no"
+                                    <check if="{{ $_SESSION['d13'] == 'no' }}" >
+                                        checked="checked"
+                                    </check>>
+                                    <label class="form-check-label" for="d13b" id="d13n">No</label>
+                                </div>
+                            </div>
+                            <!--  Next Q:   ID:d14 -->
+                            <div class="form-group">
+                                <label>Does the plan include the task of evaluation of results, so that we ensure we
+                                    stop doing or change the way we do what isn't working and continue doing or
+                                    increase what is working?</label>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="d14a" name="d14" class="form-check-input" value="yes"
+                                           onchange="toggleVisibility()"
+                                    <check if="{{ $_SESSION['d14'] == 'yes' }}" >
+                                        checked="checked"
+                                    </check>>
+                                    <label class="form-check-label" for="d14a" id="d14y">Yes</label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="d14b" name="d14" class="form-check-input" value="no"
+                                    <check if="{{ $_SESSION['d14'] == 'no' }}" >
+                                        checked="checked"
+                                    </check>>
+                                    <label class="form-check-label" for="d14b" id="d14n">No</label>
+                                </div>
+                            </div>
+                            <!--  Next Q:   ID:d15 -->
+                            <div class="form-group">
+                                <label>Does the plan address current and past customers?</label>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="d15a" name="d14" class="form-check-input" value="yes"
+                                           onchange="toggleVisibility()"
+                                    <check if="{{ $_SESSION['d15'] == 'yes' }}" >
+                                        checked="checked"
+                                    </check>>
+                                    <label class="form-check-label" for="d15a" id="d15y">Yes</label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="d15b" name="d15" class="form-check-input" value="no"
+                                    <check if="{{ $_SESSION['d15'] == 'no' }}" >
+                                        checked="checked"
+                                    </check>>
+                                    <label class="form-check-label" for="d15b" id="d15n">No</label>
+                                </div>
+                            </div>
+                            <!--  Next Q:   ID:d16 -->
+                            <div class="form-group">
+                                <label>BIG ONE: Do you actually use the plan to guide all your marketing decisions and actions?</label>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="d16a" name="d16" class="form-check-input" value="yes"
+                                           onchange="toggleVisibility()"
+                                    <check if="{{ $_SESSION['d16'] == 'yes' }}" >
+                                        checked="checked"
+                                    </check>>
+                                    <label class="form-check-label" for="d16a" id="d16y">Yes</label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="d16b" name="d16" class="form-check-input" value="no"
+                                    <check if="{{ $_SESSION['d16'] == 'no' }}" >
+                                        checked="checked"
+                                    </check>>
+                                    <label class="form-check-label" for="d16b" id="d16n">No</label>
+                                </div>
+                            </div>
+                            <!--  Next Q:   ID:d17 -->
+                            <div class="form-group">
+                                <label>Is our customer experience process designed so that prospects and customers have
+                                    predictable consistent positive experiences,that are aligned with the brand across
+                                    important touch points?</label>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="d17a" name="d17" class="form-check-input" value="yes"
+                                           onchange="toggleVisibility()"
+                                    <check if="{{ $_SESSION['d17'] == 'yes' }}" >
+                                        checked="checked"
+                                    </check>>
+                                    <label class="form-check-label" for="d17a" id="d17y">Yes</label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="d17b" name="d17" class="form-check-input" value="no"
+                                    <check if="{{ $_SESSION['d17'] == 'no' }}" >
+                                        checked="checked"
+                                    </check>>
+                                    <label class="form-check-label" for="d17b" id="d17n">No</label>
+                                </div>
+                            </div>
+                            <!--  Next Q:   ID:d18 -->
+                            <div class="form-group">
+                                <label>Have you explored that impact of changes to your prices(increases,decreases,
+                                    bundled pricing)in the last year?</label>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="d18a" name="d18" class="form-check-input" value="yes"
+                                           onchange="toggleVisibility()"
+                                    <check if="{{ $_SESSION['d18'] == 'yes' }}" >
+                                        checked="checked"
+                                    </check>>
+                                    <label class="form-check-label" for="d18a" id="d18y">Yes</label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="d18b" name="d18" class="form-check-input" value="no"
+                                    <check if="{{ $_SESSION['d18'] == 'no' }}" >
+                                        checked="checked"
+                                    </check>>
+                                    <label class="form-check-label" for="d18b" id="d18n">No</label>
+                                </div>
+                            </div>
+                            <!--  Next Q:   ID:d19 -->
+                            <div class="form-group">
+                                <label>Do you or members of your team have access to lists,relationships or influencers,
+                                    that you haven't yet tried to leverage,who are connected to 1+ of your segments?</label>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="d19a" name="d19" class="form-check-input" value="yes"
+                                           onchange="toggleVisibility()"
+                                    <check if="{{ $_SESSION['d19'] == 'yes' }}" >
+                                        checked="checked"
+                                    </check>>
+                                    <label class="form-check-label" for="d19a" id="d19y">Yes</label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="d19b" name="d19" class="form-check-input" value="no"
+                                    <check if="{{ $_SESSION['d19'] == 'no' }}" >
+                                        checked="checked"
+                                    </check>>
+                                    <label class="form-check-label" for="d19b" id="d19n">No</label>
+                                </div>
+                            </div>
+                            <!--  Next Q:   ID:d20 -->
+                            <div class="form-group">
+                                <label>Do you measure Customer Satisfaction(CSAT)?</label>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="d20a" name="d20" class="form-check-input" value="yes"
+                                           onchange="toggleVisibility()"
+                                    <check if="{{ $_SESSION['d20'] == 'yes' }}" >
+                                        checked="checked"
+                                    </check>>
+                                    <label class="form-check-label" for="d20a" id="d20y">Yes</label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="d20b" name="d20" class="form-check-input" value="no"
+                                    <check if="{{ $_SESSION['d20'] == 'no' }}" >
+                                        checked="checked"
+                                    </check>>
+                                    <label class="form-check-label" for="d20b" id="d20n">No</label>
+                                </div>
+                            </div>
+                            <!--  Next Q:   ID:d21 -->
+                            <div class="form-group">
+                                <h3>Sales</h3>
+                                <label>Do you have people who sell(as opposed to or in addition to automated online
+                                    purchasing)?</label>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="d21a" name="d21" class="form-check-input" value="yes"
+                                           onchange="toggleVisibility()"
+                                    <check if="{{ $_SESSION['d21'] == 'yes' }}" >
+                                        checked="checked"
+                                    </check>>
+                                    <label class="form-check-label" for="d21a" id="d21y">Yes</label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="d21b" name="d21" class="form-check-input" value="no"
+                                    <check if="{{ $_SESSION['d21'] == 'no' }}" >
+                                        checked="checked"
+                                    </check>>
+                                    <label class="form-check-label" for="d21b" id="d21n">No</label>
+                                </div>
+                            </div>
+                            <!--  if above answer is Yes, then show questions below -->
+                            <div class="formatHidden" id="d21hi">
+                                <div class="form-group">
+                                    <!--   Next Q:   ID:d22 -->
+                                    <label >Do you have a documented sales process?</label>
+                                    <div class="form-check-inline">
+                                        <input type="radio" id="d22a" name="d22" class="form-check-input" value="yes"
+                                               onchange="toggleVisibility()"
+                                        <check if="{{ $_SESSION['d22'] == 'yes' }}" >
+                                            checked="checked"
+                                        </check>>
+                                        <label class="form-check-label" for="d22a" id="d22y">Yes</label>
+                                    </div>
+                                    <div class="form-check-inline">
+                                        <input type="radio" id="d22b" name="d22" class="form-check-input" value="no"
+                                        <check if="{{ $_SESSION['d22'] == 'no' }}" >
+                                            checked="checked"
+                                        </check>>
+                                        <label class="form-check-label" for="d22b" id="d22n">No</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="container pl-10">
+                                <div class="form-group">
+                                    <div class="container">
+                                        <!--   Next Q:   ID:d23 -->
+                                        <label>Do you have a sales management process designed to improve
+                                            accountability& assess our people/activities?</label>
+                                        <div class="form-check-inline">
+                                            <input type="radio" id="d23a" name="d23" class="form-check-input" value="yes"
+                                            <check if="{{ $_SESSION['d23'] == 'yes' }}" >
+                                                checked="checked"
+                                            </check>>
+                                            <label class="form-check-label" for="d23a" id="d23y">Yes</label>
+                                        </div>
+                                        <div class="form-check-inline">
+                                            <input type="radio" id="d23b" name="d23" class="form-check-input" value="no"
+                                            <check if="{{ $_SESSION['d23'] == 'no' }}" >
+                                                checked="checked"
+                                            </check>>
+                                            <label class="form-check-label" for="d23b" id="d23n">No</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="container">
+                                        <!--   Next Q:   ID:d24 -->
+                                        <label>Do you recruit sales/account people with an eye to a strong
+                                            sales personality and skills, rather than just experience?</label>
+                                        <div class="form-check-inline">
+                                            <input type="radio" id="d24a" name="d24" class="form-check-input" value="yes"
+                                            <check if="{{ $_SESSION['d24'] == 'yes' }}" >
+                                                checked="checked"
+                                            </check>>
+                                            <label class="form-check-label" for="d24a" id="d24y">Yes</label>
+                                        </div>
+                                        <div class="form-check-inline">
+                                            <input type="radio" id="d24b" name="d24" class="form-check-input" value="no"
+                                            <check if="{{ $_SESSION['d24'] == 'no' }}" >
+                                                checked="checked"
+                                            </check>>
+                                            <label class="form-check-label" for="d24b" id="d24n">No</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="container">
+                                        <!--   Next Q:   ID:d25 -->
+                                        <label>Do you provide(internally or externally)solid sales training?</label>
+                                        <div class="form-check-inline">
+                                            <input type="radio" id="d25a" name="d25" class="form-check-input" value="yes"
+                                            <check if="{{ $_SESSION['d25'] == 'yes' }}" >
+                                                checked="checked"
+                                            </check>>
+                                            <label class="form-check-label" for="d25a" id="d25y">Yes</label>
+                                        </div>
+                                        <div class="form-check-inline">
+                                            <input type="radio" id="d25b" name="d25" class="form-check-input" value="no"
+                                                   onchange="toggleVisibility()"
+                                            <check if="{{ $_SESSION['d25'] == 'no' }}" >
+                                                checked="checked"
+                                            </check>>
+                                            <label class="form-check-label" for="d25b" id="d25n">No</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="container">
+                                        <!--   Next Q:   ID:d26 -->
+                                        <label>Do you use a CRM process to ensure you stay on top of opportunities and
+                                            track results?</label>
+                                        <div class="form-check-inline">
+                                            <input type="radio" id="d26a" name="d26" class="form-check-input" value="yes"
+                                            <check if="{{ $_SESSION['d26'] == 'yes' }}" >
+                                                checked="checked"
+                                            </check>>
+                                            <label class="form-check-label" for="d26a" id="d26y">Yes</label>
+                                        </div>
+                                        <div class="form-check-inline">
+                                            <input type="radio" id="d26b" name="d26" class="form-check-input" value="no"
+                                                   onchange="toggleVisibility()"
+                                            <check if="{{ $_SESSION['d26'] == 'no' }}" >
+                                                checked="checked"
+                                            </check>>
+                                            <label class="form-check-label" for="d26b" id="d26n">No</label>
+                                        </div>
+                                    </div>
+                                    <div class="container pl-20 formatHidden" id="d26hi">
+                                        <!--   If answer is No, then Next Q:   ID:d27 -->
+                                        <label>Have you researched your payment processing system to ensure
+                                            it both has to ability to scale while providing reasonable fees/rates?</label>
+                                        <div class="form-check-inline">
+                                            <input type="radio" id="d27a" name="d27" class="form-check-input" value="yes"
+                                            <check if="{{ $_SESSION['d27'] == 'yes' }}" >
+                                                checked="checked"
+                                            </check>>
+                                            <label class="form-check-label" for="d27a" id="d27y">Yes</label>
+                                        </div>
+                                        <div class="form-check-inline">
+                                            <input type="radio" id="d27b" name="d27" class="form-check-input" value="no"
+                                                   onchange="toggleVisibility()"
+                                            <check if="{{ $_SESSION['d27'] == 'no' }}" >
+                                                checked="checked"
+                                            </check>>
+                                            <label class="form-check-label" for="d27b" id="d27n">No</label>
+                                        </div>
+                                        <!--   Next Q:   ID:d28 -->
+                                        <label>Is our online funnel,website conversion optimized?</label>
+                                        <div class="form-check-inline">
+                                            <input type="radio" id="d28a" name="d28" class="form-check-input" value="yes"
+                                            <check if="{{ $_SESSION['d28'] == 'yes' }}" >
+                                                checked="checked"
+                                            </check>>
+                                            <label class="form-check-label" for="d28a" id="d28y">Yes</label>
+                                        </div>
+                                        <div class="form-check-inline">
+                                            <input type="radio" id="d28b" name="d28" class="form-check-input" value="no"
+                                                   onchange="toggleVisibility()"
+                                            <check if="{{ $_SESSION['d28'] == 'no' }}" >
+                                                checked="checked"
+                                            </check>>
+                                            <label class="form-check-label" for="d28b" id="d28n">No</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--   Additional Considerations   ID:d29 -->
+                                <div class="container">
+                                    <label>Are these any other elements of your marketing or sales that you consider
+                                        Strengths or Weakness, or do you know of Opportunities or Threats not
+                                        covered above?</label>
+                                    <div class="form-group">
+                                        <label for="d29a" >Strengths</label>
+                                        <textarea class="form-control" id="d29a" name="d29a" rows="3">{{ $_SESSION['d29a'] }}</textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="d29b" >Weaknesses</label>
+                                        <textarea class="form-control" id="d29b" name="d29b" rows="3">{{ $_SESSION['d29b'] }}</textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="d29c" >Opportunities</label>
+                                        <textarea class="form-control" id="d29c" name="d29c" rows="3">{{ $_SESSION['d29c'] }}</textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="d29d" >Threats</label>
+                                        <textarea class="form-control" id="d29d" name="d29d" rows="3">{{ $_SESSION['d29d'] }}</textarea>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class="form-group">
+                                <div class="container">
+                                    <label id="q5">Are you living it?</label>
+                                    <div class="form-check-inline">
+                                        <input type="radio" id="a5a" name="a5" class="form-check-input" value="yes"
+                                        <check if="{{ $_SESSION['a5'] == 'yes' }}" >
+                                            checked="checked"
+                                        </check>>
+                                        <label class="form-check-label" for="a5a" id="q5a">Yes</label>
+                                    </div>
+                                    <div class="form-check-inline">
+                                        <input type="radio" id="a5b" name="a5" class="form-check-input" value="no"
+                                               onchange="toggleVisibility()"
+                                        <check if="{{ $_SESSION['a5'] == 'no' }}" >
+                                            checked="checked"
+                                        </check>>
+                                        <label class="form-check-label" for="a5b" id="q5b">No</label>
+                                    </div>
+                                </div>
+                                <div class="container pl-20 formatHidden" id="a5n">
+                                    <label for="a6" id="q6">How are you not living it?</label>
+                                    <textarea class="form-control" id="a6" name="a6" rows="3">{{ $_SESSION['a6'] }}</textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- The Mission section of Section 1 -->
+                    <h3>Mission (Who We Serve, What We Do, and How We Do It)</h3>
+
+                    <div class="container">
+                        <label><strong>Question 2 -</strong> Do you have a written mission statement?</label>
+                        <div class="form-check-inline">
+                            <input type="radio" id="a7a" name="a7" class="form-check-input" value="yes"
+                                   onchange="toggleVisibility()"
+                            <check if="{{ $_SESSION['a7'] == 'yes' }}" >
+                                checked="checked"
+                            </check>>
+                            <label class="form-check-label" for="a7a" id="q7a">Yes</label>
+                        </div>
+                        <div class="form-check-inline">
+                            <input type="radio" id="a7b" name="a7" class="form-check-input" value="no"
+                            <check if="{{ $_SESSION['a7'] == 'no' }}" >
+                                checked="checked"
+                            </check>>
+                            <label class="form-check-label" for="a7b" id="q7b">No</label>
+                        </div>
+                    </div>
+
+                    <div class="formatHidden" id="a7y">
+                        <div class="form-group">
+                            <label for="a8" id="q8">What is your mission statement?</label>
+                            <textarea class="form-control" id="a8" name="a8" rows="3">{{ $_SESSION['a8'] }}</textarea>
+                        </div>
+
+                        <div class="container pl-10">
+                            <div class="form-group">
+                                <div class="container">
+                                    <label id="q9">Does your team know it?</label>
+                                    <div class="form-check-inline">
+                                        <input type="radio" id="a9a" name="a9" class="form-check-input" value="yes"
+                                        <check if="{{ $_SESSION['a9'] == 'yes' }}" >
+                                            checked="checked"
+                                        </check>>
+                                        <label class="form-check-label" for="a9a" id="q9a">Yes</label>
+                                    </div>
+                                    <div class="form-check-inline">
+                                        <input type="radio" id="a9b" name="a9" class="form-check-input" value="no"
+                                        <check if="{{ $_SESSION['a9'] == 'no' }}" >
+                                            checked="checked"
+                                        </check>>
+                                        <label class="form-check-label" for="a9b" id="q9b">No</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="container">
+                                    <label id="q10">Is it used in decision making?</label>
+                                    <div class="form-check-inline">
+                                        <input type="radio" id="a10a" name="a10" class="form-check-input" value="yes"
+                                        <check if="{{ $_SESSION['a10'] == 'yes' }}" >
+                                            checked="checked"
+                                        </check>>
+                                        <label class="form-check-label" for="a10a" id="q10a">Yes</label>
+                                    </div>
+                                    <div class="form-check-inline">
+                                        <input type="radio" id="a10b" name="a10" class="form-check-input" value="no"
+                                        <check if="{{ $_SESSION['a10'] == 'no' }}" >
+                                            checked="checked"
+                                        </check>>
+                                        <label class="form-check-label" for="a10b" id="q10b">No</label>
+                                    </div>
+                                </div>
+                            </div><br>
+
+                            <div class="form-group">
+                                <div class="container">
+                                    <label id="q11">Are you living it?</label>
+                                    <div class="form-check-inline">
+                                        <input type="radio" id="a11a" name="a11" class="form-check-input" value="yes"
+                                        <check if="{{ $_SESSION['a11'] == 'yes' }}" >
+                                            checked="checked"
+                                        </check>>
+                                        <label class="form-check-label" for="a11a" id="q11a">Yes</label>
+                                    </div>
+                                    <div class="form-check-inline">
+                                        <input type="radio" id="a11b" name="a11" class="form-check-input" value="no"
+                                               onchange="toggleVisibility()"
+                                        <check if="{{ $_SESSION['a11'] == 'no' }}" >
+                                            checked="checked"
+                                        </check>>
+                                        <label class="form-check-label" for="a11b" id="q11b">No</label>
+                                    </div>
+                                </div>
+                                <div class="container pl-20 formatHidden" id="a11n">
+                                    <label for="a12" id="q12">What part of the mission is missing?</label>
+                                    <textarea class="form-control" id="a12" name="a12" rows="3">{{ $_SESSION['a12'] }}</textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- The Vision part of Section 1 -->
+                    <h3>Vision (What Are We Trying To Create?)</h3>
+
+                    <div class="container">
+                        <label><strong>Question 3 -</strong> Do you have a written vision statement?</label>
+                        <div class="form-check-inline">
+                            <input type="radio" id="a13a" name="a13" class="form-check-input" value="yes"
+                                   onchange="toggleVisibility()"
+                            <check if="{{ $_SESSION['a13'] == 'yes' }}" >
+                                checked="checked"
+                            </check>>
+                            <label class="form-check-label" for="a13a" id="q13a">Yes</label>
+                        </div>
+                        <div class="form-check-inline">
+                            <input type="radio" id="a13b" name="a13" class="form-check-input" value="no"
+                            <check if="{{ $_SESSION['a13'] == 'no' }}" >
+                                checked="checked"
+                            </check>>
+                            <label class="form-check-label" for="a13b" id="q13b">No</label>
+                        </div>
+                    </div>
+
+                    <div class="formatHidden" id="a13y">
+                        <div class="form-group">
+                            <label for="a14" id="q14">What is your vision statement?</label>
+                            <textarea class="form-control" id="a14" name="a14" rows="3">{{ $_SESSION['a14'] }}</textarea>
+                        </div>
+
+                        <div class="container pl-10">
+                            <div class="form-group">
+                                <div class="container">
+                                    <label id="q15">Does your team know it?</label>
+                                    <div class="form-check-inline">
+                                        <input type="radio" id="a15a" name="a15" class="form-check-input" value="yes"
+                                        <check if="{{ $_SESSION['a15'] == 'yes' }}" >
+                                            checked="checked"
+                                        </check>>
+                                        <label class="form-check-label" for="a15a" id="q15a">Yes</label>
+                                    </div>
+                                    <div class="form-check-inline">
+                                        <input type="radio" id="a15b" name="a15" class="form-check-input" value="no"
+                                        <check if="{{ $_SESSION['a15'] == 'no' }}" >
+                                            checked="checked"
+                                        </check>>
+                                        <label class="form-check-label" for="a15b" id="q15b">No</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="container">
+                                    <label id="q16">Is it used in decision making?</label>
+                                    <div class="form-check-inline">
+                                        <input type="radio" id="a16a" name="a16" class="form-check-input" value="yes"
+                                        <check if="{{ $_SESSION['a16'] == 'yes' }}" >
+                                            checked="checked"
+                                        </check>>
+                                        <label class="form-check-label" for="a16a" id="q16a">Yes</label>
+                                    </div>
+                                    <div class="form-check-inline">
+                                        <input type="radio" id="a16b" name="a16" class="form-check-input" value="no"
+                                        <check if="{{ $_SESSION['a16'] == 'no' }}" >
+                                            checked="checked"
+                                        </check>>
+                                        <label class="form-check-label" for="a16b" id="q16b">No</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="container">
+                                    <label id="q17">Are you living it?</label>
+                                    <div class="form-check-inline">
+                                        <input type="radio" id="a17a" name="a17" class="form-check-input" value="yes"
+                                        <check if="{{ $_SESSION['a17'] == 'yes' }}" >
+                                            checked="checked"
+                                        </check>>
+                                        <label class="form-check-label" for="a17a" id="q17a">Yes</label>
+                                    </div>
+                                    <div class="form-check-inline">
+                                        <input type="radio" id="a17b" name="a17" class="form-check-input" value="no"
+                                               onchange="toggleVisibility()"
+                                        <check if="{{ $_SESSION['a17'] == 'no' }}" >
+                                            checked="checked"
+                                        </check>>
+                                        <label class="form-check-label" for="a17b" id="q17b">No</label>
+                                    </div>
+                                </div>
+                                <div class="container pl-20 formatHidden" id="a17n">
+                                    <label for="a18" id="q18">What part of the vision is unrealized?</label>
+                                    <textarea class="form-control" id="a18" name="a18" rows="3">{{ $_SESSION['a18'] }}</textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- The privacy disclaimer -->
+                <div class="col-4">
+                    <div class="container card bg-light rounded text-center">
+                        <p><strong>Note:</strong> Information entered is protected by our
+                            privacy policy. All answers are kept strictly confidential.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="text-right">
+                        <button type="submit" class="btn btn-primary">Continue</button>
+                    </div>
+                </div>
+            </div>
+    </form>
+</div>
+
+<script src="js/JavaScript.js"></script>
+<include href="includes/footer.html"></include>
+</body>
+</html>
+

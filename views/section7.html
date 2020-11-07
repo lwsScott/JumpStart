@@ -1,0 +1,324 @@
+<!--
+  Chunhai Yang
+  11/4/20
+  JumpStart Team Project
+  Questions for Section 7 Playbook analysis
+  -->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Section 6</title>
+    <require href="includes/check_login.php"></require>
+    <include href="includes/header.html"></include>
+</head>
+
+<body onload="toggleVisibility()">
+<include href="includes/navBar.html"></include>
+
+<div class="container">
+    <h1>Section 7: Planning</h1>
+    <hr>
+    <form action="#" method="post" class="form-horizontal">
+        <div class="row">
+            <div class="col-10">
+                <!-- Next Q-->
+                <div class="container">
+                    <label>Do you have a process of regular annual strategic planning?</label>
+                    <div class="form-check-inline">
+                        <input type="radio" id="g1a" name="g1" class="form-check-input" value="yes"
+                               onchange="toggleVisibility()"
+                        <check if="{{ $_SESSION['g1'] == 'yes' }}" >
+                            checked="checked"
+                        </check>>
+                        <label class="form-check-label" for="g1a" id="g1y">Yes</label>
+                    </div>
+                    <div class="form-check-inline">
+                        <input type="radio" id="g1b" name="g1" class="form-check-input" value="no"
+                        <check if="{{ $_SESSION['g1'] == 'no' }}" >
+                            checked="checked"
+                        </check>>
+                        <label class="form-check-label" for="g1b" id="g1n">No</label>
+                    </div>
+                </div>
+                <!-- If answer is Yes, answer next questions-->
+                <div class="formatHidden" id="g1hi">
+                    <!-- Next Q: -->
+                    <div class="container pl-10">
+                        <div class="form-group">
+                            <div class="container">
+                                <label>Do you involve your team in the strategic planning?</label>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="g2a" name="g2" class="form-check-input" value="yes"
+                                    <check if="{{ $_SESSION['g2'] == 'yes' }}" >
+                                        checked="checked"
+                                    </check>>
+                                    <label class="form-check-label" for="g2a" id="g2y">Yes</label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="g2b" name="g2" class="form-check-input" value="no"
+                                    <check if="{{ $_SESSION['g2'] == 'no' }}" >
+                                        checked="checked"
+                                    </check>>
+                                    <label class="form-check-label" for="g2b" id="g2n">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Next Q: -->
+                        <div class="form-group">
+                            <div class="container">
+                                <label>Does your strategic planning go beyond goal
+                                    setting to identification of specific tactics?</label>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="g3a" name="g3" class="form-check-input" value="yes"
+                                    <check if="{{ $_SESSION['g3'] == 'yes' }}" >
+                                        checked="checked"
+                                    </check>>
+                                    <label class="form-check-label" for="g3a" id="g3y">Yes</label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="g3b" name="g3" class="form-check-input" value="no"
+                                    <check if="{{ $_SESSION['g3'] == 'no' }}" >
+                                        checked="checked"
+                                    </check>>
+                                    <label class="form-check-label" for="g3b" id="g3n">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Next Q: -->
+                        <div class="form-group">
+                            <div class="container">
+                                <label>Do you evaluate the success of your strategy through the year?</label>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="g4a" name="g4" class="form-check-input" value="yes"
+                                    <check if="{{ $_SESSION['g4'] == 'yes' }}" >
+                                        checked="checked"
+                                    </check>>
+                                    <label class="form-check-label" for="g4a" id="g4y">Yes</label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="g4b" name="g4" class="form-check-input" value="no"
+                                    <check if="{{ $_SESSION['g4'] == 'no' }}" >
+                                        checked="checked"
+                                    </check>>
+                                    <label class="form-check-label" for="g4b" id="g4n">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Next Q: -->
+                        <div class="form-group">
+                            <div class="container">
+                                <label>Do you evaluate the success of your strategy at year end?</label>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="g5a" name="g5" class="form-check-input" value="yes"
+                                    <check if="{{ $_SESSION['g5'] == 'yes' }}" >
+                                        checked="checked"
+                                    </check>>
+                                    <label class="form-check-label" for="g5a" id="g5y">Yes</label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="g5b" name="g5" class="form-check-input" value="no"
+                                    <check if="{{ $_SESSION['g5'] == 'no' }}" >
+                                        checked="checked"
+                                    </check>>
+                                    <label class="form-check-label" for="g5b" id="g5n">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Next Q: -->
+                        <div class="form-group">
+                            <div class="container">
+                                <label>Are there clear accountabilities for the plan?</label>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="g6a" name="g6" class="form-check-input" value="yes"
+                                    <check if="{{ $_SESSION['g6'] == 'yes' }}" >
+                                        checked="checked"
+                                    </check>>
+                                    <label class="form-check-label" for="g6a" id="g6y">Yes</label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="g6b" name="g6" class="form-check-input" value="no"
+                                    <check if="{{ $_SESSION['g6'] == 'no' }}" >
+                                        checked="checked"
+                                    </check>>
+                                    <label class="form-check-label" for="g6b" id="g6n">No</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Next Q ID:g7-->
+                <div class="container">
+                    <label>Do you create quarterly or trimester action planning?</label>
+                    <div class="form-check-inline">
+                        <input type="radio" id="g7a" name="g7" class="form-check-input" value="yes"
+                               onchange="toggleVisibility()"
+                        <check if="{{ $_SESSION['g7'] == 'yes' }}" >
+                            checked="checked"
+                        </check>>
+                        <label class="form-check-label" for="g7a" id="g7y">Yes</label>
+                    </div>
+                    <div class="form-check-inline">
+                        <input type="radio" id="g7b" name="g7" class="form-check-input" value="no"
+                        <check if="{{ $_SESSION['g7'] == 'no' }}" >
+                            checked="checked"
+                        </check>>
+                        <label class="form-check-label" for="g7b" id="g7n">No</label>
+                    </div>
+                </div>
+                <!-- If answer is Yes, answer next questions-->
+                <div class="formatHidden" id="g7hi">
+                    <!-- Next Q: -->
+                    <div class="container pl-10">
+                        <div class="form-group">
+                            <div class="container">
+                                <label>Do you schedule the specific tactics on the plan?</label>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="g8a" name="g8" class="form-check-input" value="yes"
+                                    <check if="{{ $_SESSION['g8'] == 'yes' }}" >
+                                        checked="checked"
+                                    </check>>
+                                    <label class="form-check-label" for="g8a" id="g8y">Yes</label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="g8b" name="g8" class="form-check-input" value="no"
+                                    <check if="{{ $_SESSION['g8'] == 'no' }}" >
+                                        checked="checked"
+                                    </check>>
+                                    <label class="form-check-label" for="g8b" id="g8n">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Next Q: -->
+                        <div class="form-group">
+                            <div class="container">
+                                <label>Do you assign the tasks and tactics to specific people?</label>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="g9a" name="g9" class="form-check-input" value="yes"
+                                    <check if="{{ $_SESSION['g9'] == 'yes' }}" >
+                                        checked="checked"
+                                    </check>>
+                                    <label class="form-check-label" for="g9a" id="g9y">Yes</label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="g9b" name="g9" class="form-check-input" value="no"
+                                    <check if="{{ $_SESSION['g9'] == 'no' }}" >
+                                        checked="checked"
+                                    </check>>
+                                    <label class="form-check-label" for="g9b" id="g9n">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Next Q: -->
+                        <div class="form-group">
+                            <div class="container">
+                                <label>Do you ensure you have specific measures of success in your plan?</label>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="g10a" name="g10" class="form-check-input" value="yes"
+                                    <check if="{{ $_SESSION['g10'] == 'yes' }}" >
+                                        checked="checked"
+                                    </check>>
+                                    <label class="form-check-label" for="g10a" id="g10y">Yes</label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="g10b" name="g10" class="form-check-input" value="no"
+                                    <check if="{{ $_SESSION['g10'] == 'no' }}" >
+                                        checked="checked"
+                                    </check>>
+                                    <label class="form-check-label" for="g10b" id="g10n">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Next Q: -->
+                        <div class="form-group">
+                            <div class="container">
+                                <label>Do you have regular meetings to ensure the plan is
+                                    consistently and successfully executed?</label>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="g11a" name="g11" class="form-check-input" value="yes"
+                                    <check if="{{ $_SESSION['g11'] == 'yes' }}" >
+                                        checked="checked"
+                                    </check>>
+                                    <label class="form-check-label" for="g11a" id="g11y">Yes</label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="g11b" name="g11" class="form-check-input" value="no"
+                                    <check if="{{ $_SESSION['g11'] == 'no' }}" >
+                                        checked="checked"
+                                    </check>>
+                                    <label class="form-check-label" for="g11b" id="g11n">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Next Q: -->
+                        <div class="form-group">
+                            <div class="container">
+                                <label>Do you evaluate the success of the plan and use that to inform your next plan?
+                                </label>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="g12a" name="g12" class="form-check-input" value="yes"
+                                    <check if="{{ $_SESSION['g12'] == 'yes' }}" >
+                                        checked="checked"
+                                    </check>>
+                                    <label class="form-check-label" for="g12a" id="g12y">Yes</label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <input type="radio" id="g12b" name="g12" class="form-check-input" value="no"
+                                    <check if="{{ $_SESSION['g12'] == 'no' }}" >
+                                        checked="checked"
+                                    </check>>
+                                    <label class="form-check-label" for="g12b" id="g12n">No</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Next Q: -->
+                <div class="form-group">
+                    <div class="container">
+                        <label>Do you plan your weeks and/or days to ensure
+                            you are focused on the highest priority activities each day?</label>
+                        <div class="form-check-inline">
+                            <input type="radio" id="g13a" name="g13" class="form-check-input" value="yes"
+                            <check if="{{ $_SESSION['g13'] == 'yes' }}" >
+                                checked="checked"
+                            </check>>
+                            <label class="form-check-label" for="g13a" id="g13y">Yes</label>
+                        </div>
+                        <div class="form-check-inline">
+                            <input type="radio" id="g13b" name="g13" class="form-check-input" value="no"
+                            <check if="{{ $_SESSION['g13'] == 'no' }}" >
+                                checked="checked"
+                            </check>>
+                            <label class="form-check-label" for="g13b" id="g13n">No</label>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- The privacy disclaimer -->
+                <br>
+                <div class="col-4">
+                    <div class="container card bg-light rounded text-center">
+                        <p><strong>Note:</strong> Information entered is protected by our
+                            privacy policy. All answers are kept strictly confidential.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="text-right">
+                        <button type="submit" class="btn btn-primary">Continue</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script src="js/JavaScript.js"></script>
+<script src="js/clientSideValidation.js"></script>
+<include href="includes/footer.html"></include>
+</body>
+</html>
