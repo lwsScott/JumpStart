@@ -50,13 +50,11 @@ class JumpStartController
      */
     public function checkLogin($f3)
     {
-        echo "here";
         //var_dump($_SESSION);
         //session_start();
         if(!isset($_SESSION['userId']))
         {
-            echo "not set";
-            var_dump($_SESSION);
+            //var_dump($_SESSION);
             //var_dump($f3);
             $f3->reroute("login");
 
@@ -70,30 +68,6 @@ class JumpStartController
      */
     public function section1($f3)
     {
-        /*
-        $_SESSION['a1'] = "";
-        $_SESSION['a2'] = "";
-        $_SESSION['a3'] = "";
-        $_SESSION['a4'] = "";
-        $_SESSION['a5'] = "";
-        $_SESSION['a6'] = "";
-        $_SESSION['a7'] = "";
-        $_SESSION['a8'] = "";
-        $_SESSION['a9'] = "";
-        $_SESSION['a10'] = "";
-        $_SESSION['a11'] = "";
-        $_SESSION['a12'] = "";
-        $_SESSION['a13'] = "";
-        $_SESSION['a14'] = "";
-        $_SESSION['a15'] = "";
-        $_SESSION['a16'] = "";
-        $_SESSION['a17'] = "";
-        $_SESSION['a18'] = "";
-        */
-
-        //echo "Here";
-        //var_dump($_SESSION);
-
         // validate the data
         // TODO really validate the data
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -156,24 +130,24 @@ class JumpStartController
             $valid = true;
             if ($valid) {
                 //echo '<h1>I made it here with valid data</h1>';
-                $a1 = $_SESSION['a1'];
-                $a2 = $_SESSION['a2'];
-                $a3 = $_SESSION['a3'];
-                $a4 = $_SESSION['a4'];
-                $a5 = $_SESSION['a5'];
-                $a6 = $_SESSION['a6'];
-                $a7 = $_SESSION['a7'];
-                $a8 = $_SESSION['a8'];
-                $a9 = $_SESSION['a9'];
-                $a10 = $_SESSION['a10'];
-                $a11 = $_SESSION['a11'];
-                $a12 = $_SESSION['a12'];
-                $a13 = $_SESSION['a13'];
-                $a14 = $_SESSION['a14'];
-                $a15 = $_SESSION['a15'];
-                $a16 = $_SESSION['a16'];
-                $a17 = $_SESSION['a17'];
-                $a18 = $_SESSION['a18'];
+                $a1 = $_SESSION['a1'];  $this->_f3->set('a1', $a1);
+                $a2 = $_SESSION['a2']; $this->_f3->set('a2', $a2);
+                $a3 = $_SESSION['a3']; $this->_f3->set('a3', $a3);
+                $a4 = $_SESSION['a4']; $this->_f3->set('a4', $a4);
+                $a5 = $_SESSION['a5']; $this->_f3->set('a5', $a5);
+                $a6 = $_SESSION['a6']; $this->_f3->set('a6', $a6);
+                $a7 = $_SESSION['a7']; $this->_f3->set('a7', $a7);
+                $a8 = $_SESSION['a8']; $this->_f3->set('a8', $a8);
+                $a9 = $_SESSION['a9']; $this->_f3->set('a9', $a9);
+                $a10 = $_SESSION['a10']; $this->_f3->set('a10', $a10);
+                $a11 = $_SESSION['a11']; $this->_f3->set('a11', $a11);
+                $a12 = $_SESSION['a12']; $this->_f3->set('a12', $a12);
+                $a13 = $_SESSION['a13']; $this->_f3->set('a13', $a13);
+                $a14 = $_SESSION['a14']; $this->_f3->set('a14', $a14);
+                $a15 = $_SESSION['a15']; $this->_f3->set('a15', $a15);
+                $a16 = $_SESSION['a16']; $this->_f3->set('a16', $a16);
+                $a17 = $_SESSION['a17']; $this->_f3->set('a17', $a17);
+                $a18 = $_SESSION['a18']; $this->_f3->set('a18', $a18);
                 $userId = $_SESSION['userId'];
 
 
@@ -187,17 +161,18 @@ class JumpStartController
 
                 // add the recipe to the database
                 $GLOBALS['db']->addSection1($section1, 'update');
-                $f3->reroute("results");
+                //$f3->reroute("results");
+                //echo "before submit";
+                $view = new Template();
+                echo $view->render('views/results.html');
             }
         } else {
             // login
-            //echo "here";
             $this->checkLogin($f3);
+
             // populate section with user info
             $results = $GLOBALS['db']->getSection($_SESSION['userId'], "section1");
-            //var_dump($results);
-            //var_dump($_SESSION['userId']);
-            //$GLOBALS['db']->getA1();
+
             $this->_f3->set('a1', $results['a1']);
             $this->_f3->set('a2', $results['a2']);
             $this->_f3->set('a3', $results['a3']);
@@ -226,109 +201,6 @@ class JumpStartController
      */
     public function section2($f3)
     {
-        $results = $GLOBALS['db']->getSection($_SESSION['userId'], "section2");
-        $this->_f3->set('b1', $results['b1']);
-        $this->_f3->set('b2', $results['b2']);
-        $this->_f3->set('b3', $results['b3']);
-        $this->_f3->set('b4', $results['b4']);
-        $this->_f3->set('b5', $results['b5']);
-        $this->_f3->set('b6', $results['b6']);
-        $this->_f3->set('b7', $results['b7']);
-        $this->_f3->set('b8', $results['b8']);
-        $this->_f3->set('b9', $results['b9']);
-        $this->_f3->set('b10', $results['b10']);
-        $this->_f3->set('b11', $results['b11']);
-        $this->_f3->set('b12', $results['b12']);
-        $this->_f3->set('b13', $results['b13']);
-        $this->_f3->set('b14', $results['b14']);
-        $this->_f3->set('b15', $results['b15']);
-        $this->_f3->set('b16', $results['b16']);
-
-        $this->_f3->set('b17', $results['b17']);
-        $this->_f3->set('b17yn', $results['b17yn']);
-
-        $this->_f3->set('b18', $results['b18']);
-        $this->_f3->set('b18yn', $results['b18yn']);
-
-        $this->_f3->set('b19', $results['b19']);
-        $this->_f3->set('b19yn', $results['b19yn']);
-
-        $this->_f3->set('b20', $results['b20']);
-        $this->_f3->set('b20yn', $results['b20yn']);
-
-        $this->_f3->set('b21', $results['b21']);
-        $this->_f3->set('b21yn', $results['b21yn']);
-
-        $this->_f3->set('b22', $results['b22']);
-        $this->_f3->set('b22yn', $results['b22yn']);
-
-        $this->_f3->set('b23', $results['b23']);
-        $this->_f3->set('b23yn', $results['b23yn']);
-
-        $this->_f3->set('b24', $results['b24']);
-        $this->_f3->set('b24yn', $results['b24yn']);
-
-        $this->_f3->set('b25', $results['b25']);
-        $this->_f3->set('b25yn', $results['b25yn']);
-
-        $this->_f3->set('b26', $results['b26']);
-        $this->_f3->set('b26yn', $results['b26yn']);
-
-        $this->_f3->set('b27', $results['b27']);
-        $this->_f3->set('b27yn', $results['b27yn']);
-
-        $this->_f3->set('b28', $results['b28']);
-        $this->_f3->set('b28yn', $results['b28yn']);
-
-        $this->_f3->set('b29', $results['b29']);
-
-        /*
-        //echo "Here with GET";
-        $_SESSION['b1'] = "";
-        $_SESSION['b2'] = "";
-        $_SESSION['b3'] = "";
-        $_SESSION['b4'] = "";
-        $_SESSION['b5'] = "";
-        $_SESSION['b6'] = "";
-        $_SESSION['b7'] = "";
-        $_SESSION['b8'] = "";
-        $_SESSION['b9'] = "";
-        $_SESSION['b10'] = "";
-        $_SESSION['b11'] = "";
-        $_SESSION['b12'] = "";
-        $_SESSION['b13'] = "";
-        $_SESSION['b14'] = "";
-        $_SESSION['b15'] = "";
-        $_SESSION['b16'] = "";
-        $_SESSION['b17'] = "";
-        $_SESSION['b17yn'] = "";
-        $_SESSION['b18'] = "";
-        $_SESSION['b18yn'] = "";
-        $_SESSION['b19'] = "";
-        $_SESSION['b19yn'] = "";
-        $_SESSION['b20'] = "";
-        $_SESSION['b20yn'] = "";
-        $_SESSION['b21'] = "";
-        $_SESSION['b21yn'] = "";
-        $_SESSION['b22'] = "";
-        $_SESSION['b22yn'] = "";
-        $_SESSION['b23'] = "";
-        $_SESSION['b23yn'] = "";
-        $_SESSION['b24'] = "";
-        $_SESSION['b24yn'] = "";
-        $_SESSION['b25'] = "";
-        $_SESSION['b25yn'] = "";
-        $_SESSION['b26'] = "";
-        $_SESSION['b26yn'] = "";
-        $_SESSION['b27'] = "";
-        $_SESSION['b27yn'] = "";
-        $_SESSION['b28'] = "";
-        $_SESSION['b28yn'] = "";
-        $_SESSION['b29'] = "";
-        */
-        //echo "Here";
-        //var_dump($_SESSION);
-
         // validate the data
         // TODO really validate the data
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -456,8 +328,6 @@ class JumpStartController
                 $_SESSION['b29'] = $_POST['b29'];
             }
 
-            //var_dump($_SESSION);
-
             // if valid is true
             $valid = true;
             if ($valid) {
@@ -519,12 +389,67 @@ class JumpStartController
                 // add the section to the database
                 $GLOBALS['db']->addSection2($section2, 'update');
                 $f3->reroute("results");
-
-
-                //$f3->reroute("results");
             }
         } else {
+            // check login
             $this->checkLogin($f3);
+
+            // populate section with user info
+            $results = $GLOBALS['db']->getSection($_SESSION['userId'], "section2");
+            $this->_f3->set('b1', $results['b1']);
+            $this->_f3->set('b2', $results['b2']);
+            $this->_f3->set('b3', $results['b3']);
+            $this->_f3->set('b4', $results['b4']);
+            $this->_f3->set('b5', $results['b5']);
+            $this->_f3->set('b6', $results['b6']);
+            $this->_f3->set('b7', $results['b7']);
+            $this->_f3->set('b8', $results['b8']);
+            $this->_f3->set('b9', $results['b9']);
+            $this->_f3->set('b10', $results['b10']);
+            $this->_f3->set('b11', $results['b11']);
+            $this->_f3->set('b12', $results['b12']);
+            $this->_f3->set('b13', $results['b13']);
+            $this->_f3->set('b14', $results['b14']);
+            $this->_f3->set('b15', $results['b15']);
+            $this->_f3->set('b16', $results['b16']);
+
+            $this->_f3->set('b17', $results['b17']);
+            $this->_f3->set('b17yn', $results['b17yn']);
+
+            $this->_f3->set('b18', $results['b18']);
+            $this->_f3->set('b18yn', $results['b18yn']);
+
+            $this->_f3->set('b19', $results['b19']);
+            $this->_f3->set('b19yn', $results['b19yn']);
+
+            $this->_f3->set('b20', $results['b20']);
+            $this->_f3->set('b20yn', $results['b20yn']);
+
+            $this->_f3->set('b21', $results['b21']);
+            $this->_f3->set('b21yn', $results['b21yn']);
+
+            $this->_f3->set('b22', $results['b22']);
+            $this->_f3->set('b22yn', $results['b22yn']);
+
+            $this->_f3->set('b23', $results['b23']);
+            $this->_f3->set('b23yn', $results['b23yn']);
+
+            $this->_f3->set('b24', $results['b24']);
+            $this->_f3->set('b24yn', $results['b24yn']);
+
+            $this->_f3->set('b25', $results['b25']);
+            $this->_f3->set('b25yn', $results['b25yn']);
+
+            $this->_f3->set('b26', $results['b26']);
+            $this->_f3->set('b26yn', $results['b26yn']);
+
+            $this->_f3->set('b27', $results['b27']);
+            $this->_f3->set('b27yn', $results['b27yn']);
+
+            $this->_f3->set('b28', $results['b28']);
+            $this->_f3->set('b28yn', $results['b28yn']);
+
+            $this->_f3->set('b29', $results['b29']);
             $view = new Template();
             echo $view->render('views/section2.html');
         }
@@ -535,37 +460,6 @@ class JumpStartController
      */
     public function section3($f3)
     {
-        $results = $GLOBALS['db']->getSection($_SESSION['userId'], "section3");
-        $this->_f3->set('c1', $results['c1']);
-        $this->_f3->set('c2', $results['c2']);
-        $this->_f3->set('c3', $results['c3']);
-        $this->_f3->set('c4', $results['c4']);
-        $this->_f3->set('c5', $results['c5']);
-        $this->_f3->set('c6', $results['c6']);
-        $this->_f3->set('c7', $results['c7']);
-        $this->_f3->set('c8', $results['c8']);
-        $this->_f3->set('c9', $results['c9']);
-        $this->_f3->set('c10a', $results['c10a']);
-        $this->_f3->set('c10b', $results['c10b']);
-        $this->_f3->set('c10c', $results['c10c']);
-        $this->_f3->set('c10d', $results['c10d']);
-
-        /*
-        //echo "here in section3";
-        $_SESSION['c1'] = "";
-        $_SESSION['c2'] = "";
-        $_SESSION['c3'] = "";
-        $_SESSION['c4'] = "";
-        $_SESSION['c5'] = "";
-        $_SESSION['c6'] = "";
-        $_SESSION['c7'] = "";
-        $_SESSION['c8'] = "";
-        $_SESSION['c9'] = "";
-        $_SESSION['c10a'] = "";
-        $_SESSION['c10b'] = "";
-        $_SESSION['c10c'] = "";
-        $_SESSION['c10d'] = "";
-        */
         // validate the data
         // TODO really validate the data
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -628,7 +522,6 @@ class JumpStartController
 
                 $userId = $_SESSION['userId'];
 
-
                 // construct a section1 object
                 $section3 = new Section3($c1, $c2, $c3, $c4, $c5, $c6, $c7, $c8, $c9, $c10a,
                     $c10b, $c10c, $c10d, $userId);
@@ -641,7 +534,25 @@ class JumpStartController
                 $f3->reroute("results");
             }
         } else {
+            // check login
             $this->checkLogin($f3);
+
+            // populate section with user info
+            $results = $GLOBALS['db']->getSection($_SESSION['userId'], "section3");
+            $this->_f3->set('c1', $results['c1']);
+            $this->_f3->set('c2', $results['c2']);
+            $this->_f3->set('c3', $results['c3']);
+            $this->_f3->set('c4', $results['c4']);
+            $this->_f3->set('c5', $results['c5']);
+            $this->_f3->set('c6', $results['c6']);
+            $this->_f3->set('c7', $results['c7']);
+            $this->_f3->set('c8', $results['c8']);
+            $this->_f3->set('c9', $results['c9']);
+            $this->_f3->set('c10a', $results['c10a']);
+            $this->_f3->set('c10b', $results['c10b']);
+            $this->_f3->set('c10c', $results['c10c']);
+            $this->_f3->set('c10d', $results['c10d']);
+
             $view = new Template();
             echo $view->render('views/section3.html');
         }
@@ -652,86 +563,6 @@ class JumpStartController
      */
     public function section4($f3)
     {
-        $results = $GLOBALS['db']->getSection($_SESSION['userId'], "section4");
-        $this->_f3->set('d1', $results['d1']);
-        $this->_f3->set('d1a', $results['d1a']);
-
-        $this->_f3->set('d2', $results['d2']);
-        $this->_f3->set('d2a', $results['d2a']);
-
-        $this->_f3->set('d3', $results['d3']);
-        $this->_f3->set('d3a', $results['d3a']);
-
-        $this->_f3->set('d4', $results['d4']);
-        $this->_f3->set('d4a', $results['d4a']);
-
-        $this->_f3->set('d5', $results['d5']);
-        $this->_f3->set('d6', $results['d6']);
-        $this->_f3->set('d7', $results['d7']);
-        $this->_f3->set('d8', $results['d8']);
-        $this->_f3->set('d9', $results['d9']);
-        $this->_f3->set('d10', $results['d10']);
-        $this->_f3->set('d11', $results['d11']);
-        $this->_f3->set('d12', $results['d12']);
-        $this->_f3->set('d13', $results['d13']);
-        $this->_f3->set('d14', $results['d14']);
-        $this->_f3->set('d15', $results['d15']);
-        $this->_f3->set('d16', $results['d16']);
-        $this->_f3->set('d17', $results['d17']);
-        $this->_f3->set('d18', $results['d18']);
-        $this->_f3->set('d19', $results['d19']);
-        $this->_f3->set('d20', $results['d20']);
-        $this->_f3->set('d21', $results['d21']);
-        $this->_f3->set('d22', $results['d22']);
-        $this->_f3->set('d23', $results['d23']);
-        $this->_f3->set('d24', $results['d24']);
-        $this->_f3->set('d25', $results['d25']);
-        $this->_f3->set('d26', $results['d26']);
-
-        $this->_f3->set('d27a', $results['d27a']);
-        $this->_f3->set('d27b', $results['d27b']);
-        $this->_f3->set('d27c', $results['d27c']);
-        $this->_f3->set('d27d', $results['d27d']);
-
-        /*
-        //echo "here in section3";
-        $_SESSION['d1'] = "";
-        $_SESSION['d1a'] = "";
-        $_SESSION['d2'] = "";
-        $_SESSION['d2a'] = "";
-        $_SESSION['d3'] = "";
-        $_SESSION['d3a'] = "";
-        $_SESSION['d4'] = "";
-        $_SESSION['d4a'] = "";
-        $_SESSION['d5'] = "";
-        $_SESSION['d6'] = "";
-        $_SESSION['d7'] = "";
-        $_SESSION['d8'] = "";
-        $_SESSION['d9'] = "";
-        $_SESSION['d10'] = "";
-        $_SESSION['d11'] = "";
-        $_SESSION['d12'] = "";
-        $_SESSION['d13'] = "";
-        $_SESSION['d14'] = "";
-        $_SESSION['d15'] = "";
-        $_SESSION['d16'] = "";
-        $_SESSION['d17'] = "";
-        $_SESSION['d18'] = "";
-        $_SESSION['d19'] = "";
-        $_SESSION['d20'] = "";
-        $_SESSION['d21'] = "";
-        $_SESSION['d22'] = "";
-        $_SESSION['d23'] = "";
-        $_SESSION['d24'] = "";
-        $_SESSION['d24'] = "";
-        $_SESSION['d25'] = "";
-        $_SESSION['d26'] = "";
-        $_SESSION['d27a'] = "";
-        $_SESSION['d27b'] = "";
-        $_SESSION['d27c'] = "";
-        $_SESSION['d27d'] = "";
-        */
-
         // validate the data
         // TODO really validate the data
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -896,11 +727,55 @@ class JumpStartController
                 $f3->reroute("results");
             }
         } else {
+            // check login
             $this->checkLogin($f3);
+
+            // populate section with user info
+            $results = $GLOBALS['db']->getSection($_SESSION['userId'], "section4");
+            $this->_f3->set('d1', $results['d1']);
+            $this->_f3->set('d1a', $results['d1a']);
+
+            $this->_f3->set('d2', $results['d2']);
+            $this->_f3->set('d2a', $results['d2a']);
+
+            $this->_f3->set('d3', $results['d3']);
+            $this->_f3->set('d3a', $results['d3a']);
+
+            $this->_f3->set('d4', $results['d4']);
+            $this->_f3->set('d4a', $results['d4a']);
+
+            $this->_f3->set('d5', $results['d5']);
+            $this->_f3->set('d6', $results['d6']);
+            $this->_f3->set('d7', $results['d7']);
+            $this->_f3->set('d8', $results['d8']);
+            $this->_f3->set('d9', $results['d9']);
+            $this->_f3->set('d10', $results['d10']);
+            $this->_f3->set('d11', $results['d11']);
+            $this->_f3->set('d12', $results['d12']);
+            $this->_f3->set('d13', $results['d13']);
+            $this->_f3->set('d14', $results['d14']);
+            $this->_f3->set('d15', $results['d15']);
+            $this->_f3->set('d16', $results['d16']);
+            $this->_f3->set('d17', $results['d17']);
+            $this->_f3->set('d18', $results['d18']);
+            $this->_f3->set('d19', $results['d19']);
+            $this->_f3->set('d20', $results['d20']);
+            $this->_f3->set('d21', $results['d21']);
+            $this->_f3->set('d22', $results['d22']);
+            $this->_f3->set('d23', $results['d23']);
+            $this->_f3->set('d24', $results['d24']);
+            $this->_f3->set('d25', $results['d25']);
+            $this->_f3->set('d26', $results['d26']);
+
+            $this->_f3->set('d27a', $results['d27a']);
+            $this->_f3->set('d27b', $results['d27b']);
+            $this->_f3->set('d27c', $results['d27c']);
+            $this->_f3->set('d27d', $results['d27d']);
             $view = new Template();
             echo $view->render('views/section4.html');
         }
     }
+
     /**
      * Display the results route
      */
@@ -911,26 +786,6 @@ class JumpStartController
         $view = new Template();
         echo $view->render('views/results.html');
     }
-    /**
-     * Process the view Recipes route
-     */
-    /*Example for development
-    // TODO fix
-    public function viewRecipes()
-    {
-        // get the recipes
-        $result = $GLOBALS['db']->getRecipes();
-
-        //var_dump($result);
-        // store the recipes in the hive as 'results'
-        $this->_f3->set('results', $result);
-
-        // display the recipes page
-        $view = new Template();
-        echo $view->render('views/recipes.php');
-    }
-    */
-
 
     /**
      *  Provides a login form and validates
