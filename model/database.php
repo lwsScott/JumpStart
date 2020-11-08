@@ -128,7 +128,7 @@ class Database
         $statement->bindParam(':a18',$a18, PDO::PARAM_STR);
         $statement->bindParam(':userId',$userId, PDO::PARAM_STR);
 
-        echo $sql;
+        //echo $sql;
         //$statement->bindParam(':image', $recipe->getImage());
         //4. Execute the statement
         $result = $statement->execute();
@@ -179,7 +179,8 @@ class Database
         $userId = $_SESSION['userId'];
         //echo $userId;
         //1. Define the query
-        $sql = "INSERT INTO section2 (b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, 
+        if ($change == 'add') {
+            $sql = "INSERT INTO section2 (b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, 
                         b13, b14, b15, b16, b17, b17yn, b18, b18yn, b19, b19yn, b20, b20yn,
                         b21, b21yn, b22, b22yn, b23, b23yn, b24, b24yn, b25, b25yn, b26, 
                         b26yn, b27, b27yn, b28, b28yn, b29, userId)
@@ -187,6 +188,16 @@ class Database
                         :b13, :b14, :b15, :b16, :b17, :b17yn, :b18, :b18yn, :b19, :b19yn, :b20, :b20yn,
                         :b21, :b21yn, :b22, :b22yn, :b23, :b23yn, :b24, :b24yn, :b25, :b25yn, :b26, 
                         :b26yn, :b27, :b27yn, :b28, :b28yn, :b29, :userId)";
+        } elseif ($change == 'update') {
+            $sql = "UPDATE section1 SET b1 = :b1, b2 = :b2, b3 = :b3, b4 = :b4, b5 = :b5, b6 = :b6, b7 = :b7,
+                                        b8 = :b8, b9 = :b9, b10 = :b10, b11 = :b11, b12 = :b12, b13 = :b13, b14 = :b14, 
+                                        b15 = :b15, b16 = :b16, b17 = :b17, b17yn = :b17yn , b18 = :b18, b18yn = :b18yn
+                                        b19 = :b19, b19yn = :b19yn, b20 = :b20, b20yn = :b20yn, b21 = :b21, b21yn = :b21yn,
+                                        b22 = :b22, b22yn = :b22yn, b23 = :b23, b23yn = :b23yn, b24 = :b24, b24yn = :b24yn,
+                                        b25 = :b25, b25yn = :b25yn, b26 = :b26, b26yn = :b26yn, b27 = :b27, b27yn = :b27yn,
+                                        b28 = :b28, b28yn = :b28yn, b29 = :b29
+                                        WHERE userId = :userId";
+        }
         //var_dump($sql);
         //2. Prepare the statement
         $statement = $this->_dbh->prepare($sql);
@@ -303,9 +314,16 @@ class Database
         $userId = $_SESSION['userId'];
         //echo $userId;
         //1. Define the query
-        $sql = "INSERT INTO section3(c1, c2, c3, c4, c5, c6, c7, c8, c9, c10a, 
+        if ($change == 'add') {
+            $sql = "INSERT INTO section3(c1, c2, c3, c4, c5, c6, c7, c8, c9, c10a, 
                    c10b, c10c, c10d, userId)
                 VALUES (:c1, :c2, :c3, :c4, :c5, :c6, :c7, :c8, :c9, :c10a, :c10b, :c10c, :c10d, :userId)";
+        } elseif ($change == 'update') {
+            $sql = "UPDATE section1 SET c1 = :c1, c2 = :c2, c3 = :c3, c4 = :c4, c5 = :c5, c6 = :c6, c7 = :c7,
+                                        c8 = :c8, c9 = :c9, c10a = :c10a, c10b = :c10b, c10c = :c10c, c10d = :c10d
+                                        WHERE userId = :userId";
+
+    }
         //var_dump($sql);
         //2. Prepare the statement
         $statement = $this->_dbh->prepare($sql);
@@ -360,32 +378,35 @@ class Database
      */
     function addSection4($section4, $change)
     {
-
         $userId = $_SESSION['userId'];
         //echo $userId;
         //1. Define the query
-        $sql = "INSERT INTO section4 (d1a, d2, d2a,  d3, d3a, d4, d4a, d5, d6, d7, d8, d9, d10, d11, d12, 
-                    d13, d14, d15, d16, d17, d18, d19, d20, d21, d22, d23, d24, d25, d26, 
-                    d27a, d27b, d27c, d28d, userId)
-            VALUES (:d1a, :d2, :d2a, :d3, :d3a, :d4, :d4a, :d5, :d6, :d7, :d8, :d9, :d10, :d11, :d12, 
-                    :d13, :d14, :d15, :d16, :d17, :d18, :d19, :d20, :d21, :d22, :d23, :d24, :d25, :d26, 
-                   :d27a, :d27b, :d27c, :d28d, :userId)";
-        //var_dump($sql);
+        if ($change == 'add') {
+            $sql = "INSERT INTO section4(d1, d1a, d2, d2a, d3, d3a, d4, d4a, d5, d6, d7, d8, d9, d10, d11, d12, 
+                    d13, d14, d15, d16, d17, d18, d19, d20, d21, d22, d23, d24, d25, d26, d27a, d27b, d27c, d27d, userId)
+                                VALUES (:d1, :d1a, :d2, :d2a, :d3, :d3a, :d4, :d4a, :d5, :d6, :d7, :d8, :d9, :d10, :d11, :d12, 
+                                :d13, :d14, :d15, :d16, :d17, :d18, :d19, :d20, :d21, :d22, :d23, :d24, :d25, :d26, :d27a, :d27b, 
+                                :d27c, :d27d, :userId)";
+        } elseif ($change == 'update') {
+                $sql = "UPDATE section4 SET d1 = :d1, d1a = :d1a, d2 = :d2, d2a = :d2a, d3 = :d3, d3a = :d3a, d4 = :d4, d4a = :d4a, 
+                            d5 = :d5, d6 = :d6, d7 = :d7, d8 = :d8, d9 = :d9, d10 = :d10, d11 = :d11, d12 = :d12, 
+                            d13 = :d13, d14 = :d14, d15 = :d15, d16 = :d16, d17 = :d17, :d18 = d18, d19 = :d19, d20 = :d20,
+                            d21 = :d21, d22 = :d22, d23 = :d23, d24 = :d24, d25 = :d25, d26 = :d26, d27a = :d27a, d27b = :d27b, 
+                            d27c = :d27c, d27d = :d27d, :userId
+                            WHERE userId = :userId";
+
+    }
         //2. Prepare the statement
-        $statement = $this->_ddh->prepare($sql);
+        $statement = $this->_dbh->prepare($sql);
         //var_dump($statement);
         $d1 = $section4->getD1();
         $d1a = $section4->getD1a();
-
         $d2 = $section4->getD2();
         $d2a = $section4->getD2a();
-
         $d3 = $section4->getD3();
         $d3a = $section4->getD3a();
-
         $d4 = $section4->getD4();
         $d4a = $section4->getD4a();
-
         $d5 = $section4->getD5();
         $d6 = $section4->getD6();
         $d7 = $section4->getD7();
@@ -419,16 +440,12 @@ class Database
         //3. Bind the parameters
         $statement->bindParam(':d1',$d1, PDO::PARAM_STR);
         $statement->bindParam(':d1a',$d1a, PDO::PARAM_STR);
-
         $statement->bindParam(':d2',$d2, PDO::PARAM_STR);
         $statement->bindParam(':d2a',$d2a, PDO::PARAM_STR);
-
         $statement->bindParam(':d3',$d3, PDO::PARAM_STR);
         $statement->bindParam(':d3a',$d3a, PDO::PARAM_STR);
-
         $statement->bindParam(':d4',$d4, PDO::PARAM_STR);
         $statement->bindParam(':d4a',$d4a, PDO::PARAM_STR);
-
         $statement->bindParam(':d5',$d5, PDO::PARAM_STR);
         $statement->bindParam(':d6',$d6, PDO::PARAM_STR);
         $statement->bindParam(':d7',$d7, PDO::PARAM_STR);
@@ -455,17 +472,14 @@ class Database
         $statement->bindParam(':d27b',$d27b, PDO::PARAM_STR);
         $statement->bindParam(':d27c',$d27c, PDO::PARAM_STR);
         $statement->bindParam(':d27d',$d27d, PDO::PARAM_STR);
-
         $statement->bindParam(':userId',$userId, PDO::PARAM_STR);
-
-        //$statement->bindParam(':image', $recipe->getImage());
 
         //4. Execute the statement
         $result = $statement->execute();
-        //echo "Result: " . $result;
+        echo "Result: " . $result;
 
         //Get the key of the last inserted row
-        $answerID = $this->_ddh->lastInsertId();
+        $answerID = $this->_dbh->lastInsertId();
         $_SESSION['answerID'] = $answerID;
         //echo $id;
     }

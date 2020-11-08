@@ -75,7 +75,7 @@ class Section4
         $this->_d16 = $d16;
         $this->_d17 = $d17;
         $this->_d18 = $d18;
-        $this->_d18 = $d19;
+        $this->_d19 = $d19;
         $this->_d20 = $d20;
         $this->_d21 = $d21;
         $this->_d22 = $d22;
