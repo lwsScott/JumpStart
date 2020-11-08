@@ -1,5 +1,13 @@
 <?php
 
+/*
+ * Analysis class for playbook website
+ * stores SWOT information
+ * 11/7/20
+ * @author Roldan Barbante
+ * @version 1.0
+ */
+
 
 class Section5
 {
