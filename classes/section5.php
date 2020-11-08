@@ -1077,6 +1077,502 @@ class Section5
         return $this->_e31c;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getE32()
+    {
+        return $this->_e32;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE32a()
+    {
+        return $this->_e32a;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE32b()
+    {
+        return $this->_e32b;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE32c()
+    {
+        return $this->_e32c;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE33()
+    {
+        return $this->_e33;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE33a()
+    {
+        return $this->_e33a;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE33b()
+    {
+        return $this->_e33b;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE34()
+    {
+        return $this->_e34;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE34a()
+    {
+        return $this->_e34a;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE35()
+    {
+        return $this->_e35;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE35a()
+    {
+        return $this->_e35a;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE35b()
+    {
+        return $this->_e35b;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE36()
+    {
+        return $this->_e36;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE36a()
+    {
+        return $this->_e36a;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE36b()
+    {
+        return $this->_e36b;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE36c()
+    {
+        return $this->_e36c;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE37()
+    {
+        return $this->_e37;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE37a()
+    {
+        return $this->_e37a;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE37b()
+    {
+        return $this->_e37b;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE37c()
+    {
+        return $this->_e37c;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE38()
+    {
+        return $this->_e38;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE38a()
+    {
+        return $this->_e38a;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE38b()
+    {
+        return $this->_e38b;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE39()
+    {
+        return $this->_e39;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE39a()
+    {
+        return $this->_e39a;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE39b()
+    {
+        return $this->_e39b;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE40()
+    {
+        return $this->_e40;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE40a()
+    {
+        return $this->_e40a;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE40b()
+    {
+        return $this->_e40b;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE41()
+    {
+        return $this->_e41;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE41a()
+    {
+        return $this->_e41a;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE41b()
+    {
+        return $this->_e41b;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE42()
+    {
+        return $this->_e42;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE42a()
+    {
+        return $this->_e42a;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE42b()
+    {
+        return $this->_e42b;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE43()
+    {
+        return $this->_e43;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE44()
+    {
+        return $this->_e44;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE44a()
+    {
+        return $this->_e44a;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE44b()
+    {
+        return $this->_e44b;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE45()
+    {
+        return $this->_e45;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE45a()
+    {
+        return $this->_e45a;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE45b()
+    {
+        return $this->_e45b;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE46()
+    {
+        return $this->_e46;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE46a()
+    {
+        return $this->_e46a;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE46b()
+    {
+        return $this->_e46b;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE47()
+    {
+        return $this->_e47;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE47a()
+    {
+        return $this->_e47a;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE47b()
+    {
+        return $this->_e47b;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE48()
+    {
+        return $this->_e48;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE48a()
+    {
+        return $this->_e48a;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE48b()
+    {
+        return $this->_e48b;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE49()
+    {
+        return $this->_e49;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE49a()
+    {
+        return $this->_e49a;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE49b()
+    {
+        return $this->_e49b;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE50()
+    {
+        return $this->_e50;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE50a()
+    {
+        return $this->_e50a;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE50b()
+    {
+        return $this->_e50b;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE51()
+    {
+        return $this->_e51;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE51a()
+    {
+        return $this->_e51a;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE51b()
+    {
+        return $this->_e51b;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE51c()
+    {
+        return $this->_e51c;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getE51d()
+    {
+        return $this->_e51d;
+    }
+
 
 
 
