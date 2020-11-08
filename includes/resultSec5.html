@@ -1,0 +1,671 @@
+<!--
+    David Haas
+    11/2/20
+    filename https://jumpstart.greenriverdev.com/playbook/JumpStart/includes/footer.html
+    Displays results of section 5 answers to SWOT analysis
+  -->
+
+<table class="table" id="table">
+    <thead>
+    <tr>
+        <th scope="col">STRENGTHS</th>
+        <th scope="col">WEAKNESSES</th>
+        <th scope="col">OPPORTUNITIES</th>
+        <th scope="col">THREATS</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <!-- Y-S, N-W, NN -->
+        <td><check if="{{ @e1 == 'yes' }}" >
+            We have a customer intake process that reinforces their decision to buy
+            from us and that provides us needed info and them clarity on what to
+            expect
+        </check></td>
+        <td><check if="{{ @e1 == 'no' }}" >
+            We don't have a customer intake process, so customers may not be clear
+            on what to expect, our team may not have access to needed info and the
+            customer could potentially be having  buyer's remorse
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @e2 == 'yes' }}" >
+            We actually use the Customer Intake process and find it helpful
+        </check></td>
+        <td><check if="{{ @e2 == 'no' }}" >
+            While we have a customer intake process, we don't consistently use it
+            which means we may be providing inconsistent experiences?
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @e3 == 'yes' }}" >
+            We have a written production process
+        </check></td>
+        <td><check if="{{ @e3 == 'no' }}" >
+            We do not have a written production process
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W, U-W -->
+        <td><check if="{{ @e4 == 'yes' }}" >
+            Our production process is consistently followed
+        </check></td>
+        <td><check if="{{ @e4 == 'no' }}" >
+            While we have a production process we don't consistently follow it
+            meaning our output may be inconsistent
+        </check>
+        <check if="{{ @e4 == 'unknown' }}" >
+            The fact that we don't know if our process is followed probably means
+            it isn't consistently and also demonstrates weakness in our management
+            oversight
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @e5 == 'yes' }}" >
+            Because people are training in our production process, they are more
+            likely to follow it?
+        </check></td>
+        <td><check if="{{ @e5 == 'no' }}" >
+            Because we don't adequately train people in our production process,
+            it is likely not as effective as it needs to be
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W, NN -->
+        <td><check if="{{ @e6 == 'yes' }}" >
+            Our production process allows us to predict completion times for
+            customers and for internal planning?
+        </check></td>
+        <td><check if="{{ @e6 == 'no' }}" >
+            Our production process doesn't allow us to predict completion times
+            for customers or for internal purposes?
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W, NN -->
+        <td><check if="{{ @e7 == 'yes' }}" >
+            We communicate with customers while production is in process, so
+            they remain confident in their decision
+        </check></td>
+        <td><check if="{{ @e7 == 'no' }}" >
+            We don't, as part of our process, communicate with customers while
+            in production, which may leave them wondering what's happening and
+            questioning their decision
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W, NN -->
+        <td><check if="{{ @e8 == 'yes' }}" >
+            We incorporate Quality Assurance into our production process
+        </check></td>
+        <td><check if="{{ @e8 == 'no' }}" >
+            While we have a production process, we don't adequately incorporate
+            quality assurance, meaning customers may not have consistent experiences
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N, NN -->
+        <td><check if="{{ @e9 == 'yes' }}" >
+            We use appropriate technology to streamline our production activities,
+            our planning and/or our project management
+        </check></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-W,T N-S -->
+        <td><check if="{{ @e10 == 'no' }}" >
+            Our equipment and technology is up to date
+        </check></td>
+        <td><check if="{{ @e10 == 'yes' }}" >
+            We do not have the latest, greatest equipment or technology.  Those
+            that are particularly of concern are:&nbsp&nbsp{{ @e10a }}
+        </check></td>
+        <td></td>
+        <td><check if="{{ @e10 == 'yes' }}" >
+            Because the technology or equipment listed below is outdated, we are
+            at risk of losing to competitors who are using updated equip/tech that
+            may allow them to be better or faster or cheaper
+        </check></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W,O, NN -->
+        <td><check if="{{ @e11 == 'yes' }}" >
+            We can predict and we tell customers when to expect delivery
+        </check></td>
+        <td><check if="{{ @e11 == 'no' }}" >
+            We don't have the ability to predict and tell customers when delivery
+            is expected
+        </check></td>
+        <td><check if="{{ @e11 == 'no' }}" >
+            If we can predict and tell customers when to expect delivery, we will
+            likely reduce inbound inquiries and increase customer satisfaction
+        </check></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W, NN -->
+        <td><check if="{{ @e12 == 'yes' }}" >
+            We can track whether delivery will happen as promised
+        </check></td>
+        <td><check if="{{ @e12 == 'no' }}" >
+            We have no ability to track delivery times
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W, NN -->
+        <td><check if="{{ @e13 == 'yes' }}" >
+            We are able to stave off customer complaints by proactively
+            communicaing if delivery is on time or delayed?
+        </check></td>
+        <td><check if="{{ @e13 == 'no' }}" >
+            We leave ourselves open to complaint as we don't tell customers if
+            delivery will be on time or delayed
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W, NN -->
+        <td><check if="{{ @e14 == 'yes' }}" >
+            We have a policy or practice of making it up to customers if we have
+            errors or delays in delivery
+        </check></td>
+        <td><check if="{{ @e14 == 'no' }}" >
+            We risk upsetting and losing customers as we have no policy/practice of
+            "making it up to customers when we have errors or delays in delivery"
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W, NN -->
+        <td><check if="{{ @e15 == 'yes' }}" >
+            We ensure we provide clear directions when we deliver our services
+        </check></td>
+        <td><check if="{{ @e15 == 'no' }}" >
+            We do not provide sufficiently clear directions to clients when we
+            deliver our services
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @e16 == 'yes' }}" >
+            To the extent we have processes for delivery, we have them documented
+        </check></td>
+        <td><check if="{{ @e16 == 'no' }}" >
+            We have not documented our delivery processes so our delivery experience
+            may be inconsistent
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @e17 == 'yes' }}" >
+            We train our people on our delivery processes
+        </check></td>
+        <td><check if="{{ @e17 == 'no' }}" >
+            We do not adequately train our people on our delivery processes so
+            the experience of customers may be inconsistent
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W,O NN -->
+        <td><check if="{{ @e18 == 'yes' }}" >
+            We follow up with customers after delivery to ensure they are satisfied
+            and to explore additional needs
+        </check></td>
+        <td><check if="{{ @e18 == 'no' }}" >
+            Because we don't follow up post delivery, we may have dissatisfied
+            customers we don't know about and may miss upsell opportunities
+        </check></td>
+        <td><check if="{{ @e18 == 'no' }}" >
+            By following up with customers post-delivery, we can identify
+            dissatisfied customers and take corrective action.  We may also uncover
+            additional needs from the client that reveal additional ways we can help
+            them and make additional sales
+        </check></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W, NN -->
+        <td><check if="{{ @e19 == 'yes' }}" >
+            In our Post-mortems, we seek feedback from customers so we can improve
+        </check></td>
+        <td><check if="{{ @e19 == 'no' }}" >
+            In our post-mortems we fail to gather feedback from customers that
+            could help us improve
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @e20 == 'yes' }}" >
+            We incorporate that feedback where valuable and make improvements
+        </check></td>
+        <td><check if="{{ @e20 == 'no' }}" >
+            While we gather feedback, we rarely make any changes based on it
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W, U-W -->
+        <td><check if="{{ @e21 == 'yes' }}" >
+            We run post-mortems or reviews to gather insights from the team on
+            what's worked, what hasn't and what be done better
+        </check></td>
+        <td><check if="{{ @e21 == 'no' }}" >
+            We don't run post mortems or periodic debriefs to gather from
+            the team info on what's worked, what hasn't and hwhat could be
+            improved
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W, NN -->
+        <td><check if="{{ @e22 == 'yes' }}" >
+            We ensure our prices and terms are clear before being or when hired
+            or contracted by a customer
+        </check></td>
+        <td><check if="{{ @e22 == 'no' }}" >
+            We don't systematically ensure our prices and terms are clear before
+            being or when hired or contracted by a customer
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W, NN -->
+        <td><check if="{{ @e23 == 'yes' }}" >
+            We systematically ensure that invoices go out in a timely manner
+        </check></td>
+        <td><check if="{{ @e23 == 'no' }}" >
+            We do not systematically send invoices out in a timely manner, which
+            may affect  the promptness that people pay or annoy customers and may
+            negatively affect our cash flow
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W, NN -->
+        <td><check if="{{ @e24 == 'yes' }}" >
+            Our invoices are clear and understandable
+        </check></td>
+        <td><check if="{{ @e24 == 'no' }}" >
+            Our invoices could be easier to understand
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W, NN -->
+        <td><check if="{{ @e25 == 'yes' }}" >
+            We use invoicing as an opportunity to reinforce the relationship
+        </check></td>
+        <td><check if="{{ @e25 == 'no' }}" >
+            We don't do anything at invoicing that might reinforce the
+            relationship even though this is an influential moment in the
+            relationship
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N, NN -->
+        <td><check if="{{ @e26 == 'yes' }}" >
+            We encourage regular payment by thanking people when we receive payment
+        </check></td>
+        <td><check if="{{ @e26 == 'no' }}" >
+            We don't regularly thank customers for payment
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S N-W -->
+        <td><check if="{{ @e27 == 'yes' }}" >
+            We systematically pursue late accounts
+        </check></td>
+        <td><check if="{{ @e27 == 'no' }}" >
+            We don't have a system for seeking payment from late accounts, leaving
+            us vulnerable to unnecessarily large or lengthy accounts receivable
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W, NN -->
+        <td><check if="{{ @e28 == 'yes' }}" >
+            Our physical facilities are in fine shape as we have a system and/or
+            people specifically assigned the responsibility to keep it that way
+        </check></td>
+        <td><check if="{{ @e28 == 'no' }}" >
+            We have no system or people sepcifically assigned to look after our
+            physical facilities, so we can't be certain they will consistently be
+            clean, secure, in good working order and adequately supplied
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N, NN -->
+        <td><check if="{{ @e29 == 'yes' }}" >
+            We regularly maintain our equipment to avoid downtime and extend the
+            equipment's lifespan
+        </check></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W, NN -->
+        <td><check if="{{ @e30 == 'yes' }}" >
+            We regularly review our IT systems for viruses, malware or unauthorized
+            software and to ensure the necessary back-ups & upgrades are done
+        </check></td>
+        <td><check if="{{ @e30 == 'no' }}" >
+            We are vulnerable as we don't regularly review or IT systems for
+            viruses, malware or unauthorized software and to ensure the necessary
+            upgrades and back ups are done
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @e32 == 'yes' }}" >
+            We use inventory management software.
+        </check></td>
+        <td><check if="{{ @e32 == 'no' }}" >
+            We may be losing productivity and incurring unnecessary costs as we
+            aren't taking advantage of inventory management software
+        </check></td>
+        <td><check if="{{ @e32 == 'no' }}" >
+            Inventory management software may save us time and money if used
+            effectively
+        </check></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @e33 == 'yes' }}" >
+            We do sales and inventory forecasting with reasonable accuracy
+        </check></td>
+        <td><check if="{{ @e33 == 'no' }}" >
+            We do no inventory foreasting or our forecasts are very inaccurate
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W,O -->
+        <td><check if="{{ @e34 == 'yes' }}" >
+            We use Just In Time (JIT) inventory
+        </check></td>
+        <td><check if="{{ @e34 == 'no' }}" >
+            We may be incurring unnecessary costs, hurting our cash flow and
+            reducing efficiencies by not using Just In Time Inventory practices
+        </check></td>
+        <td><check if="{{ @e34 == 'no' }}" >
+            By engaging in JIT practices, we can save time & money
+        </check></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @e35 == 'yes' }}" >
+            We optimize our inventory levels by measuring/reviewing inventory
+            turns/inventory days and adjust accordingly
+        </check></td>
+        <td><check if="{{ @e35 == 'no' }}" >
+            We don't regularly measure/review inventory levels so we may not
+            be optimizing our inventory levels and therefore may be wasting
+            cash
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W, NA-W -->
+        <td><check if="{{ @e36 == 'yes' }}" >
+            I regularly receive my key financial statements
+        </check></td>
+        <td><check if="{{ @e36 == 'no' }}" >
+            Because I don't regularly receive my financial statements, I may be
+            guessing or be unaware of the future financial health of my business
+        </check>
+        <check if="{{ @e36 == 'notAll' }}" >
+            Because I don't regularly receive all of our financial statements, I may
+            be getting an inaccurate or incomplete picture of the health of my
+            business
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W,O -->
+        <td><check if="{{ @e37 == 'yes' }}" >
+            I am comfortable with my financial statements and know how to extract
+            insights from them
+        </check></td>
+        <td><check if="{{ @e37 == 'no' }}" >
+            When I receive my financial statements I don't really understand how to
+            draw actionable insights beyond seeing my sales/profits and cash in the bank
+        </check></td>
+        <td><check if="{{ @e37 == 'no' }}" >
+            By learning how to better draw insights from my financial data, I may be
+            able to make better and more informed decisions
+        </check></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @e38 == 'yes' }}" >
+            "I regularly use my financial info when making decisions and consider
+            how my decisions will impact the financial health of the business
+        </check></td>
+        <td><check if="{{ @e38 == 'no' }}" >
+            While I may look at or review my financials, I don't really know how to
+            use them in decision-making
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @e39 == 'yes' }}" >
+            I have instructed my accountants/bookkeeper to set up my books for
+            management purposes, rather than just for tax filings
+        </check></td>
+        <td><check if="{{ @e39 == 'no' }}" >
+            "I haven't asked my accountant/bookkeeper to set up my boods for management
+            purposes as opposed to just for tax purposes.  Therefore, I may not be
+            getting actionable information
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- N-W -->
+        <td></td>
+        <td><check if="{{ @e40 == 'no' }}" >
+            Despite being asked to do so, my accountant/ bookkeeper has not set up my
+            books for management purposes, so I may ot be receiving actionable insights
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @e41 == 'yes' }}" >
+            We have, or have access to, sufficient cash to fund our operations and
+            growth plans
+        </check></td>
+        <td><check if="{{ @e41 == 'no' }}" >
+            We don't have, or have access to, sufficient cash to fund your operations
+            and growth plans
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @e42 == 'yes' }}" >
+            I have and use cash flow projections so I can predict how decisions will
+            affect my cash position
+        </check></td>
+        <td><check if="{{ @e42 == 'no' }}" >
+            I don't have or use cash flow projections so I can't really predict how
+            decisions/outcomes will affect my cash position
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @e43 == 'yes' }}" >
+            I know our gross margins on our different products/services
+        </check></td>
+        <td><check if="{{ @e43 == 'no' }}" >
+            Because I don't know the margins on our different products/ services,
+            I may not know how to adjust pricing or the mix of our offerings to
+            optimize our profits
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @e44 == 'yes' }}" >
+            I know our break even
+        </check></td>
+        <td><check if="{{ @e44 == 'no' }}" >
+            I don't know our break even so I may not be able to target properly
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S N-W -->
+        <td><check if="{{ @e45 == 'yes' }}" >
+            I have a target profit goal and know my profit break even sales number
+        </check></td>
+        <td><check if="{{ @e45 == 'no' }}" >
+            I don't know our profit break even number
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-O -->
+        <td><check if="{{ @e46 == 'yes' }}" >
+            We develop a budget and work to stick to it, giving us control and a red
+            flag when things are going off plan
+        </check></td>
+        <td></td>
+        <td><check if="{{ @e46 == 'no' }}" >
+            By using a budget, we may find we create better discipline and experience
+            more control as we get a line of sight when things are going off plan
+        </check></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @e47 == 'yes' }}" >
+            We do regular annual/quarterly goal setting
+        </check></td>
+        <td><check if="{{ @e47 == 'no' }}" >
+            We don't do regular annual or quarterly goal setting
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @e48 == 'yes' }}" >
+            Because we have well defined metrics, we are able to say objectively if we
+            have been successful or not in reaching our goals
+        </check></td>
+        <td><check if="{{ @e48 == 'no' }}" >
+            Despite having goals, we may not have agreement on whether or not we've
+            reached them because we don't have well defined measurements for success
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @e49 == 'yes' }}" >
+            We have identified our Key Result Indicators
+        </check></td>
+        <td><check if="{{ @e49 == 'no' }}" >
+            We have not identified our Key Result Indicators so we don't know clearly
+            how we perform on critical areas of the business
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @e50 == 'yes' }}" >
+            We have identified our Key Predictive Indicators
+        </check></td>
+        <td><check if="{{ @e50 == 'no' }}" >
+            We have not identified our Key Predictive Indicators, which may make it
+            hard to preempt problems
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @e51 == 'yes' }}" >
+            We use our metrics to make deisions and improvements
+        </check></td>
+        <td><check if="{{ @e51 == 'no' }}" >
+            While we measure our KPI's, we don't actually use them to make decisions
+            or improvements
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>{{ @e52a }}</td>
+        <td>{{ @e52b }}</td>
+        <td>{{ @e52c }}</td>
+        <td>{{ @e52d }}</td>
+    </tr>
+    </tbody>
+</table>
+

@@ -1,0 +1,629 @@
+<!--
+    David Haas
+    11/2/20
+    filename https://jumpstart.greenriverdev.com/playbook/JumpStart/includes/footer.html
+    Displays results of section 6 answers to SWOT analysis
+  -->
+
+<table class="table" id="table">
+    <thead>
+    <tr>
+        <th scope="col">STRENGTHS</th>
+        <th scope="col">WEAKNESSES</th>
+        <th scope="col">OPPORTUNITIES</th>
+        <th scope="col">THREATS</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <!-- Y-S, N-W, NN -->
+        <td><check if="{{ @f1 == 'yes' }}" >
+            We have the right level of staffing for our current needs
+        </check></td>
+        <td><check if="{{ @f1 == 'no' }}" >
+            We are currently: {{ @f2 }}
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W -->
+        <td>{{ @f3 }} % of our team operates at or above the skill/productivity level we
+            expect></td>
+        <td><check if="{{ @f3a != 'unknown' }}" >
+            The percentage of employees operating below the skill/ productivity level we
+            expect are likely costing us
+        </check>
+        <check if="{{ @f3a == 'unknown' }}" >
+            We don't know what percent of our team is operating at or above the skill/
+            productivity level we expect
+        </check></td>
+        <td><check if="{{ @f3a == 'unknown' }}" >
+            By identifying which staff are and aren't performing to standard or above, we
+            can train or transition those that are below and more effectively reward &
+            challenge our stars
+        </check></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W, U-W -->
+        <td><check if="{{ @f4 == 'yes' }}" >
+            Because we have an HR plan that shows prioritized positioin to fill and the
+            conditions that must exist, we are in control and are less likely to be caught
+            short-handed
+        </check></td>
+        <td><check if="{{ @f4 == 'no' }}" >
+            Because we don't have an HR plan, we may not be clear enough on which positions
+            need to be filled next, what conditions must exist before we hire and we are
+            vulnerable to being caught flat footed
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @f5 == 'yes' }}" >
+            High performing
+        </check></td>
+        <td><check if="{{ @f5 == 'no' }}" >
+            Not high performing
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W, NN -->
+        <td><check if="{{ @f6 == 'yes' }}" >
+            Accountable
+        </check></td>
+        <td><check if="{{ @f6 == 'no' }}" >
+            Not accountable
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W, NN -->
+        <td><check if="{{ @f7 == 'yes' }}" >
+            A positive place to work
+        </check></td>
+        <td><check if="{{ @f7 == 'no' }}" >
+            Not a positive place to work
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W,O, NN -->
+        <td><check if="{{ @f8 == 'yes' }}" >
+            When we recruit, we try to reach as many qualified candidates as possible
+        </check></td>
+        <td><check if="{{ @f8 == 'no' }}" >
+            Because we don't want to waste time reviewing lots of candidates, we may be
+            missing out on excellent prospects
+        </check></td>
+        <td><check if="{{ @f8 == 'no' }}" >
+            By casting our net wider than we are, we may find better quality candidates
+        </check></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @f9 == 'yes' }}" >
+            Despite casting our net wide when recruiting, we manage our time with a process
+            that screens out candidates
+        </check></td>
+        <td><check if="{{ @f9 == 'no' }}" >
+            Because we cast wide and don't screen out, we are probably spending too much
+            time on the front end of our recruitment process
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-W, N-S -->
+        <td><check if="{{ @f10 == 'no' }}" >
+            Before we recruit, we get clear on the job, its function, the impact it is to
+            have and what success in the role looks like
+        </check></td>
+        <td><check if="{{ @f10 == 'yes' }}" >
+            We decrease the likelihood of successful hires because we don't first clearly
+            describe the job, its function, the impact it is to have and what success in the
+            role looks like
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @f11 == 'yes' }}" >
+            Before we recruit, we clearly outline the skills and experience we require
+        </check></td>
+        <td><check if="{{ @f11 == 'no' }}" >
+            We recruit without clearly outlining the skills/experience we require
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @f12 == 'yes' }}" >
+            "To ensure we get the best fit, we clarify the characteristics that will fit
+            the role, the culture and the team
+        </check></td>
+        <td><check if="{{ @f12 == 'no' }}" >
+            We don't clarify the personal characteristics that are likely make the person
+            successful before recruiting
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W, NN -->
+        <td><check if="{{ @f13 == 'yes' }}" >
+            We save time by screening out candidates with short phone call pre-interviews
+            before inviting people in
+        </check></td>
+        <td><check if="{{ @f13 == 'no' }}" >
+            "We likely waste time interviewing unqualified candidates because we don't
+            pre-screen with short phone interviews
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W, NN -->
+        <td><check if="{{ @f14 == 'yes' }}" >
+            We use behavioral interview techniques to increase the chances of a successful
+            hire
+        </check></td>
+        <td><check if="{{ @f14 == 'no' }}" >
+            We don't use behavioral interviewing
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W, NN -->
+        <td><check if="{{ @f15 == 'yes' }}" >
+            Because we are honest about what it is to work here, people are more likely to
+            stay once hired as we do what we say
+        </check></td>
+        <td><check if="{{ @f15 == 'no' }}" >
+            Because we aren't fully candid about what it is to work here, people may be
+            surprised and disappointed
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @f16 == 'yes' }}" >
+            We have more than one interview involving more than one person to ensure we
+            are getting the right person
+        </check></td>
+        <td><check if="{{ @f16 == 'no' }}" >
+            Because we hire with just one interview we may not be securing the talent with
+            the best fit
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @f17 == 'yes' }}" >
+            We involve our team in the interview process, especially those with whom the
+            candidate would work, both to get addition input and to ensure a good fit with
+            the team
+        </check></td>
+        <td><check if="{{ @f17 == 'no' }}" >
+            Because we don't involve the team in the interview process, especially those
+            with whom the candidate may work, we may not correctly assiss fit with the team
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @f18 == 'yes' }}" >
+            We use validated assessment tools that help us identify things we might have
+            missed in candidates and that help us assess the candidate's potential
+        </check></td>
+        <td><check if="{{ @f18 == 'no' }}" >
+            "Because we don't use validated assessment tools, we may be missing warning
+            signs in candidates and overlooking insights that will help us more fully
+            assess their potential
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W, NN -->
+        <td><check if="{{ @f19 == 'yes' }}" >
+            We protect ourselves and our team by using employment agreements drafted or
+            approved by a competent lawyer
+        </check></td>
+        <td><check if="{{ @f19 == 'no' }}" >
+            We may leave ourselves at risk because we don't use employment agreements
+            drafed or approved by a competent lawyer
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @f20 == 'yes' }}" >
+            We have a documented system for induction or on-boarding
+        </check></td>
+        <td><check if="{{ @f20 == 'no' }}" >
+            We don't have a system for onboarding or inducting new hires, so there is risk
+            they won't integrate as effectively or become productive as quickly as we would
+            like
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W, U-W -->
+        <td><check if="{{ @f21 == 'yes' }}" >
+            Because we order all materials they need before they arrive, new people are able
+            to start working immediately upon arrival
+        </check></td>
+        <td><check if="{{ @f21 == 'no' }}" >
+            Because we don't systematically ensure all materials they need are ordered before
+            they arrive, we risk having new people unable to start contributing right away
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-O -->
+        <td><check if="{{ @f22 == 'yes' }}" >
+            We help new hires start to feel a part of the team before they arrive by sending
+            them info about those they'll be working with
+        </check></td>
+        <td></td>
+        <td><check if="{{ @f22 == 'no' }}" >
+            We can help people feel more excited about joining us by sending info about
+            their future team members before they arrive
+        </check></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W, NN -->
+        <td><check if="{{ @f23 == 'yes' }}" >
+            We providea structured orientation to new hires during their first week
+        </check></td>
+        <td><check if="{{ @f23 == 'no' }}" >
+            We risk leaving new hires disappointed or unsettled when they arrive because we
+            don't have a structured orientation program
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W, NN -->
+        <td><check if="{{ @f24 == 'yes' }}" >
+            We schedule multiple check ins over the new hire's first month or two, so
+            they are set up for success, and so we can get ahead of any potential problems
+        </check></td>
+        <td><check if="{{ @f24 == 'no' }}" >
+            We risk incurring unforeseen problems or disappointing new hires by not
+            scheduling regular check ins over their first month or two
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @f25 == 'yes' }}" >
+            We strive to get new hires up to speed as fast as possible with systematic
+            training
+        </check></td>
+        <td><check if="{{ @f25 == 'no' }}" >
+            Because we don't engage in systematic training of new hires, we risk not making
+            them productive as soon as possible and leaving them frustrated/disappointed
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @f26 == 'yes' }}" >
+            When someone is promoted or moved to a new position, we set them up for success
+            with systematic training
+        </check></td>
+        <td><check if="{{ @f26 == 'no' }}" >
+            We may not immediately set people up for success when we promote them or move
+            them into a new position as we don't provide systematic training
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S N-W -->
+        <td><check if="{{ @f27 == 'yes' }}" >
+            We encourage long term excellence by helping our people develop professional
+            or career development plans
+        </check></td>
+        <td><check if="{{ @f27 == 'no' }}" >
+            Because we don't help our people create professional or career development
+            plans, we may not be getting the best long term performance from them
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @f28 == 'yes' }}" >
+            Not only do we create those plans, we use and refer to them to ensure our people
+            do in fact develop their potential
+        </check></td>
+        <td><check if="{{ @f28 == 'no' }}" >
+            While we help create the development plans, we don't use them consistently and
+            therefore our people may not be fully developing to their potential
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-O -->
+        <td><check if="{{ @f29 == 'yes' }}" >
+            We encourage our people to pursue education and training outside the organization
+        </check></td>
+        <td></td>
+        <td><check if="{{ @f29 == 'no' }}" >
+            We might be able to more fully develop the potential of our people by encouraging
+            them to pursue education/ training outside the organization with budgets, time or
+            other incentives
+        </check></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W,T, U-O -->
+        <td><check if="{{ @f30 == 'yes' }}" >
+            We regularly review our IT systems for viruses, malware or unauthorized
+            software and to ensure the necessary back-ups & upgrades are done
+        </check></td>
+        <td><check if="{{ @f30 == 'no' }}" >
+            Our compensation is not competitive so we risk attracting sub-par people and
+            losing good people
+        </check></td>
+        <td><check if="{{ @f30 == 'unknown' }}" >
+            By learning the compensation standards in our industry, we can creatively create
+            packages that attract the kind of people we want
+        </check></td>
+        <td><check if="{{ @f30 == 'no' }}" >
+            Because our compensation os below the competition, we are vulnerable to having our
+            people poached or leave us of their own accord
+        </check></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-O -->
+        <td><check if="{{ @f31 == 'yes' }}" >
+            We include non-monetary elements in our comp package to simultaneously provide
+            motivation for our team ad save us money
+        </check></td>
+        <td></td>
+        <td><check if="{{ @f31 == 'no' }}" >
+            By considering non-monetary elements in our comp, we can craft packages that
+            motivate our team improve loyalty and even save us moneyInventory management
+            software may save us time and money if used
+            effectively
+        </check></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-) -->
+        <td><check if="{{ @f32 == 'yes' }}" >
+            Our compensation packages include incentives for individual performance to
+            encourage particular behaviours or outcomes
+        </check></td>
+        <td></td>
+        <td><check if="{{ @f32 == 'no' }}" >
+            We may be able to inspire even better performance from our people if our
+            compensation includes incentives for specific behaviours or outcomes
+        </check></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-O -->
+        <td><check if="{{ @f33 == 'yes' }}" >
+            We include incentives for team performance as part of our comp plans to encourage
+            support of team goals
+        </check></td>
+        <td></td>
+        <td><check if="{{ @f33 == 'no' }}" >
+            We may be able to encourage better team performance by including team performance
+            incentives in our comp packages
+        </check></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W,O -->
+        <td><check if="{{ @f34 == 'yes' }}" >
+            We help our people understand what is expected of them by having clear performance
+            expectations
+        </check></td>
+        <td><check if="{{ @f34 == 'no' }}" >
+            We don't provide our people clear performance criteria, which can lead to
+            confusion and weaker performance than is possible
+        </check></td>
+        <td><check if="{{ @f34 == 'no' }}" >
+            By providing our team with clear performance criteria, we are likely to inspire
+            superoior performance
+        </check></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W,O -->
+        <td><check if="{{ @f35 == 'yes' }}" >
+            We do conduct performance conversations with staff
+        </check></td>
+        <td><check if="{{ @f35 == 'no' }}" >
+            We do not hold performance conversations with our staff potentially leaving them
+            unclear how they are doing and how to perform
+            cash
+        </check></td>
+        <td><check if="{{ @f35 == 'no' }}" >
+            By conducting performance conversations, we can let people know how they are
+            doing and what's expected of them.This may improve overall performance
+            cash
+        </check></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @f36 == 'yes' }}" >
+            We hold performance reviews more than 1x/yr so staff have a chance to make
+            changes/improvements along the way
+        </check></td>
+        <td><check if="{{ @f36 == 'no' }}" >
+            Because we only do performance reviews no more than 1x/yr, we may not be allowing
+            staff to make changes/improvements  along the way, thereby affecting their
+            compensation and advancement
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W,O -->
+        <td><check if="{{ @f37 == 'yes' }}" >
+            It is part of our culture to give detailed and informal feedback throughout the
+            year so our people always no where they stand and are never surprised in a
+            performance review
+        </check></td>
+        <td><check if="{{ @f37 == 'no' }}" >
+            Because we don't, as a matter of course, provide detailed informal feedback
+            throughout the year, people may not know where they stand and could be taken by
+            surprise in performance reviews
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @f38 == 'yes' }}" >
+            Because we set performance goals in our performance reviews, our people have
+            clarity and direction so they can grown and improve
+        </check></td>
+        <td><check if="{{ @f38 == 'no' }}" >
+            We don't have or help our people set performance goals in our performance
+            reviews so they may lack clarity on what to do to improve and grow
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @f39 == 'yes' }}" >
+            Everyone is clear on who reports to whom
+        </check></td>
+        <td><check if="{{ @f39 == 'no' }}" >
+            Because everyone is not clear who reports to who, it's possible that people will
+            become confused in a way that affects performance
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- N-W -->
+        <td></td>
+        <td><check if="{{ @f40 == 'yes' }}" >
+            We ensure people receive some form of recognition every month so they feel
+            valued and appreciated
+        </check></td>
+        <td><check if="{{ @f40 == 'no' }}" >
+            Because we don’t ensure people are recognized or appreciated at least 1x/month,
+            we risk reducing productivity and loyalty
+        </check></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @f41 == 'yes' }}" >
+            We evaluate employee satisfaction every year so we have confidence on how our
+            people are feeling and so we can take corrective measures where warranted
+        </check></td>
+        <td><check if="{{ @f41 == 'no' }}" >
+            Because we don't measure employee satisfaction, we may misjudge how happy or
+            frustrated out people are and we may miss opportunities to make improvements
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W,O -->
+        <td><check if="{{ @f42 == 'yes' }}" >
+            We screen and evaluate our subs to ensure they meet our quality standards (work,
+            timeliness and communication)
+        </check></td>
+        <td><check if="{{ @f42 == 'no' }}" >
+            Because we don't screen our subs for quality, we risk either delivering poor
+            quality work to clients or incur the cost of redoing work
+        </check></td>
+        <td><check if="{{ @f42 == 'no' }}" >
+            By screening and choosing subs on their quality of work, timeliness and
+            communication, we increase our chances of producing work consistently at our
+            standards
+        </check></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-W -->
+        <td><check if="{{ @f43 == 'yes' }}" >
+            We ensure our subs act in accordance with our brand so both our team and our
+            customers have consistent experiences
+        </check></td>
+        <td><check if="{{ @f43 == 'no' }}" >
+            We don't evaluate our subs on their alignment with our brand, which means both
+            our staff and our customers have have inconsistent experiences
+        </check></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S -->
+        <td><check if="{{ @f44 == 'yes' }}" >
+            We evaluate and only hire subs who are aligned with our values
+        </check></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S N-O, NN -->
+        <td><check if="{{ @f45 == 'yes' }}" >
+            To ensure we get the best from our subs, we have an A-list of subs who get
+            priority and a B-list who get some work and are there in case some subs take
+            us for granted
+        </check></td>
+        <td></td>
+        <td><check if="{{ @f45 == 'no' }}" >
+            By creating an A-list and a B-team of subs, you might have the ability to
+            maintain high standards of quality
+        </check></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- Y-S, N-O -->
+        <td><check if="{{ @f46 == 'yes' }}" >
+            We plan for when we will bring skills in house rather than keep paying outside
+            resources
+        </check></td>
+        <td></td>
+        <td><check if="{{ @f46 == 'no' }}" >
+            Planning ahead for bringing skills in-house when economical/prudent may save us
+            time and enhance our control
+        </check></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>{{ @f47a }}</td>
+        <td>{{ @f47b }}</td>
+        <td>{{ @f47c }}</td>
+        <td>{{ @f47d }}</td>
+    </tr>
+    </tbody>
+</table>
+
