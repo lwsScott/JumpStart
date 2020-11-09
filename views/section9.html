@@ -1,0 +1,71 @@
+<!--
+  Chunhai Yang
+  11/4/20
+  JumpStart Team Project
+  Questions for Section 9 Playbook analysis
+  -->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Section 9</title>
+    <require href="includes/check_login.php"></require>
+    <include href="includes/header.html"></include>
+</head>
+
+<body onload="toggleVisibility()">
+<include href="includes/navBar.html"></include>
+
+<div class="container">
+    <h1>Section 9: Additional External Threats and Opportunities</h1>
+    <hr>
+
+    <form action="#" method="post" class="form-horizontal">
+        <div class="row">
+            <div class="col-10">
+                <h3>In addition to the specific areas of business, there are often dynamics in the external
+                    environment that can affect the business and its operations: Technological change,
+                    Mergers/acquisitions, Legislative or regulatory change, changes in the competitive landscape,
+                    in the state of the economy, in labour markets, in the supply chain, in interest rates,
+                    in capital availability, in customer behavior/preferences and more.  Below, identify any
+                    external circumstances, locally or beyond, that either present opportunities for you & your
+                    business, or that pose threats:</h3>
+                <div class="container">
+                    <label><strong>OPPORTUNITIES</strong></label>
+                    <textarea class="form-control" id="i1" name="i1" rows="3">{{ $_SESSION['i1'] }}</textarea>
+                </div>
+                <div class="container">
+                    <label><strong>THREATS</strong></label>
+                    <textarea class="form-control" id="i2" name="i2" rows="3">{{ $_SESSION['i2'] }}</textarea>
+                </div>
+            </div>
+        </div>
+        <!-- The privacy disclaimer -->
+        <br>
+        <div class="col-4">
+            <div class="container card bg-light rounded text-center">
+                <p><strong>Note:</strong> Information entered is protected by our
+                    privacy policy. All answers are kept strictly confidential.</p>
+            </div>
+        </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="text-right">
+            <button type="submit" class="btn btn-primary">Continue</button>
+        </div>
+    </div>
+</div>
+
+</div>
+</form>
+
+</div>
+
+<script src="js/JavaScript.js"></script>
+<script src="js/clientSideValidation.js"></script>
+<include href="includes/footer.html"></include>
+</body>
+</html>
+

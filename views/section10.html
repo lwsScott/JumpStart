@@ -1,0 +1,74 @@
+<!--
+  Chunhai Yang
+  11/4/20
+  JumpStart Team Project
+  Questions for Section 10 Playbook analysis
+  -->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Section 10</title>
+    <require href="includes/check_login.php"></require>
+    <include href="includes/header.html"></include>
+</head>
+
+<body onload="toggleVisibility()">
+<include href="includes/navBar.html"></include>
+
+<div class="container">
+    <h1>Section 10:The Final Four</h1>
+    <hr>
+
+    <form action="#" method="post" class="form-horizontal">
+        <div class="row">
+            <div class="col-10">
+                <h3>Entrepreneurs often have very strong instincts about things that need attention.
+                    So, apart from anything else you have discussed above, can you identify:</h3>
+                <div class="container">
+                    <label>1)  Up to 3 things you know work great that you know you should keep doing or doing more of.</label>
+                    <textarea class="form-control" id="j1" name="j1" rows="3">{{ $_SESSION['j1'] }}</textarea>
+                </div>
+                <div class="container">
+                    <label>2)  Up to 3 things you should keep doing but improve</label>
+                    <textarea class="form-control" id="j2" name="2" rows="3">{{ $_SESSION['j2'] }}</textarea>
+                </div>
+                <div class="container">
+                    <label>  3) Up to 3 things you should stop doing altogether:</label>
+                    <textarea class="form-control" id="j3" name="j3" rows="3">{{ $_SESSION['j3'] }}</textarea>
+                </div>
+                <div class="container">
+                    <label><strong>4) Up to the 3 biggest risks facing your business right now or that you may face soon</strong></label>
+                    <textarea class="form-control" id="j4" name="j4" rows="3">{{ $_SESSION['j4'] }}</textarea>
+                </div>
+            </div>
+        </div>
+        <!-- The privacy disclaimer -->
+        <br>
+        <div class="col-4">
+            <div class="container card bg-light rounded text-center">
+                <p><strong>Note:</strong> Information entered is protected by our
+                    privacy policy. All answers are kept strictly confidential.</p>
+            </div>
+        </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="text-right">
+            <button type="submit" class="btn btn-primary">Continue</button>
+        </div>
+    </div>
+</div>
+
+</div>
+</form>
+
+</div>
+
+<script src="js/JavaScript.js"></script>
+<script src="js/clientSideValidation.js"></script>
+<include href="includes/footer.html"></include>
+</body>
+</html>
+
