@@ -132,7 +132,7 @@ class Database
         //$statement->bindParam(':image', $recipe->getImage());
         //4. Execute the statement
         $result = $statement->execute();
-        echo "Result: " . $result;
+        //echo "Result: " . $result;
 
         //Get the key of the last inserted row
         $answerID = $this->_dbh->lastInsertId();
@@ -189,9 +189,9 @@ class Database
                         :b21, :b21yn, :b22, :b22yn, :b23, :b23yn, :b24, :b24yn, :b25, :b25yn, :b26, 
                         :b26yn, :b27, :b27yn, :b28, :b28yn, :b29, :userId)";
         } elseif ($change == 'update') {
-            $sql = "UPDATE section1 SET b1 = :b1, b2 = :b2, b3 = :b3, b4 = :b4, b5 = :b5, b6 = :b6, b7 = :b7,
+            $sql = "UPDATE section2 SET b1 = :b1, b2 = :b2, b3 = :b3, b4 = :b4, b5 = :b5, b6 = :b6, b7 = :b7,
                                         b8 = :b8, b9 = :b9, b10 = :b10, b11 = :b11, b12 = :b12, b13 = :b13, b14 = :b14, 
-                                        b15 = :b15, b16 = :b16, b17 = :b17, b17yn = :b17yn , b18 = :b18, b18yn = :b18yn
+                                        b15 = :b15, b16 = :b16, b17 = :b17, b17yn = :b17yn , b18 = :b18, b18yn = :b18yn,
                                         b19 = :b19, b19yn = :b19yn, b20 = :b20, b20yn = :b20yn, b21 = :b21, b21yn = :b21yn,
                                         b22 = :b22, b22yn = :b22yn, b23 = :b23, b23yn = :b23yn, b24 = :b24, b24yn = :b24yn,
                                         b25 = :b25, b25yn = :b25yn, b26 = :b26, b26yn = :b26yn, b27 = :b27, b27yn = :b27yn,
@@ -294,7 +294,7 @@ class Database
 
         //4. Execute the statement
         $result = $statement->execute();
-        //echo "Result: " . $result;
+        echo "Result: " . $result;
 
         //Get the key of the last inserted row
         $answerID = $this->_dbh->lastInsertId();
@@ -319,7 +319,7 @@ class Database
                    c10b, c10c, c10d, userId)
                 VALUES (:c1, :c2, :c3, :c4, :c5, :c6, :c7, :c8, :c9, :c10a, :c10b, :c10c, :c10d, :userId)";
         } elseif ($change == 'update') {
-            $sql = "UPDATE section1 SET c1 = :c1, c2 = :c2, c3 = :c3, c4 = :c4, c5 = :c5, c6 = :c6, c7 = :c7,
+            $sql = "UPDATE section3 SET c1 = :c1, c2 = :c2, c3 = :c3, c4 = :c4, c5 = :c5, c6 = :c6, c7 = :c7,
                                         c8 = :c8, c9 = :c9, c10a = :c10a, c10b = :c10b, c10c = :c10c, c10d = :c10d
                                         WHERE userId = :userId";
 
@@ -364,7 +364,7 @@ class Database
 
         //4. Execute the statement
         $result = $statement->execute();
-        echo "Result: " . $result;
+        //echo "Result: " . $result;
 
         //Get the key of the last inserted row
         $answerID = $this->_dbh->lastInsertId();
@@ -476,7 +476,7 @@ class Database
 
         //4. Execute the statement
         $result = $statement->execute();
-        echo "Result: " . $result;
+        //echo "Result: " . $result;
 
         //Get the key of the last inserted row
         $answerID = $this->_dbh->lastInsertId();

@@ -76,6 +76,62 @@ $f3->route('GET|POST /section3', function($f3){
     $GLOBALS['controller']->section3($f3);
 });
 
+// this is the route to section 3 page
+// GET method when coming from home page
+// POST method when submitting form
+$f3->route('GET|POST /section4', function($f3){
+    // if the form has been submitted
+    $GLOBALS['controller']->section4($f3);
+});
+
+// this is the route to section 3 page
+// GET method when coming from home page
+// POST method when submitting form
+$f3->route('GET|POST /section5', function($f3){
+    // if the form has been submitted
+    $GLOBALS['controller']->section3($f3);
+});
+
+// this is the route to section 6 page
+// GET method when coming from home page
+// POST method when submitting form
+$f3->route('GET|POST /section6', function($f3){
+    // if the form has been submitted
+    $GLOBALS['controller']->section3($f3);
+});
+
+// this is the route to section 7 page
+// GET method when coming from home page
+// POST method when submitting form
+$f3->route('GET|POST /section7', function($f3){
+    // if the form has been submitted
+    $GLOBALS['controller']->section3($f3);
+});
+
+// this is the route to section 8 page
+// GET method when coming from home page
+// POST method when submitting form
+$f3->route('GET|POST /section8', function($f3){
+    // if the form has been submitted
+    $GLOBALS['controller']->section3($f3);
+});
+
+// this is the route to section 9 page
+// GET method when coming from home page
+// POST method when submitting form
+$f3->route('GET|POST /section9', function($f3){
+    // if the form has been submitted
+    $GLOBALS['controller']->section3($f3);
+});
+
+// this is the route to section 10 page
+// GET method when coming from home page
+// POST method when submitting form
+$f3->route('GET|POST /section10', function($f3){
+    // if the form has been submitted
+    $GLOBALS['controller']->section3($f3);
+});
+
 // this is the route to results page
 // GET method when coming from other section pages
 // POST method when submitting form
