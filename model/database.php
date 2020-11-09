@@ -31,9 +31,9 @@ class Database
     function __construct()
     {
         try {
-            if ($_SERVER['USER'] == 'lscottgr')
+            if ($_SERVER['USER'] == 'jumpstar')
             {
-                require_once '/home2/lscottgr/config.php';
+                require_once '/home/jumpstar/config.php';
             }
             else if ($_SERVER['USER'] == 'dhaasgre')
             {

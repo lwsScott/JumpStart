@@ -54,12 +54,9 @@ class JumpStartController
         //session_start();
         if(!isset($_SESSION['userId']))
         {
-            //var_dump($_SESSION);
-            //var_dump($f3);
-            $f3->reroute("login");
+            $_SESSION["page"] = $_SERVER["SCRIPT_URI"];
 
-            //Redirect user to login page
-            //header("location: login");
+            $f3->reroute("login");
         }
     }
 
@@ -976,8 +973,8 @@ class JumpStartController
                         $err = false;
                             //var_dump($f3);
                         // redirect user to either the page they came from or index.php
-                        //$page = isset($_SESSION['page']) ? $_SESSION['page'] : "index.php";
-                        //header("location: " . $page);
+                        $page = isset($_SESSION['page']) ? $_SESSION['page'] : "home";
+                        header("location: " . $page);
 
                         $view = new Template();
                         echo $view->render('views/home.html');
