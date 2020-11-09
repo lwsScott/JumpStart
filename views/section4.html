@@ -48,7 +48,7 @@
                 <div class="formatHidden" id="d2hi">
                     <div class="form-group">
                         <label for="d2" id="d2t">Identify them</label>
-                        <textarea class="form-control" id="d2" name="d2t" rows="3">{{ $_SESSION['d2'] }}</textarea>
+                        <textarea class="form-control" id="d2" name="d2" rows="3">{{ $_SESSION['d2'] }}</textarea>
                     </div>
                     <div class="container pl-10">
                         <div class="form-group">
@@ -71,13 +71,13 @@
                                 </div>
                                 <!-- Next Q   ID: d4 -->
                                 <label>which ones don't you know?(if all, write "all")</label>
-                                <textarea class="form-control" id="d4" name="d4t" rows="3">{{ $_SESSION['d4'] }}</textarea>
+                                <textarea class="form-control" id="d4" name="d4" rows="3">{{ $_SESSION['d4'] }}</textarea>
                                 <!-- Next Q   ID: d5-->
                                 <label> Which segments generate the most profit?</label>
-                                <textarea class="form-control" id="d5" name="d5t" rows="3">{{ $_SESSION['d5'] }}</textarea>
+                                <textarea class="form-control" id="d5" name="d5" rows="3">{{ $_SESSION['d5'] }}</textarea>
                                 <!-- Next Q   ID: d6-->
                                 <label> Which segments produce the most profitable customers?</label>
-                                <textarea class="form-control" id="d6" name="d6t" rows="3">{{ $_SESSION['d6'] }}</textarea>
+                                <textarea class="form-control" id="d6" name="d6" rows="3">{{ $_SESSION['d6'] }}</textarea>
                             </div>
                         </div>
                     </div>
@@ -247,7 +247,7 @@
                             <div class="form-group">
                                 <label>Does the plan address current and past customers?</label>
                                 <div class="form-check-inline">
-                                    <input type="radio" id="d15a" name="d14" class="form-check-input" value="yes"
+                                    <input type="radio" id="d15a" name="d15" class="form-check-input" value="yes"
                                            onchange="toggleVisibility()"
                                     <check if="{{ $_SESSION['d15'] == 'yes' }}" >
                                         checked="checked"
@@ -498,7 +498,8 @@
                                             it both has to ability to scale while providing reasonable fees/rates?</label>
                                         <div class="form-check-inline">
                                             <input type="radio" id="d27a" name="d27" class="form-check-input" value="yes"
-                                            <check if="{{ $_SESSION['d27'] == 'yes' }}" >
+                                                   onchange="toggleVisibility()"
+                                            <check if="{{ $_SESSION['d27a'] == 'yes' }}" >
                                                 checked="checked"
                                             </check>>
                                             <label class="form-check-label" for="d27a" id="d27y">Yes</label>
@@ -506,7 +507,7 @@
                                         <div class="form-check-inline">
                                             <input type="radio" id="d27b" name="d27" class="form-check-input" value="no"
                                                    onchange="toggleVisibility()"
-                                            <check if="{{ $_SESSION['d27'] == 'no' }}" >
+                                            <check if="{{ $_SESSION['d27b'] == 'no' }}" >
                                                 checked="checked"
                                             </check>>
                                             <label class="form-check-label" for="d27b" id="d27n">No</label>
@@ -536,20 +537,20 @@
                                         Strengths or Weakness, or do you know of Opportunities or Threats not
                                         covered above?</label>
                                     <div class="form-group">
-                                        <label for="d29a" >Strengths</label>
-                                        <textarea class="form-control" id="d29a" name="d29a" rows="3">{{ $_SESSION['d29a'] }}</textarea>
+                                        <label for="d27a" >Strengths</label>
+                                        <textarea class="form-control" id="d27a" name="d27a" rows="3">{{ $_SESSION['d29a'] }}</textarea>
                                     </div>
                                     <div class="form-group">
-                                        <label for="d29b" >Weaknesses</label>
-                                        <textarea class="form-control" id="d29b" name="d29b" rows="3">{{ $_SESSION['d29b'] }}</textarea>
+                                        <label for="d27b" >Weaknesses</label>
+                                        <textarea class="form-control" id="d27b" name="d27b" rows="3">{{ $_SESSION['d29b'] }}</textarea>
                                     </div>
                                     <div class="form-group">
-                                        <label for="d29c" >Opportunities</label>
-                                        <textarea class="form-control" id="d29c" name="d29c" rows="3">{{ $_SESSION['d29c'] }}</textarea>
+                                        <label for="d27c" >Opportunities</label>
+                                        <textarea class="form-control" id="d27c" name="d27c" rows="3">{{ $_SESSION['d29c'] }}</textarea>
                                     </div>
                                     <div class="form-group">
-                                        <label for="d29d" >Threats</label>
-                                        <textarea class="form-control" id="d29d" name="d29d" rows="3">{{ $_SESSION['d29d'] }}</textarea>
+                                        <label for="d27d" >Threats</label>
+                                        <textarea class="form-control" id="d27d" name="d27d" rows="3">{{ $_SESSION['d29d'] }}</textarea>
                                     </div>
 
                                 </div>
@@ -886,15 +887,16 @@
                     </div>
                 </div>
             </div>
-
-            <div class="row">
-                <div class="col-12">
-                    <div class="text-right">
-                        <button type="submit" class="btn btn-primary">Continue</button>
-                    </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="text-right">
+                    <button type="submit" class="btn btn-primary">Continue</button>
                 </div>
             </div>
+        </div>
     </form>
+
 </div>
 
 <script src="js/JavaScript.js"></script>
