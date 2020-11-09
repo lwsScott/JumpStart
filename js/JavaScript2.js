@@ -9,7 +9,8 @@ function toggleVisibility()
         document.getElementById('b1y').style.display = "block";
         document.getElementById('b1y').style.visibility = "visible";
 
-    } else {
+    } else
+        {
         document.getElementById('b1y').style.display = "none";
         document.getElementById('b1y').style.visibility = "hidden";
     }
