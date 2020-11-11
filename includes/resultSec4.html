@@ -20,7 +20,7 @@
         <!-- Y-S, N-W -->
         <td><check if="{{ @d1 == 'yes' }}" >
             We have clearly identified market segments that are:
-            &nbsp&nbsp{{ @d1a }}
+            &nbsp&nbsp{{ @d2 }}
         </check></td>
         <td><check if="{{ @d1 == 'no' }}" >
             We don't have clearly identified target market segments
@@ -30,59 +30,59 @@
     </tr>
     <tr>
         <!-- Y-S, N-W -->
-        <td><check if="{{ @d2 == 'yes' }}" >
+        <td><check if="{{ @d3 == 'yes' }}" >
             We are clear on the pains, needs, desires of each segment
         </check></td>
-        <td><check if="{{ @d2 == 'no' }}" >
+        <td><check if="{{ @d3 == 'no' }}" >
             We don't the pains, needs, desires of the following segments:
-            &nbsp&nbsp{{ @d2a }}
+            &nbsp&nbsp{{ @d4 }}
         </check></td>
         <td></td>
         <td></td>
     </tr>
     <tr>
         <!-- Y-S, N-W,O,T -->
-        <td><check if="{{ @d3 == 'yes' }}" >
-            We know that  the ranking of segments by revenue are:&nbsp&nbsp{{ @d3a }}
+        <td><check if="{{ @d5 == 'yes' }}" >
+            We know that  the ranking of segments by revenue are:&nbsp&nbsp{{ @d5t }}
         </check></td>
-        <td><check if="{{ @d3 == 'no' }}" >
+        <td><check if="{{ @d5 == 'no' }}" >
             We don't know which segments bring in the most money
         </check></td>
-        <td><check if="{{ @d3 == 'no' }}" >
+        <td><check if="{{ @d5 == 'no' }}" >
             When we know which segments bring in the most and least $, we can adjust our
             marketing mix to optimize marketing $ by focusing on those we seem to attract
             or on those we may be under-serving
         </check></td>
-        <td><check if="{{ @d3 == 'no' }}" >
+        <td><check if="{{ @d5 == 'no' }}" >
             By not optimizing our marketing activities strategically, we may be wasting $
             or losing customers to competitors by not adequately communicating with them
         </check></td>
     </tr>
     <tr>
         <!-- Y-S, N-W,O,T -->
-        <td><check if="{{ @d4 == 'yes' }}" >
+        <td><check if="{{ @d6 == 'yes' }}" >
             We know that the segments that produce the most profitable customers are, in
-            order:&nbsp&nbsp{{ @d4a }}
+            order:&nbsp&nbsp{{ @d6t }}
         </check></td>
-        <td><check if="{{ @d4 == 'no' }}" >
+        <td><check if="{{ @d6 == 'no' }}" >
             We don't know which segments produce the most profitable customers
         </check></td>
-        <td><check if="{{ @d4 == 'no' }}" >
+        <td><check if="{{ @d6 == 'no' }}" >
             By determining which segments produc the most profitable customers, we can
             focus our marketing efforts and $Research may reveal where we can better meet
             quality expectations
         </check></td>
-        <td><check if="{{ @d4 == 'no' }}" >
+        <td><check if="{{ @d6 == 'no' }}" >
             Because we aren't strategically targeting prospects by profit potential, we
             may be losing high profit prospects to competitors
         </check></td>
     </tr>
     <tr>
         <!-- Y-S, N-W -->
-        <td><check if="{{ @d5 == 'yes' }}" >
+        <td><check if="{{ @d7 == 'yes' }}" >
             We have and use a written marketing plan
         </check></td>
-        <td><check if="{{ @d5 == 'no' }}" >
+        <td><check if="{{ @d7 == 'no' }}" >
             We do not have or use a written marketing plan
         </check></td>
         <td></td>
@@ -90,22 +90,22 @@
     </tr>
     <tr>
         <!-- Y-S, N-W -->
-        <td><check if="{{ @d6 == 'yes' }}" >
+        <td><check if="{{ @d8 == 'yes' }}" >
             Our marketing plan distinguishes among our different market segments
         </check></td>
-        <td><check if="{{ @d6 == 'no' }}" >
-            Our markting plan fails to distinguish between our different segments
+        <td><check if="{{ @d8 == 'no' }}" >
+            Our marketing plan fails to distinguish between our different segments
         </check></td>
         <td></td>
         <td></td>
     </tr>
     <tr>
         <!-- Y-S, N-W -->
-        <td><check if="{{ @d7 == 'yes' }}" >
+        <td><check if="{{ @d9 == 'yes' }}" >
             Our plan specifies the tactics will use and the media or locations in which
             our marketing appears?
         </check></td>
-        <td><check if="{{ @d7 == 'no' }}" >
+        <td><check if="{{ @d9 == 'no' }}" >
             Our marketing plan doesn't sufficiently guide our actions as it doesn't
             specify the tactics we will use or the media or locations in which our
             marketing will appear
@@ -115,10 +115,10 @@
     </tr>
     <tr>
         <!-- Y-S, N-W -->
-        <td><check if="{{ @d8 == 'yes' }}" >
+        <td><check if="{{ @d10 == 'yes' }}" >
             Our marketing plan includes budgets
         </check></td>
-        <td><check if="{{ @d8 == 'no' }}" >
+        <td><check if="{{ @d10 == 'no' }}" >
             Our marketing plan doesn't have associated budgets
         </check></td>
         <td></td>
@@ -126,11 +126,11 @@
     </tr>
     <tr>
         <!-- Y-S, N-W -->
-        <td><check if="{{ @d9 == 'yes' }}" >
+        <td><check if="{{ @d11 == 'yes' }}" >
             Our marketing plan outlines the timings of when the activities will happen
         </check></td>
-        <td><check if="{{ @d9 == 'no' }}" >
-            Our marketing plan doesn't adequately give guidance on whan activies are
+        <td><check if="{{ @d11 == 'no' }}" >
+            Our marketing plan doesn't adequately give guidance on what activities are
             to take place
         </check></td>
         <td></td>
@@ -138,10 +138,10 @@
     </tr>
     <tr>
         <!-- Y-S, N-W -->
-        <td><check if="{{ @d10 == 'yes' }}" >
+        <td><check if="{{ @d12 == 'yes' }}" >
             Within our plan, we are ensuring that we track the relevant success metrics
         </check></td>
-        <td><check if="{{ @d10 == 'no' }}" >
+        <td><check if="{{ @d12 == 'no' }}" >
             Because we have not included plans to track key metrics, our plan is incomplete
             as we have no way of determining its success
         </check></td>
@@ -150,10 +150,10 @@
     </tr>
     <tr>
         <!-- Y-S, N-W -->
-        <td><check if="{{ @d11 == 'yes' }}" >
+        <td><check if="{{ @d13 == 'yes' }}" >
             Our marketing plan clearly assigns responsibilities
         </check></td>
-        <td><check if="{{ @d11 == 'no' }}" >
+        <td><check if="{{ @d13 == 'no' }}" >
             Because, when everyone is responsible, no one is, our plan may fail because we
             haven't clearly assigned responsibilities
         </check></td>
@@ -162,10 +162,10 @@
     </tr>
     <tr>
         <!-- Y-S, N-W -->
-        <td><check if="{{ @d12 == 'yes' }}" >
+        <td><check if="{{ @d14 == 'yes' }}" >
             Our plan includes time for evaluation so we can "stop, revise, continue, increase"
         </check></td>
-        <td><check if="{{ @d12 == 'no' }}" >
+        <td><check if="{{ @d14 == 'no' }}" >
             Because the plan doesn't include time for evaluation, we may continue doing the
             ineffective and under-emphasizing things that are
         </check></td>
@@ -174,11 +174,11 @@
     </tr>
     <tr>
         <!-- Y-S, N-W -->
-        <td><check if="{{ @d13 == 'yes' }}" >
+        <td><check if="{{ @d15 == 'yes' }}" >
             Our plan recognizes the importance of engaging current customers and reactivating
             past customers
         </check></td>
-        <td><check if="{{ @d13 == 'no' }}" >
+        <td><check if="{{ @d15 == 'no' }}" >
             Our plan focuses only on new prospects, so we may be missing opportunities to
             engage current customers and reactivate past customers
         </check></td>
@@ -187,10 +187,10 @@
     </tr>
     <tr>
         <!-- Y-S, N-W -->
-        <td><check if="{{ @d14 == 'yes' }}" >
+        <td><check if="{{ @d16 == 'yes' }}" >
             We use our plan as the guide for all our marketing activities.
         </check></td>
-        <td><check if="{{ @d14 == 'no' }}" >
+        <td><check if="{{ @d16 == 'no' }}" >
             While we have a plan, we don't (or don't consistently) use it as the guide for
             our marketing activities
         </check></td>
@@ -199,11 +199,11 @@
     </tr>
     <tr>
         <!-- Y-S, N-W -->
-        <td><check if="{{ @d15 == 'yes' }}" >
+        <td><check if="{{ @d17 == 'yes' }}" >
             We have a well defined customer experience process that consistently delivers
             positive experiences at all significant touch points
         </check></td>
-        <td><check if="{{ @d15 == 'no' }}" >
+        <td><check if="{{ @d17 == 'no' }}" >
             We could be losing customers as we have not designed a customer experience
             process that consistently gives positive experiences at important touch points
         </check></td>
@@ -212,31 +212,31 @@
     </tr>
     <tr>
         <!-- Y-S, N-W,O,T -->
-        <td><check if="{{ @d16 == 'yes' }}" >
+        <td><check if="{{ @d18 == 'yes' }}" >
             We are confident in our pricing as we have explored the impact of price changes
             over the last year
         </check></td>
-        <td><check if="{{ @d16 == 'no' }}" >
+        <td><check if="{{ @d18 == 'no' }}" >
             We haven't explored the impact of price changes (increase, decrease, bundled
             prices) over the last year
         </check></td>
-        <td><check if="{{ @d16 == 'no' }}" >
+        <td><check if="{{ @d18 == 'no' }}" >
             We may be able improve both our profitability and customer quality by optimizing
             our pricing
         </check></td>
-        <td><check if="{{ @d16 == 'no' }}" >
+        <td><check if="{{ @d18 == 'no' }}" >
             Because we haven't examined our pricing, we may be vulnerable to being caught
             by surprise by competitors?
         </check></td>
     </tr>
     <tr>
         <!-- Y-S,O -->
-        <td><check if="{{ @d17 == 'yes' }}" >
+        <td><check if="{{ @d19 == 'yes' }}" >
             We have access to lists, relationships or influencers that are connected to 1+ of
             our segments
         </check></td>
         <td></td>
-        <td><check if="{{ @d17 == 'yes' }}" >
+        <td><check if="{{ @d19 == 'yes' }}" >
             We could reach new customers by leveraging the lists, relationships or influencers
             who are connected to 1+ of our segments
         </check></td>
@@ -244,11 +244,11 @@
     </tr>
     <tr>
         <!-- Y-S, N-W -->
-        <td><check if="{{ @d18 == 'yes' }}" >
+        <td><check if="{{ @d20 == 'yes' }}" >
             We measure CSAT, so we are more likely to assess potential loyalty and to
             identify ways to make improvements
         </check></td>
-        <td><check if="{{ @d18 == 'no' }}" >
+        <td><check if="{{ @d20 == 'no' }}" >
             Because we don't measure CSAT, we risk losing clients and missing
             opportunities to improve customer loyalty
         </check></td>
@@ -256,21 +256,21 @@
         <td></td>
     </tr>
     <tr>
-        <td>{{@d19}}</td>
+        <td>{{@d21}}</td>
         <td></td>
         <td></td>
         <td></td>
     </tr>
     <tr>
         <!-- Y-S, N-W -->
-        <td><check if="{{ @d20 == 'yes' }}" >
+        <td><check if="{{ @d22 == 'yes' }}" >
             We have a documented sales process, which lets us asses what works and what doesn't
         </check></td>
-        <td><check if="{{ @d20 == 'no' }}" >
+        <td><check if="{{ @d22 == 'no' }}" >
             Because we don't have a documented sales process, we may not be able to identify
             where our sales efforts are working and not working?
         </check></td>
-        <td><check if="{{ @d20 == 'no' }}" >
+        <td><check if="{{ @d22 == 'no' }}" >
             By documenting our sale process, we'll be able to more effectively train new
             sales people and diagnose where things are working or not working in sales
         </check></td>
@@ -278,11 +278,11 @@
     </tr>
     <tr>
         <!-- Y-S, N-W -->
-        <td><check if="{{ @d21 == 'yes' }}" >
+        <td><check if="{{ @d23 == 'yes' }}" >
             We have a sales management process that allows us to improve accountability
             and assess both our people and activities?
         </check></td>
-        <td><check if="{{ @d21 == 'no' }}" >
+        <td><check if="{{ @d23 == 'no' }}" >
             Because we don't have a sales management process, we may not be getting the
             best out of our people or good information about our sales effectiveness?
         </check></td>
@@ -291,29 +291,29 @@
     </tr>
     <tr>
         <!-- Y-S, N-W,O,T -->
-        <td><check if="{{ @d22 == 'yes' }}" >
+        <td><check if="{{ @d24 == 'yes' }}" >
             We hire our sales/account people with an eye to a strong sales personality
             and skills
         </check></td>
-        <td><check if="{{ @d22 == 'no' }}" >
+        <td><check if="{{ @d24 == 'no' }}" >
             By recruiting primarily on experience rather than personality and skills, we
             may be missing people with excellent potential
         </check></td>
-        <td><check if="{{ @d22 == 'no' }}" >
+        <td><check if="{{ @d24 == 'no' }}" >
             By recruiting for skills and personality fit, we could reach more prospects
             through a strong sales force
         </check></td>
-        <td><check if="{{ @d22 == 'no' }}" >
+        <td><check if="{{ @d24 == 'no' }}" >
             By failing to recruit for personality fit and skills, we could face competitors
             with superior sales people
         </check></td>
     </tr>
     <tr>
         <!-- Y-S, N-W -->
-        <td><check if="{{ @d23 == 'yes' }}" >
+        <td><check if="{{ @d25 == 'yes' }}" >
             We set our sales people up for success by providing solid sales training
         </check></td>
-        <td><check if="{{ @d23 == 'no' }}" >
+        <td><check if="{{ @d25 == 'no' }}" >
             We do not provide solid sales training so our sales people may not be
             performing to their potential?
         </check></td>
@@ -322,14 +322,14 @@
     </tr>
     <tr>
         <!-- Y-S, N-W,O, NN -->
-        <td><check if="{{ @d24 == 'yes' }}" >
+        <td><check if="{{ @d26 == 'yes' }}" >
             We use a CRM system to ensure we stay on top of opportunities and track results
         </check></td>
-        <td><check if="{{ @d24 == 'no' }}" >
+        <td><check if="{{ @d26 == 'no' }}" >
             Because we don't use a CRM, we may lose track of opportunities, fail in timely
             follow up and have inaccurate data on our results
         </check></td>
-        <td><check if="{{ @d24 == 'no' }}" >
+        <td><check if="{{ @d26 == 'no' }}" >
             There are CRM systems available that may help us streamline our sales process,
             ensure we stay on top of opportunities and track our results
         </check></td>
@@ -337,11 +337,11 @@
     </tr>
     <tr>
         <!-- Y-S, N-W -->
-        <td><check if="{{ @d25 == 'yes' }}" >
+        <td><check if="{{ @d27 == 'yes' }}" >
             We have a payment processing system that can grow with us while providing
             reasonable fees/rates?"
         </check></td>
-        <td><check if="{{ @d25 == 'no' }}" >
+        <td><check if="{{ @d27 == 'no' }}" >
             We haven't researched to know if your payment processing system is best to
             scale with our growth and provides the most reasonable fees/rates?
         </check></td>
@@ -350,24 +350,24 @@
     </tr>
     <tr>
         <!-- Y-S, N-W, U-O -->
-        <td><check if="{{ @d26 == 'yes' }}" >
+        <td><check if="{{ @d28 == 'yes' }}" >
             Our online funnel and website are conversion optimized
         </check></td>
-        <td><check if="{{ @d26 == 'no' }}" >
+        <td><check if="{{ @d28 == 'no' }}" >
             We have not optimized our online funnel or website for
             conversions, which means we may be losing sales
         </check></td>
-        <td><check if="{{ @d26 == 'unknown' }}" >
+        <td><check if="{{ @d28 == 'unknown' }}" >
             By optimizing our website and funnels for conversion,
             we could potentially generate significantly increased sales?
         </check></td>
         <td></td>
     </tr>
     <tr>
-        <td>{{@d27a}}</td>
-        <td>{{@d27b}}</td>
-        <td>{{@d27c}}</td>
-        <td>{{@d27d}}</td>
+        <td>{{@d29a}}</td>
+        <td>{{@d29b}}</td>
+        <td>{{@d29c}}</td>
+        <td>{{@d29d}}</td>
     </tr>
     </tbody>
 </table>
