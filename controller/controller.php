@@ -67,148 +67,57 @@ class JumpStartController
     {
         // initialize the session variables
         // allows for incomplete submittal
-        $_SESSION['a1'] = "";
-        $_SESSION['a2'] = "";
-        $_SESSION['a3'] = "";
-        $_SESSION['a4'] = "";
-        $_SESSION['a5'] = "";
-        $_SESSION['a6'] = "";
-        $_SESSION['a7'] = "";
-        $_SESSION['a8'] = "";
-        $_SESSION['a9'] = "";
-        $_SESSION['a10'] = "";
-        $_SESSION['a11'] = "";
-        $_SESSION['a12'] = "";
-        $_SESSION['a13'] = "";
-        $_SESSION['a14'] = "";
-        $_SESSION['a15'] = "";
-        $_SESSION['a16'] = "";
-        $_SESSION['a17'] = "";
-        $_SESSION['a18'] = "";
 
         // validate the data
         // TODO really validate the data
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            if (isset($_POST['a1'])) {
-                $_SESSION['a1'] = $_POST['a1'];
-            }
-            if (isset($_POST['a2'])) {
-                $_SESSION['a2'] = $_POST['a2'];
-            }
-            if (isset($_POST['a3'])) {
-                $_SESSION['a3'] = $_POST['a3'];
-            }
-            if (isset($_POST['a4'])) {
-                $_SESSION['a4'] = $_POST['a4'];
-            }
-            if (isset($_POST['a5'])) {
-                $_SESSION['a5'] = $_POST['a5'];
-            }
-            if (isset($_POST['a6'])) {
-                $_SESSION['a6'] = $_POST['a6'];
-            }
-            if (isset($_POST['a7'])) {
-                $_SESSION['a7'] = $_POST['a7'];
-            }
-            if (isset($_POST['a8'])) {
-                $_SESSION['a8'] = $_POST['a8'];
-            }
-            if (isset($_POST['a9'])) {
-                $_SESSION['a9'] = $_POST['a9'];
-            }
-            if (isset($_POST['a10'])) {
-                $_SESSION['a10'] = $_POST['a10'];
-            }
-            if (isset($_POST['a11'])) {
-                $_SESSION['a11'] = $_POST['a11'];
-            }
-            if (isset($_POST['a12'])) {
-                $_SESSION['a12'] = $_POST['a12'];
-            }
-            if (isset($_POST['a13'])) {
-                $_SESSION['a13'] = $_POST['a13'];
-            }
-            if (isset($_POST['a14'])) {
-                $_SESSION['a14'] = $_POST['a14'];
-            }
-            if (isset($_POST['a15'])) {
-                $_SESSION['a15'] = $_POST['a15'];
-            }
-            if (isset($_POST['a16'])) {
-                $_SESSION['a16'] = $_POST['a16'];
-            }
-            if (isset($_POST['a17'])) {
-                $_SESSION['a17'] = $_POST['a17'];
-            }
-            if (isset($_POST['a18'])) {
-                $_SESSION['a18'] = $_POST['a18'];
+
+            $section1 = getSection1();
+
+            foreach ($section1 as $k=>$v)
+            {
+                //var_dump($_POST[$v]);
+                if (isset($_POST[$v])) {
+                    $this->_f3->set($v, $_POST[$v]);
+                } else {
+                    $this->_f3->set($v, "");
+
+                }
             }
 
-            // if valid is true
-            $valid = true;
-            if ($valid) {
-                //echo '<h1>I made it here with valid data</h1>';
-                $a1 = $_SESSION['a1'];  $this->_f3->set('a1', $a1);
-                $a2 = $_SESSION['a2']; $this->_f3->set('a2', $a2);
-                $a3 = $_SESSION['a3']; $this->_f3->set('a3', $a3);
-                $a4 = $_SESSION['a4']; $this->_f3->set('a4', $a4);
-                $a5 = $_SESSION['a5']; $this->_f3->set('a5', $a5);
-                $a6 = $_SESSION['a6']; $this->_f3->set('a6', $a6);
-                $a7 = $_SESSION['a7']; $this->_f3->set('a7', $a7);
-                $a8 = $_SESSION['a8']; $this->_f3->set('a8', $a8);
-                $a9 = $_SESSION['a9']; $this->_f3->set('a9', $a9);
-                $a10 = $_SESSION['a10']; $this->_f3->set('a10', $a10);
-                $a11 = $_SESSION['a11']; $this->_f3->set('a11', $a11);
-                $a12 = $_SESSION['a12']; $this->_f3->set('a12', $a12);
-                $a13 = $_SESSION['a13']; $this->_f3->set('a13', $a13);
-                $a14 = $_SESSION['a14']; $this->_f3->set('a14', $a14);
-                $a15 = $_SESSION['a15']; $this->_f3->set('a15', $a15);
-                $a16 = $_SESSION['a16']; $this->_f3->set('a16', $a16);
-                $a17 = $_SESSION['a17']; $this->_f3->set('a17', $a17);
-                $a18 = $_SESSION['a18']; $this->_f3->set('a18', $a18);
-                $userId = $_SESSION['userId'];
+            $userId = $_SESSION['userId'];
 
+            // construct a section1 object
+            $section1 = new Section1($f3->get('a1'),$f3->get('a2'), $f3->get('a3'), $f3->get('a4'), $f3->get('a5'),
+                $f3->get('a6'), $f3->get('a7'), $f3->get('a8'), $f3->get('a9'), $f3->get('a10'), $f3->get('a11'),
+                $f3->get('a12'), $f3->get('a13'), $f3->get('a14'), $f3->get('a15'), $f3->get('a16'), $f3->get('a17'),
+                $f3->get('a18'), $userId);
 
-                // construct a section1 object
-                $section1 = new Section1($a1, $a2, $a3, $a4, $a5, $a6, $a7, $a8, $a9, $a10, $a11, $a12,
-                    $a13, $a14, $a15, $a16, $a17, $a18, $userId);
+            //$_SESSION['section1'] = $section1;
+            $this->_f3->set('section1', $section1);
+            //var_dump($section1);
 
-                $_SESSION['section1'] = $section1;
-                $this->_f3->set('section1', $section1);
-                //var_dump($section1);
-
-                // add the recipe to the database
-                $GLOBALS['db']->addSection1($section1, 'update');
-                $f3->reroute("results");
-                //echo "before submit";
-                //$view = new Template();
-                //echo $view->render('views/results.html');
-            }
+            // add the section to the database
+            $GLOBALS['db']->addSection1($section1, 'update');
+            $f3->reroute("results");
+            //echo "before submit";
+            //$view = new Template();
+            //echo $view->render('views/results.html');
         } else {
             // login
             $this->checkLogin($f3);
 
             // populate section with user info
-            $results = $GLOBALS['db']->getSection($_SESSION['userId'], "section1");
-
-            $this->_f3->set('a1', $results['a1']);
-            $this->_f3->set('a2', $results['a2']);
-            $this->_f3->set('a3', $results['a3']);
-            $this->_f3->set('a4', $results['a4']);
-            $this->_f3->set('a5', $results['a5']);
-            $this->_f3->set('a6', $results['a6']);
-            $this->_f3->set('a7', $results['a7']);
-            $this->_f3->set('a8', $results['a8']);
-            $this->_f3->set('a9', $results['a9']);
-            $this->_f3->set('a10', $results['a10']);
-            $this->_f3->set('a11', $results['a11']);
-            $this->_f3->set('a12', $results['a12']);
-            $this->_f3->set('a13', $results['a13']);
-            $this->_f3->set('a14', $results['a14']);
-            $this->_f3->set('a15', $results['a15']);
-            $this->_f3->set('a16', $results['a16']);
-            $this->_f3->set('a17', $results['a17']);
-            $this->_f3->set('a18', $results['a18']);
+            // initialize the user variables
+            $resultsSec1 = $GLOBALS['db']->getSection($_SESSION['userId'], "section1");
+            foreach ($resultsSec1 as $k=>$v)
+            {
+                if ($k != 'answerID')
+                {
+                    $this->_f3->set($k, $v);
+                    //echo " k " . $k . " v " . $v;
+                }
+            }
 
             $view = new Template();
             echo $view->render('views/section1.html');
