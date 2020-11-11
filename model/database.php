@@ -14,11 +14,10 @@ ini_set('display_errors', 1);
 error_reporting(E_ALL);
 //require '/home2/lscottgr/config.php';
 
-
 /*
  * Class Database
  * constructs database object
- * additional functions will include storage and retrieval methods
+ * additional functions include storage and retrieval methods
  * 10/28/20
  * @author Lewis Scott
  * @version 1.0
@@ -34,6 +33,10 @@ class Database
             if ($_SERVER['USER'] == 'jumpstar')
             {
                 require_once '/home/jumpstar/config.php';
+            }
+            elseif ($_SERVER['USER'] == 'lscottgr') {
+
+                require_once '/home2/lscottgr/config.php';
             }
             else if ($_SERVER['USER'] == 'dhaasgre')
             {
@@ -597,6 +600,4 @@ class Database
         $result = $statement->fetch(PDO::FETCH_ASSOC);
         return $result;
     }
-
-
 }
