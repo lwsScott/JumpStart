@@ -1,5 +1,5 @@
 /**
- * This method makes section1 questions visible based on answers to other questions
+ * This method makes section4 questions visible based on answers to other questions
  */
 function toggleVisibility()
 {

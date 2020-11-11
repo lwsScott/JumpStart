@@ -5,19 +5,20 @@ function toggleVisibility()
 {
     // make a text field  visible if Yes checked, hidden otherwise
     if (document.getElementById('c1a').checked) {
+
         document.getElementById('c1hiy').style.display = "block";
         document.getElementById('c1hiy').style.visibility = "visible";
-        document.getElementById('c1hin').style.display = "none";
-        document.getElementById('c1hin').style.visibility = "hidden";
+
+    } else {
+
+        document.getElementById('c1hiy').style.display = "none";
+        document.getElementById('c1hiy').style.visibility = "hidden";
     }
 
     if (document.getElementById('c1b').checked) {
         document.getElementById('c1hiy').style.display = "none";
         document.getElementById('c1hiy').style.visibility = "hidden";
-        document.getElementById('c1hin').style.display =  "block";
-        document.getElementById('c1hin').style.visibility = "visible";
     }
-
 
     // make question and text box visible if No checked, hidden otherwise
     if (document.getElementById('c2a').checked)
