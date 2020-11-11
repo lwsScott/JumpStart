@@ -12,15 +12,13 @@ class Section4
     //Declare instance variables
     private $_answerID;
     private $_d1;
-    private $_d1a;
     private $_d2;
-    private $_d2a;
     private $_d3;
-    private $_d3a;
     private $_d4;
-    private $_d4a;
     private $_d5;
+    private $_d5t;
     private $_d6;
+    private $_d6t;
     private $_d7;
     private $_d8;
     private $_d9;
@@ -41,28 +39,28 @@ class Section4
     private $_d24;
     private $_d25;
     private $_d26;
-    private $_d27a;
-    private $_d27b;
-    private $_d27c;
-    private $_d27d;
+    private $_d27;
+    private $_d28;
+    private $_d29a;
+    private $_d29b;
+    private $_d29c;
+    private $_d29d;
     private $_userId;
 
     // constructor
 
-    function __construct($d1, $d1a, $d2, $d2a, $d3, $d3a, $d4, $d4a, $d5, $d6, $d7, $d8, $d9,
+    function __construct($d1, $d2, $d3, $d4, $d5, $d5t, $d5t, $d6, $d6t, $d7, $d8, $d9,
                          $d10, $d11, $d12, $d13, $d14, $d15, $d16, $d17, $d18, $d19, $d20, $d21,
-                         $d22, $d23, $d24, $d25, $d26, $d27a, $d27b, $d27c, $d27d, $userId)
+                         $d22, $d23, $d24, $d25, $d26, $d27, $d28, $d29a, $d29b, $d29c, $d29d, $userId)
     {
         $this->_d1 = $d1;
-        $this->_d1a = $d1a;
         $this->_d2 = $d2;
-        $this->_d2a = $d2a;
         $this->_d3 = $d3;
-        $this->_d3a = $d3a;
         $this->_d4 = $d4;
-        $this->_d4a = $d4a;
         $this->_d5 = $d5;
+        $this->_d5t = $d5t;
         $this->_d6 = $d6;
+        $this->_d6t = $d6t;
         $this->_d7 = $d7;
         $this->_d8 = $d8;
         $this->_d9 = $d9;
@@ -83,10 +81,12 @@ class Section4
         $this->_d24 = $d24;
         $this->_d25 = $d25;
         $this->_d26 = $d26;
-        $this->_d27a = $d27a;
-        $this->_d27b = $d27b;
-        $this->_d27c = $d27c;
-        $this->_d27d = $d27d;
+        $this->_d25 = $d27;
+        $this->_d26 = $d28;
+        $this->_d29a = $d29a;
+        $this->_d29b = $d29b;
+        $this->_d29c = $d29c;
+        $this->_d29d = $d29d;
         $this->_userId = $userId;
     }
 
@@ -109,25 +109,9 @@ class Section4
     /**
      * @return mixed
      */
-    public function getD1a()
-    {
-        return $this->_d1a;
-    }
-
-    /**
-     * @return mixed
-     */
     public function getD2()
     {
         return $this->_d2;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getD2a()
-    {
-        return $this->_d2a;
     }
 
     /**
@@ -141,25 +125,9 @@ class Section4
     /**
      * @return mixed
      */
-    public function getD3a()
-    {
-        return $this->_d3a;
-    }
-
-    /**
-     * @return mixed
-     */
     public function getD4()
     {
         return $this->_d4;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getD4a()
-    {
-        return $this->_d4a;
     }
 
     /**
@@ -173,9 +141,25 @@ class Section4
     /**
      * @return mixed
      */
+    public function getD5t()
+    {
+        return $this->_d5t;
+    }
+
+    /**
+     * @return mixed
+     */
     public function getD6()
     {
         return $this->_d6;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getD6t()
+    {
+        return $this->_d6t;
     }
 
     /**
@@ -341,33 +325,49 @@ class Section4
     /**
      * @return mixed
      */
-    public function getD27a()
+    public function getD27()
     {
-        return $this->_d27a;
+        return $this->_d27;
     }
 
     /**
      * @return mixed
      */
-    public function getD27b()
+    public function getD28()
     {
-        return $this->_d27b;
+        return $this->_d28;
     }
 
     /**
      * @return mixed
      */
-    public function getD27c()
+    public function getD29a()
     {
-        return $this->_d27c;
+        return $this->_d29a;
     }
 
     /**
      * @return mixed
      */
-    public function getD27d()
+    public function getD29b()
     {
-        return $this->_d27d;
+        return $this->_d29b;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getD29c()
+    {
+        return $this->_d29c;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getD29d()
+    {
+        return $this->_d29d;
     }
 
     /**
