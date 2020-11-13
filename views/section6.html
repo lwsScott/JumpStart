@@ -55,7 +55,7 @@
                     <label>What percentage of your team is operating at or above the skill and productivity
                         level you expect at their level of seniority and experience?</label>
                     <div class="form-check-inline">
-                        <input class="form-control" type="text" name="f3t" id="f3t" value="{{ @bf3t }}">
+                        <input class="form-control" type="text" name="f3t" id="f3t" value="{{ @f3t }}">
                     </div>
                     <div class="form-check-inline">
                         <input class="form-check-input" type="checkbox" id="f3" name="f3">
@@ -636,7 +636,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f30c" name="f30" class="form-check-input" value="I don't know"
                        onchange="toggleVisibility()"
-                <check if="{{ @f30 == 'I don't know' }}" >
+                <check if="{{ @f30 == 'unknown' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f30c" id="f30na">I don't know</label>
@@ -1002,19 +1002,19 @@
                     of Threats not covered above?</label>
                 <div class="form-group">
                     <label for="e52a" >Strengths</label>
-                    <textarea class="form-control" id="e52a" name="e52a" rows="3">{{ @e52a] }}</textarea>
+                    <textarea class="form-control" id="f47a" name="f47a" rows="3">{{ @f47a }}</textarea>
                 </div>
                 <div class="form-group">
                     <label for="e52b" >Weaknesses</label>
-                    <textarea class="form-control" id="e52b" name="e52b" rows="3">{{ @e52b }}</textarea>
+                    <textarea class="form-control" id="f47b" name="f47b" rows="3">{{ @f47b }}</textarea>
                 </div>
                 <div class="form-group">
                     <label for="e52c" >Opportunities</label>
-                    <textarea class="form-control" id="e52c" name="e52c" rows="3">{{ @e52c }}</textarea>
+                    <textarea class="form-control" id="f47c" name="f47c" rows="3">{{ @f47c }}</textarea>
                 </div>
                 <div class="form-group">
                     <label for="e52d" >Threats</label>
-                    <textarea class="form-control" id="e52d" name="e52d" rows="3">{{ @e52d }}</textarea>
+                    <textarea class="form-control" id="f47d" name="f47d" rows="3">{{ @f47d }}</textarea>
                 </div>
                 <!-- The privacy disclaimer -->
                 <br>

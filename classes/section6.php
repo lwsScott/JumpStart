@@ -9,7 +9,7 @@
  */
 
 
-class Sfction6
+class Section6
 {
     //Declare instance variables
     private $_answerID;

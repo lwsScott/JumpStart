@@ -948,6 +948,73 @@ class JumpStartController
             echo $view->render('views/section5.html');
         }
     }
+
+    /**
+     * Display the section1 route
+     */
+    public function section6($f3)
+    {
+        // initialize the session variables
+        // allows for incomplete submittal
+
+        // validate the data
+        // TODO really validate the data
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            // get the section1 variable names and set hive variables
+            $section6 = getSection6();
+            foreach ($section6 as $k=>$v)
+            {
+                //var_dump($_POST[$v]);
+                if (isset($_POST[$v])) {
+                    $this->_f3->set($v, $_POST[$v]);
+                } else {
+                    $this->_f3->set($v, "");
+                }
+            }
+
+            $userId = $_SESSION['userId'];
+
+            // construct a section1 object
+            $section6 = new Section6($f3->get('f1'), $f3->get('f2'), $f3->get('f3'), $f3->get('f3t'), $f3->get('f4'), $f3->get('f5'),
+                $f3->get('f6'), $f3->get('f7'), $f3->get('f8'), $f3->get('f9'), $f3->get('f10'),  $f3->get('f10t'),
+                $f3->get('f11'), $f3->get('f12'), $f3->get('f13'), $f3->get('f14'), $f3->get('f15'), $f3->get('f16'),
+                $f3->get('f17'), $f3->get('f18'), $f3->get('f19'), $f3->get('f20'), $f3->get('f21'), $f3->get('f22'),
+                $f3->get('f23'), $f3->get('f24'), $f3->get('f25'), $f3->get('f26'), $f3->get('f27'), $f3->get('f28'),
+                $f3->get('f29'), $f3->get('f30'), $f3->get('f31'), $f3->get('f32'), $f3->get('f33'), $f3->get('f34'),
+                $f3->get('f35'), $f3->get('f36'), $f3->get('f37'), $f3->get('f38'), $f3->get('f39'), $f3->get('f40'),
+                $f3->get('f41'), $f3->get('f42'), $f3->get('f43'), $f3->get('f44'), $f3->get('f45'), $f3->get('f46'),
+                $f3->get('f47a'), $f3->get('f47b'), $f3->get('f47c'), $f3->get('f47d'), $userId);
+
+
+            $this->_f3->set('section6', $section6);
+
+            // add the section to the database
+            $GLOBALS['db']->addSection6($section6, 'update');
+            $f3->reroute("results");
+            //echo "before submit";
+            //$view = new Template();
+            //echo $view->render('views/results.html');
+        } else {
+            // login
+            $this->checkLogin($f3);
+
+            // populate section with user info
+            // initialize the user variables
+            $resultsSec6 = $GLOBALS['db']->getSection($_SESSION['userId'], "section6");
+            foreach ($resultsSec6 as $k=>$v)
+            {
+                if ($k != 'answerID')
+                {
+                    $this->_f3->set($k, $v);
+                    //echo " k " . $k . " v " . $v;
+                }
+            }
+
+            $view = new Template();
+            echo $view->render('views/section6.html');
+        }
+    }
     /**
      * Display the results route
      */
@@ -1005,6 +1072,14 @@ class JumpStartController
             }
         }
 
+        $resultsSec6 = $GLOBALS['db']->getSection($_SESSION['userId'], "section6");
+        foreach ($resultsSec6 as $k=>$v)
+        {
+            if ($k != 'answerID')
+            {
+                $this->_f3->set($k, $v);
+            }
+        }
         $view = new Template();
         echo $view->render('views/results.html');
     }
@@ -1162,12 +1237,18 @@ class JumpStartController
                     "", "", "", "", "", "", "", "", "", "", "",
                     "", "", "", $userId);
 
+                $section6 = new Section6("", "", "", "", "", "", "", "", "",
+                    "", "", "", "", "", "", "", "", "", "", "",
+                    "", "", "", "", "", "", "", "", "", "", "",
+                    "", "", "", "", "", "",  "", "", "", "", "",
+                    "", "", "", "", "", "", "","", "", $userId);
+
                 $_SESSION['section1'] = $section1;
                 $_SESSION['section2'] = $section2;
                 $_SESSION['section3'] = $section3;
                 $_SESSION['section4'] = $section4;
                 $_SESSION['section5'] = $section5;
-
+                $_SESSION['section6'] = $section6;
 
                 //var_dump($section1);
 

@@ -30,15 +30,15 @@
         <!-- Y-S, N-W -->
         <td>{{ @f3t }} % of our team operates at or above the skill/productivity level we
             expect></td>
-        <td><check if="{{ @f3.check == true }}" >
+        <td><check if="{{ @f3 == 'on' }}" >
             The percentage of employees operating below the skill/ productivity level we
             expect are likely costing us
         </check>
-        <check if="{{ @f3.check == true }}" >
+        <check if="{{ @f3 == 'on' }}" >
             We don't know what percent of our team is operating at or above the skill/
             productivity level we expect
         </check></td>
-        <td><check if="{{ @f3.check == true }}" >
+        <td><check if="{{ @f3 == 'on' }}" >
             By identifying which staff are and aren't performing to standard or above, we
             can train or transition those that are below and more effectively reward &
             challenge our stars
