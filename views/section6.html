@@ -48,17 +48,18 @@
                 <!-- If the above answer is No, then next Q -->
                 <div class="container pl-20 formatHidden" id="f1hi">
                     <label for="f2" id="q6">Are you overstaffed or understaffed?</label>
-                    <textarea class="form-control" id="f2" name="f2" rows="3">{{ $_SESSION['f2'] }}</textarea>
+                    <textarea class="form-control" id="f2" name="f2" rows="3">{{ @f2 }}</textarea>
                 </div>
                 <!-- Next Q of Section 6 -->
                 <div class="container">
                     <label>What percentage of your team is operating at or above the skill and productivity
                         level you expect at their level of seniority and experience?</label>
                     <div class="form-check-inline">
-                        <textarea class="form-control" id="f3" name="f3" rows="3">{{ $_SESSION['f3'] }}</textarea>
+                        <input class="form-control" type="text" name="f3t" id="f3t" value="{{ @bf3t }}">
                     </div>
                     <div class="form-check-inline">
-                        <label>I don't know</label>
+                        <input class="form-check-input" type="checkbox" id="f3" name="f3">
+                        <label class="form-check-label" for="f3">I don't know</label>
                     </div>
                 </div>
                 <!-- Next Q of Section 6-->
@@ -66,20 +67,20 @@
                     <label>We have an HR plan that shows the prioritized positions to fill and what conditions
                         must exist (sales, cash in bank, leads,  production load etc) before we fill them?</label>
                     <div class="form-check-inline">
-                        <input type="radio" id="f3a" name="f3" class="form-check-input" value="yes"
+                        <input type="radio" id="f4a" name="f4" class="form-check-input" value="yes"
                                onchange="toggleVisibility()"
-                        <check if="{{ @f3 == 'yes' }}" >
+                        <check if="{{ @f4 == 'yes' }}" >
                             checked="checked"
                         </check>>
-                        <label class="form-check-label" for="f3a" id="f3y">Yes</label>
+                        <label class="form-check-label" for="f4a" id="f4y">Yes</label>
                     </div>
                     <div class="form-check-inline">
-                        <input type="radio" id="f3b" name="f3" class="form-check-input" value="no"
+                        <input type="radio" id="f4b" name="f4" class="form-check-input" value="no"
                                onchange="toggleVisibility()"
-                        <check if="{{ @f3 == 'no' }}" >
+                        <check if="{{ @f4 == 'no' }}" >
                             checked="checked"
                         </check>>
-                        <label class="form-check-label" for="f3b" id="f3n">No</label>
+                        <label class="form-check-label" for="f4b" id="f4n">No</label>
                     </div>
                 </div>
             </div>
