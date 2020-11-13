@@ -8,7 +8,6 @@
  * @version 1.0
  */
 
-
 class Section5
 {
     //Declare instance variables
@@ -23,7 +22,7 @@ class Section5
     private $_e8;
     private $_e9;
     private $_e10;
-    private $_e10a;
+    private $_e10t;
     private $_e11;
     private $_e12;
     private $_e13;
@@ -70,20 +69,15 @@ class Section5
     private $_e52c;
     private $_e52d;
 
-
-
-
-
-
     private $_userId;
 
     // constructor
 
-    function __construct($e1, $e2, $e3, $e3a, $e4, $e5, $e6, $e7, $e8, $e9, $e10, $e10a,$e11,
+    function __construct($e1, $e2, $e3, $e4, $e5, $e6, $e7, $e8, $e9, $e10, $e10t, $e11,
                          $e12, $e13, $e14, $e15, $e16, $e17, $e18, $e19, $e20, $e21, $e22,
                          $e23, $e24, $e25, $e26, $e27, $e28, $e29, $e30, $e31, $e32, $e33, $e34,
                          $e35, $e36, $e37, $e38, $e39, $e40, $e41, $e42, $e43, $e44, $e45, $e46,
-                         $e47, $e48, $e49, $e50, $e51, $e52a, $e52b, $e52c, $e52c, $e52d ,$userId)
+                         $e47, $e48, $e49, $e50, $e51, $e52a, $e52b, $e52c, $e52d ,$userId)
     {
         $this->_e1 = $e1;
         $this->_e2 = $e2;
@@ -95,7 +89,7 @@ class Section5
         $this->_e8 = $e8;
         $this->_e9 = $e9;
         $this->_e10 = $e10;
-        $this->_e10a = $e10a;
+        $this->_e10t = $e10t;
         $this->_e11 = $e11;
         $this->_e12 = $e12;
         $this->_e13 = $e13;
@@ -237,9 +231,9 @@ class Section5
     /**
      * @return mixed
      */
-    public function getE10a()
+    public function getE10t()
     {
-        return $this->_e10a;
+        return $this->_e10t;
     }
 
     /**

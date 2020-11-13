@@ -89,7 +89,7 @@ $f3->route('GET|POST /section4', function($f3){
 // POST method when submitting form
 $f3->route('GET|POST /section5', function($f3){
     // if the form has been submitted
-    $GLOBALS['controller']->section3($f3);
+    $GLOBALS['controller']->section5($f3);
 });
 
 // this is the route to section 6 page
@@ -97,7 +97,7 @@ $f3->route('GET|POST /section5', function($f3){
 // POST method when submitting form
 $f3->route('GET|POST /section6', function($f3){
     // if the form has been submitted
-    $GLOBALS['controller']->section3($f3);
+    $GLOBALS['controller']->section6($f3);
 });
 
 // this is the route to section 7 page
@@ -105,7 +105,7 @@ $f3->route('GET|POST /section6', function($f3){
 // POST method when submitting form
 $f3->route('GET|POST /section7', function($f3){
     // if the form has been submitted
-    $GLOBALS['controller']->section3($f3);
+    $GLOBALS['controller']->section7($f3);
 });
 
 // this is the route to section 8 page
@@ -113,7 +113,7 @@ $f3->route('GET|POST /section7', function($f3){
 // POST method when submitting form
 $f3->route('GET|POST /section8', function($f3){
     // if the form has been submitted
-    $GLOBALS['controller']->section3($f3);
+    $GLOBALS['controller']->section8($f3);
 });
 
 // this is the route to section 9 page
@@ -121,7 +121,7 @@ $f3->route('GET|POST /section8', function($f3){
 // POST method when submitting form
 $f3->route('GET|POST /section9', function($f3){
     // if the form has been submitted
-    $GLOBALS['controller']->section3($f3);
+    $GLOBALS['controller']->section9($f3);
 });
 
 // this is the route to section 10 page
@@ -129,7 +129,7 @@ $f3->route('GET|POST /section9', function($f3){
 // POST method when submitting form
 $f3->route('GET|POST /section10', function($f3){
     // if the form has been submitted
-    $GLOBALS['controller']->section3($f3);
+    $GLOBALS['controller']->section10($f3);
 });
 
 // this is the route to results page

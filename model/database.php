@@ -65,6 +65,7 @@ class Database
     /**
      * Inserts Section 1 answers into the database
      * @param $section1 the section 1 answers to add
+     * @param $change the type of change
      */
     function addSection1($section1, $change)
     {
@@ -173,6 +174,7 @@ class Database
     /**
      * Inserts Section 2 answers into the database
      * @param $section1 the section 1 answers to add
+     * @param $change the type of change
      */
     function addSection2($section2, $change)
     {
@@ -308,6 +310,7 @@ class Database
     /**
      * Inserts Section 3 answers into the database
      * @param $section3 the section 3 answers to add
+     * @param $change the type of change
      */
     function addSection3($section3, $change)
     {
@@ -412,6 +415,7 @@ class Database
     /**
      * Inserts Section 4 answers into the datadase
      * @param $section4 the section 4 answers to add
+     * @param $change the type of change
      */
     function addSection4($section4, $change)
     {
@@ -471,9 +475,6 @@ class Database
         $d29c = $section4->getD29c();
         $d29d = $section4->getD29d();
 
-        //$userId = $section4->getUserId();
-
-
         //3. Bind the parameters
         $statement->bindParam(':d1',$d1, PDO::PARAM_STR);
         $statement->bindParam(':d2',$d2, PDO::PARAM_STR);
@@ -521,7 +522,165 @@ class Database
         //echo $id;
     }
 
+    /**
+     * Inserts Section 5 answers into the datadase
+     * @param $section5 the section 4 answers to add
+     * @param $change the type of change
+     */
+    function addSection5($section5, $change)
+    {
+        $userId = $_SESSION['userId'];
+        //echo $userId;
+        //1. Define the query
+        if ($change == 'add') {
+            $sql = "INSERT INTO section5(e1, e2, e3, e4, e5, e6, e7, e8, e9, e10, e10t, e11, e12, 
+                    e13, e14, e15, e16, e17, e18, e19, e20, e21, e22, e23, e24, e25, e26, e27, e28, e29,
+                     e30, e31, e32, e33, e34, e35, e36, e37, e38, e39, e40, e41, e42, e43, e44, e45, e46, 
+                     e47, e48, e49, e50, e51, e52a, e52b, e52c, e52d, userId)
+                    VALUES (:e1, :e2, :e3, :e4, :e5, :e6, :e7, :e8, :e9, :e10, :e10t, :e11, :e12, 
+                    :e13, :e14, :e15, :e16, :e17, :e18, :e19, :e20, :e21, :e22, :e23, :e24, :e25, :e26, :e27,
+                    :e28, :e29, :e30, :e31, :e32, :e33, :e34, :e35, :e36, :e37, :e38, :e39, :e40, :e41, :e42, :e43, 
+                    :e44, :e45, :e46, :e47, :e48, :e49, :e50, :e51, :e52a, :e52b, :e52c, :e52d, :userId)";
+        } elseif ($change == 'update') {
+            $sql = "UPDATE section5 SET e1 = :e1, e2 = :e2, e3 = :e3, e4 = :e4, e5 = :e5, e6 = :e6, e7 = :e7, 
+                            e8 = :e8, e9 = :e9, e10 = :e10, e10t = :e10t, e11 = :e11, e12 = :e12, e13 = :e13, 
+                            e14 = :e14, e15 = :e15, e16 = :e16, e17 = :e17, e18 = :e18, e19 = :e19, e20 = :e20, 
+                            e21 = :e21, e22 = :e22, e23 = :e23, e24 = :e24, e25 = :e25, e26 = :e26, e27 = :e27, 
+                            e28 = :e28, e29 = :e29, e30 = :e30, e31 = :e31, e32 = :e32, e33 = :e33, e34 = :e34, 
+                            e35 = :e35, e36 = :e36, e37 = :e37, e38 = :e38, e39 = :e39, e40 = :e40, e41 = :e41, 
+                            e42 = :e42, e43 = :e43, e44 = :e44, e45 = :e45, e46 = :e46, e47 = :e47, e48 = :e48, 
+                            e49 = :e49, e50 = :e50, e51 = :e51, e52a = :e52a, e52b = :e52b, e52c = :e52c, e52d = :e52d 
+                            WHERE userId = :userId";
+        }
+        //2. Prepare the statement
+        $statement = $this->_dbh->prepare($sql);
+        //var_dump($statement);
+        $e1 = $section5->getE1();
+        $e2 = $section5->getE2();
+        $e3 = $section5->getE3();
+        $e4 = $section5->getE4();
+        $e5 = $section5->getE5();
+        $e6 = $section5->getE6();
+        $e7 = $section5->getE7();
+        $e8 = $section5->getE8();
+        $e9 = $section5->getE9();
+        $e10 = $section5->getE10();
+        $e10t = $section5->getE10t();
+        $e11 = $section5->getE11();
+        $e12 = $section5->getE12();
+        $e13 = $section5->getE13();
+        $e14 = $section5->getE14();
+        $e15 = $section5->getE15();
+        $e16 = $section5->getE16();
+        $e17 = $section5->getE17();
+        $e18 = $section5->getE18();
+        $e19 = $section5->getE19();
+        $e20 = $section5->getE20();
+        $e21 = $section5->getE21();
+        $e22 = $section5->getE22();
+        $e23 = $section5->getE23();
+        $e24 = $section5->getE24();
+        $e25 = $section5->getE25();
+        $e26 = $section5->getE26();
+        $e27 = $section5->getE27();
+        $e28 = $section5->getE28();
+        $e29 = $section5->getE29();
+        $e30 = $section5->getE30();
+        $e31 = $section5->getE31();
+        $e32 = $section5->getE32();
+        $e33 = $section5->getE33();
+        $e34 = $section5->getE34();
+        $e35 = $section5->getE35();
+        $e36 = $section5->getE36();
+        $e37 = $section5->getE37();
+        $e38 = $section5->getE38();
+        $e39 = $section5->getE39();
+        $e40 = $section5->getE40();
+        $e41 = $section5->getE41();
+        $e42 = $section5->getE42();
+        $e43 = $section5->getE43();
+        $e44 = $section5->getE44();
+        $e45 = $section5->getE45();
+        $e46 = $section5->getE46();
+        $e47 = $section5->getE47();
+        $e48 = $section5->getE48();
+        $e49 = $section5->getE49();
+        $e50 = $section5->getE50();
+        $e51 = $section5->getE51();
+        $e52a = $section5->getE52a();
+        $e52b = $section5->getE52b();
+        $e52c = $section5->getE52c();
+        $e52d = $section5->getE52d();
 
+
+        //3. Bind the parameters
+        $statement->bindParam(':e1',$e1, PDO::PARAM_STR);
+        $statement->bindParam(':e2',$e2, PDO::PARAM_STR);
+        $statement->bindParam(':e3',$e3, PDO::PARAM_STR);
+        $statement->bindParam(':e4',$e4, PDO::PARAM_STR);
+        $statement->bindParam(':e5',$e5, PDO::PARAM_STR);
+        $statement->bindParam(':e6',$e6, PDO::PARAM_STR);
+        $statement->bindParam(':e7',$e7, PDO::PARAM_STR);
+        $statement->bindParam(':e8',$e8, PDO::PARAM_STR);
+        $statement->bindParam(':e9',$e9, PDO::PARAM_STR);
+        $statement->bindParam(':e10',$e10, PDO::PARAM_STR);
+        $statement->bindParam(':e10t',$e10t, PDO::PARAM_STR);
+        $statement->bindParam(':e11',$e11, PDO::PARAM_STR);
+        $statement->bindParam(':e12',$e12, PDO::PARAM_STR);
+        $statement->bindParam(':e13',$e13, PDO::PARAM_STR);
+        $statement->bindParam(':e14',$e14, PDO::PARAM_STR);
+        $statement->bindParam(':e15',$e15, PDO::PARAM_STR);
+        $statement->bindParam(':e16',$e16, PDO::PARAM_STR);
+        $statement->bindParam(':e17',$e17, PDO::PARAM_STR);
+        $statement->bindParam(':e18',$e18, PDO::PARAM_STR);
+        $statement->bindParam(':e19',$e19, PDO::PARAM_STR);
+        $statement->bindParam(':e20',$e20, PDO::PARAM_STR);
+        $statement->bindParam(':e21',$e21, PDO::PARAM_STR);
+        $statement->bindParam(':e22',$e22, PDO::PARAM_STR);
+        $statement->bindParam(':e23',$e23, PDO::PARAM_STR);
+        $statement->bindParam(':e24',$e24, PDO::PARAM_STR);
+        $statement->bindParam(':e25',$e25, PDO::PARAM_STR);
+        $statement->bindParam(':e26',$e26, PDO::PARAM_STR);
+        $statement->bindParam(':e27',$e27, PDO::PARAM_STR);
+        $statement->bindParam(':e28',$e28, PDO::PARAM_STR);
+        $statement->bindParam(':e29',$e29, PDO::PARAM_STR);
+        $statement->bindParam(':e30',$e30, PDO::PARAM_STR);
+        $statement->bindParam(':e31',$e31, PDO::PARAM_STR);
+        $statement->bindParam(':e32',$e32, PDO::PARAM_STR);
+        $statement->bindParam(':e33',$e33, PDO::PARAM_STR);
+        $statement->bindParam(':e34',$e34, PDO::PARAM_STR);
+        $statement->bindParam(':e35',$e35, PDO::PARAM_STR);
+        $statement->bindParam(':e36',$e36, PDO::PARAM_STR);
+        $statement->bindParam(':e37',$e37, PDO::PARAM_STR);
+        $statement->bindParam(':e38',$e38, PDO::PARAM_STR);
+        $statement->bindParam(':e39',$e39, PDO::PARAM_STR);
+        $statement->bindParam(':e40',$e40, PDO::PARAM_STR);
+        $statement->bindParam(':e41',$e41, PDO::PARAM_STR);
+        $statement->bindParam(':e42',$e42, PDO::PARAM_STR);
+        $statement->bindParam(':e43',$e43, PDO::PARAM_STR);
+        $statement->bindParam(':e44',$e44, PDO::PARAM_STR);
+        $statement->bindParam(':e45',$e45, PDO::PARAM_STR);
+        $statement->bindParam(':e46',$e46, PDO::PARAM_STR);
+        $statement->bindParam(':e47',$e47, PDO::PARAM_STR);
+        $statement->bindParam(':e48',$e48, PDO::PARAM_STR);
+        $statement->bindParam(':e49',$e49, PDO::PARAM_STR);
+        $statement->bindParam(':e50',$e50, PDO::PARAM_STR);
+        $statement->bindParam(':e51',$e51, PDO::PARAM_STR);
+        $statement->bindParam(':e52a',$e52a, PDO::PARAM_STR);
+        $statement->bindParam(':e52b',$e52b, PDO::PARAM_STR);
+        $statement->bindParam(':e52c',$e52c, PDO::PARAM_STR);
+        $statement->bindParam(':e52d',$e52d, PDO::PARAM_STR);
+
+        $statement->bindParam(':userId',$userId, PDO::PARAM_STR);
+        //4. Execute the statement
+        $result = $statement->execute();
+        //echo "Result: " . $result;
+
+        //Get the key of the last inserted row
+        $answerID = $this->_dbh->lastInsertId();
+        $_SESSION['answerID'] = $answerID;
+        //echo $id;
+    }
     /**
      * Insert a new user into the database
      * @param $newUser the user to add

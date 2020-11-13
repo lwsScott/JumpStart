@@ -72,8 +72,8 @@ class JumpStartController
         // TODO really validate the data
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
+            // get the section1 variable names and set hive variables
             $section1 = getSection1();
-
             foreach ($section1 as $k=>$v)
             {
                 //var_dump($_POST[$v]);
@@ -81,7 +81,6 @@ class JumpStartController
                     $this->_f3->set($v, $_POST[$v]);
                 } else {
                     $this->_f3->set($v, "");
-
                 }
             }
 
@@ -883,6 +882,73 @@ class JumpStartController
     }
 
     /**
+     * Display the section1 route
+     */
+    public function section5($f3)
+    {
+        // initialize the session variables
+        // allows for incomplete submittal
+
+        // validate the data
+        // TODO really validate the data
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            // get the section1 variable names and set hive variables
+            $section5 = getSection5();
+            foreach ($section5 as $k=>$v)
+            {
+                //var_dump($_POST[$v]);
+                if (isset($_POST[$v])) {
+                    $this->_f3->set($v, $_POST[$v]);
+                } else {
+                    $this->_f3->set($v, "");
+                }
+            }
+
+            $userId = $_SESSION['userId'];
+
+            // construct a section1 object
+            $section5 = new Section5($f3->get('e1'), $f3->get('e2'), $f3->get('e3'), $f3->get('e4'), $f3->get('e5'),
+                $f3->get('e6'), $f3->get('e7'), $f3->get('e8'), $f3->get('e9'), $f3->get('e10'),  $f3->get('e10t'),
+                $f3->get('e11'), $f3->get('e12'), $f3->get('e13'), $f3->get('e14'), $f3->get('e15'), $f3->get('e16'),
+                $f3->get('e17'), $f3->get('e18'), $f3->get('e19'), $f3->get('e20'), $f3->get('e21'), $f3->get('e22'),
+                $f3->get('e23'), $f3->get('e24'), $f3->get('e25'), $f3->get('e26'), $f3->get('e27'), $f3->get('e28'),
+                $f3->get('e29'), $f3->get('e30'), $f3->get('e31'), $f3->get('e32'), $f3->get('e33'), $f3->get('e34'),
+                $f3->get('e35'), $f3->get('e36'), $f3->get('e37'), $f3->get('e38'), $f3->get('e39'), $f3->get('e40'),
+                $f3->get('e41'), $f3->get('e42'), $f3->get('e43'), $f3->get('e44'), $f3->get('e45'), $f3->get('e46'),
+                $f3->get('e47'), $f3->get('e48'), $f3->get('e49'), $f3->get('e50'), $f3->get('e51'), $f3->get('e52a'),
+                $f3->get('e52b'), $f3->get('e52c'), $f3->get('e52d'), $userId);
+
+
+            $this->_f3->set('section5', $section5);
+
+            // add the section to the database
+            $GLOBALS['db']->addSection5($section5, 'update');
+            $f3->reroute("results");
+            //echo "before submit";
+            //$view = new Template();
+            //echo $view->render('views/results.html');
+        } else {
+            // login
+            $this->checkLogin($f3);
+
+            // populate section with user info
+            // initialize the user variables
+            $resultsSec5 = $GLOBALS['db']->getSection($_SESSION['userId'], "section5");
+            foreach ($resultsSec5 as $k=>$v)
+            {
+                if ($k != 'answerID')
+                {
+                    $this->_f3->set($k, $v);
+                    //echo " k " . $k . " v " . $v;
+                }
+            }
+
+            $view = new Template();
+            echo $view->render('views/section5.html');
+        }
+    }
+    /**
      * Display the results route
      */
     public function results($f3)
@@ -923,6 +989,15 @@ class JumpStartController
 
         $resultsSec4 = $GLOBALS['db']->getSection($_SESSION['userId'], "section4");
         foreach ($resultsSec4 as $k=>$v)
+        {
+            if ($k != 'answerID')
+            {
+                $this->_f3->set($k, $v);
+            }
+        }
+
+        $resultsSec5 = $GLOBALS['db']->getSection($_SESSION['userId'], "section5");
+        foreach ($resultsSec5 as $k=>$v)
         {
             if ($k != 'answerID')
             {
@@ -1078,12 +1153,20 @@ class JumpStartController
                 $section4 = new Section4("", "", "", "", "", "", "", "", "",
                     "", "", "", "", "", "", "", "", "", "", "",
                     "", "", "", "", "", "", "", "", "", "", "",
-                    "", "", "", "", "");
+                    "", "", "", $userId);
+
+                $section5 = new Section5("", "", "", "", "", "", "", "", "",
+                    "", "", "", "", "", "", "", "", "", "", "",
+                    "", "", "", "", "", "", "", "", "", "", "",
+                    "", "", "", "", "", "",  "", "", "", "", "",
+                    "", "", "", "", "", "", "", "", "", "", "",
+                    "", "", "", $userId);
 
                 $_SESSION['section1'] = $section1;
                 $_SESSION['section2'] = $section2;
                 $_SESSION['section3'] = $section3;
                 $_SESSION['section4'] = $section4;
+                $_SESSION['section5'] = $section5;
 
 
                 //var_dump($section1);
