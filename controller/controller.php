@@ -1143,6 +1143,8 @@ class JumpStartController
     public function logout($f3)
     {
         // logout
+
+
         $view = new Template();
         echo $view->render
         ('views/logout.php');
@@ -1257,6 +1259,8 @@ class JumpStartController
                 $GLOBALS['db']->addSection2($section2, 'add');
                 $GLOBALS['db']->addSection3($section3, 'add');
                 $GLOBALS['db']->addSection4($section4, 'add');
+                $GLOBALS['db']->addSection5($section4, 'add');
+                $GLOBALS['db']->addSection6($section4, 'add');
 
 
                 $this->_f3->reroute('home');
