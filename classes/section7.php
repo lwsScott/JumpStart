@@ -20,7 +20,6 @@ class Section7
     private $_g7;
     private $_g8;
     private $_g9;
-    private $_g9b;
     private $_g10;
     private $_g11;
     private $_g12;
@@ -44,7 +43,6 @@ class Section7
         $this->_g7 = $g7;
         $this->_g8 = $g8;
         $this->_g9 = $g9;
-        $this->_g9a =g9a;
         $this->_g10 = $g10;
         $this->_g11 = $g11;
         $this->_g12 = $g12;
@@ -56,17 +54,17 @@ class Section7
     /**
      * @return mixed
      */
-    public function getG9a()
-    {
-        return $this->_g9a;
-    }
-
-    /**
-     * @return mixed
-     */
     public function getAnswerID()
     {
         return $this->_answerID;
+    }
+
+    /**
+     * @param mixed $answerID
+     */
+    public function setAnswerID($answerID)
+    {
+        $this->_answerID = $answerID;
     }
 
     /**
@@ -78,11 +76,27 @@ class Section7
     }
 
     /**
+     * @param mixed $g1
+     */
+    public function setG1($g1)
+    {
+        $this->_g1 = $g1;
+    }
+
+    /**
      * @return mixed
      */
     public function getG2()
     {
         return $this->_g2;
+    }
+
+    /**
+     * @param mixed $g2
+     */
+    public function setG2($g2)
+    {
+        $this->_g2 = $g2;
     }
 
     /**
@@ -94,11 +108,27 @@ class Section7
     }
 
     /**
+     * @param mixed $g3
+     */
+    public function setG3($g3)
+    {
+        $this->_g3 = $g3;
+    }
+
+    /**
      * @return mixed
      */
     public function getG4()
     {
         return $this->_g4;
+    }
+
+    /**
+     * @param mixed $g4
+     */
+    public function setG4($g4)
+    {
+        $this->_g4 = $g4;
     }
 
     /**
@@ -110,11 +140,27 @@ class Section7
     }
 
     /**
+     * @param mixed $g5
+     */
+    public function setG5($g5)
+    {
+        $this->_g5 = $g5;
+    }
+
+    /**
      * @return mixed
      */
     public function getG6()
     {
         return $this->_g6;
+    }
+
+    /**
+     * @param mixed $g6
+     */
+    public function setG6($g6)
+    {
+        $this->_g6 = $g6;
     }
 
     /**
@@ -126,11 +172,27 @@ class Section7
     }
 
     /**
+     * @param mixed $g7
+     */
+    public function setG7($g7)
+    {
+        $this->_g7 = $g7;
+    }
+
+    /**
      * @return mixed
      */
     public function getG8()
     {
         return $this->_g8;
+    }
+
+    /**
+     * @param mixed $g8
+     */
+    public function setG8($g8)
+    {
+        $this->_g8 = $g8;
     }
 
     /**
@@ -142,11 +204,11 @@ class Section7
     }
 
     /**
-     * @return mixed
+     * @param mixed $g9
      */
-    public function getG9b()
+    public function setG9($g9)
     {
-        return $this->_g9b;
+        $this->_g9 = $g9;
     }
 
     /**
@@ -158,11 +220,27 @@ class Section7
     }
 
     /**
+     * @param mixed $g10
+     */
+    public function setG10($g10)
+    {
+        $this->_g10 = $g10;
+    }
+
+    /**
      * @return mixed
      */
     public function getG11()
     {
         return $this->_g11;
+    }
+
+    /**
+     * @param mixed $g11
+     */
+    public function setG11($g11)
+    {
+        $this->_g11 = $g11;
     }
 
     /**
@@ -174,6 +252,14 @@ class Section7
     }
 
     /**
+     * @param mixed $g12
+     */
+    public function setG12($g12)
+    {
+        $this->_g12 = $g12;
+    }
+
+    /**
      * @return mixed
      */
     public function getG13()
@@ -182,10 +268,26 @@ class Section7
     }
 
     /**
+     * @param mixed $g13
+     */
+    public function setG13($g13)
+    {
+        $this->_g13 = $g13;
+    }
+
+    /**
      * @return mixed
      */
     public function getUserId()
     {
         return $this->_userId;
+    }
+
+    /**
+     * @param mixed $userId
+     */
+    public function setUserId($userId)
+    {
+        $this->_userId = $userId;
     }
 }

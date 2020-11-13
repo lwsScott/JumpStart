@@ -32,11 +32,11 @@
                     business, or that pose threats:</h3>
                 <div class="container">
                     <label><strong>OPPORTUNITIES</strong></label>
-                    <textarea class="form-control" id="i1" name="i1" rows="3">{{ $_SESSION['i1'] }}</textarea>
+                    <textarea class="form-control" id="i1" name="i1" rows="3">{{ @i1 }}</textarea>
                 </div>
                 <div class="container">
                     <label><strong>THREATS</strong></label>
-                    <textarea class="form-control" id="i2" name="i2" rows="3">{{ $_SESSION['i2'] }}</textarea>
+                    <textarea class="form-control" id="i2" name="i2" rows="3">{{ @i2 }}</textarea>
                 </div>
             </div>
         </div>
@@ -63,7 +63,6 @@
 
 </div>
 
-<script src="js/JavaScript.js"></script>
 <script src="js/clientSideValidation.js"></script>
 <include href="includes/footer.html"></include>
 </body>

@@ -23,7 +23,6 @@ class Sfction6
     private $_f8;
     private $_f9;
     private $_f10;
-    private $_f10a;
     private $_f11;
     private $_f12;
     private $_f13;
@@ -60,6 +59,11 @@ class Sfction6
     private $_f44;
     private $_f45;
     private $_f46;
+    private $_f47a;
+    private $_f47b;
+    private $_f47c;
+    private $_f47d;
+
 
 
 
@@ -70,10 +74,11 @@ class Sfction6
 
     // constructor
 
-    function __construct($f1, $f2, $f3, $f3a, $f4, $f5, $f6, $f7, $f8, $f9, $f10, $f10a,$f11,
+    function __construct($f1, $f2, $f3, $f3a, $f4, $f5, $f6, $f7, $f8, $f9, $f10, $f11,
                          $f12, $f13, $f14, $f15, $f16, $f17, $f18, $f19, $f20, $f21, $f22,
                          $f23, $f24, $f25, $f26, $f27, $f28, $f29, $f30, $f31, $f32, $f33, $f34,
-                         $f35, $f36, $f37, $f38, $f39, $f40, $f41, $f42, $f43, $f44, $f45, $f46 ,$userId)
+                         $f35, $f36, $f37, $f38, $f39, $f40, $f41, $f42, $f43, $f44, $f45, $f46,
+                         $f47a, $f47b, $f47c, $f47d, $userId)
     {
         $this->_f1 = $f1;
         $this->_f2 = $f2;
@@ -85,7 +90,6 @@ class Sfction6
         $this->_f8 = $f8;
         $this->_f9 = $f9;
         $this->_f10 = $f10;
-        $this->_f10a = $f10a;
         $this->_f11 = $f11;
         $this->_f12 = $f12;
         $this->_f13 = $f13;
@@ -122,7 +126,10 @@ class Sfction6
         $this->_f44 = $f44;
         $this->_f45 = $f45;
         $this->_f46 = $f46;
-
+        $this->_f47a = $f47a;
+        $this->_f47b = $f47b;
+        $this->_f47c = $f47c;
+        $this->_f47d = $f47d;
 
         $this->_userId = $userId;
     }
@@ -130,7 +137,7 @@ class Sfction6
     /**
      * @return mixed
      */
-    public function getAnswfrID()
+    public function getAnswerID()
     {
         return $this->_answerID;
     }
@@ -213,14 +220,6 @@ class Sfction6
     public function getF10()
     {
         return $this->_f10;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getF10a()
-    {
-        return $this->_f10a;
     }
 
     /**
@@ -514,73 +513,33 @@ class Sfction6
     /**
      * @return mixed
      */
-    public function getF47()
+    public function getF47a()
     {
-        return $this->_f47;
+        return $this->_f47a;
     }
 
     /**
      * @return mixed
      */
-    public function getF48()
+    public function getF47b()
     {
-        return $this->_f48;
+        return $this->_f47b;
     }
 
     /**
      * @return mixed
      */
-    public function getF49()
+    public function getF47c()
     {
-        return $this->_f49;
+        return $this->_f47c;
     }
 
     /**
      * @return mixed
      */
-    public function getF50()
+    public function getF47d()
     {
-        return $this->_f50;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getF51()
-    {
-        return $this->_f51;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getF52a()
-    {
-        return $this->_f52a;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getF52b()
-    {
-        return $this->_f52b;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getF52c()
-    {
-        return $this->_f52c;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getF52d()
-    {
-        return $this->_f52d;
+        return $this->_f47d;
     }
 
     /**

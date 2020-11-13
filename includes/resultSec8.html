@@ -5,154 +5,156 @@
     Displays results of section 8 answers to SWOT analysis
   -->
 
-<table class="table">
-    <thead>
-    <tr>
-        <th scope="col">STRENGTHS</th>
-        <th scope="col">WEAKNESSES</th>
-        <th scope="col">OPPORTUNITIES</th>
-        <th scope="col">THREATS</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <!-- Y-S, N-O -->
-        <td><check if="{{ @h1 == 'yes' }}" >
-            I believe that my personal growth is a requirement for personal growth
-        </check></td>
-        <td></td>
-        <td><check if="{{ @h1 == 'no' }}" >
-            By pursuing personal growth, I may accelerate the growth and success
-            of my business
-        </check></td>
-        <td></td>
-    </tr>
-    <tr>
-        <!-- Y-S, N-O -->
-        <td><check if="{{ @h2 == 'yes' }}" >
-            I have a morning ritual that sets me up to have a successful/
-            productive day
-        </check></td>
-        <td></td>
-        <td><check if="{{ @h2 == 'no' }}" >
-            By creating & following a morning success ritual, I could set myself
-            up to have more successful and productive rituals
-        </check></td>
-        <td></td>
-    </tr>
-    <tr>
-        <!-- Y-S, N-O -->
-        <td><check if="{{ @h3 == 'yes' }}" >
-            I have identified specific areas for my personal growth
-        </check></td>
-        <td></td>
-        <td><check if="{{ @h3 == 'no' }}" >
-            By identifying areas of growth, I could accelerate my success in
-            personal growth
-        </check></td>
-        <td></td>
-    </tr>
-    <tr>
-        <!-- Y-S -->
-        <td><check if="{{ @h4 == 'yes' }}" >
-            I am actively working to develop in the areas I've identified
-        </check></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <!-- Y-S, N-W -->
-        <td><check if="{{ @h5 == 'yes' }}" >
-            I successfully manage my stress
-        </check></td>
-        <td><check if="{{ @h5 == 'no' }}" >
-            I am not as successful as I would like to be at managing my stress
-        </check></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <!-- Y-S, N-O -->
-        <td><check if="{{ @h6 == 'yes' }}" >
-            I regularly consciously choose to be grateful for the good in my life
-        </check></td>
-        <td></td>
-        <td><check if="{{ @h6 == 'no' }}" >
-            If I were to regularly consciously choose to be grateful for the
-            good in my life, I would be happier and more fulfilled
-        </check></td>
-        <td></td>
-    </tr>
-    <tr>
-        <!-- Y-S, N-O -->
-        <td><check if="{{ @h7 == 'yes' }}" >
-            I consciously make food choices on how they impact my mood and energy
-        </check></td>
-        <td></td>
-        <td><check if="{{ @h7 == 'no' }}" >
-            If I start making conscious food choices, I may have more energy
-            and experience better moods
-        </check></td>
-        <td></td>
-    </tr>
-    <tr>
-        <!-- Y-S, N-O -->
-        <td><check if="{{ @h8 == 'yes' }}" >
-            I consistently live true to my own values
-        </check></td>
-        <td></td>
-        <td><check if="{{ @h8 == 'no' }}" >
-            By committing to live consistently with my values, I'm likely to
-            feel more contentment
-        </check></td>
-        <td></td>
-    </tr>
-    <tr>
-        <!-- Y-S, N-O -->
-        <td><check if="{{ @h9 == 'yes' }}" >
-            I do sufficient regular exercise to have the energy to tackle my
-            responsibilities
-        </check></td>
-        <td></td>
-        <td><check if="{{ @h9 == 'no' }}" >
-            By doing some regular exercise, I can increase the energy I have
-            to tackle my responsibilities
-        </check></td>
-        <td></td>
-    </tr>
-    <tr>
-        <!-- Y-S, N-W -->
-        <td><check if="{{ @h10 == 'yes' }}" >
-            I consistently and intentionally avoid blaming others or making
-            excuses and instead take full responsibility for all outcomes in
-            your life
-        </check></td>
-        <td><check if="{{ @h10 == 'no' }}" >
-            I don't consistently accept full responsibility and find myself
-            making excuses or blaming others
-        </check></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <!-- Y-S, N-O -->
-        <td><check if="{{ @h11 == 'yes' }}" >
-            I able to adjust my leadership style based on the person I'm leading
-            and on the needs of the situation
-        </check></td>
-        <td></td>
-        <td><check if="{{ @h11 == 'no' }}" >
-            By learning to adopt different leadership approaches, I'm more likely
-            to get from people the performance I look for and the outcomes I seek
-        </check></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>{{ @h12 }}</td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    </tbody>
-</table>
+<check if="{{ @h12 == 'yes' }}" >
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">STRENGTHS</th>
+            <th scope="col">WEAKNESSES</th>
+            <th scope="col">OPPORTUNITIES</th>
+            <th scope="col">THREATS</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <!-- Y-S, N-O -->
+            <td><check if="{{ @h1 == 'yes' }}" >
+                I believe that my personal growth is a requirement for personal growth
+            </check></td>
+            <td></td>
+            <td><check if="{{ @h1 == 'no' }}" >
+                By pursuing personal growth, I may accelerate the growth and success
+                of my business
+            </check></td>
+            <td></td>
+        </tr>
+        <tr>
+            <!-- Y-S, N-O -->
+            <td><check if="{{ @h2 == 'yes' }}" >
+                I have a morning ritual that sets me up to have a successful/
+                productive day
+            </check></td>
+            <td></td>
+            <td><check if="{{ @h2 == 'no' }}" >
+                By creating & following a morning success ritual, I could set myself
+                up to have more successful and productive rituals
+            </check></td>
+            <td></td>
+        </tr>
+        <tr>
+            <!-- Y-S, N-O -->
+            <td><check if="{{ @h3 == 'yes' }}" >
+                I have identified specific areas for my personal growth
+            </check></td>
+            <td></td>
+            <td><check if="{{ @h3 == 'no' }}" >
+                By identifying areas of growth, I could accelerate my success in
+                personal growth
+            </check></td>
+            <td></td>
+        </tr>
+        <tr>
+            <!-- Y-S -->
+            <td><check if="{{ @h4 == 'yes' }}" >
+                I am actively working to develop in the areas I've identified
+            </check></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <!-- Y-S, N-W -->
+            <td><check if="{{ @h5 == 'yes' }}" >
+                I successfully manage my stress
+            </check></td>
+            <td><check if="{{ @h5 == 'no' }}" >
+                I am not as successful as I would like to be at managing my stress
+            </check></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <!-- Y-S, N-O -->
+            <td><check if="{{ @h6 == 'yes' }}" >
+                I regularly consciously choose to be grateful for the good in my life
+            </check></td>
+            <td></td>
+            <td><check if="{{ @h6 == 'no' }}" >
+                If I were to regularly consciously choose to be grateful for the
+                good in my life, I would be happier and more fulfilled
+            </check></td>
+            <td></td>
+        </tr>
+        <tr>
+            <!-- Y-S, N-O -->
+            <td><check if="{{ @h7 == 'yes' }}" >
+                I consciously make food choices on how they impact my mood and energy
+            </check></td>
+            <td></td>
+            <td><check if="{{ @h7 == 'no' }}" >
+                If I start making conscious food choices, I may have more energy
+                and experience better moods
+            </check></td>
+            <td></td>
+        </tr>
+        <tr>
+            <!-- Y-S, N-O -->
+            <td><check if="{{ @h8 == 'yes' }}" >
+                I consistently live true to my own values
+            </check></td>
+            <td></td>
+            <td><check if="{{ @h8 == 'no' }}" >
+                By committing to live consistently with my values, I'm likely to
+                feel more contentment
+            </check></td>
+            <td></td>
+        </tr>
+        <tr>
+            <!-- Y-S, N-O -->
+            <td><check if="{{ @h9 == 'yes' }}" >
+                I do sufficient regular exercise to have the energy to tackle my
+                responsibilities
+            </check></td>
+            <td></td>
+            <td><check if="{{ @h9 == 'no' }}" >
+                By doing some regular exercise, I can increase the energy I have
+                to tackle my responsibilities
+            </check></td>
+            <td></td>
+        </tr>
+        <tr>
+            <!-- Y-S, N-W -->
+            <td><check if="{{ @h10 == 'yes' }}" >
+                I consistently and intentionally avoid blaming others or making
+                excuses and instead take full responsibility for all outcomes in
+                your life
+            </check></td>
+            <td><check if="{{ @h10 == 'no' }}" >
+                I don't consistently accept full responsibility and find myself
+                making excuses or blaming others
+            </check></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <!-- Y-S, N-O -->
+            <td><check if="{{ @h11 == 'yes' }}" >
+                I able to adjust my leadership style based on the person I'm leading
+                and on the needs of the situation
+            </check></td>
+            <td></td>
+            <td><check if="{{ @h11 == 'no' }}" >
+                By learning to adopt different leadership approaches, I'm more likely
+                to get from people the performance I look for and the outcomes I seek
+            </check></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>{{ @h12 }}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        </tbody>
+    </table>
+</check>

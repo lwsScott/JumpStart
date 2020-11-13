@@ -28,17 +28,17 @@
     </tr>
     <tr>
         <!-- Y-S, N-W -->
-        <td>{{ @f3 }} % of our team operates at or above the skill/productivity level we
+        <td>{{ @f3t }} % of our team operates at or above the skill/productivity level we
             expect></td>
-        <td><check if="{{ @f3a != 'unknown' }}" >
+        <td><check if="{{ @f3 != 'unknown' }}" >
             The percentage of employees operating below the skill/ productivity level we
             expect are likely costing us
         </check>
-        <check if="{{ @f3a == 'unknown' }}" >
+        <check if="{{ @f3 == 'unknown' }}" >
             We don't know what percent of our team is operating at or above the skill/
             productivity level we expect
         </check></td>
-        <td><check if="{{ @f3a == 'unknown' }}" >
+        <td><check if="{{ @f3 == 'unknown' }}" >
             By identifying which staff are and aren't performing to standard or above, we
             can train or transition those that are below and more effectively reward &
             challenge our stars
@@ -218,7 +218,7 @@
         </check></td>
         <td><check if="{{ @f17 == 'no' }}" >
             Because we don't involve the team in the interview process, especially those
-            with whom the candidate may work, we may not correctly assiss fit with the team
+            with whom the candidate may work, we may not correctly assess fit with the team
         </check></td>
         <td></td>
         <td></td>
@@ -256,7 +256,7 @@
             We have a documented system for induction or on-boarding
         </check></td>
         <td><check if="{{ @f20 == 'no' }}" >
-            We don't have a system for onboarding or inducting new hires, so there is risk
+            We don't have a system for on-boarding or inducting new hires, so there is risk
             they won't integrate as effectively or become productive as quickly as we would
             like
         </check></td>
@@ -402,7 +402,7 @@
         <!-- Y-S, N-O -->
         <td><check if="{{ @f31 == 'yes' }}" >
             We include non-monetary elements in our comp package to simultaneously provide
-            motivation for our team ad save us money
+            motivation for our team and save us money
         </check></td>
         <td></td>
         <td><check if="{{ @f31 == 'no' }}" >

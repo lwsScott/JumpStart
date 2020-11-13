@@ -23,10 +23,6 @@ class Section8
     private $_h10;
     private $_h11;
     private $_h12;
-
-
-
-
     private $_userId;
 
     // constructor
