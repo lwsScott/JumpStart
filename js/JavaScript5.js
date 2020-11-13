@@ -52,6 +52,20 @@ function toggleVisibility()
         document.getElementById('e10hi').style.display = "none";
         document.getElementById('e10hi').style.visibility = "hidden";
     }
+    // make e20 question visible if Yes checked, hidden otherwise
+    if (document.getElementById('e19a').checked)
+    {
+        document.getElementById('e19hi').style.display = "block";
+        document.getElementById('e19hi').style.visibility = "visible";
+    } else {
+        document.getElementById('e19hi').style.display = "none";
+        document.getElementById('e19hi').style.visibility = "hidden";
+    }
+
+    if (document.getElementById('e19b').checked) {
+        document.getElementById('e19hi').style.display = "none";
+        document.getElementById('e19hi').style.visibility = "hidden";
+    }
 
     // make e40 visible if Yes checked, hidden otherwise
     if (document.getElementById('e39a').checked)
