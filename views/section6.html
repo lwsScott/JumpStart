@@ -31,7 +31,7 @@
                     <div class="form-check-inline">
                         <input type="radio" id="f1a" name="f1" class="form-check-input" value="yes"
                                onchange="toggleVisibility()"
-                        <check if="{{ $_SESSION['f1'] == 'yes' }}" >
+                        <check if="{{ @f1 == 'yes' }}" >
                             checked="checked"
                         </check>>
                         <label class="form-check-label" for="f1a" id="f1y">Yes</label>
@@ -39,7 +39,7 @@
                     <div class="form-check-inline">
                         <input type="radio" id="f1b" name="f1" class="form-check-input" value="no"
                                onchange="toggleVisibility()"
-                        <check if="{{ $_SESSION['f1'] == 'no' }}" >
+                        <check if="{{ @f1 == 'no' }}" >
                             checked="checked"
                         </check>>
                         <label class="form-check-label" for="f1b" id="f1n">No</label>
@@ -68,7 +68,7 @@
                     <div class="form-check-inline">
                         <input type="radio" id="f3a" name="f3" class="form-check-input" value="yes"
                                onchange="toggleVisibility()"
-                        <check if="{{ $_SESSION['f3'] == 'yes' }}" >
+                        <check if="{{ @f3 == 'yes' }}" >
                             checked="checked"
                         </check>>
                         <label class="form-check-label" for="f3a" id="f3y">Yes</label>
@@ -76,7 +76,7 @@
                     <div class="form-check-inline">
                         <input type="radio" id="f3b" name="f3" class="form-check-input" value="no"
                                onchange="toggleVisibility()"
-                        <check if="{{ $_SESSION['f3'] == 'no' }}" >
+                        <check if="{{ @f3 == 'no' }}" >
                             checked="checked"
                         </check>>
                         <label class="form-check-label" for="f3b" id="f3n">No</label>
@@ -91,14 +91,14 @@
                 <label >High performing</label>
                 <div class="form-check-inline">
                     <input type="radio" id="f5a" name="f5" class="form-check-input" value="yes"
-                    <check if="{{ $_SESSION['f5'] == 'yes' }}" >
+                    <check if="{{ @f5 == 'yes' }}" >
                         checked="checked"
                     </check>>
                     <label class="form-check-label" for="f5a" id="f5y">Yes</label>
                 </div>
                 <div class="form-check-inline">
                     <input type="radio" id="f5b" name="f5" class="form-check-input" value="no"
-                    <check if="{{ $_SESSION['f5'] == 'no' }}" >
+                    <check if="{{ @f5 == 'no' }}" >
                         checked="checked"
                     </check>>
                     <label class="form-check-label" for="f5b" id="f5n">No</label>
@@ -110,14 +110,14 @@
                 <label >Accountable</label>
                 <div class="form-check-inline">
                     <input type="radio" id="f6a" name="f6" class="form-check-input" value="yes"
-                    <check if="{{ $_SESSION['f6'] == 'yes' }}" >
+                    <check if="{{ @f6 == 'yes' }}" >
                         checked="checked"
                     </check>>
                     <label class="form-check-label" for="f6a" id="f6y">Yes</label>
                 </div>
                 <div class="form-check-inline">
                     <input type="radio" id="f6b" name="f6" class="form-check-input" value="no"
-                    <check if="{{ $_SESSION['f6'] == 'no' }}" >
+                    <check if="{{ @f6 == 'no' }}" >
                         checked="checked"
                     </check>>
                     <label class="form-check-label" for="f6b" id="f6n">No</label>
@@ -129,14 +129,14 @@
                 <label >A positive place to work</label>
                 <div class="form-check-inline">
                     <input type="radio" id="f7a" name="f7" class="form-check-input" value="yes"
-                    <check if="{{ $_SESSION['f7'] == 'yes' }}" >
+                    <check if="{{ @f7 == 'yes' }}" >
                         checked="checked"
                     </check>>
                     <label class="form-check-label" for="f7a" id="f7y">Yes</label>
                 </div>
                 <div class="form-check-inline">
                     <input type="radio" id="f7b" name="f7" class="form-check-input" value="no"
-                    <check if="{{ $_SESSION['f7'] == 'no' }}" >
+                    <check if="{{ @f7 == 'no' }}" >
                         checked="checked"
                     </check>>
                     <label class="form-check-label" for="f7b" id="f7n">No</label>
@@ -151,7 +151,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f8a" name="f8" class="form-check-input" value="yes"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f8'] == 'yes' }}" >
+                <check if="{{ @f8 == 'yes' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f8a" id="f8y">Yes</label>
@@ -159,7 +159,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f8b" name="f8" class="form-check-input" value="no"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f8'] == 'no' }}" >
+                <check if="{{ @f8 == 'no' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f8b" id="f8n">No</label>
@@ -167,7 +167,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f8c" name="f8" class="form-check-input" value="N/A"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f8'] == 'N/A' }}" >
+                <check if="{{ @f8 == 'N/A' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f8c" id="f8na">N/A</label>
@@ -180,14 +180,14 @@
                         them screen themselves out so you or your team don't have to review every CV?</label>
                     <div class="form-check-inline">
                         <input type="radio" id="f9a" name="f9" class="form-check-input" value="yes"
-                        <check if="{{ $_SESSION['f9'] == 'yes' }}" >
+                        <check if="{{ @f9 == 'yes' }}" >
                             checked="checked"
                         </check>>
                         <label class="form-check-label" for="f9a" id="f9y">Yes</label>
                     </div>
                     <div class="form-check-inline">
                         <input type="radio" id="f9b" name="f9" class="form-check-input" value="no"
-                        <check if="{{ $_SESSION['f9'] == 'no' }}" >
+                        <check if="{{ @f9 == 'no' }}" >
                             checked="checked"
                         </check>>
                         <label class="form-check-label" for="f9b" id="f9n">No</label>
@@ -202,7 +202,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f10a" name="f10" class="form-check-input" value="yes"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f10'] == 'yes' }}" >
+                <check if="{{ @f10 == 'yes' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f10a" id="f10y">Yes</label>
@@ -210,7 +210,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f10b" name="f10" class="form-check-input" value="no"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f10'] == 'no' }}" >
+                <check if="{{ @f10 == 'no' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f10b" id="f10n">No</label>
@@ -222,7 +222,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f11a" name="f11" class="form-check-input" value="yes"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f11'] == 'yes' }}" >
+                <check if="{{ @f11 == 'yes' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f11a" id="f11y">Yes</label>
@@ -230,7 +230,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f11b" name="f11" class="form-check-input" value="no"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f11'] == 'no' }}" >
+                <check if="{{ @f11 == 'no' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f11b" id="f11n">No</label>
@@ -243,7 +243,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f12a" name="f12" class="form-check-input" value="yes"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f12'] == 'yes' }}" >
+                <check if="{{ @f12 == 'yes' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f12a" id="f12y">Yes</label>
@@ -251,7 +251,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f12b" name="f12" class="form-check-input" value="no"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f12'] == 'no' }}" >
+                <check if="{{ @f12 == 'no' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f12b" id="f12n">No</label>
@@ -263,7 +263,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f13a" name="f13" class="form-check-input" value="yes"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f13'] == 'yes' }}" >
+                <check if="{{ @f13 == 'yes' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f13a" id="f13y">Yes</label>
@@ -271,7 +271,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f13b" name="f13" class="form-check-input" value="no"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f13'] == 'no' }}" >
+                <check if="{{ @f13 == 'no' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f13b" id="f13n">No</label>
@@ -283,7 +283,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f14a" name="f14" class="form-check-input" value="yes"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f14'] == 'yes' }}" >
+                <check if="{{ @f14 == 'yes' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f14a" id="f14y">Yes</label>
@@ -291,7 +291,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f14b" name="f14" class="form-check-input" value="no"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f14'] == 'no' }}" >
+                <check if="{{ @f14 == 'no' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f14b" id="f14n">No</label>
@@ -303,7 +303,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f15a" name="f15" class="form-check-input" value="yes"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f15'] == 'yes' }}" >
+                <check if="{{ @f15 == 'yes' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f15a" id="f15y">Yes</label>
@@ -311,7 +311,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f15b" name="f15" class="form-check-input" value="no"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f15'] == 'no' }}" >
+                <check if="{{ @f15 == 'no' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f15b" id="f15n">No</label>
@@ -323,7 +323,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f16a" name="f16" class="form-check-input" value="yes"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f16'] == 'yes' }}" >
+                <check if="{{ @f16 == 'yes' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f16a" id="f16y">Yes</label>
@@ -331,7 +331,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f16b" name="f16" class="form-check-input" value="no"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f16'] == 'no' }}" >
+                <check if="{{ @f16 == 'no' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f16b" id="f16n">No</label>
@@ -343,7 +343,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f17a" name="f17" class="form-check-input" value="yes"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f17'] == 'yes' }}" >
+                <check if="{{ @f17 == 'yes' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f17a" id="f17y">Yes</label>
@@ -351,7 +351,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f17b" name="f17" class="form-check-input" value="no"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f17'] == 'no' }}" >
+                <check if="{{ @f17 == 'no' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f17b" id="f17n">No</label>
@@ -364,7 +364,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f18a" name="f18" class="form-check-input" value="yes"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f18'] == 'yes' }}" >
+                <check if="{{ @f18 == 'yes' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f18a" id="f18y">Yes</label>
@@ -372,7 +372,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f18b" name="f18" class="form-check-input" value="no"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f18'] == 'no' }}" >
+                <check if="{{ @f18 == 'no' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f18b" id="f18n">No</label>
@@ -384,7 +384,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f19a" name="f19" class="form-check-input" value="yes"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f19'] == 'yes' }}" >
+                <check if="{{ @f19 == 'yes' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f19a" id="f19y">Yes</label>
@@ -392,7 +392,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f19b" name="f19" class="form-check-input" value="no"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f19'] == 'no' }}" >
+                <check if="{{ @f19 == 'no' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f19b" id="f19n">No</label>
@@ -406,7 +406,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f20a" name="f20" class="form-check-input" value="yes"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f20'] == 'yes' }}" >
+                <check if="{{ @f20 == 'yes' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f20a" id="f20y">Yes</label>
@@ -414,7 +414,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f20b" name="f20" class="form-check-input" value="no"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f20'] == 'no' }}" >
+                <check if="{{ @f20 == 'no' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f20b" id="f20n">No</label>
@@ -427,7 +427,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f21a" name="f21" class="form-check-input" value="yes"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f21'] == 'yes' }}" >
+                <check if="{{ @f21 == 'yes' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f21a" id="f21y">Yes</label>
@@ -435,7 +435,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f21b" name="f21" class="form-check-input" value="no"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f21'] == 'no' }}" >
+                <check if="{{ @f21 == 'no' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f21b" id="f21n">No</label>
@@ -448,7 +448,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f22a" name="f22" class="form-check-input" value="yes"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f22'] == 'yes' }}" >
+                <check if="{{ @f22 == 'yes' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f22a" id="f22y">Yes</label>
@@ -456,7 +456,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f22b" name="f22" class="form-check-input" value="no"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f22'] == 'no' }}" >
+                <check if="{{ @f22 == 'no' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f22b" id="f22n">No</label>
@@ -469,7 +469,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f23a" name="f23" class="form-check-input" value="yes"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f23'] == 'yes' }}" >
+                <check if="{{ @f23 == 'yes' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f23a" id="f23y">Yes</label>
@@ -477,7 +477,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f23b" name="f23" class="form-check-input" value="no"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f23'] == 'no' }}" >
+                <check if="{{ @f23 == 'no' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f23b" id="f23n">No</label>
@@ -490,7 +490,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f24a" name="f24" class="form-check-input" value="yes"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f24'] == 'yes' }}" >
+                <check if="{{ @f24 == 'yes' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f24a" id="f24y">Yes</label>
@@ -498,7 +498,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f24b" name="f24" class="form-check-input" value="no"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f24'] == 'no' }}" >
+                <check if="{{ @f24 == 'no' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f24b" id="f24n">No</label>
@@ -512,7 +512,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f25a" name="f25" class="form-check-input" value="yes"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f25'] == 'yes' }}" >
+                <check if="{{ @f25 == 'yes' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f25a" id="f25y">Yes</label>
@@ -520,7 +520,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f25b" name="f25" class="form-check-input" value="no"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f25'] == 'no' }}" >
+                <check if="{{ @f25 == 'no' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f25b" id="f25n">No</label>
@@ -533,7 +533,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f26a" name="f26" class="form-check-input" value="yes"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f26'] == 'yes' }}" >
+                <check if="{{ @f26 == 'yes' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f26a" id="f26y">Yes</label>
@@ -541,7 +541,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f26b" name="f26" class="form-check-input" value="no"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f26'] == 'no' }}" >
+                <check if="{{ @f26 == 'no' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f26b" id="f26n">No</label>
@@ -554,7 +554,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f27a" name="f27" class="form-check-input" value="yes"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f27'] == 'yes' }}" >
+                <check if="{{ @f27 == 'yes' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f27a" id="f27y">Yes</label>
@@ -562,7 +562,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f27b" name="f27" class="form-check-input" value="no"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f27'] == 'no' }}" >
+                <check if="{{ @f27 == 'no' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f27b" id="f27n">No</label>
@@ -576,14 +576,14 @@
                         your people are taking the steps outlined on the plan?</label>
                     <div class="form-check-inline">
                         <input type="radio" id="f28a" name="f28" class="form-check-input" value="yes"
-                        <check if="{{ $_SESSION['f28'] == 'yes' }}" >
+                        <check if="{{ @f28 == 'yes' }}" >
                             checked="checked"
                         </check>>
                         <label class="form-check-label" for="f28a" id="f28y">Yes</label>
                     </div>
                     <div class="form-check-inline">
                         <input type="radio" id="f28b" name="f28" class="form-check-input" value="no"
-                        <check if="{{ $_SESSION['f28'] == 'no' }}" >
+                        <check if="{{ @f28 == 'no' }}" >
                             checked="checked"
                         </check>>
                         <label class="form-check-label" for="f28b" id="f28n">No</label>
@@ -598,7 +598,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f29a" name="f29" class="form-check-input" value="yes"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f29'] == 'yes' }}" >
+                <check if="{{ @f29 == 'yes' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f29a" id="f29y">Yes</label>
@@ -606,7 +606,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f29b" name="f29" class="form-check-input" value="no"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f29'] == 'no' }}" >
+                <check if="{{ @f29 == 'no' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f29b" id="f29n">No</label>
@@ -619,7 +619,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f30a" name="f30" class="form-check-input" value="yes"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f30'] == 'yes' }}" >
+                <check if="{{ @f30 == 'yes' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f30a" id="f30y">Yes</label>
@@ -627,7 +627,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f30b" name="f30" class="form-check-input" value="no"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f30'] == 'no' }}" >
+                <check if="{{ @f30 == 'no' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f30b" id="f30n">No</label>
@@ -635,7 +635,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f30c" name="f30" class="form-check-input" value="I don't know"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f30'] == 'I don't know' }}" >
+                <check if="{{ @f30 == 'I don't know' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f30c" id="f30na">I don't know</label>
@@ -648,7 +648,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f31a" name="f31" class="form-check-input" value="yes"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f31'] == 'yes' }}" >
+                <check if="{{ @f31 == 'yes' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f31a" id="f31y">Yes</label>
@@ -656,7 +656,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f31b" name="f31" class="form-check-input" value="no"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f31'] == 'no' }}" >
+                <check if="{{ @f31 == 'no' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f31b" id="f31n">No</label>
@@ -668,7 +668,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f32a" name="f32" class="form-check-input" value="yes"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f32'] == 'yes' }}" >
+                <check if="{{ @f32 == 'yes' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f32a" id="f32y">Yes</label>
@@ -676,7 +676,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f32b" name="f32" class="form-check-input" value="no"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f32'] == 'no' }}" >
+                <check if="{{ @f32 == 'no' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f32b" id="f32n">No</label>
@@ -688,7 +688,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f33a" name="f33" class="form-check-input" value="yes"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f33'] == 'yes' }}" >
+                <check if="{{ @f33 == 'yes' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f33a" id="f33y">Yes</label>
@@ -696,7 +696,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f33b" name="f33" class="form-check-input" value="no"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f33'] == 'no' }}" >
+                <check if="{{ @f33 == 'no' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f33b" id="f33n">No</label>
@@ -709,7 +709,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f34a" name="f34" class="form-check-input" value="yes"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f34'] == 'yes' }}" >
+                <check if="{{ @f34 == 'yes' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f34a" id="f34y">Yes</label>
@@ -717,7 +717,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f34b" name="f34" class="form-check-input" value="no"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f34'] == 'no' }}" >
+                <check if="{{ @f34 == 'no' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f34b" id="f34n">No</label>
@@ -729,7 +729,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f35a" name="f35" class="form-check-input" value="yes"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f35'] == 'yes' }}" >
+                <check if="{{ @f35 == 'yes' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f35a" id="f35y">Yes</label>
@@ -737,7 +737,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f35b" name="f35" class="form-check-input" value="no"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f35'] == 'no' }}" >
+                <check if="{{ @f35 == 'no' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f35b" id="f35n">No</label>
@@ -749,7 +749,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f36a" name="f36" class="form-check-input" value="yes"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f36'] == 'yes' }}" >
+                <check if="{{ @f36 == 'yes' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f36a" id="f36y">Yes</label>
@@ -757,7 +757,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f36b" name="f36" class="form-check-input" value="no"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f36'] == 'no' }}" >
+                <check if="{{ @f36 == 'no' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f36b" id="f36n">No</label>
@@ -770,7 +770,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f37a" name="f37" class="form-check-input" value="yes"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f37'] == 'yes' }}" >
+                <check if="{{ @f37 == 'yes' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f37a" id="f37y">Yes</label>
@@ -778,7 +778,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f37b" name="f37" class="form-check-input" value="no"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f37'] == 'no' }}" >
+                <check if="{{ @f37 == 'no' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f37b" id="f37n">No</label>
@@ -791,7 +791,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f38a" name="f38" class="form-check-input" value="yes"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f38'] == 'yes' }}" >
+                <check if="{{ @f38 == 'yes' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f38a" id="f38y">Yes</label>
@@ -799,7 +799,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f38b" name="f38" class="form-check-input" value="no"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f38'] == 'no' }}" >
+                <check if="{{ @f38 == 'no' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f38b" id="f38n">No</label>
@@ -811,7 +811,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f39a" name="f39" class="form-check-input" value="yes"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f39'] == 'yes' }}" >
+                <check if="{{ @f39 == 'yes' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f39a" id="f39y">Yes</label>
@@ -819,7 +819,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f39b" name="f39" class="form-check-input" value="no"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f39'] == 'no' }}" >
+                <check if="{{ @f39 == 'no' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f39b" id="f39n">No</label>
@@ -832,7 +832,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f40a" name="f40" class="form-check-input" value="yes"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f40'] == 'yes' }}" >
+                <check if="{{ @f40 == 'yes' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f40a" id="f40y">Yes</label>
@@ -840,7 +840,7 @@
             <div class="form-check-inline">
                 <input type="radio" id="f40b" name="f40" class="form-check-input" value="no"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f40'] == 'no' }}" >
+                <check if="{{ @f40 == 'no' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f40b" id="f40n">No</label>
@@ -853,14 +853,14 @@
             <div class="form-check-inline">
                 <input type="radio" id="f41a" name="f41" class="form-check-input" value="yes"
                        onchange="toggleVisibility()"
-                <check if="{{ $_SESSION['f41'] == 'yes' }}" >
+                <check if="{{ @f41 == 'yes' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f41a" id="f41y">Yes</label>
             </div>
             <div class="form-check-inline">
                 <input type="radio" id="f41b" name="f41" class="form-check-input" value="no"
-                <check if="{{ $_SESSION['f41'] == 'no' }}" >
+                <check if="{{ @f41 == 'no' }}" >
                     checked="checked"
                 </check>>
                 <label class="form-check-label" for="f41b" id="f41n">No</label>
@@ -876,14 +876,14 @@
                             quality(work, timeliness, communication) as you?</label>
                         <div class="form-check-inline">
                             <input type="radio" id="f42a" name="f42" class="form-check-input" value="yes"
-                            <check if="{{ $_SESSION['f42'] == 'yes' }}" >
+                            <check if="{{ @f42 == 'yes' }}" >
                                 checked="checked"
                             </check>>
                             <label class="form-check-label" for="f42a" id="f42y">Yes</label>
                         </div>
                         <div class="form-check-inline">
                             <input type="radio" id="f42b" name="f42" class="form-check-input" value="no"
-                            <check if="{{ $_SESSION['f42'] == 'no' }}" >
+                            <check if="{{ @f42 == 'no' }}" >
                                 checked="checked"
                             </check>>
                             <label class="form-check-label" for="f42b" id="f42n">No</label>
@@ -898,14 +898,14 @@
                             customers directly or indirectly?</label>
                         <div class="form-check-inline">
                             <input type="radio" id="f43a" name="f43" class="form-check-input" value="yes"
-                            <check if="{{ $_SESSION['f43'] == 'yes' }}" >
+                            <check if="{{ @f43 == 'yes' }}" >
                                 checked="checked"
                             </check>>
                             <label class="form-check-label" for="f43a" id="f43y">Yes</label>
                         </div>
                         <div class="form-check-inline">
                             <input type="radio" id="f43b" name="f43" class="form-check-input" value="no"
-                            <check if="{{ $_SESSION['f43'] == 'no' }}" >
+                            <check if="{{ @f43 == 'no' }}" >
                                 checked="checked"
                             </check>>
                             <label class="form-check-label" for="f43b" id="f43n">No</label>
@@ -919,14 +919,14 @@
                             values of your company so as to ensure they are a fit?</label>
                         <div class="form-check-inline">
                             <input type="radio" id="f44a" name="f44" class="form-check-input" value="yes"
-                            <check if="{{ $_SESSION['f44'] == 'yes' }}" >
+                            <check if="{{ @f44 == 'yes' }}" >
                                 checked="checked"
                             </check>>
                             <label class="form-check-label" for="f44a" id="f44y">Yes</label>
                         </div>
                         <div class="form-check-inline">
                             <input type="radio" id="f44b" name="f44" class="form-check-input" value="no"
-                            <check if="{{ $_SESSION['f44'] == 'no' }}" >
+                            <check if="{{ @f44 == 'no' }}" >
                                 checked="checked"
                             </check>>
                             <label class="form-check-label" for="f44b" id="f44n">No</label>
@@ -941,21 +941,21 @@
                             some work and are there in case some subs take us for granted.</label>
                         <div class="form-check-inline">
                             <input type="radio" id="f45a" name="f45" class="form-check-input" value="yes"
-                            <check if="{{ $_SESSION['f45'] == 'yes' }}" >
+                            <check if="{{ @f45 == 'yes' }}" >
                                 checked="checked"
                             </check>>
                             <label class="form-check-label" for="f45a" id="f45y">Yes</label>
                         </div>
                         <div class="form-check-inline">
                             <input type="radio" id="f45b" name="f45" class="form-check-input" value="no"
-                            <check if="{{ $_SESSION['f45'] == 'no' }}" >
+                            <check if="{{ @f45 == 'no' }}" >
                                 checked="checked"
                             </check>>
                             <label class="form-check-label" for="f45b" id="f45n">No</label>
                         </div>
                         <div class="form-check-inline">
                             <input type="radio" id="f45c" name="f45" class="form-check-input" value="N/A"
-                            <check if="{{ $_SESSION['f45'] == 'N/A' }}" >
+                            <check if="{{ @f45 == 'N/A' }}" >
                                 checked="checked"
                             </check>>
                             <label class="form-check-label" for="f45c" id="f45na">N/A</label>
@@ -969,21 +969,21 @@
                             economical/ wise to bring skills in house rather than sub out?</label>
                         <div class="form-check-inline">
                             <input type="radio" id="f46a" name="f46" class="form-check-input" value="yes"
-                            <check if="{{ $_SESSION['f46'] == 'yes' }}" >
+                            <check if="{{ @f46 == 'yes' }}" >
                                 checked="checked"
                             </check>>
                             <label class="form-check-label" for="f46a" id="f46y">Yes</label>
                         </div>
                         <div class="form-check-inline">
                             <input type="radio" id="f46b" name="f46" class="form-check-input" value="no"
-                            <check if="{{ $_SESSION['f46'] == 'no' }}" >
+                            <check if="{{ @f46 == 'no' }}" >
                                 checked="checked"
                             </check>>
                             <label class="form-check-label" for="f46b" id="f46n">No</label>
                         </div>
                         <div class="form-check-inline">
                             <input type="radio" id="f46c" name="f46" class="form-check-input" value="N/A"
-                            <check if="{{ $_SESSION['f46'] == 'N/A' }}" >
+                            <check if="{{ @f46 == 'N/A' }}" >
                                 checked="checked"
                             </check>>
                             <label class="form-check-label" for="f46c" id="f46na">N/A</label>
@@ -1001,19 +1001,19 @@
                     of Threats not covered above?</label>
                 <div class="form-group">
                     <label for="e52a" >Strengths</label>
-                    <textarea class="form-control" id="e52a" name="e52a" rows="3">{{ $_SESSION['e52a'] }}</textarea>
+                    <textarea class="form-control" id="e52a" name="e52a" rows="3">{{ @e52a] }}</textarea>
                 </div>
                 <div class="form-group">
                     <label for="e52b" >Weaknesses</label>
-                    <textarea class="form-control" id="e52b" name="e52b" rows="3">{{ $_SESSION['e52b'] }}</textarea>
+                    <textarea class="form-control" id="e52b" name="e52b" rows="3">{{ @e52b }}</textarea>
                 </div>
                 <div class="form-group">
                     <label for="e52c" >Opportunities</label>
-                    <textarea class="form-control" id="e52c" name="e52c" rows="3">{{ $_SESSION['e52c'] }}</textarea>
+                    <textarea class="form-control" id="e52c" name="e52c" rows="3">{{ @e52c }}</textarea>
                 </div>
                 <div class="form-group">
                     <label for="e52d" >Threats</label>
-                    <textarea class="form-control" id="e52d" name="e52d" rows="3">{{ $_SESSION['e52d'] }}</textarea>
+                    <textarea class="form-control" id="e52d" name="e52d" rows="3">{{ @e52d }}</textarea>
                 </div>
                 <!-- The privacy disclaimer -->
                 <br>
@@ -1036,7 +1036,7 @@
 
 </div>
 
-<script src="js/JavaScript.js"></script>
+<script src="js/JavaScript6.js"></script>
 <script src="js/clientSideValidation.js"></script>
 <include href="includes/footer.html"></include>
 </body>
