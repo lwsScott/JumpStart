@@ -37,6 +37,23 @@ function toggleVisibility()
         document.getElementById('f8hi').style.visibility = "hidden";
     }
 
+    // make f28  visible if Yes checked, hidden otherwise
+    if (document.getElementById('f27a').checked)
+    {
+        document.getElementById('f27hi').style.visibility = "block";
+        document.getElementById('f27hi').style.display = "visible";
+    }
+    else {
+        document.getElementById('f27hi').style.display = "none";
+        document.getElementById('f27hi').style.visibility = "hidden";
+    }
+
+
+    if (document.getElementById('f27b').checked) {
+        document.getElementById('f27hi').style.display = "none";
+        document.getElementById('f27hi').style.visibility = "hidden";
+    }
+
 
     // make f42 through f46 if Yes checked, hidden otherwise
     if (document.getElementById('f41a').checked)
