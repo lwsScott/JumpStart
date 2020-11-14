@@ -61,7 +61,34 @@ class Database
         }
     }
 
+    /**
+     * Get a section from to the database
+     * @param $userId the user id to get the section for
+     * @param $section the section to get
+     * @return the section
+     */
+    function getSection($userId, $section)
+    {
+        //1. Define the query
+        $sql = "SELECT * 
+                FROM $section
+                WHERE userId = $userId";
+        //echo $sql;
+        //2. Prepare the statement
+        $statement = $this->_dbh->prepare($sql);
 
+        //3. Bind the parameters
+        $statement->bindParam(':userId', $userId);
+
+        //4. Execute the statement
+        $statement->execute();
+
+        //5. Get the result
+        $result = $statement->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
+    
+    
     /**
      * Inserts Section 1 answers into the database
      * @param $section1 the section 1 answers to add
@@ -110,7 +137,6 @@ class Database
         $a18 = $section1->getA18();
         //$userId = $_SESSION['userId'];
 
-
         //3. Bind the parameters
         $statement->bindParam(':a1',$a1, PDO::PARAM_STR);
         $statement->bindParam(':a2',$a2, PDO::PARAM_STR);
@@ -132,8 +158,6 @@ class Database
         $statement->bindParam(':a18',$a18, PDO::PARAM_STR);
         $statement->bindParam(':userId',$userId, PDO::PARAM_STR);
 
-        //echo $sql;
-        //$statement->bindParam(':image', $recipe->getImage());
         //4. Execute the statement
         $result = $statement->execute();
         //echo "Result: " . $result;
@@ -145,35 +169,8 @@ class Database
     }
 
     /**
-     * Get a section to add to the database
-     * @param $userId the user id to get the section for
-     * @param $section the section to get
-     * @return the section
-     */
-    function getSection($userId, $section)
-    {
-        //1. Define the query
-        $sql = "SELECT * 
-                FROM $section
-                WHERE userId = $userId";
-        //echo $sql;
-        //2. Prepare the statement
-        $statement = $this->_dbh->prepare($sql);
-
-        //3. Bind the parameters
-        $statement->bindParam(':userId', $userId);
-
-        //4. Execute the statement
-        $statement->execute();
-
-        //5. Get the result
-        $result = $statement->fetch(PDO::FETCH_ASSOC);
-        return $result;
-    }
-
-    /**
      * Inserts Section 2 answers into the database
-     * @param $section1 the section 1 answers to add
+     * @param $section1 the section 2 answers to add
      * @param $change the type of change
      */
     function addSection2($section2, $change)
@@ -295,8 +292,6 @@ class Database
         $statement->bindParam(':b29',$b29, PDO::PARAM_STR);
         $statement->bindParam(':userId',$userId, PDO::PARAM_STR);
 
-        //$statement->bindParam(':image', $recipe->getImage());
-
         //4. Execute the statement
         $result = $statement->execute();
         echo "Result: " . $result;
@@ -338,69 +333,49 @@ class Database
         //var_dump($statement);
         $c1 = $section3->getC1();
         $c1t = $section3->getC1t();
-
         $c2 = $section3->getC2();
         $c2t = $section3->getC2t();
-
         $c3 = $section3->getC3();
         $c3t = $section3->getC3t();
-
         $c4 = $section3->getC4();
         $c4t = $section3->getC4t();
-
         $c5 = $section3->getC5();
         $c6 = $section3->getC6();
         $c6t = $section3->getC6t();
-
         $c7 = $section3->getC7();
         $c7t = $section3->getC7t();
-
         $c8 = $section3->getC8();
         $c8t = $section3->getC8t();
-
         $c9 = $section3->getC9();
         $c9t = $section3->getC9t();
-
         $c10a = $section3->getC10a();
         $c10b = $section3->getC10b();
         $c10c = $section3->getC10c();
         $c10d = $section3->getC10d();
-        //$userId = $section3->getUserId();
-
 
         //3. Bind the parameters
         $statement->bindParam(':c1',$c1, PDO::PARAM_STR);
         $statement->bindParam(':c1t',$c1t, PDO::PARAM_STR);
-
         $statement->bindParam(':c2',$c2, PDO::PARAM_STR);
         $statement->bindParam(':c2t',$c2t, PDO::PARAM_STR);
-
         $statement->bindParam(':c3',$c3, PDO::PARAM_STR);
         $statement->bindParam(':c3t',$c3t, PDO::PARAM_STR);
-
         $statement->bindParam(':c4',$c4, PDO::PARAM_STR);
         $statement->bindParam(':c4t',$c4t, PDO::PARAM_STR);
-
         $statement->bindParam(':c5',$c5, PDO::PARAM_STR);
         $statement->bindParam(':c6',$c6, PDO::PARAM_STR);
         $statement->bindParam(':c6t',$c6t, PDO::PARAM_STR);
-
         $statement->bindParam(':c7',$c7, PDO::PARAM_STR);
         $statement->bindParam(':c7t',$c7t, PDO::PARAM_STR);
-
         $statement->bindParam(':c8',$c8, PDO::PARAM_STR);
         $statement->bindParam(':c8t',$c8t, PDO::PARAM_STR);
-
         $statement->bindParam(':c9',$c9, PDO::PARAM_STR);
         $statement->bindParam(':c9t',$c9t, PDO::PARAM_STR);
-
         $statement->bindParam(':c10a',$c10a, PDO::PARAM_STR);
         $statement->bindParam(':c10b',$c10b, PDO::PARAM_STR);
         $statement->bindParam(':c10c',$c10c, PDO::PARAM_STR);
         $statement->bindParam(':c10d',$c10d, PDO::PARAM_STR);
         $statement->bindParam(':userId',$userId, PDO::PARAM_STR);
-
-        //$statement->bindParam(':image', $recipe->getImage());
 
         //4. Execute the statement
         $result = $statement->execute();
@@ -439,7 +414,6 @@ class Database
     }
         //2. Prepare the statement
         $statement = $this->_dbh->prepare($sql);
-        //var_dump($statement);
         $d1 = $section4->getD1();
         $d2 = $section4->getD2();
         $d3 = $section4->getD3();
@@ -524,13 +498,12 @@ class Database
 
     /**
      * Inserts Section 5 answers into the datadase
-     * @param $section6 the section 4 answers to add
+     * @param $section5 the section 5 answers to add
      * @param $change the type of change
      */
-    function addSection5($section6, $change)
+    function addSection5($section5, $change)
     {
         $userId = $_SESSION['userId'];
-        //echo $userId;
         //1. Define the query
         if ($change == 'add') {
             $sql = "INSERT INTO section5(e1, e2, e3, e4, e5, e6, e7, e8, e9, e10, e10t, e11, e12, 
@@ -555,62 +528,62 @@ class Database
         //2. Prepare the statement
         $statement = $this->_dbh->prepare($sql);
         //var_dump($statement);
-        $e1 = $section6->getE1();
-        $e2 = $section6->getE2();
-        $e3 = $section6->getE3();
-        $e4 = $section6->getE4();
-        $e5 = $section6->getE5();
-        $e6 = $section6->getE6();
-        $e7 = $section6->getE7();
-        $e8 = $section6->getE8();
-        $e9 = $section6->getE9();
-        $e10 = $section6->getE10();
-        $e10t = $section6->getE10t();
-        $e11 = $section6->getE11();
-        $e12 = $section6->getE12();
-        $e13 = $section6->getE13();
-        $e14 = $section6->getE14();
-        $e15 = $section6->getE15();
-        $e16 = $section6->getE16();
-        $e17 = $section6->getE17();
-        $e18 = $section6->getE18();
-        $e19 = $section6->getE19();
-        $e20 = $section6->getE20();
-        $e21 = $section6->getE21();
-        $e22 = $section6->getE22();
-        $e23 = $section6->getE23();
-        $e24 = $section6->getE24();
-        $e25 = $section6->getE25();
-        $e26 = $section6->getE26();
-        $e27 = $section6->getE27();
-        $e28 = $section6->getE28();
-        $e29 = $section6->getE29();
-        $e30 = $section6->getE30();
-        $e31 = $section6->getE31();
-        $e32 = $section6->getE32();
-        $e33 = $section6->getE33();
-        $e34 = $section6->getE34();
-        $e35 = $section6->getE35();
-        $e36 = $section6->getE36();
-        $e37 = $section6->getE37();
-        $e38 = $section6->getE38();
-        $e39 = $section6->getE39();
-        $e40 = $section6->getE40();
-        $e41 = $section6->getE41();
-        $e42 = $section6->getE42();
-        $e43 = $section6->getE43();
-        $e44 = $section6->getE44();
-        $e45 = $section6->getE45();
-        $e46 = $section6->getE46();
-        $e47 = $section6->getE47();
-        $e48 = $section6->getE48();
-        $e49 = $section6->getE49();
-        $e50 = $section6->getE50();
-        $e51 = $section6->getE51();
-        $e52a = $section6->getE52a();
-        $e52b = $section6->getE52b();
-        $e52c = $section6->getE52c();
-        $e52d = $section6->getE52d();
+        $e1 = $section5->getE1();
+        $e2 = $section5->getE2();
+        $e3 = $section5->getE3();
+        $e4 = $section5->getE4();
+        $e5 = $section5->getE5();
+        $e6 = $section5->getE6();
+        $e7 = $section5->getE7();
+        $e8 = $section5->getE8();
+        $e9 = $section5->getE9();
+        $e10 = $section5->getE10();
+        $e10t = $section5->getE10t();
+        $e11 = $section5->getE11();
+        $e12 = $section5->getE12();
+        $e13 = $section5->getE13();
+        $e14 = $section5->getE14();
+        $e15 = $section5->getE15();
+        $e16 = $section5->getE16();
+        $e17 = $section5->getE17();
+        $e18 = $section5->getE18();
+        $e19 = $section5->getE19();
+        $e20 = $section5->getE20();
+        $e21 = $section5->getE21();
+        $e22 = $section5->getE22();
+        $e23 = $section5->getE23();
+        $e24 = $section5->getE24();
+        $e25 = $section5->getE25();
+        $e26 = $section5->getE26();
+        $e27 = $section5->getE27();
+        $e28 = $section5->getE28();
+        $e29 = $section5->getE29();
+        $e30 = $section5->getE30();
+        $e31 = $section5->getE31();
+        $e32 = $section5->getE32();
+        $e33 = $section5->getE33();
+        $e34 = $section5->getE34();
+        $e35 = $section5->getE35();
+        $e36 = $section5->getE36();
+        $e37 = $section5->getE37();
+        $e38 = $section5->getE38();
+        $e39 = $section5->getE39();
+        $e40 = $section5->getE40();
+        $e41 = $section5->getE41();
+        $e42 = $section5->getE42();
+        $e43 = $section5->getE43();
+        $e44 = $section5->getE44();
+        $e45 = $section5->getE45();
+        $e46 = $section5->getE46();
+        $e47 = $section5->getE47();
+        $e48 = $section5->getE48();
+        $e49 = $section5->getE49();
+        $e50 = $section5->getE50();
+        $e51 = $section5->getE51();
+        $e52a = $section5->getE52a();
+        $e52b = $section5->getE52b();
+        $e52c = $section5->getE52c();
+        $e52d = $section5->getE52d();
 
 
         //3. Bind the parameters
@@ -683,8 +656,8 @@ class Database
     }
 
     /**
-     * Inserts Section 5 answers into the datadase
-     * @param $section6 the section 4 answers to add
+     * Inserts Section 6 answers into the datadase
+     * @param $section6 the section 6 answers to add
      * @param $change the type of change
      */
     function addSection6($section6, $change)
@@ -714,7 +687,6 @@ class Database
         }
         //2. Prepare the statement
         $statement = $this->_dbh->prepare($sql);
-        //var_dump($statement);
         $f1 = $section6->getF1();
         $f2 = $section6->getF2();
         $f3 = $section6->getF3();
@@ -766,7 +738,6 @@ class Database
         $f47b = $section6->getF47b();
         $f47c = $section6->getF47c();
         $f47d = $section6->getF47d();
-
 
         //3. Bind the parameters
         $statement->bindParam(':f1',$f1, PDO::PARAM_STR);
@@ -831,6 +802,220 @@ class Database
         $_SESSION['answerID'] = $answerID;
         //echo $id;
     }
+
+    /**
+     * Inserts Section 7 answers into the database
+     * @param $section1 the section 7 answers to add
+     * @param $change the type of change
+     */
+    function addSection7($section7, $change)
+    {
+        $userId = $_SESSION['userId'];
+        //1. Define the query
+        if ($change == 'add') {
+            $sql = "INSERT INTO section7 (g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13
+                        userId)
+                VALUES (:g1, :g2, :g3, :g4, :g5, :g6, :g7, :g8, :g9, :g10, :g11, :g12, :g13 
+                        :userId)";
+        } elseif ($change == 'update') {
+            $sql = "UPDATE section7 SET g1 = :g1, g2 = :g2, g3 = :g3, g4 = :g4, g5 = :g5, g6 = :g6, g7 = :g7,
+                                        g8 = :g8, g9 = :g9, g10 = :g10, g11 = :g11, g12 = :g12, g13 = :g13
+                                        WHERE userId = :userId";
+
+        }
+
+        //2. Prepare the statement
+        $statement = $this->_dbh->prepare($sql);
+        //var_dump($statement);
+        $g1 = $section7->getG1();
+        $g2 = $section7->getG2();
+        $g3 = $section7->getG3();
+        $g4 = $section7->getG4();
+        $g5 = $section7->getG5();
+        $g6 = $section7->getG6();
+        $g7 = $section7->getG7();
+        $g8 = $section7->getG8();
+        $g9 = $section7->getG9();
+        $g10 = $section7->getG10();
+        $g11 = $section7->getG11();
+        $g12 = $section7->getG12();
+        $g13 = $section7->getG13();
+
+        //3. Bind the parameters
+        $statement->bindParam(':g1',$g1, PDO::PARAM_STR);
+        $statement->bindParam(':g2',$g2, PDO::PARAM_STR);
+        $statement->bindParam(':g3',$g3, PDO::PARAM_STR);
+        $statement->bindParam(':g4',$g4, PDO::PARAM_STR);
+        $statement->bindParam(':g5',$g5, PDO::PARAM_STR);
+        $statement->bindParam(':g6',$g6, PDO::PARAM_STR);
+        $statement->bindParam(':g7',$g7, PDO::PARAM_STR);
+        $statement->bindParam(':g8',$g8, PDO::PARAM_STR);
+        $statement->bindParam(':g9',$g9, PDO::PARAM_STR);
+        $statement->bindParam(':g10',$g10, PDO::PARAM_STR);
+        $statement->bindParam(':g11',$g11, PDO::PARAM_STR);
+        $statement->bindParam(':g12',$g12, PDO::PARAM_STR);
+        $statement->bindParam(':g13',$g13, PDO::PARAM_STR);
+        $statement->bindParam(':userId',$userId, PDO::PARAM_STR);
+
+        //4. Execute the statement
+        $result = $statement->execute();
+        //echo "Result: " . $result;
+
+        //Get the key of the last inserted row
+        $answerID = $this->_dbh->lastInsertId();
+        $_SESSION['answerID'] = $answerID;
+        //echo $id;
+    }
+
+    /**
+     * Inserts Section 8 answers into the database
+     * @param $section8 the section 8 answers to add
+     * @param $change the type of change
+     */
+    function addSection8($section8, $change)
+    {
+        $userId = $_SESSION['userId'];
+        //1. Define the query
+        if ($change == 'add') {
+            $sql = "INSERT INTO section8 (h1, h2, h3, h4, h5, h6, h7, h8, h9, h10, h11, h12, 
+                        userId)
+                VALUES (:h1, :h2, :h3, :h4, :h5, :h6, :h7, :h8, :h9, :h10, :h11, :h12, 
+                        :userId)";
+        } elseif ($change == 'update') {
+            $sql = "UPDATE section8 SET h1 = :h1, h2 = :h2, h3 = :h3, h4 = :h4, h5 = :h5, h6 = :h6, h7 = :h7,
+                                        h8 = :h8, h9 = :h9, h10 = :h10, h11 = :h11, h12 = :h12
+                                        WHERE userId = :userId";
+
+        }
+        //var_dump($sql);
+        //2. Prepare the statement
+        $statement = $this->_dbh->prepare($sql);
+        //var_dump($statement);
+        $h1 = $section8->getH1();
+        $h2 = $section8->getH2();
+        $h3 = $section8->getH3();
+        $h4 = $section8->getH4();
+        $h5 = $section8->getH5();
+        $h6 = $section8->getH6();
+        $h7 = $section8->getH7();
+        $h8 = $section8->getH8();
+        $h9 = $section8->getH9();
+        $h10 = $section8->getH10();
+        $h11 = $section8->getH11();
+        $h12 = $section8->getH12();
+
+        //3. Bind the parameters
+        $statement->bindParam(':h1',$h1, PDO::PARAM_STR);
+        $statement->bindParam(':h2',$h2, PDO::PARAM_STR);
+        $statement->bindParam(':h3',$h3, PDO::PARAM_STR);
+        $statement->bindParam(':h4',$h4, PDO::PARAM_STR);
+        $statement->bindParam(':h5',$h5, PDO::PARAM_STR);
+        $statement->bindParam(':h6',$h6, PDO::PARAM_STR);
+        $statement->bindParam(':h7',$h7, PDO::PARAM_STR);
+        $statement->bindParam(':h8',$h8, PDO::PARAM_STR);
+        $statement->bindParam(':h9',$h9, PDO::PARAM_STR);
+        $statement->bindParam(':h10',$h10, PDO::PARAM_STR);
+        $statement->bindParam(':h11',$h11, PDO::PARAM_STR);
+        $statement->bindParam(':h12',$h12, PDO::PARAM_STR);
+
+        $statement->bindParam(':userId',$userId, PDO::PARAM_STR);
+
+        //4. Execute the statement
+        $result = $statement->execute();
+        //echo "Result: " . $result;
+
+        //Get the key of the last inserted row
+        $answerID = $this->_dbh->lastInsertId();
+        $_SESSION['answerID'] = $answerID;
+        //echo $id;
+    }
+
+    /**
+     * Inserts Section 9 answers into the database
+     * @param $section9 the section 9 answers to add
+     * @param $change the type of change
+     */
+    function addSection9($section9, $change)
+    {
+        $userId = $_SESSION['userId'];
+        //1. Define the query
+        if ($change == 'add') {
+            $sql = "INSERT INTO section9 (i1, i2, userId)
+                    VALUES (:i1, :i2, :userId)";
+        } elseif ($change == 'update') {
+            $sql = "UPDATE section9 SET i1 = :i1, i2 = :i2 
+                    WHERE userId = :userId";
+
+        }
+
+        //2. Prepare the statement
+        $statement = $this->_dbh->prepare($sql);
+        //var_dump($statement);
+        $i1 = $section9->getI1();
+        $i2 = $section9->getI2();
+
+        //3. Bind the parameters
+        $statement->bindParam(':i1',$i1, PDO::PARAM_STR);
+        $statement->bindParam(':i2',$i2, PDO::PARAM_STR);
+
+        $statement->bindParam(':userId',$userId, PDO::PARAM_STR);
+
+        //4. Execute the statement
+        $result = $statement->execute();
+        //echo "Result: " . $result;
+
+        //Get the key of the last inserted row
+        $answerID = $this->_dbh->lastInsertId();
+        $_SESSION['answerID'] = $answerID;
+        //echo $id;
+    }
+
+    /**
+     * Inserts Section 10 answers into the database
+     * @param $section10 the section 10 answers to add
+     * @param $change the type of change
+     */
+    function addSection10($section10, $change)
+    {
+        $userId = $_SESSION['userId'];
+        //1. Define the query
+        if ($change == 'add') {
+            $sql = "INSERT INTO section10 (j1, j2, j3, j4, userId)
+                    VALUES (:j1, :j2, :j3, :j4, :userId)";
+        } elseif ($change == 'update') {
+            $sql = "UPDATE section10 SET j1 = :j1, j2 = :j2, j3 = :j3, j4 = :j4
+                    WHERE userId = :userId";
+
+        }
+        //var_dump($sql);
+        //2. Prepare the statement
+        $statement = $this->_dbh->prepare($sql);
+        //var_dump($statement);
+        $j1 = $section10->getJ1();
+        $j2 = $section10->getJ2();
+        $j3 = $section10->getJ3();
+        $j4 = $section10->getJ4();
+        
+        //3. Bind the parameters
+        $statement->bindParam(':j1',$j1, PDO::PARAM_STR);
+        $statement->bindParam(':j2',$j2, PDO::PARAM_STR);
+        $statement->bindParam(':j3',$j3, PDO::PARAM_STR);
+        $statement->bindParam(':j4',$j4, PDO::PARAM_STR);
+        
+        $statement->bindParam(':userId',$userId, PDO::PARAM_STR);
+
+        //echo $sql;
+        //$statement->bindParam(':image', $recipe->getImage());
+        //4. Execute the statement
+        $result = $statement->execute();
+        //echo "Result: " . $result;
+
+        //Get the key of the last inserted row
+        $answerID = $this->_dbh->lastInsertId();
+        $_SESSION['answerID'] = $answerID;
+        //echo $id;
+    }
+
     /**
      * Insert a new user into the database
      * @param $newUser the user to add

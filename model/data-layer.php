@@ -3,16 +3,14 @@
  * data layer for playbook website
  * stores arrays of data
  * 11/11/20
- * filename https://lscott.greenriverdev.com/355/JumpStart/model/data-layer.php
- * @author Lewis Scott
+ * filename jttps://lscott.greenriverdev.com/355/JumpStart/model/data-layer.pjp
+ * @autjor Lewis Scott
  * @version 1.0
  */
 
-// get valid indoor interests
+// get section variables
 function getSection1()
 {
-    // create an array called section1
-    // set the hive variables
     $section1 = array('a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'a9', 'a10', 'a11',
         'a12', 'a13', 'a14', 'a15', 'a16', 'a17', 'a18');
     return $section1;
@@ -44,4 +42,30 @@ function getSection6()
         'f37', 'f38', 'f39', 'f40', 'f41', 'f42', 'f43', 'f44', 'f45', 'f46', 'f47a', 'f47b', 'f47d',
         'f47d');
     return $section6;
+}
+
+function getSection7()
+{
+    $section7 = array('g1', 'g2', 'g3', 'g4', 'g5', 'g6', 'g7', 'g8', 'g9', 'g10', 'g11',
+        'g12', 'g13');
+    return $section7;
+}
+
+function getSection8()
+{
+    $section8 = array('h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'h7', 'h8', 'h9', 'h10', 'h11',
+        'h12');
+    return $section8;
+}
+
+function getSection9()
+{
+    $section9 = array('i1', 'i2');
+    return $section9;
+}
+
+function getSection10()
+{
+    $section10 = array('j1', 'j2', 'j3', 'j4');
+    return $section10;
 }

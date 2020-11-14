@@ -427,7 +427,7 @@ class JumpStartController
     }
 
     /**
-     * Display the section1 route
+     * Display the section3 route
      */
     public function section3($f3)
     {
@@ -808,11 +808,9 @@ class JumpStartController
                 $d27c = $_SESSION['d27c'];
                 $d27d = $_SESSION['d27d'];
 
-
                 $userId = $_SESSION['userId'];
 
-
-                // construct a section1 object
+                // construct a section4 object
                 $section4 = new Section4($d1, $d1a, $d2, $d2a, $d3, $d3a, $d4, $d4a, $d5, $d6, $d7, $d8, $d9, $d10,
                     $d11, $d12, $d13, $d14, $d15, $d16, $d17, $d18, $d19, $d20, $d21, $d22, $d23, $d24, $d25, $d26, $d27a,
                     $d27b, $d27c, $d27d, $userId);
@@ -835,54 +833,14 @@ class JumpStartController
                     $this->_f3->set($k, $v);
                 }
             }
-             /*
-            $this->_f3->set('d1', $results['d1']);
-            $this->_f3->set('d1a', $results['d1a']);
 
-            $this->_f3->set('d2', $results['d2']);
-            $this->_f3->set('d2a', $results['d2a']);
-
-            $this->_f3->set('d3', $results['d3']);
-            $this->_f3->set('d3a', $results['d3a']);
-
-            $this->_f3->set('d4', $results['d4']);
-            $this->_f3->set('d4a', $results['d4a']);
-
-            $this->_f3->set('d5', $results['d5']);
-            $this->_f3->set('d6', $results['d6']);
-            $this->_f3->set('d7', $results['d7']);
-            $this->_f3->set('d8', $results['d8']);
-            $this->_f3->set('d9', $results['d9']);
-            $this->_f3->set('d10', $results['d10']);
-            $this->_f3->set('d11', $results['d11']);
-            $this->_f3->set('d12', $results['d12']);
-            $this->_f3->set('d13', $results['d13']);
-            $this->_f3->set('d14', $results['d14']);
-            $this->_f3->set('d15', $results['d15']);
-            $this->_f3->set('d16', $results['d16']);
-            $this->_f3->set('d17', $results['d17']);
-            $this->_f3->set('d18', $results['d18']);
-            $this->_f3->set('d19', $results['d19']);
-            $this->_f3->set('d20', $results['d20']);
-            $this->_f3->set('d21', $results['d21']);
-            $this->_f3->set('d22', $results['d22']);
-            $this->_f3->set('d23', $results['d23']);
-            $this->_f3->set('d24', $results['d24']);
-            $this->_f3->set('d25', $results['d25']);
-            $this->_f3->set('d26', $results['d26']);
-
-            $this->_f3->set('d27a', $results['d27a']);
-            $this->_f3->set('d27b', $results['d27b']);
-            $this->_f3->set('d27c', $results['d27c']);
-            $this->_f3->set('d27d', $results['d27d']);
-             */
             $view = new Template();
             echo $view->render('views/section4.html');
         }
     }
 
     /**
-     * Display the section1 route
+     * Display the section5 route
      */
     public function section5($f3)
     {
@@ -907,7 +865,7 @@ class JumpStartController
 
             $userId = $_SESSION['userId'];
 
-            // construct a section1 object
+            // construct a section5 object
             $section5 = new Section5($f3->get('e1'), $f3->get('e2'), $f3->get('e3'), $f3->get('e4'), $f3->get('e5'),
                 $f3->get('e6'), $f3->get('e7'), $f3->get('e8'), $f3->get('e9'), $f3->get('e10'),  $f3->get('e10t'),
                 $f3->get('e11'), $f3->get('e12'), $f3->get('e13'), $f3->get('e14'), $f3->get('e15'), $f3->get('e16'),
@@ -986,13 +944,11 @@ class JumpStartController
                 $f3->get('f41'), $f3->get('f42'), $f3->get('f43'), $f3->get('f44'), $f3->get('f45'), $f3->get('f46'),
                 $f3->get('f47a'), $f3->get('f47b'), $f3->get('f47c'), $f3->get('f47d'), $userId);
 
-
             $this->_f3->set('section6', $section6);
 
             // add the section to the database
             $GLOBALS['db']->addSection6($section6, 'update');
             $f3->reroute("results");
-            //echo "before submit";
             //$view = new Template();
             //echo $view->render('views/results.html');
         } else {
@@ -1013,6 +969,245 @@ class JumpStartController
 
             $view = new Template();
             echo $view->render('views/section6.html');
+        }
+    }
+
+    /**
+     * Display the section7 route
+     */
+    public function section7($f3)
+    {
+        // initialize the session variables
+        // allows for incomplete submittal
+
+        // validate the data
+        // TODO really validate the data
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            // get the section1 variable names and set hive variables
+            $section7 = getSection7();
+            foreach ($section7 as $k=>$v)
+            {
+                //var_dump($_POST[$v]);
+                if (isset($_POST[$v])) {
+                    $this->_f3->set($v, $_POST[$v]);
+                } else {
+                    $this->_f3->set($v, "");
+                }
+            }
+
+            $userId = $_SESSION['userId'];
+
+            // construct a section1 object
+            $section7 = new Section7($f3->get('g1'),$f3->get('g2'), $f3->get('g3'), $f3->get('g4'), $f3->get('g5'),
+                $f3->get('g6'), $f3->get('g7'), $f3->get('g8'), $f3->get('g9'), $f3->get('g10'), $f3->get('g11'),
+                $f3->get('g12'),  $f3->get('g13'),$userId);
+
+            $this->_f3->set('section7', $section7);
+            //var_dump($section1);
+
+            // add the section to the database
+            $GLOBALS['db']->addSection7($section7, 'update');
+            $f3->reroute("results");
+            //echo "before submit";
+            //$view = new Template();
+            //echo $view->render('views/results.html');
+        } else {
+            // login
+            $this->checkLogin($f3);
+
+            // populate section with user info
+            // initialize the user variables
+            $resultsSec7 = $GLOBALS['db']->getSection($_SESSION['userId'], "section7");
+            foreach ($resultsSec7 as $k=>$v)
+            {
+                if ($k != 'answerID')
+                {
+                    $this->_f3->set($k, $v);
+                    //echo " k " . $k . " v " . $v;
+                }
+            }
+
+            $view = new Template();
+            echo $view->render('views/section7.html');
+        }
+    }
+
+    /**
+     * Display the section8 route
+     */
+    public function section8($f3)
+    {
+        // initialize the session variables
+        // allows for incomplete submittal
+
+        // validate the data
+        // TODO really validate the data
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            // get the section1 variable names and set hive variables
+            $section8 = getSection8();
+            foreach ($section8 as $k=>$v)
+            {
+                //var_dump($_POST[$v]);
+                if (isset($_POST[$v])) {
+                    $this->_f3->set($v, $_POST[$v]);
+                } else {
+                    $this->_f3->set($v, "");
+                }
+            }
+
+            $userId = $_SESSION['userId'];
+
+            // construct a section8 object
+            $section8 = new Section8($f3->get('h1'),$f3->get('h2'), $f3->get('h3'), $f3->get('h4'), $f3->get('h5'),
+                $f3->get('h6'), $f3->get('h7'), $f3->get('h8'), $f3->get('h9'), $f3->get('h10'), $f3->get('h11'),
+                $f3->get('h12'), $userId);
+
+            $this->_f3->set('section8', $section8);
+            //var_dump($section1);
+
+            // add the section to the database
+            $GLOBALS['db']->addSection8($section8, 'update');
+            $f3->reroute("results");
+            //echo "before submit";
+            //$view = new Template();
+            //echo $view->render('views/results.html');
+        } else {
+            // login
+            $this->checkLogin($f3);
+
+            // populate section with user info
+            // initialize the user variables
+            $resultsSec8 = $GLOBALS['db']->getSection($_SESSION['userId'], "section8");
+            foreach ($resultsSec8 as $k=>$v)
+            {
+                if ($k != 'answerID')
+                {
+                    $this->_f3->set($k, $v);
+                    //echo " k " . $k . " v " . $v;
+                }
+            }
+
+            $view = new Template();
+            echo $view->render('views/section8.html');
+        }
+    }
+
+    /**
+     * Display the section9 route
+     */
+    public function section9($f3)
+    {
+        // initialize the session variables
+        // allows for incomplete submittal
+
+        // validate the data
+        // TODO really validate the data
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            // get the section1 variable names and set hive variables
+            $section9 = getSection9();
+            foreach ($section9 as $k=>$v)
+            {
+                if (isset($_POST[$v])) {
+                    $this->_f3->set($v, $_POST[$v]);
+                } else {
+                    $this->_f3->set($v, "");
+                }
+            }
+
+            $userId = $_SESSION['userId'];
+
+            // construct a section9 object
+            $section9 = new Section9($f3->get('i1'), $f3->get('i2'), $userId);
+
+            $this->_f3->set('section9', $section9);
+            //var_dump($section1);
+
+            // add the section to the database
+            $GLOBALS['db']->addSection9($section9, 'update');
+            $f3->reroute("results");
+            //echo "before submit";
+            //$view = new Template();
+            //echo $view->render('views/results.html');
+        } else {
+            // login
+            $this->checkLogin($f3);
+
+            // populate section with user info
+            // initialize the user variables
+            $resultsSec9 = $GLOBALS['db']->getSection($_SESSION['userId'], "section9");
+            foreach ($resultsSec9 as $k=>$v)
+            {
+                if ($k != 'answerID')
+                {
+                    $this->_f3->set($k, $v);
+                    //echo " k " . $k . " v " . $v;
+                }
+            }
+
+            $view = new Template();
+            echo $view->render('views/section9.html');
+        }
+    }
+
+    /**
+     * Display the section10 route
+     */
+    public function section10($f3)
+    {
+        // initialize the session variables
+        // allows for incomplete submittal
+
+        // validate the data
+        // TODO really validate the data
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            // get the section1 variable names and set hive variables
+            $section10 = getsection10();
+            foreach ($section10 as $k=>$v)
+            {
+                //var_dump($_POST[$v]);
+                if (isset($_POST[$v])) {
+                    $this->_f3->set($v, $_POST[$v]);
+                } else {
+                    $this->_f3->set($v, "");
+                }
+            }
+
+            $userId = $_SESSION['userId'];
+
+            // construct a section10 object
+            $section10 = new Section10($f3->get('j1'),$f3->get('j2'), $f3->get('j3'), $f3->get('j4'), $userId);
+
+            $this->_f3->set('section10', $section10);
+            //var_dump($section1);
+
+            // add the section to the database
+            $GLOBALS['db']->addsection10($section10, 'update');
+            $f3->reroute("results");
+            //echo "before submit";
+            //$view = new Template();
+            //echo $view->render('views/results.html');
+        } else {
+            // login
+            $this->checkLogin($f3);
+
+            // populate section with user info
+            // initialize the user variables
+            $resultsSec9 = $GLOBALS['db']->getSection($_SESSION['userId'], "section10");
+            foreach ($resultsSec9 as $k=>$v)
+            {
+                if ($k != 'answerID')
+                {
+                    $this->_f3->set($k, $v);
+                    //echo " k " . $k . " v " . $v;
+                }
+            }
+
+            $view = new Template();
+            echo $view->render('views/section10.html');
         }
     }
     /**
@@ -1080,6 +1275,44 @@ class JumpStartController
                 $this->_f3->set($k, $v);
             }
         }
+
+        $resultsSec7 = $GLOBALS['db']->getSection($_SESSION['userId'], "section7");
+        foreach ($resultsSec7 as $k=>$v)
+        {
+            if ($k != 'answerID')
+            {
+                $this->_f3->set($k, $v);
+            }
+        }
+
+        $resultsSec8 = $GLOBALS['db']->getSection($_SESSION['userId'], "section8");
+        foreach ($resultsSec8 as $k=>$v)
+        {
+            if ($k != 'answerID')
+            {
+                $this->_f3->set($k, $v);
+            }
+        }
+
+        $resultsSec9 = $GLOBALS['db']->getSection($_SESSION['userId'], "section9");
+        foreach ($resultsSec9 as $k=>$v)
+        {
+            if ($k != 'answerID')
+            {
+                $this->_f3->set($k, $v);
+            }
+        }
+
+        $resultsSec10 = $GLOBALS['db']->getSection($_SESSION['userId'], "section10");
+        foreach ($resultsSec10 as $k=>$v)
+        {
+            if ($k != 'answerID')
+            {
+                $this->_f3->set($k, $v);
+            }
+        }
+
+
         $view = new Template();
         echo $view->render('views/results.html');
     }
@@ -1243,12 +1476,26 @@ class JumpStartController
                     "", "", "", "", "", "",  "", "", "", "", "",
                     "", "", "", "", "", "", "","", "", $userId);
 
+                $section7 = new Section7("", "", "","", "","","","","",
+                    "","","","", $userId);
+
+                $section8 = new Section8("", "", "","", "","","","","",
+                    "","","", $userId);
+
+                $section9 = new Section9("", "", $userId);
+
+                $section10 = new Section10("", "", "","", $userId);
+
                 $_SESSION['section1'] = $section1;
                 $_SESSION['section2'] = $section2;
                 $_SESSION['section3'] = $section3;
                 $_SESSION['section4'] = $section4;
                 $_SESSION['section5'] = $section5;
                 $_SESSION['section6'] = $section6;
+                $_SESSION['section7'] = $section7;
+                $_SESSION['section8'] = $section8;
+                $_SESSION['section9'] = $section9;
+                $_SESSION['section10'] = $section10;
 
                 //var_dump($section1);
 
@@ -1257,6 +1504,12 @@ class JumpStartController
                 $GLOBALS['db']->addSection2($section2, 'add');
                 $GLOBALS['db']->addSection3($section3, 'add');
                 $GLOBALS['db']->addSection4($section4, 'add');
+                $GLOBALS['db']->addSection5($section5, 'add');
+                $GLOBALS['db']->addSection6($section6, 'add');
+                $GLOBALS['db']->addSection7($section7, 'add');
+                $GLOBALS['db']->addSection8($section8, 'add');
+                $GLOBALS['db']->addSection9($section9, 'add');
+                $GLOBALS['db']->addSection10($section10, 'add');
 
 
                 $this->_f3->reroute('home');
