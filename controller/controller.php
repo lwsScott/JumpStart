@@ -935,12 +935,11 @@ class JumpStartController
 
             // construct a section1 object
             $section6 = new Section6($f3->get('f1'), $f3->get('f2'), $f3->get('f3'), $f3->get('f3t'), $f3->get('f4'), $f3->get('f5'),
-                $f3->get('f6'), $f3->get('f7'), $f3->get('f8'), $f3->get('f9'), $f3->get('f10'),  $f3->get('f10t'),
-                $f3->get('f11'), $f3->get('f12'), $f3->get('f13'), $f3->get('f14'), $f3->get('f15'), $f3->get('f16'),
-                $f3->get('f17'), $f3->get('f18'), $f3->get('f19'), $f3->get('f20'), $f3->get('f21'), $f3->get('f22'),
-                $f3->get('f23'), $f3->get('f24'), $f3->get('f25'), $f3->get('f26'), $f3->get('f27'), $f3->get('f28'),
-                $f3->get('f29'), $f3->get('f30'), $f3->get('f31'), $f3->get('f32'), $f3->get('f33'), $f3->get('f34'),
-                $f3->get('f35'), $f3->get('f36'), $f3->get('f37'), $f3->get('f38'), $f3->get('f39'), $f3->get('f40'),
+                $f3->get('f6'), $f3->get('f7'), $f3->get('f8'), $f3->get('f9'), $f3->get('f10'),  $f3->get('f11'), $f3->get('f12'),
+                $f3->get('f13'), $f3->get('f14'), $f3->get('f15'), $f3->get('f16'), $f3->get('f17'), $f3->get('f18'), $f3->get('f19'),
+                $f3->get('f20'), $f3->get('f21'), $f3->get('f22'), $f3->get('f23'), $f3->get('f24'), $f3->get('f25'), $f3->get('f26'),
+                $f3->get('f27'), $f3->get('f28'), $f3->get('f29'), $f3->get('f30'), $f3->get('f31'), $f3->get('f32'), $f3->get('f33'),
+                $f3->get('f34'), $f3->get('f35'), $f3->get('f36'), $f3->get('f37'), $f3->get('f38'), $f3->get('f39'), $f3->get('f40'),
                 $f3->get('f41'), $f3->get('f42'), $f3->get('f43'), $f3->get('f44'), $f3->get('f45'), $f3->get('f46'),
                 $f3->get('f47a'), $f3->get('f47b'), $f3->get('f47c'), $f3->get('f47d'), $userId);
 
