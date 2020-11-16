@@ -813,9 +813,9 @@ class Database
         $userId = $_SESSION['userId'];
         //1. Define the query
         if ($change == 'add') {
-            $sql = "INSERT INTO section7 (g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13
+            $sql = "INSERT INTO section7 (g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13,
                         userId)
-                VALUES (:g1, :g2, :g3, :g4, :g5, :g6, :g7, :g8, :g9, :g10, :g11, :g12, :g13 
+                VALUES (:g1, :g2, :g3, :g4, :g5, :g6, :g7, :g8, :g9, :g10, :g11, :g12, :g13, 
                         :userId)";
         } elseif ($change == 'update') {
             $sql = "UPDATE section7 SET g1 = :g1, g2 = :g2, g3 = :g3, g4 = :g4, g5 = :g5, g6 = :g6, g7 = :g7,
