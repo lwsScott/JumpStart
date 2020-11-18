@@ -10,13 +10,12 @@
 
 <body>
 
-<div class="container">
+<include href="includes/navBar.html"></include>
 
-    <div class="jumbotron">
-        <h4 class="display-4">Client login</h4>
-        <p>Required for answering SWOT questions</p>
-        <hr class="my-4">
-    </div>
+<div class="container card rounded" id = "loginUser">
+    <h1>Login</h1>
+
+
 
     <form action="login" method="post">
 
@@ -34,13 +33,13 @@
             <span class="err">Incorrect login</span><br>
         </check>
 
-        <button type="submit" class="btn btn-primary mb-3">Login</button>
+        <button id = "loginSubmit" type="submit" class="btn btn-primary mb-3">Login</button>
 
     </form>
 
     <!-- Request User Account-->
     <form action="newUser" method="get">
-        <button class="btn btn-primary text-center mb-3" type="submit">Request User account</button>
+        <button id = "request" class="btn btn-primary text-center mb-3" type="submit">Request User account</button>
     </form>
 </div>
 
