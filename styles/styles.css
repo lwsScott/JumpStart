@@ -76,3 +76,43 @@ a:active {
 .formatHidden {
     visibility: hidden;
 }
+
+#loginUser {
+    margin-top:50px;
+    align-items: center;
+}
+
+#username {
+    width: 250px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+
+#password {
+    width: 250px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+#confirm {
+    width: 250px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+#request {
+    background-color: white;
+    color: #007bb5;
+    border-color: white;
+
+}
+
+#loginSubmit {
+    background-color: #007bb5;
+}
+
+
+#userSubmit {
+    background-color: #007bb5
+}
