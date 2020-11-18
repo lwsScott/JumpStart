@@ -7,6 +7,7 @@
 
 let table = $('#table').DataTable();
 let items = [];
+let JSONitems;
 
 $('#table').on( 'click', 'td', function () {
     //alert( table.cell( this ).data() );
@@ -21,6 +22,12 @@ $('#table').on( 'click', 'td', function () {
         $("#itemList").append("<li>" + items[i] + "</li>" + "<br>");
     }
     //$("#item").val("");
+
+    // convert that array into a JSON string - puts quotes around the array
+    JSONitems = JSON.stringify(items);
+
+    // set the value of the form to carry the array within a string
+    document.getElementById('items').value = JSONitems;
 
 } );
 

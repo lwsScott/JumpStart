@@ -1370,6 +1370,48 @@ class JumpStartController
     }
 
     /**
+     *  Provides a user form to submit a recipe
+     */
+    public function submitTheme($f3)
+    {
+        // check if the user is logged in
+        // redirect to login page if not
+        // user will be redirected back after logging in
+        if (!isset($_SESSION['userId'])) {
+            $_SESSION["page"] = $_SERVER["SCRIPT_URI"];
+            $this->_f3->reroute('login');
+        }
+
+        $userId = $_SESSION['userId'];
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            var_dump($_POST);
+            // validate the data and set hive variables
+            $valid = true;
+            // validate theme name
+            if (!isset($_POST['themeName']) || $_POST['themeName'] == "") {
+                $valid = false;
+                $this->_f3->set('errors["name"]', "Please provide a theme name");
+            } else {
+                $this->_f3->set('selectedName', $_POST['themeName']);
+            }
+
+            // if valid data
+            if ($valid) {
+
+                $themeName = $_POST['themeName'];
+            }
+            else {
+                $f3->reroute("results");
+
+            }
+        } else {
+            $f3->reroute("results");
+
+        }
+    }
+
+    /**
      *  Logout function
      */
     public function logout($f3)

@@ -17,15 +17,34 @@
 <div class="container">
 
     <div class="row">
-        <h5>Theme List</h5>
-        <ul id="itemList"></ul>
+        <div class="col-4 position-fixed" >
+            <h5>Theme List</h5>
+            <ul id="itemList"></ul>
+
+
+            <form class="form-group" id="theme" action="submitTheme" method="post">
+                <!-- get theme name -->
+                <div class="form-group">
+                    <label for="themeName">Theme Name:</label>
+                    <input type="text" class="form-control" id="themeName" name="themeName"
+                           value="<check if='{{ !empty(@selectedName) }}'>{{ @selectedName }}</check>">
+                    <span class="err" id="errName"></span>
+                    <span>
+                        <check if="{{ isset(@errors['name']) }}">
+                            <p>{{ @errors['name'] }}</p>
+                        </check>
+                   </span>
+                </div>
+                <button id="btnSubmit" class="btn-primary rounded">Submit Theme</button>
+            </form>
+        </div>
     </div>
 
     <div class="row border rounded p-2 mt-2">
         <!--<h1>Results</h1>-->
         <hr>
 
-        <div class="col-12">
+        <div class="col-8">
             <h3>Purpose</h3>
             <include href="includes/resultSec1.html"></include>
             <h3>What we stand for</h3>
@@ -47,6 +66,8 @@
             <h3>The Final Four</h3>
             <include href="includes/resultSec10.html"></include>
         </div>
+
+
         <!--
         <div class="container col-4">
             <form action="#" method="post" class="form-horizontal">
@@ -57,7 +78,10 @@
         -->
     </div>
 
-
+    <!-- ingredients hidden form field-->
+    <div class="form-group hidden">
+        <input type="text" class="form-control hidden" id="items" name="items">
+    </div>
 
 </div>
 
@@ -76,7 +100,6 @@
             items: 'cell'
         }
     } );
-
 </script>
 
 <script src="js/themes.js"></script>
