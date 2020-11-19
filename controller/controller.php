@@ -1370,7 +1370,7 @@ class JumpStartController
     }
 
     /**
-     *  Provides a user form to submit a recipe
+     *  Provides a user form to submit a theme
      */
     public function submitTheme($f3)
     {
@@ -1385,11 +1385,11 @@ class JumpStartController
         $userId = $_SESSION['userId'];
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            var_dump($_POST);
             // validate the data and set hive variables
             $valid = true;
             // validate theme name
             if (!isset($_POST['themeName']) || $_POST['themeName'] == "") {
+                echo "invalid";
                 $valid = false;
                 $this->_f3->set('errors["name"]', "Please provide a theme name");
             } else {
@@ -1398,12 +1398,14 @@ class JumpStartController
 
             // if valid data
             if ($valid) {
-
+                var_dump($_POST);
                 $themeName = $_POST['themeName'];
             }
             else {
-                $f3->reroute("results");
-
+                //$f3->reroute("results");
+                $view = new Template();
+                echo $view->render
+                ('views/results.html');
             }
         } else {
             $f3->reroute("results");
