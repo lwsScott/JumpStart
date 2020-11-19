@@ -253,7 +253,7 @@
                         </div>
                         <!--  Next Q: Is there a hierarchy to the values ot have you at least identified the top 3? -->
                         <div class="form-group">
-                            <label for="b16q" id="b16q">Is there a hierarchy to the values ot have you at least identified the top 3?</label>
+                            <label for="b16q" id="b16q">Is there a hierarchy to the values or have you at least identified the top 3?</label>
                             <div class="form-check-inline">
                                 <input type="radio" id="b16a" name="b16" class="form-check-input" value="yes"
                                        onchange="toggleVisibility()"
@@ -276,17 +276,14 @@
                             <div class="form-group">
                                 <div class="container">
                                     <label id="">Below, identify each value and whether or not you feel the value is "lived"
-                                        in the organization to the extent expect/want to see(You don't have to have12)</label>
-                                    <label id="b17q">Value 1</label>
-                                    <input class="form-control" type="text" name="b17" id="b17" value="{{ @b17 }}">
+                                        in the organization to the extent expect/want to see (You don't have to have 12)</label>
                                     <div class="form-check-inline">
-                                        <input type="radio" id="b17a" name=b17yn" class="form-check-input" value="yes"
+                                        <input class="form-control" type="text" name="b17" id="b17" placeholder="Value 1" value="{{ @b17 }}">
+                                        <input type="radio" id="b17a" name="b17yn" class="form-check-input" value="yes"
                                         <check if="{{ @b17yn == 'yes' }}" >
                                             checked="checked"
                                         </check>>
                                         <label class="form-check-label" for="b17a" id="b17q17a">Yes</label>
-                                    </div>
-                                    <div class="form-check-inline">
                                         <input type="radio" id="b17b" name="b17yn" class="form-check-input" value="no"
                                         <check if="{{ @b17yn == 'no' }}" >
                                             checked="checked"
@@ -294,16 +291,13 @@
                                         <label class="form-check-label" for="b17b" id="b17q17b">No</label>
                                     </div>
 
-                                    <label id="b18q">Value 2</label>
-                                    <input class="form-control" type="text" name="b18" id="b18" value="{{ @b18 }}">
                                     <div class="form-check-inline">
+                                        <input class="form-control" type="text" name="b18" id="b18" placeholder="Value 2" value="{{ @b18 }}">
                                         <input type="radio" id="b18a" name="b18yn" class="form-check-input" value="yes"
                                         <check if="{{ @b18yn == 'yes' }}" >
                                             checked="checked"
                                         </check>>
                                         <label class="form-check-label" for="b18a" id="b18q18a">Yes</label>
-                                    </div>
-                                    <div class="form-check-inline">
                                         <input type="radio" id="b18b" name="b18yn" class="form-check-input" value="no"
                                         <check if="{{ @b18yn == 'no' }}" >
                                             checked="checked"
@@ -311,16 +305,13 @@
                                         <label class="form-check-label" for="b18b" id="b18q18b">No</label>
                                     </div>
 
-                                    <label id="b19q">Value 3</label>
-                                    <input class="form-control" type="text" name="b19" id="b19" value="{{ @b19 }}">
                                     <div class="form-check-inline">
+                                        <input class="form-control" type="text" name="b19" id="b19" placeholder="Value 3" value="{{ @b19 }}">
                                         <input type="radio" id="b19a" name="b19yn" class="form-check-input" value="yes"
                                         <check if="{{ @b19yn == 'yes' }}" >
                                             checked="checked"
                                         </check>>
                                         <label class="form-check-label" for="b19a" id="b19q19a">Yes</label>
-                                    </div>
-                                    <div class="form-check-inline">
                                         <input type="radio" id="b19b" name="b19yn" class="form-check-input" value="no"
                                         <check if="{{ @b19yn == 'no' }}" >
                                             checked="checked"
@@ -328,16 +319,13 @@
                                         <label class="form-check-label" for="b19b" id="b19q19b">No</label>
                                     </div>
 
-                                    <label id="b20q">Value 4</label>
-                                    <input class="form-control" type="text" name="b20" id="b20" value="{{ @b20 }}">
                                     <div class="form-check-inline">
+                                        <input class="form-control" type="text" name="b20" id="b20" placeholder="Value 4" value="{{ @b20 }}">
                                         <input type="radio" id="b20a" name="b20yn" class="form-check-input" value="yes"
                                         <check if="{{ @b20yn == 'yes' }}" >
                                             checked="checked"
                                         </check>>
                                         <label class="form-check-label" for="b20a" id="b20q20a">Yes</label>
-                                    </div>
-                                    <div class="form-check-inline">
                                         <input type="radio" id="b20b" name="b20yn" class="form-check-input" value="no"
                                         <check if="{{ @b20yn == 'no' }}" >
                                             checked="checked"
@@ -345,16 +333,13 @@
                                         <label class="form-check-label" for="b20b" id="b20q20b">No</label>
                                     </div>
 
-                                    <label id="b21q">Value 6</label>
-                                    <input class="form-control" type="text" name="b21" id="b21" value="{{ @b21 }}">
                                     <div class="form-check-inline">
+                                        <input class="form-control" type="text" name="b21" id="b21" placeholder="Value 5" value="{{ @b21 }}">
                                         <input type="radio" id="b21a" name="b21yn" class="form-check-input" value="yes"
                                         <check if="{{ @b21yn == 'yes' }}" >
                                             checked="checked"
                                         </check>>
                                         <label class="form-check-label" for="b21a" id="b21q21a">Yes</label>
-                                    </div>
-                                    <div class="form-check-inline">
                                         <input type="radio" id="b21b" name="b21yn" class="form-check-input" value="no"
                                         <check if="{{ @b21yn == 'no' }}" >
                                             checked="checked"
@@ -362,16 +347,13 @@
                                         <label class="form-check-label" for="b21b" id="b21q21b">No</label>
                                     </div>
 
-                                    <label id="b22q">Value 6</label>
-                                    <input class="form-control" type="text" name="b22" id="b22" value="{{ @b22 }}">
                                     <div class="form-check-inline">
+                                        <input class="form-control" type="text" name="b22" id="b22" placeholder="Value 6" value="{{ @b22 }}">
                                         <input type="radio" id="b22a" name="b22yn" class="form-check-input" value="yes"
                                         <check if="{{ @b22yn == 'yes' }}" >
                                             checked="checked"
                                         </check>>
                                         <label class="form-check-label" for="b22a" id="b22q22a">Yes</label>
-                                    </div>
-                                    <div class="form-check-inline">
                                         <input type="radio" id="b22b" name="b22yn" class="form-check-input" value="no"
                                         <check if="{{ @b22yn == 'no' }}" >
                                             checked="checked"
@@ -379,16 +361,13 @@
                                         <label class="form-check-label" for="b22b" id="b22q22b">No</label>
                                     </div>
 
-                                    <label id="b23q">Value 7</label>
-                                    <input class="form-control" type="text" name="b23" id="b23" value="{{ @b23 }}">
                                     <div class="form-check-inline">
+                                        <input class="form-control" type="text" name="b23" id="b23" placeholder="Value 7" value="{{ @b23 }}">
                                         <input type="radio" id="b23a" name="b23yn" class="form-check-input" value="yes"
                                         <check if="{{ @b23yn == 'yes' }}" >
                                             checked="checked"
                                         </check>>
                                         <label class="form-check-label" for="b23a" id="b23q23a">Yes</label>
-                                    </div>
-                                    <div class="form-check-inline">
                                         <input type="radio" id="b23b" name="b23yn" class="form-check-input" value="no"
                                         <check if="{{ @b23yn == 'no' }}" >
                                             checked="checked"
@@ -396,16 +375,13 @@
                                         <label class="form-check-label" for="b23b" id="b23q23b">No</label>
                                     </div>
 
-                                    <label id="b24q">Value 8</label>
-                                    <input class="form-control" type="text" name="b24" id="b24" value="{{ @b24 }}">
                                     <div class="form-check-inline">
+                                        <input class="form-control" type="text" name="b24" id="b24" placeholder="Value 8" value="{{ @b24 }}">
                                         <input type="radio" id="b24a" name="b24yn" class="form-check-input" value="yes"
                                         <check if="{{ @b24yn == 'yes' }}" >
                                             checked="checked"
                                         </check>>
                                         <label class="form-check-label" for="b24a" id="b24q24a">Yes</label>
-                                    </div>
-                                    <div class="form-check-inline">
                                         <input type="radio" id="b24b" name="b24yn" class="form-check-input" value="no"
                                         <check if="{{ @b24yn == 'no' }}" >
                                             checked="checked"
@@ -413,16 +389,13 @@
                                         <label class="form-check-label" for="b24b" id="b24q24b">No</label>
                                     </div>
 
-                                    <label id="b25q">Value 9</label>
-                                    <input class="form-control" type="text" name="b25" id="b25" value="{{ @b25 }}">
                                     <div class="form-check-inline">
+                                        <input class="form-control" type="text" name="b25" id="b25" placeholder="Value 9" value="{{ @b25 }}">
                                         <input type="radio" id="b25a" name="b25yn" class="form-check-input" value="yes"
                                         <check if="{{ @b25yn == 'yes' }}" >
                                             checked="checked"
                                         </check>>
                                         <label class="form-check-label" for="b25a" id="b25q25a">Yes</label>
-                                    </div>
-                                    <div class="form-check-inline">
                                         <input type="radio" id="b25b" name="b25yn" class="form-check-input" value="no"
                                         <check if="{{ @b25yn == 'no' }}" >
                                             checked="checked"
@@ -430,16 +403,13 @@
                                         <label class="form-check-label" for="b25b" id="b25q25b">No</label>
                                     </div>
 
-                                    <label id="b26q">Value 10</label>
-                                    <input class="form-control" type="text" name="b26" id="b26" value="{{ @b26 }}">
                                     <div class="form-check-inline">
+                                        <input class="form-control" type="text" name="b26" id="b26" placeholder="Value 10" value="{{ @b26 }}">
                                         <input type="radio" id="b26a" name="b26yn" class="form-check-input" value="yes"
                                         <check if="{{ @b26yn == 'yes' }}" >
                                             checked="checked"
                                         </check>>
                                         <label class="form-check-label" for="b26a" id="b26q26a">Yes</label>
-                                    </div>
-                                    <div class="form-check-inline">
                                         <input type="radio" id="b26b" name="b26yn" class="form-check-input" value="no"
                                         <check if="{{ @b26yn == 'no' }}" >
                                             checked="checked"
@@ -447,16 +417,13 @@
                                         <label class="form-check-label" for="b26b" id="b26q26b">No</label>
                                     </div>
 
-                                    <label id="b27q">Value 11</label>
-                                    <input class="form-control" type="text" name="b27" id="b27" value="{{ @b27 }}">
                                     <div class="form-check-inline">
+                                        <input class="form-control" type="text" name="b27" id="b27" placeholder="Value 11" value="{{ @b27 }}">
                                         <input type="radio" id="b27a" name="b27yn" class="form-check-input" value="yes"
                                         <check if="{{ @b27yn == 'yes' }}" >
                                             checked="checked"
                                         </check>>
                                         <label class="form-check-label" for="b27a" id="b27q27a">Yes</label>
-                                    </div>
-                                    <div class="form-check-inline">
                                         <input type="radio" id="b27b" name="b27yn" class="form-check-input" value="no"
                                         <check if="{{ @b27yn == 'no' }}" >
                                             checked="checked"
@@ -464,16 +431,13 @@
                                         <label class="form-check-label" for="b27b" id="b27q27b">No</label>
                                     </div>
 
-                                    <label id="b28q">Value 12</label>
-                                    <input class="form-control" type="text" name="b28" id="b28" value="{{ @b28 }}">
                                     <div class="form-check-inline">
+                                        <input class="form-control" type="text" name="b28" id="b28" placeholder="Value 12" value="{{ @b28 }}">
                                         <input type="radio" id="b28a" name="b28yn" class="form-check-input" value="yes"
                                         <check if="{{ @b28yn == 'yes' }}" >
                                             checked="checked"
                                         </check>>
                                         <label class="form-check-label" for="b28a" id="b28q28a">Yes</label>
-                                    </div>
-                                    <div class="form-check-inline">
                                         <input type="radio" id="b28b" name="b28yn" class="form-check-input" value="no"
                                         <check if="{{ @b28yn == 'no' }}" >
                                             checked="checked"
