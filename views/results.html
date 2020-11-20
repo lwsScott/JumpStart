@@ -16,68 +16,74 @@
 
 <div class="container-fluid">
 
-    <div class="row border rounded p-2 mt-2 pt-5">
-        <h5>Theme1: Name - </h5>
-        <br>
-        <p>{{ @themeName }}</p><br>
-        <ul>
-            <repeat group="{{ @itemArray }}" value="{{ @item }}">
-                <li>{{ @item }}</li>
-            </repeat>
-        </ul>
-    </div>
 
-    <div class="row border rounded p-2 mt-2 pt-5">
-        <h5>Theme2: Name - </h5>
-        <br>
-        <p>{{ @themeName2 }}</p><br>
-        <ul>
-            <repeat group="{{ @itemArray2 }}" value="{{ @item }}">
-                <li>{{ @item }}</li>
-            </repeat>
-        </ul>
-    </div>
-
-    <div class="row border rounded p-2 mt-2 pt-5">
-        <h5>Theme3: Name - </h5>
-        <br>
-        <p>{{ @themeName3 }}</p><br>
-        <ul>
-            <repeat group="{{ @itemArray3 }}" value="{{ @item }}">
-                <li>{{ @item }}</li>
-            </repeat>
-        </ul>
-    </div>
 
 
     <div class="row">
-        <!--<h1>Results</h1>-->
-        <hr>
 
-        <div class="col-6">
-            <h3>Purpose</h3>
-            <include href="includes/resultSec1.html"></include>
-            <h3>What we stand for</h3>
-            <include href="includes/resultSec2.html"></include>
-            <h3>Products/Services</h3>
-            <include href="includes/resultSec3.html"></include>
-            <h3>Promotion</h3>
-            <include href="includes/resultSec4.html"></include>
-            <h3>Processes</h3>
-            <include href="includes/resultSec5.html"></include>
-            <h3>People</h3>
-            <include href="includes/resultSec6.html"></include>
-            <h3>Planning</h3>
-            <include href="includes/resultSec7.html"></include>
-            <h3>Personal Growth</h3>
-            <include href="includes/resultSec8.html"></include>
-            <h3>Others</h3>
-            <include href="includes/resultSec9.html"></include>
-            <h3>The Final Four</h3>
-            <include href="includes/resultSec10.html"></include>
+        <div class="col-9">
+            <div class="sticky-top bg-white">
+                <div class="container">
+                    <h5>Theme1: Name - </h5>
+                    <br>
+                    <p>{{ @themeName }}</p><br>
+                    <ul>
+                        <repeat group="{{ @itemArray }}" value="{{ @item }}">
+                            <li>{{ @item }}</li>
+                        </repeat>
+                    </ul>
+                </div>
+
+                <div class="container">
+                    <h5>Theme2: Name - </h5>
+                    <br>
+                    <p>{{ @themeName2 }}</p><br>
+                    <ul>
+                        <repeat group="{{ @itemArray2 }}" value="{{ @item }}">
+                            <li>{{ @item }}</li>
+                        </repeat>
+                    </ul>
+                </div>
+
+                <div class="container">
+                    <h5>Theme3: Name - </h5>
+                    <br>
+                    <p>{{ @themeName3 }}</p><br>
+                    <ul>
+                        <repeat group="{{ @itemArray3 }}" value="{{ @item }}">
+                            <li>{{ @item }}</li>
+                        </repeat>
+                    </ul>
+                </div>
+            </div>
+
+            <hr>
+
+            <div>
+                <h3>Purpose</h3>
+                <include href="includes/resultSec1.html"></include>
+                <h3>What we stand for</h3>
+                <include href="includes/resultSec2.html"></include>
+                <h3>Products/Services</h3>
+                <include href="includes/resultSec3.html"></include>
+                <h3>Promotion</h3>
+                <include href="includes/resultSec4.html"></include>
+                <h3>Processes</h3>
+                <include href="includes/resultSec5.html"></include>
+                <h3>People</h3>
+                <include href="includes/resultSec6.html"></include>
+                <h3>Planning</h3>
+                <include href="includes/resultSec7.html"></include>
+                <h3>Personal Growth</h3>
+                <include href="includes/resultSec8.html"></include>
+                <h3>Others</h3>
+                <include href="includes/resultSec9.html"></include>
+                <h3>The Final Four</h3>
+                <include href="includes/resultSec10.html"></include>
+            </div>
         </div>
 
-        <div class="col-4 ">
+        <div class="col-3 ">
             <div class="sidebar-item sticky-top pt-5">
                 <div class="make-me-sticky">
                     <div class="row border rounded bg-light p-2 mt-2">
