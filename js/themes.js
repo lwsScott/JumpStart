@@ -8,7 +8,7 @@ let items = [];
 let JSONitems;
 
 // add event listener for theme list items
-document.getElementById("itemList").addEventListener("click", function(e) {
+document.getElementById("itemList").addEventListener("dblclick", function(e) {
     var tgt = e.target;
     if (tgt.tagName.toUpperCase() == "LI") {
 
@@ -32,7 +32,7 @@ document.getElementById("itemList").addEventListener("click", function(e) {
 // allow the click of a table cell to add to the theme item list
 let table = $('#table').DataTable();
 
-$('#table').on( 'click', 'td', function () {
+$('#table').on( 'dblclick', 'td', function () {
     //alert( table.cell( this ).data() );
     let add = table.cell( this ).data();
     if(items.indexOf(add) == -1) {
@@ -56,7 +56,7 @@ $('#table').on( 'click', 'td', function () {
 
 let table2 = $('#table2').DataTable();
 
-$('#table2').on( 'click', 'td', function () {
+$('#table2').on( 'dblclick', 'td', function () {
     //alert( table2.cell( this ).data() );
     let add = table2.cell( this ).data();
     if(items.indexOf(add) == -1) {
