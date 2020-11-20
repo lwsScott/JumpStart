@@ -1017,6 +1017,39 @@ class Database
     }
 
     /**
+     * Inserts theme into the database
+     * @param $theme1 the theme to add
+     */
+    function addThemes($theme, $chooseTheme)
+    {
+        $userId = $_SESSION['userId'];
+        //1. Define the query
+        $sql = "UPDATE $chooseTheme SET themeName = :themeName, themeList = :themeList
+                WHERE userId = :userId";
+        //2. Prepare the statement
+        $statement = $this->_dbh->prepare($sql);
+
+        $themeName = $theme->getTName();
+        $themeList = $theme->getT1();
+        //3. Bind the parameters
+        $statement->bindParam(':themeName',$themeName, PDO::PARAM_STR);
+        $statement->bindParam(':themeList',$themeList, PDO::PARAM_STR);
+
+        $statement->bindParam(':userId',$userId, PDO::PARAM_STR);
+
+        //echo $sql;
+        //$statement->bindParam(':image', $recipe->getImage());
+        //4. Execute the statement
+        $result = $statement->execute();
+        //echo "Result: " . $result;
+
+        //Get the key of the last inserted row
+        $themeID = $this->_dbh->lastInsertId();
+        $_SESSION['themeID'] = $themeID;
+        //echo $id;
+    }
+
+    /**
      * Insert a new user into the database
      * @param $newUser the user to add
      */
@@ -1064,6 +1097,30 @@ class Database
 
         //5. Get the result
         $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    /*
+ * The user's themes
+ */
+    function getThemes($userId, $chooseTheme)
+    {
+        //1. Define the query
+        $sql = "SELECT * FROM $chooseTheme
+        WHERE $userId = $userId";
+;
+
+        //2. Prepare the statement
+        $statement = $this->_dbh->prepare($sql);
+
+        //3. Bind the parameters
+        $statement->bindParam(':userId', $userId);
+
+        //4. Execute the statement
+        $statement->execute();
+
+        //5. Get the result
+        $result = $statement->fetch(PDO::FETCH_ASSOC);
         return $result;
     }
 

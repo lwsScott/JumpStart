@@ -1,16 +1,16 @@
 <?php
 /*
- * Controller page for JumpStart website
+ * Controller page for tumpStart website
  * provides routes to various views and runs fat free
  * 10/13/20
- * filename https://jumpstart.greenriverdev.com/playbook/JumpStart/controller/controller.php
+ * filename https://tumpstart.greenriverdev.com/playbook/tumpStart/controller/controller.php
  * @author Lewis Scott
  * @version 1.0
  */
 /**
  * Class JumpStartController
  * routes and validates data
- * interacts with the database object
+ * interacts with the database obtect
  * 10/13/20
  * @author Lewis Scott
  * @version 1.0
@@ -24,7 +24,7 @@ class JumpStartController
     /**
      * @var
      */
-    private $_validator; //validation object
+    private $_validator; //validation obtect
 
     /**
      * Controller constructor.
@@ -86,7 +86,7 @@ class JumpStartController
 
             $userId = $_SESSION['userId'];
 
-            // construct a section1 object
+            // construct a section1 obtect
             $section1 = new Section1($f3->get('a1'),$f3->get('a2'), $f3->get('a3'), $f3->get('a4'), $f3->get('a5'),
                 $f3->get('a6'), $f3->get('a7'), $f3->get('a8'), $f3->get('a9'), $f3->get('a10'), $f3->get('a11'),
                 $f3->get('a12'), $f3->get('a13'), $f3->get('a14'), $f3->get('a15'), $f3->get('a16'), $f3->get('a17'),
@@ -347,7 +347,7 @@ class JumpStartController
                 $userId = $_SESSION['userId'];  $this->_f3->set('userId', $userId);
 
 
-                // construct a section1 object
+                // construct a section1 obtect
                 $section2 = new Section2($b1, $b2, $b3, $b4, $b5, $b6, $b7, $b8, $b9, $b10, $b11, $b12,
                     $b13, $b14, $b15, $b16, $b17, $b17yn, $b18, $b18yn, $b19, $b19yn, $b20, $b20yn,
                     $b21, $b21yn, $b22, $b22yn, $b23, $b23yn, $b24, $b24yn, $b25, $b25yn, $b26, $b26yn,
@@ -566,7 +566,7 @@ class JumpStartController
 
                 $userId = $_SESSION['userId'];
 
-                // construct a section1 object
+                // construct a section1 obtect
                 $section3 = new Section3($c1, $c1t, $c2, $c2t, $c3, $c3t, $c4, $c4t, $c5, $c6, $c6t, $c7, $c7t, $c8,
                     $c8t, $c9, $c9t, $c10a, $c10b, $c10c, $c10d, $userId);
 
@@ -810,7 +810,7 @@ class JumpStartController
 
                 $userId = $_SESSION['userId'];
 
-                // construct a section4 object
+                // construct a section4 obtect
                 $section4 = new Section4($d1, $d1a, $d2, $d2a, $d3, $d3a, $d4, $d4a, $d5, $d6, $d7, $d8, $d9, $d10,
                     $d11, $d12, $d13, $d14, $d15, $d16, $d17, $d18, $d19, $d20, $d21, $d22, $d23, $d24, $d25, $d26, $d27a,
                     $d27b, $d27c, $d27d, $userId);
@@ -865,7 +865,7 @@ class JumpStartController
 
             $userId = $_SESSION['userId'];
 
-            // construct a section5 object
+            // construct a section5 obtect
             $section5 = new Section5($f3->get('e1'), $f3->get('e2'), $f3->get('e3'), $f3->get('e4'), $f3->get('e5'),
                 $f3->get('e6'), $f3->get('e7'), $f3->get('e8'), $f3->get('e9'), $f3->get('e10'),  $f3->get('e10t'),
                 $f3->get('e11'), $f3->get('e12'), $f3->get('e13'), $f3->get('e14'), $f3->get('e15'), $f3->get('e16'),
@@ -933,7 +933,7 @@ class JumpStartController
 
             $userId = $_SESSION['userId'];
 
-            // construct a section1 object
+            // construct a section1 obtect
             $section6 = new Section6($f3->get('f1'), $f3->get('f2'), $f3->get('f3'), $f3->get('f3t'), $f3->get('f4'), $f3->get('f5'),
                 $f3->get('f6'), $f3->get('f7'), $f3->get('f8'), $f3->get('f9'), $f3->get('f10'),  $f3->get('f11'), $f3->get('f12'),
                 $f3->get('f13'), $f3->get('f14'), $f3->get('f15'), $f3->get('f16'), $f3->get('f17'), $f3->get('f18'), $f3->get('f19'),
@@ -997,7 +997,7 @@ class JumpStartController
 
             $userId = $_SESSION['userId'];
 
-            // construct a section1 object
+            // construct a section1 obtect
             $section7 = new Section7($f3->get('g1'),$f3->get('g2'), $f3->get('g3'), $f3->get('g4'), $f3->get('g5'),
                 $f3->get('g6'), $f3->get('g7'), $f3->get('g8'), $f3->get('g9'), $f3->get('g10'), $f3->get('g11'),
                 $f3->get('g12'),  $f3->get('g13'),$userId);
@@ -1041,7 +1041,6 @@ class JumpStartController
         // allows for incomplete submittal
 
         // validate the data
-        // TODO really validate the data
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             // get the section1 variable names and set hive variables
@@ -1058,7 +1057,7 @@ class JumpStartController
 
             $userId = $_SESSION['userId'];
 
-            // construct a section8 object
+            // construct a section8 obtect
             $section8 = new Section8($f3->get('h1'),$f3->get('h2'), $f3->get('h3'), $f3->get('h4'), $f3->get('h5'),
                 $f3->get('h6'), $f3->get('h7'), $f3->get('h8'), $f3->get('h9'), $f3->get('h10'), $f3->get('h11'),
                 $f3->get('h12'), $userId);
@@ -1118,7 +1117,7 @@ class JumpStartController
 
             $userId = $_SESSION['userId'];
 
-            // construct a section9 object
+            // construct a section9 obtect
             $section9 = new Section9($f3->get('i1'), $f3->get('i2'), $userId);
 
             $this->_f3->set('section9', $section9);
@@ -1177,7 +1176,7 @@ class JumpStartController
 
             $userId = $_SESSION['userId'];
 
-            // construct a section10 object
+            // construct a section10 obtect
             $section10 = new Section10($f3->get('j1'),$f3->get('j2'), $f3->get('j3'), $f3->get('j4'), $userId);
 
             $this->_f3->set('section10', $section10);
@@ -1186,7 +1185,6 @@ class JumpStartController
             // add the section to the database
             $GLOBALS['db']->addsection10($section10, 'update');
             $f3->reroute("results");
-            //echo "before submit";
             //$view = new Template();
             //echo $view->render('views/results.html');
         } else {
@@ -1310,6 +1308,124 @@ class JumpStartController
                 $this->_f3->set($k, $v);
             }
         }
+        /*
+          $themes = $GLOBALS['db']->getThemes($_SESSION['userId']);
+          foreach ($themes as $k=>$v)
+          {
+              if ($k != 'themeID')
+              {
+                  $this->_f3->set($k, $v);
+              }
+          }
+
+          // store the themes in the hive as 'results'
+          $result = $GLOBALS['db']->getThemes($_SESSION['userId']);
+          $this->_f3->set('results', $result);
+          // decode the theme and set hive array
+          $themeName = $result['themeName'];
+          $this->_f3->set('themeName', $themeName);
+
+          $itemArray = json_decode($result['themeList']);
+          $this->_f3->set('itemArray', $itemArray);
+        */
+
+        // store the themes in the hive as 'results'
+        // theme 1
+        $result = $GLOBALS['db']->getThemes($_SESSION['userId'], 'theme1');
+        $this->_f3->set('results', $result);
+        // decode the theme and set hive array
+        $itemArray = json_decode($result['themeList']);
+        $themeName = $result['themeName'];
+        $this->_f3->set('itemArray', $itemArray);
+        $this->_f3->set('themeName', $themeName);
+
+
+        // theme 2
+        $result = $GLOBALS['db']->getThemes($_SESSION['userId'], 'theme2');
+        $this->_f3->set('results', $result);
+        // decode the theme and set hive array
+        $itemArray = json_decode($result['themeList']);
+        $themeName2 = $result['themeName'];
+        $this->_f3->set('itemArray2', $itemArray);
+        $this->_f3->set('themeName2', $themeName2);
+
+
+        // theme 3
+        $result = $GLOBALS['db']->getThemes($_SESSION['userId'], 'theme3');
+        $this->_f3->set('results', $result);
+        // decode the theme and set hive array
+        $itemArray = json_decode($result['themeList']);
+        $themeName3 = $result['themeName'];
+        $this->_f3->set('itemArray3', $itemArray);
+        $this->_f3->set('themeName3', $themeName3);
+
+
+
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            // validate the data and set hive variables
+            $valid = true;
+            // validate theme name
+            if (!isset($_POST['themeName']) || $_POST['themeName'] == "" || ($_POST['items']) == "") {
+                $valid = false;
+                $this->_f3->set('errors["name"]', "Please provide a theme name and list");
+                $this->_f3->set('selectedName', $_POST['themeName']);
+            } else {
+                $this->_f3->set('selectedName', $_POST['themeName']);
+            }
+
+            // if valid data
+            if ($valid) {
+                $f3->clear('errors["name"]');
+
+                $themeName = $_POST['themeName'];
+                $themeList = $_POST['items'];
+                $userId = $_SESSION['userId'];
+                $chooseTheme = $_POST['theme'];
+
+                // construct a theme object
+                $theme = new Themes($themeName, $themeList, $userId);
+                $this->_f3->set('themes', $theme);
+
+                // add the theme to the database
+                $GLOBALS['db']->addThemes($theme, $chooseTheme);
+            }
+
+            // store the themes in the hive as 'results'
+            // theme 1
+            $result = $GLOBALS['db']->getThemes($_SESSION['userId'], 'theme1');
+            $this->_f3->set('results', $result);
+            // decode the theme and set hive array
+            $itemArray = json_decode($result['themeList']);
+            $themeName = $result['themeName'];
+            $this->_f3->set('itemArray', $itemArray);
+            $this->_f3->set('themeName', $themeName);
+
+
+            // theme 2
+            $result = $GLOBALS['db']->getThemes($_SESSION['userId'], 'theme2');
+            $this->_f3->set('results', $result);
+            // decode the theme and set hive array
+            $itemArray = json_decode($result['themeList']);
+            $themeName2 = $result['themeName'];
+            $this->_f3->set('itemArray2', $itemArray);
+            $this->_f3->set('themeName2', $themeName2);
+
+
+            // theme 3
+            $result = $GLOBALS['db']->getThemes($_SESSION['userId'], 'theme3');
+            $this->_f3->set('results', $result);
+            // decode the theme and set hive array
+            $itemArray = json_decode($result['themeList']);
+            $themeName3 = $result['themeName'];
+            $this->_f3->set('itemArray3', $itemArray);
+            $this->_f3->set('themeName3', $themeName3);
+
+
+            // clear the item list
+            $_POST['items'] = "";
+
+        }
 
 
         $view = new Template();
@@ -1366,50 +1482,6 @@ class JumpStartController
             $view = new Template();
             echo $view->render
             ('views/login.php');
-        }
-    }
-
-    /**
-     *  Provides a user form to submit a theme
-     */
-    public function submitTheme($f3)
-    {
-        // check if the user is logged in
-        // redirect to login page if not
-        // user will be redirected back after logging in
-        if (!isset($_SESSION['userId'])) {
-            $_SESSION["page"] = $_SERVER["SCRIPT_URI"];
-            $this->_f3->reroute('login');
-        }
-
-        $userId = $_SESSION['userId'];
-
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            // validate the data and set hive variables
-            $valid = true;
-            // validate theme name
-            if (!isset($_POST['themeName']) || $_POST['themeName'] == "") {
-                echo "invalid";
-                $valid = false;
-                $this->_f3->set('errors["name"]', "Please provide a theme name");
-            } else {
-                $this->_f3->set('selectedName', $_POST['themeName']);
-            }
-
-            // if valid data
-            if ($valid) {
-                var_dump($_POST);
-                $themeName = $_POST['themeName'];
-            }
-            else {
-                //$f3->reroute("results");
-                $view = new Template();
-                echo $view->render
-                ('views/results.html');
-            }
-        } else {
-            $f3->reroute("results");
-
         }
     }
 
@@ -1476,7 +1548,7 @@ class JumpStartController
                 $username = $_POST['username'];
                 $password = $_POST['password'];
 
-                // create the user object
+                // create the user obtect
                 $newUser = new User($username, $password);
 
                 // add into it
@@ -1487,7 +1559,7 @@ class JumpStartController
 
                 // populate new database tables
                 // section1
-                // construct a section1 object
+                // construct a section1 obtect
                 $section1 = new Section1("", "", "","", "","","","","",
                     "","","","","","","","","", $userId);
 
@@ -1529,6 +1601,8 @@ class JumpStartController
 
                 $section10 = new Section10("", "", "","", $userId);
 
+                $themes = new Themes("", "", $userId);
+
                 $_SESSION['section1'] = $section1;
                 $_SESSION['section2'] = $section2;
                 $_SESSION['section3'] = $section3;
@@ -1539,6 +1613,7 @@ class JumpStartController
                 $_SESSION['section8'] = $section8;
                 $_SESSION['section9'] = $section9;
                 $_SESSION['section10'] = $section10;
+                $_SESSION['themes'] = $themes;
 
                 //var_dump($section1);
 
@@ -1553,6 +1628,7 @@ class JumpStartController
                 $GLOBALS['db']->addSection8($section8, 'add');
                 $GLOBALS['db']->addSection9($section9, 'add');
                 $GLOBALS['db']->addSection10($section10, 'add');
+                $GLOBALS['db']->addThemes($themes);
 
 
                 $this->_f3->reroute('home');
