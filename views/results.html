@@ -14,45 +14,7 @@
 <body>
 <include href="includes/navBar.html"></include>
 
-<div class="container">
-
-    <div class="row border rounded p-2 mt-2 pt-5">
-        <!-- Theme 1 -->
-        <div class="col-4 ">
-            <h5>Submit Theme items</h5>
-            <ul id="itemList">
-            </ul>
-
-            <form class="form-group" id="theme" action="#" method="post">
-                <!-- get theme name -->
-                <div class="form-group">
-                    <label for="themeName">Theme Name:</label>
-                    <input type="text" class="form-control" id="themeName" name="themeName"
-                           value="<check if='{{ !empty(@selectedName) }}'>{{ @selectedName }}</check>">
-                    <span class="err" id="errName"></span>
-                    <span>
-                        <check if="{{ isset(@errors['name']) }}">
-                            <p>{{ @errors['name'] }}</p>
-                        </check>
-                   </span>
-                    <br>
-                    <label for="theme">Choose a theme</label>
-                    <select name="theme">
-                        <option value="theme1">Theme1</option>
-                        <option value="theme2">Theme2</option>
-                        <option value="theme3">Theme3</option>
-                    </select>
-
-                </div>
-                <button id="btnSubmit" class="btn-primary rounded">Submit Theme</button>
-
-                <!-- theme items hidden form field-->
-                <div class="form-group hidden">
-                    <input type="text" class="form-control hidden" id="items" name="items">
-                </div>
-            </form>
-        </div>
-    </div>
+<div class="container-fluid">
 
     <div class="row border rounded p-2 mt-2 pt-5">
         <h5>Theme1: Name - </h5>
@@ -87,11 +49,12 @@
         </ul>
     </div>
 
-    <div class="row border rounded p-2 mt-2">
+
+    <div class="row">
         <!--<h1>Results</h1>-->
         <hr>
 
-        <div class="col-8">
+        <div class="col-6">
             <h3>Purpose</h3>
             <include href="includes/resultSec1.html"></include>
             <h3>What we stand for</h3>
@@ -114,6 +77,46 @@
             <include href="includes/resultSec10.html"></include>
         </div>
 
+        <div class="col-4 ">
+            <div class="sidebar-item sticky-top pt-5">
+                <div class="make-me-sticky">
+                    <div class="row border rounded bg-light p-2 mt-2">
+                        <h5>Theme List</h5>
+                        <ul id="itemList"></ul>
+
+                        <form class="form-group" id="theme" action="submitTheme" method="post">
+                            <!-- get theme name -->
+                            <div class="form-group">
+                                <label for="themeName">Theme Name:</label>
+                                <input type="text" class="form-control" id="themeName" name="themeName"
+                                       value="<check if='{{ !empty(@selectedName) }}'>{{ @selectedName }}</check>">
+                                <span class="err" id="errName"></span>
+                                <span>
+                                <check if="{{ isset(@errors['name']) }}">
+                                    <p>{{ @errors['name'] }}</p>
+                                </check>
+                            </span>
+                                <br>
+                                <label for="theme">Choose a theme</label>
+                                <select name="theme">
+                                    <option value="theme1">Theme1</option>
+                                    <option value="theme2">Theme2</option>
+                                    <option value="theme3">Theme3</option>
+                                </select>
+
+                            </div>
+                            <button id="btnSubmit" class="btn-primary rounded">Submit Theme</button>
+
+                            <!-- theme items hidden form field-->
+                            <div class="form-group hidden">
+                                <input type="text" class="form-control hidden" id="items" name="items">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
         <!--
         <div class="container col-4">
@@ -125,6 +128,10 @@
         -->
     </div>
 
+    <!-- ingredients hidden form field-->
+    <div class="form-group hidden">
+        <input type="text" class="form-control hidden" id="items" name="items">
+    </div>
 
 </div>
 
