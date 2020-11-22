@@ -1366,19 +1366,19 @@ class JumpStartController
             // validate the data and set hive variables
             $valid = true;
             // validate theme name
-            if (!isset($_POST['themeName']) || $_POST['themeName'] == "" || ($_POST['items']) == "") {
+            if (($_POST['items']) == "") {
                 $valid = false;
-                $this->_f3->set('errors["name"]', "Please provide a theme name and list");
-                $this->_f3->set('selectedName', $_POST['themeName']);
+                $this->_f3->set('errors["name"]', "Please provide items to add");
+                //$this->_f3->set('selectedName', $_POST['themeName']);
             } else {
-                $this->_f3->set('selectedName', $_POST['themeName']);
+                //$this->_f3->set('selectedName', $_POST['themeName']);
             }
 
             // if valid data
             if ($valid) {
                 $f3->clear('errors["name"]');
 
-                $themeName = $_POST['themeName'];
+                //$themeName = $_POST['themeName'];
                 $themeList = $_POST['items'];
                 $userId = $_SESSION['userId'];
                 $chooseTheme = $_POST['theme'];

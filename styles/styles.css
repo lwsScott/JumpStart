@@ -38,6 +38,10 @@ a:active {
     background-color: #00a2d6 ;
 }
 
+.hidden {
+    visibility: hidden;
+}
+
 /* Style all font awesome icons */
 .fa {
     padding: 15px;
