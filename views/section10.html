@@ -17,14 +17,14 @@
 <include href="includes/navBar.html"></include>
 
 <div class="container">
-    <h1>Section 10:The Final Four</h1>
+    <h3>Section 10:The Final Four</h3>
     <hr>
 
     <form action="#" method="post" class="form-horizontal">
         <div class="row">
             <div class="col-10">
-                <h3>Entrepreneurs often have very strong instincts about things that need attention.
-                    So, apart from anything else you have discussed above, can you identify:</h3>
+                <label><strong>Entrepreneurs often have very strong instincts about things that need attention.
+                    So, apart from anything else you have discussed above, can you identify:</strong></label>
                 <div class="container">
                     <label>1)  Up to 3 things you know work great that you know you should keep doing or doing more of.</label>
                     <textarea class="form-control" id="j1" name="j1" rows="3">{{ @j1 }}</textarea>
@@ -38,32 +38,28 @@
                     <textarea class="form-control" id="j3" name="j3" rows="3">{{ @j3 }}</textarea>
                 </div>
                 <div class="container">
-                    <label><strong>4) Up to the 3 biggest risks facing your business right now or that you may face soon</strong></label>
+                    <label>4) Up to the 3 biggest risks facing your business right now or that you may face soon</label>
                     <textarea class="form-control" id="j4" name="j4" rows="3">{{ @j4 }}</textarea>
                 </div>
             </div>
         </div>
         <!-- The privacy disclaimer -->
-        <br>
-        <div class="col-4">
-            <div class="container card bg-light rounded text-center">
+        <hr>
+        <div class="col-12">
+            <div class="container card bg-light rounded text-center col-4">
                 <p><strong>Note:</strong> Information entered is protected by our
                     privacy policy. All answers are kept strictly confidential.</p>
             </div>
         </div>
-</div>
 
-<div class="row">
-    <div class="col-12">
-        <div class="text-right">
-            <button type="submit" class="btn btn-primary">Continue</button>
+        <div class="row">
+            <div class="col-12">
+                <div class="text-right">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-
-</div>
-</form>
-
+    </form>
 </div>
 
 <script src="js/clientSideValidation.js"></script>

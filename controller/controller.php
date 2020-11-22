@@ -98,7 +98,7 @@ class JumpStartController
 
             // add the section to the database
             $GLOBALS['db']->addSection1($section1, 'update');
-            $f3->reroute("results");
+            $f3->reroute("section2");
             //echo "before submit";
             //$view = new Template();
             //echo $view->render('views/results.html');
@@ -359,7 +359,7 @@ class JumpStartController
 
                 // add the section to the database
                 $GLOBALS['db']->addSection2($section2, 'update');
-                $f3->reroute("results");
+                $f3->reroute("section3");
             }
         } else {
             // check login
@@ -575,7 +575,7 @@ class JumpStartController
 
                 // add the section to the database
                 $GLOBALS['db']->addSection3($section3, 'update');
-                $f3->reroute("results");
+                $f3->reroute("section4");
             }
         } else {
             // check login
@@ -820,7 +820,7 @@ class JumpStartController
 
                 // add the section to the database
                 $GLOBALS['db']->addSection4($section4, 'update');
-                $f3->reroute("results");
+                $f3->reroute("section5");
             }
         } else {
             // check login
@@ -882,7 +882,7 @@ class JumpStartController
 
             // add the section to the database
             $GLOBALS['db']->addSection5($section5, 'update');
-            $f3->reroute("results");
+            $f3->reroute("section6");
             //echo "before submit";
             //$view = new Template();
             //echo $view->render('views/results.html');
@@ -947,7 +947,7 @@ class JumpStartController
 
             // add the section to the database
             $GLOBALS['db']->addSection6($section6, 'update');
-            $f3->reroute("results");
+            $f3->reroute("section7");
             //$view = new Template();
             //echo $view->render('views/results.html');
         } else {
@@ -1007,7 +1007,7 @@ class JumpStartController
 
             // add the section to the database
             $GLOBALS['db']->addSection7($section7, 'update');
-            $f3->reroute("results");
+            $f3->reroute("section8");
             //echo "before submit";
             //$view = new Template();
             //echo $view->render('views/results.html');
@@ -1067,7 +1067,7 @@ class JumpStartController
 
             // add the section to the database
             $GLOBALS['db']->addSection8($section8, 'update');
-            $f3->reroute("results");
+            $f3->reroute("section9");
             //echo "before submit";
             //$view = new Template();
             //echo $view->render('views/results.html');
@@ -1125,7 +1125,7 @@ class JumpStartController
 
             // add the section to the database
             $GLOBALS['db']->addSection9($section9, 'update');
-            $f3->reroute("results");
+            $f3->reroute("section10");
             //echo "before submit";
             //$view = new Template();
             //echo $view->render('views/results.html');
