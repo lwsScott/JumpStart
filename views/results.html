@@ -22,40 +22,7 @@
     <div class="row">
 
         <div class="col-9">
-            <div class="sticky-top bg-white">
-                <div class="container">
-                    <h5>Theme1: Name - </h5>
-                    <br>
-                    <p>{{ @themeName }}</p><br>
-                    <ul>
-                        <repeat group="{{ @itemArray }}" value="{{ @item }}">
-                            <li>{{ @item }}</li>
-                        </repeat>
-                    </ul>
-                </div>
 
-                <div class="container">
-                    <h5>Theme2: Name - </h5>
-                    <br>
-                    <p>{{ @themeName2 }}</p><br>
-                    <ul>
-                        <repeat group="{{ @itemArray2 }}" value="{{ @item }}">
-                            <li>{{ @item }}</li>
-                        </repeat>
-                    </ul>
-                </div>
-
-                <div class="container">
-                    <h5>Theme3: Name - </h5>
-                    <br>
-                    <p>{{ @themeName3 }}</p><br>
-                    <ul>
-                        <repeat group="{{ @itemArray3 }}" value="{{ @item }}">
-                            <li>{{ @item }}</li>
-                        </repeat>
-                    </ul>
-                </div>
-            </div>
 
             <hr>
 
@@ -83,10 +50,10 @@
             </div>
         </div>
 
-        <div class="col-3 ">
-            <div class="sidebar-item sticky-top pt-5">
+        <div class="col-3">
+            <div class="sidebar-item sticky-top">
                 <div class="make-me-sticky">
-                    <div class="row border rounded bg-light p-2 mt-2">
+                    <div class="row border rounded bg-light pt-5 mt-2">
                         <h5>Theme List</h5>
                         <ul id="itemList"></ul>
 
@@ -119,19 +86,39 @@
                             </div>
                         </form>
                     </div>
+
+                    <div class="bg-white">
+                        <div class="container">
+                            <p><strong>Theme 1 -</strong></p>
+                            <ul>
+                                <repeat group="{{ @itemArray }}" value="{{ @item }}">
+                                    <li>{{ @item }}</li>
+                                </repeat>
+                            </ul>
+                        </div>
+
+                        <div class="container">
+                            <p><strong>Theme 2 -</strong></p>
+                            <ul>
+                                <repeat group="{{ @itemArray2 }}" value="{{ @item }}">
+                                    <li>{{ @item }}</li>
+                                </repeat>
+                            </ul>
+                        </div>
+
+                        <div class="container">
+                            <p><strong>Theme 3 -</strong></p>
+                            <ul>
+                                <repeat group="{{ @itemArray3 }}" value="{{ @item }}">
+                                    <li>{{ @item }}</li>
+                                </repeat>
+                            </ul>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
-
-
-        <!--
-        <div class="container col-4">
-            <form action="#" method="post" class="form-horizontal">
-                <label>Theme</label>
-                <input class="form-control box" draggable="true" type="text" name="theme1" id="theme1">
-            </form>
-        </div>
-        -->
     </div>
 
     <!-- ingredients hidden form field-->
@@ -154,7 +141,8 @@
     $('.table').DataTable({
         select: {
             items: 'cell'
-        }
+        },
+        paging: false
     } );
 </script>
 
