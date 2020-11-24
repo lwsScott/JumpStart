@@ -16,13 +16,29 @@ function getSection1()
     return $section1;
 }
 
+function getSection2()
+{
+    $section2 = array('b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7', 'b8', 'b9', 'b10', 'b11', 'b12',
+        'b13', 'b14', 'b15', 'b16', 'b17', 'b17yn', 'b18', 'b18yn', 'b19', 'b19yn', 'b20', 'b20yn',
+        'b21', 'b21yn', 'b22', 'b22yn', 'b23', 'b23yn', 'b24', 'b24yn', 'b25', 'b25yn', 'b26',
+        'b26yn', 'b27', 'b27yn', 'b28', 'b28yn', 'b29');
+    return $section2;
+}
+
+function getSection3()
+{
+    $section3 = array('c1', 'c1t', 'c2', 'c2t', 'c3', 'c3t', 'c4', 'c4t', 'c5', 'c6', 'c6t', 'c7', 'c7t',
+                        'c8', 'c8t', 'c9', 'c9t', 'c10a', 'c10b', 'c10c', 'c10d');
+    return $section3;
+}
+
 function getSection4()
 {
     $section4 = array('d1', 'd2', 'd3', 'd4', 'd5', 'd5t', 'd6', 'd6t', 'd7', 'd8', 'd9', 'd10', 
         'd11', 'd12', 'd13', 'd14', 'd15', 'd16', 'd17', 'd18', 'd19', 'd20', 'd21', 'd22', 'd23',
         'd24', 'd25', 'd26', 'd27', 'd28', 'd29a', 'd29b', 'd29c', 'd29d');
     return $section4;
-    }
+}
 
 function getSection5()
 {

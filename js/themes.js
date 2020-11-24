@@ -70,6 +70,12 @@ $('#table2').on( 'dblclick', 'td', function () {
     }
     //$("#item").val("");
 
+    // convert that array into a JSON string - puts quotes around the array
+    JSONitems = JSON.stringify(items);
+
+    // set the value of the form to carry the array within a string
+    document.getElementById('items').value = JSONitems;
+
 } );
 
 let table3 = $('#table3').DataTable();
@@ -87,6 +93,12 @@ $('#table3').on( 'dblclick', 'td', function () {
         $("#itemList").append("<li>" + items[i] + "</li>");
     }
     //$("#item").val("");
+
+    // convert that array into a JSON string - puts quotes around the array
+    JSONitems = JSON.stringify(items);
+
+    // set the value of the form to carry the array within a string
+    document.getElementById('items').value = JSONitems;
 
 } );
 
@@ -106,6 +118,12 @@ $('#table4').on( 'dblclick', 'td', function () {
     }
     //$("#item").val("");
 
+    // convert that array into a JSON string - puts quotes around the array
+    JSONitems = JSON.stringify(items);
+
+    // set the value of the form to carry the array within a string
+    document.getElementById('items').value = JSONitems;
+
 } );
 
 let table5 = $('#table5').DataTable();
@@ -123,6 +141,12 @@ $('#table5').on( 'dblclick', 'td', function () {
         $("#itemList").append("<li>" + items[i] + "</li>");
     }
     //$("#item").val("");
+
+    // convert that array into a JSON string - puts quotes around the array
+    JSONitems = JSON.stringify(items);
+
+    // set the value of the form to carry the array within a string
+    document.getElementById('items').value = JSONitems;
 
 } );
 
@@ -142,6 +166,12 @@ $('#table6').on( 'dblclick', 'td', function () {
     }
     //$("#item").val("");
 
+    // convert that array into a JSON string - puts quotes around the array
+    JSONitems = JSON.stringify(items);
+
+    // set the value of the form to carry the array within a string
+    document.getElementById('items').value = JSONitems;
+
 } );
 
 let table7 = $('#table7').DataTable();
@@ -159,6 +189,12 @@ $('#table7').on( 'dblclick', 'td', function () {
         $("#itemList").append("<li>" + items[i] + "</li>");
     }
     //$("#item").val("");
+
+    // convert that array into a JSON string - puts quotes around the array
+    JSONitems = JSON.stringify(items);
+
+    // set the value of the form to carry the array within a string
+    document.getElementById('items').value = JSONitems;
 
 } );
 
@@ -178,6 +214,12 @@ $('#table8').on( 'dblclick', 'td', function () {
     }
     //$("#item").val("");
 
+    // convert that array into a JSON string - puts quotes around the array
+    JSONitems = JSON.stringify(items);
+
+    // set the value of the form to carry the array within a string
+    document.getElementById('items').value = JSONitems;
+
 } );
 
 let table9 = $('#table9').DataTable();
@@ -196,6 +238,12 @@ $('#table9').on( 'dblclick', 'td', function () {
     }
     //$("#item").val("");
 
+    // convert that array into a JSON string - puts quotes around the array
+    JSONitems = JSON.stringify(items);
+
+    // set the value of the form to carry the array within a string
+    document.getElementById('items').value = JSONitems;
+
 } );
 
 let table10 = $('#table10').DataTable();
@@ -213,5 +261,11 @@ $('#table10').on( 'dblclick', 'td', function () {
         $("#itemList").append("<li>" + items[i] + "</li>");
     }
     //$("#item").val("");
+
+    // convert that array into a JSON string - puts quotes around the array
+    JSONitems = JSON.stringify(items);
+
+    // set the value of the form to carry the array within a string
+    document.getElementById('items').value = JSONitems;
 
 } );
