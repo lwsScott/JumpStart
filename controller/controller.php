@@ -743,7 +743,7 @@ class JumpStartController
         // store the themes in the hive as 'results'
         // theme 1
         $result = $GLOBALS['db']->getThemes($_SESSION['userId'], 'theme1');
-        $this->_f3->set('results', $result);
+        //$this->_f3->set('results', $result);
         // decode the theme and set hive array
         $itemArray = json_decode($result['themeList']);
         $themeName = $result['themeName'];
@@ -792,11 +792,11 @@ class JumpStartController
                 $chooseTheme = $_POST['theme'];
 
                 // construct a theme object
-                $theme = new Themes($themeName, $themeList, $userId);
-                $this->_f3->set('themes', $theme);
+                $theme = new Theme1($themeName, $themeList, $userId);
+                $this->_f3->set('themes', $theme, 'update');
 
                 // add the theme to the database
-                $GLOBALS['db']->addThemes($theme, $chooseTheme);
+                $GLOBALS['db']->addThemes($theme, $chooseTheme, 'update');
             }
 
             // store the themes in the hive as 'results'
@@ -1008,7 +1008,10 @@ class JumpStartController
 
                 $section10 = new Section10("", "", "","", $userId);
 
-                $themes = new Themes("", "", $userId);
+                $theme1 = new Theme1("", "", $userId);
+                $theme2 = new Theme2("", "", $userId);
+                $theme3 = new Theme3("", "", $userId);
+
 
                 $_SESSION['section1'] = $section1;
                 $_SESSION['section2'] = $section2;
@@ -1020,7 +1023,10 @@ class JumpStartController
                 $_SESSION['section8'] = $section8;
                 $_SESSION['section9'] = $section9;
                 $_SESSION['section10'] = $section10;
-                $_SESSION['themes'] = $themes;
+                $_SESSION['theme1'] = $theme1;
+                $_SESSION['theme2'] = $theme2;
+                $_SESSION['theme3'] = $theme3;
+
 
                 //var_dump($section1);
 
@@ -1035,7 +1041,9 @@ class JumpStartController
                 $GLOBALS['db']->addSection8($section8, 'add');
                 $GLOBALS['db']->addSection9($section9, 'add');
                 $GLOBALS['db']->addSection10($section10, 'add');
-                $GLOBALS['db']->addThemes($themes);
+                $GLOBALS['db']->addThemes($theme1, 'theme1', 'add');
+                $GLOBALS['db']->addThemes($theme2, 'theme2', 'add');
+                $GLOBALS['db']->addThemes($theme3, 'theme3', 'add');
 
                 $this->_f3->reroute('home');
 

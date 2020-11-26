@@ -1020,12 +1020,18 @@ class Database
      * Inserts theme into the database
      * @param $theme1 the theme to add
      */
-    function addThemes($theme, $chooseTheme)
+    function addThemes($theme, $chooseTheme, $change)
     {
+
         $userId = $_SESSION['userId'];
         //1. Define the query
+        if ($change == 'add') {
+            $sql = "INSERT INTO $chooseTheme (themeName, themeList, userId)
+                    VALUES (:themeName, :themeList, :userId)";
+        } elseif ($change == 'update')
         $sql = "UPDATE $chooseTheme SET themeName = :themeName, themeList = :themeList
                 WHERE userId = :userId";
+
         //2. Prepare the statement
         $statement = $this->_dbh->prepare($sql);
 
@@ -1037,8 +1043,6 @@ class Database
 
         $statement->bindParam(':userId',$userId, PDO::PARAM_STR);
 
-        //echo $sql;
-        //$statement->bindParam(':image', $recipe->getImage());
         //4. Execute the statement
         $result = $statement->execute();
         //echo "Result: " . $result;
@@ -1107,9 +1111,7 @@ class Database
     {
         //1. Define the query
         $sql = "SELECT * FROM $chooseTheme
-        WHERE $userId = $userId";
-;
-
+        WHERE userId = $userId";
         //2. Prepare the statement
         $statement = $this->_dbh->prepare($sql);
 

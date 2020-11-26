@@ -6,7 +6,7 @@
  * @author Lewis Scott
  * @version 1.0
  */
-class Themes
+class Theme3
 {
     //Declare instance variables
     private $_themeID;
