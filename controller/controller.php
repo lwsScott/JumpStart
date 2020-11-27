@@ -774,29 +774,41 @@ class JumpStartController
             // validate the data and set hive variables
             $valid = true;
             // validate theme name
-            if (($_POST['items']) == "") {
+            /*
+            if (($_POST['items1']) == "") {
                 $valid = false;
                 $this->_f3->set('errors["name"]', "Please provide items to add");
                 //$this->_f3->set('selectedName', $_POST['themeName']);
             } else {
                 //$this->_f3->set('selectedName', $_POST['themeName']);
             }
+            */
 
             // if valid data
             if ($valid) {
                 $f3->clear('errors["name"]');
 
                 //$themeName = $_POST['themeName'];
-                $themeList = $_POST['items'];
+                $themeList1 = $_POST['items1'];
+                $themeList2 = $_POST['items2'];
+                $themeList3 = $_POST['items3'];
+
                 $userId = $_SESSION['userId'];
-                $chooseTheme = $_POST['theme'];
+                //$chooseTheme = $_POST['theme'];
 
-                // construct a theme object
-                $theme = new Theme1($themeName, $themeList, $userId);
-                $this->_f3->set('themes', $theme, 'update');
+                // construct theme objects
+                $theme1 = new Theme1($themeName, $themeList1, $userId);
+                $this->_f3->set('themes', $theme1, 'update');
+                $theme2 = new Theme1($themeName, $themeList2, $userId);
+                $this->_f3->set('themes', $theme2, 'update');
+                $theme3 = new Theme1($themeName, $themeList3, $userId);
+                $this->_f3->set('themes', $theme3, 'update');
 
-                // add the theme to the database
-                $GLOBALS['db']->addThemes($theme, $chooseTheme, 'update');
+                // add the themse to the database
+                $GLOBALS['db']->addThemes($theme1, 'theme1', 'update');
+                $GLOBALS['db']->addThemes($theme2, 'theme2', 'update');
+                $GLOBALS['db']->addThemes($theme3, 'theme3', 'update');
+
             }
 
             // store the themes in the hive as 'results'

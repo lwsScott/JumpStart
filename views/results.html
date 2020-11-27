@@ -14,6 +14,90 @@
 <body>
 <include href="includes/navBar.html"></include>
 
+<div class="container-fluid sticky-top pt-5">
+    <div class="bg-white pt-2">
+        <div class="row text-center">
+            <div class="container">
+                <h5>Double click cell items to add to selected themes</h5>
+                <h5>Double click theme items to add to remove</h5>
+            </div>
+        </div>
+        <!-- theme items hidden form field-->
+        <form action="#" method="post" class="form-horizontal" id="themes">
+            <div class="form-group hidden">
+                <input type="text" class="form-control" id="items1" name="items1">
+            </div>
+            <div class="form-group hidden">
+                <input type="text" class="form-control" id="items2" name="items2">
+            </div>
+            <div class="form-group hidden">
+                <input type="text" class="form-control" id="items3" name="items3">
+            </div>
+            <div class="text-right">
+                <button type="submit" class="btn">Save themes</button>
+            </div>
+        </form>
+        <div class="row">
+
+        <div class="container col-3">
+            <p><strong>Theme 1 -</strong></p>
+            <label for="theme1">Select to add items</label>
+            <input type="checkbox" id="theme1">
+            <ul id="itemList1">
+                <repeat group="{{ @itemArray }}" value="{{ @item }}">
+                    <li>{{ @item }}</li>
+                </repeat>
+            </ul>
+
+        </div>
+
+            <div class="container col-3">
+                <p><strong>Theme 2 -</strong></p>
+                <label for="theme1">Select to add items</label>
+                <input type="checkbox" id="theme2">
+                <ul id="itemList2">
+                    <repeat group="{{ @itemArray2 }}" value="{{ @item }}">
+                        <li>{{ @item }}</li>
+                    </repeat>
+                </ul>
+
+            </div>
+
+            <div class="container col-3">
+                <p><strong>Theme 3 -</strong></p>
+                <label for="theme1">Select to add items</label>
+                <input type="checkbox" id="theme3">
+                <ul id="itemList3">
+                    <repeat group="{{ @itemArray3 }}" value="{{ @item }}">
+                        <li>{{ @item }}</li>
+                    </repeat>
+                </ul>
+
+            </div>
+
+            <!--Old way of adding theme items
+            <div class="container col-3">
+                <div class="row border rounded bg-light">
+                    <h5>Add Theme items</h5>
+                    <p>Double click a cell to add</p>
+                    <ul id="itemList"></ul>
+
+                    <label>Choose a theme</label>
+                    <select name="theme" id="theme">
+                        <option value="theme1">Theme1</option>
+                        <option value="theme2">Theme2</option>
+                        <option value="theme3">Theme3</option>
+                    </select>
+                    <br>
+
+                    <button id="btnSubmit" class="btn-primary rounded">Add item to theme</button>
+
+                </div>
+                    -->
+            </div>
+        </div>
+    </div>
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-9">
@@ -42,74 +126,7 @@
             </div>
         </div>
 
-        <div class="col-3">
-            <div class="sidebar-item sticky-top">
-                <div class="make-me-sticky">
-                    <div class="row border rounded bg-light pt-5 mt-2">
-                        <h5>Theme List</h5>
-                        <ul id="itemList"></ul>
 
-                        <form class="form-group" id="theme" action="#" method="post">
-                            <!-- get theme name -->
-                            <div class="form-group">
-                                <label for="themeName">Theme Name:</label>
-                                <input type="text" class="form-control" id="themeName" name="themeName"
-                                       value="<check if='{{ !empty(@selectedName) }}'>{{ @selectedName }}</check>">
-                                <span class="err" id="errName"></span>
-                                <span>
-                                <check if="{{ isset(@errors['name']) }}">
-                                    <p>{{ @errors['name'] }}</p>
-                                </check>
-                            </span>
-                                <br>
-                                <label for="theme">Choose a theme</label>
-                                <select name="theme">
-                                    <option value="theme1">Theme1</option>
-                                    <option value="theme2">Theme2</option>
-                                    <option value="theme3">Theme3</option>
-                                </select>
-
-                            </div>
-                            <button id="btnSubmit" class="btn-primary rounded">Submit Theme</button>
-
-                            <!-- theme items hidden form field-->
-                            <div class="form-group hidden">
-                                <input type="text" class="form-control hidden" id="items" name="items">
-                            </div>
-                        </form>
-                    </div>
-
-                    <div class="bg-white">
-                        <div class="container">
-                            <p><strong>Theme 1 -</strong></p>
-                            <ul>
-                                <repeat group="{{ @itemArray }}" value="{{ @item }}">
-                                    <li>{{ @item }}</li>
-                                </repeat>
-                            </ul>
-                        </div>
-
-                        <div class="container">
-                            <p><strong>Theme 2 -</strong></p>
-                            <ul>
-                                <repeat group="{{ @itemArray2 }}" value="{{ @item }}">
-                                    <li>{{ @item }}</li>
-                                </repeat>
-                            </ul>
-                        </div>
-
-                        <div class="container">
-                            <p><strong>Theme 3 -</strong></p>
-                            <ul>
-                                <repeat group="{{ @itemArray3 }}" value="{{ @item }}">
-                                    <li>{{ @item }}</li>
-                                </repeat>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 
