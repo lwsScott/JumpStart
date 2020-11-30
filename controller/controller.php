@@ -1024,6 +1024,10 @@ class JumpStartController
                 $theme2 = new Theme2("", "", $userId);
                 $theme3 = new Theme3("", "", $userId);
 
+                $strategy1 = new Strategy1("", "", $userId);
+                $strategy2 = new Strategy1("", "", $userId);
+                $strategy3 = new Strategy1("", "", $userId);
+
 
                 $_SESSION['section1'] = $section1;
                 $_SESSION['section2'] = $section2;
@@ -1038,6 +1042,9 @@ class JumpStartController
                 $_SESSION['theme1'] = $theme1;
                 $_SESSION['theme2'] = $theme2;
                 $_SESSION['theme3'] = $theme3;
+                $_SESSION['strategy1'] = $strategy1;
+                $_SESSION['strategy1'] = $strategy1;
+                $_SESSION['strategy1'] = $strategy1;
 
 
                 //var_dump($section1);
@@ -1056,6 +1063,10 @@ class JumpStartController
                 $GLOBALS['db']->addThemes($theme1, 'theme1', 'add');
                 $GLOBALS['db']->addThemes($theme2, 'theme2', 'add');
                 $GLOBALS['db']->addThemes($theme3, 'theme3', 'add');
+                $GLOBALS['db']->addStrategy($strategy1, 'strategy1', 'add');
+                $GLOBALS['db']->addStrategy($strategy2, 'strategy2', 'add');
+                $GLOBALS['db']->addStrategy($strategy3, 'strategy3', 'add');
+
 
                 $this->_f3->reroute('home');
 
@@ -1064,6 +1075,169 @@ class JumpStartController
         $view = new Template();
         echo $view->render
         ('views/newUser.html');
+    }
+
+    /**
+     * Display the tactical route
+     */
+    public function tactical()
+    {
+        $view = new Template();
+        echo $view->render('views/tactical.html');
+    }
+
+    /**
+     * Display the strategy route
+     */
+    public function strategy()
+    {
+        // store the themes in the hive as 'results'
+        // theme 1
+        $result = $GLOBALS['db']->getThemes($_SESSION['userId'], 'theme1');
+        //$this->_f3->set('results', $result);
+        // decode the theme and set hive array
+        $itemArray = json_decode($result['themeList']);
+        $themeName = $result['themeName'];
+        $this->_f3->set('itemArray', $itemArray);
+        $this->_f3->set('themeName', $themeName);
+
+
+        // theme 2
+        $result = $GLOBALS['db']->getThemes($_SESSION['userId'], 'theme2');
+        $this->_f3->set('results', $result);
+        // decode the theme and set hive array
+        $itemArray = json_decode($result['themeList']);
+        $themeName2 = $result['themeName'];
+        $this->_f3->set('itemArray2', $itemArray);
+        $this->_f3->set('themeName2', $themeName2);
+
+
+        // theme 3
+        $result = $GLOBALS['db']->getThemes($_SESSION['userId'], 'theme3');
+        $this->_f3->set('results', $result);
+        // decode the theme and set hive array
+        $itemArray = json_decode($result['themeList']);
+        $themeName3 = $result['themeName'];
+        $this->_f3->set('itemArray3', $itemArray);
+        $this->_f3->set('themeName3', $themeName3);
+
+        // store the strategies in the hive as 'results'
+        // strategy 1
+        $result = $GLOBALS['db']->getStrategies($_SESSION['userId'], 'strategy1');
+        //$this->_f3->set('results', $result);
+        // decode the theme and set hive array
+        $itemArray = json_decode($result['strategyList']);
+        $strategyName = $result['strategyName'];
+        $this->_f3->set('strategyArray', $itemArray);
+        $this->_f3->set('strategyName', $strategyName);
+
+
+        // strategy 2
+        $result = $GLOBALS['db']->getStrategies($_SESSION['userId'], 'strategy2');
+        $this->_f3->set('results', $result);
+        // decode the theme and set hive array
+        $itemArray = json_decode($result['strategyList']);
+        $strategyName2 = $result['strategyName'];
+        $this->_f3->set('strategyArray2', $itemArray);
+        $this->_f3->set('strategyName2', $strategyName2);
+
+
+        // strategy 3
+        $result = $GLOBALS['db']->getStrategies($_SESSION['userId'], 'strategy3');
+        $this->_f3->set('results', $result);
+        // decode the theme and set hive array
+        $itemArray = json_decode($result['strategyList']);
+        $strategyName3 = $result['strategyName'];
+        $this->_f3->set('strategyArray3', $itemArray);
+        $this->_f3->set('strategyName3', $strategyName3);
+
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            // validate the data and set hive variables
+
+            //$themeName = $_POST['themeName'];
+            $strategyList1 = $_POST['items1'];
+            $strategyList2 = $_POST['items2'];
+            $strategyList3 = $_POST['items3'];
+
+            $userId = $_SESSION['userId'];
+            //$chooseTheme = $_POST['theme'];
+
+            // construct strategy objects
+            $strategy1 = new Strategy1($strategyName, $strategyList1, $userId);
+            $this->_f3->set('strategy1', $strategy1, 'update');
+            $strategy2 = new Strategy2($strategyName, $strategyList2, $userId);
+            $this->_f3->set('strategy2', $strategy2, 'update');
+            $strategy3 = new Strategy3($strategyName, $strategyList3, $userId);
+            $this->_f3->set('strategy3', $strategy3, 'update');
+
+            // add the strategies to the database
+            $GLOBALS['db']->addStrategy($strategy1, 'strategy1', 'update');
+            $GLOBALS['db']->addStrategy($strategy2, 'strategy2', 'update');
+            $GLOBALS['db']->addStrategy($strategy3, 'strategy3', 'update');
+            }
+
+            // store the themes in the hive as 'results'
+            // theme 1
+            $result = $GLOBALS['db']->getThemes($_SESSION['userId'], 'theme1');
+            $this->_f3->set('results', $result);
+            // decode the theme and set hive array
+            $itemArray = json_decode($result['themeList']);
+            $themeName = $result['themeName'];
+            $this->_f3->set('itemArray', $itemArray);
+            $this->_f3->set('themeName', $themeName);
+
+
+            // theme 2
+            $result = $GLOBALS['db']->getThemes($_SESSION['userId'], 'theme2');
+            $this->_f3->set('results', $result);
+            // decode the theme and set hive array
+            $itemArray = json_decode($result['themeList']);
+            $themeName2 = $result['themeName'];
+            $this->_f3->set('itemArray2', $itemArray);
+            $this->_f3->set('themeName2', $themeName2);
+
+
+            // theme 3
+            $result = $GLOBALS['db']->getThemes($_SESSION['userId'], 'theme3');
+            $this->_f3->set('results', $result);
+            // decode the theme and set hive array
+            $itemArray = json_decode($result['themeList']);
+            $themeName3 = $result['themeName'];
+            $this->_f3->set('itemArray3', $itemArray);
+            $this->_f3->set('themeName3', $themeName3);
+
+        // strategy 1
+        $result = $GLOBALS['db']->getStrategies($_SESSION['userId'], 'strategy1');
+        //$this->_f3->set('results', $result);
+        // decode the theme and set hive array
+        $itemArray = json_decode($result['strategyList']);
+        $strategyName = $result['strategyName'];
+        $this->_f3->set('strategyArray', $itemArray);
+        $this->_f3->set('strategyName', $strategyName);
+
+
+        // strategy 2
+        $result = $GLOBALS['db']->getStrategies($_SESSION['userId'], 'strategy2');
+        $this->_f3->set('results', $result);
+        // decode the theme and set hive array
+        $itemArray = json_decode($result['strategyList']);
+        $strategyName2 = $result['strategyName'];
+        $this->_f3->set('strategyArray2', $itemArray);
+        $this->_f3->set('strategyName2', $strategyName2);
+
+
+        // strategy 3
+        $result = $GLOBALS['db']->getStrategies($_SESSION['userId'], 'strategy3');
+        $this->_f3->set('results', $result);
+        // decode the theme and set hive array
+        $itemArray = json_decode($result['strategyList']);
+        $strategyName3 = $result['strategyName'];
+        $this->_f3->set('strategyArray3', $itemArray);
+        $this->_f3->set('strategyName3', $strategyName3);
+
+        $view = new Template();
+        echo $view->render('views/strategy.html');
     }
 
     /*

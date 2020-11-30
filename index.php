@@ -141,6 +141,24 @@ $f3->route('GET|POST /results', function($f3){
     $GLOBALS['controller']->results($f3);
 });
 
+// this is the route to strategies page
+// GET method when coming from other section pages
+// POST method when submitting form
+$f3->route('GET|POST /strategy', function($f3){
+    //$view = new Template();
+    //echo $view->render('views/results.html');
+    $GLOBALS['controller']->strategy($f3);
+});
+
+// this is the route to tactical page
+// GET method when coming from other section pages
+// POST method when submitting form
+$f3->route('GET|POST /tactical', function($f3){
+    //$view = new Template();
+    //echo $view->render('views/results.html');
+    $GLOBALS['controller']->tactical($f3);
+});
+
 // this is the route to login page
 // POST method when submitting form
 $f3->route('GET|POST /login', function($f3){

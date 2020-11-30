@@ -1054,6 +1054,43 @@ class Database
     }
 
     /**
+     * Inserts theme into the database
+     * @param $theme1 the theme to add
+     */
+    function addStrategy($strategy, $chooseStrategy, $change)
+    {
+
+        $userId = $_SESSION['userId'];
+        //1. Define the query
+        if ($change == 'add') {
+            $sql = "INSERT INTO $chooseStrategy (strategyName, strategyList, userId)
+                    VALUES (:strategyName, :strategyList, :userId)";
+        } elseif ($change == 'update')
+            $sql = "UPDATE $chooseStrategy SET strategyName = :strategyName, strategyList = :strategyList
+                WHERE userId = :userId";
+
+        //2. Prepare the statement
+        $statement = $this->_dbh->prepare($sql);
+
+        $strategyName = $strategy->getStrategyName();
+        $strategyList = $strategy->getStrategyList();
+        //3. Bind the parameters
+        $statement->bindParam(':strategyName',$strategyName, PDO::PARAM_STR);
+        $statement->bindParam(':strategyList',$strategyList, PDO::PARAM_STR);
+
+        $statement->bindParam(':userId',$userId, PDO::PARAM_STR);
+
+        //4. Execute the statement
+        $result = $statement->execute();
+        //echo "Result: " . $result;
+
+        //Get the key of the last inserted row
+        $strategyId = $this->_dbh->lastInsertId();
+        $_SESSION['strategyId'] = $strategyId;
+        //echo $id;
+    }
+
+    /**
      * Insert a new user into the database
      * @param $newUser the user to add
      */
@@ -1111,6 +1148,28 @@ class Database
     {
         //1. Define the query
         $sql = "SELECT * FROM $chooseTheme
+        WHERE userId = $userId";
+        //2. Prepare the statement
+        $statement = $this->_dbh->prepare($sql);
+
+        //3. Bind the parameters
+        $statement->bindParam(':userId', $userId);
+
+        //4. Execute the statement
+        $statement->execute();
+
+        //5. Get the result
+        $result = $statement->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    /*
+* The user's themes
+*/
+    function getStrategies($userId, $chooseStrategy)
+    {
+        //1. Define the query
+        $sql = "SELECT * FROM $chooseStrategy
         WHERE userId = $userId";
         //2. Prepare the statement
         $statement = $this->_dbh->prepare($sql);

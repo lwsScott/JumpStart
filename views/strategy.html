@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title><!--
+    <title></title>
+        <!--
   11/27/20
   filename https://jumpstart.greenriverdev.com/playbook/JumpStart/includes/footer.html
   SWOT Strategic Focus and Priorities
@@ -22,136 +23,98 @@
     <div class="row">
         <div class="container col-4">
             <p><strong>Theme 1 -</strong></p>
-            <ul>
+            <ul id="itemList1">
                 <repeat group="{{ @itemArray }}" value="{{ @item }}">
                     <li>{{ @item }}</li>
                 </repeat>
             </ul>
-            <label for="theme1Name">Name:</label>
-            <input type="text" class="form-control" id="theme1Name" name="theme1Name" value="">
-            <div class="dropdown">
-                <button onclick="myFunction()" class="dropbtn">Strategic Focus</button>
-                <div id="myDropdown" class="dropdown-content">
-                    <a value="Raise Revenues by Getting More People to Pay">Raise Revenues by Getting More People to Pay</a>
-                    <a value="Raise Revenues by Getting More People to Pay More Often">Raise Revenues by Getting More People to Pay More Often</a>
-                    <a value="Raise Revenue by Getting More People to Pay More per Transaction">Raise Revenue by Getting More People to Pay More per Transaction</a>
-                    <a value="Reduce Variable Cost by Cost Reductions">Reduce Variable Cost by Cost Reductions</a>
-                    <a value="Reduce Variable Cost by Process Improvement">Reduce Variable Cost by Process Improvement</a>
-                    <a value="Reduce Overhead by Cost Reductions">Reduce Overhead by Cost Reductions</a>
-                    <a value="Reduce Overhead by Process Improvements">Reduce Overhead by Process Improvements</a>
-                    <a value="Reduce Risk">Reduce Risk</a>
-                    <a value="Personal Fulfillment">Personal Fulfillment</a>
-                    <a value="Improve Performance of Our People">Improve Performance of Our People</a>
-                    <a value="Other">Other</a>
-                </div>
-            </div>
         </div>
 
         <div class="container col-4">
             <p><strong>Theme 2 -</strong></p>
-            <ul>
+            <ul id="itemList2">
                 <repeat group="{{ @itemArray2 }}" value="{{ @item }}">
                     <li>{{ @item }}</li>
                 </repeat>
             </ul>
-            <label for="theme2Name">Name:</label>
-            <input type="text" class="form-control" id="theme2Name" name="theme2Name" value="">
-            <div class="dropdown">
-                <button onclick="myFunction()" class="dropbtn">Strategic Focus</button>
-                <div id="myDropdown2" class="dropdown-content">
-                    <a value="Raise Revenues by Getting More People to Pay">Raise Revenues by Getting More People to Pay</a>
-                    <a value="Raise Revenues by Getting More People to Pay More Often">Raise Revenues by Getting More People to Pay More Often</a>
-                    <a value="Raise Revenue by Getting More People to Pay More per Transaction">Raise Revenue by Getting More People to Pay More per Transaction</a>
-                    <a value="Reduce Variable Cost by Cost Reductions">Reduce Variable Cost by Cost Reductions</a>
-                    <a value="Reduce Variable Cost by Process Improvement">Reduce Variable Cost by Process Improvement</a>
-                    <a value="Reduce Overhead by Cost Reductions">Reduce Overhead by Cost Reductions</a>
-                    <a value="Reduce Overhead by Process Improvements">Reduce Overhead by Process Improvements</a>
-                    <a value="Reduce Risk">Reduce Risk</a>
-                    <a value="Personal Fulfillment">Personal Fulfillment</a>
-                    <a value="Improve Performance of Our People">Improve Performance of Our People</a>
-                    <a value="Other">Other</a>
-                </div>
-            </div>
         </div>
 
         <div class="container col-4">
             <p><strong>Theme 3 -</strong></p>
-            <ul>
+            <ul id="itemList3">
                 <repeat group="{{ @itemArray3 }}" value="{{ @item }}">
                     <li>{{ @item }}</li>
                 </repeat>
             </ul>
-            <label for="theme3Name">Name:</label>
-            <input type="text" class="form-control" id="theme3Name" name="theme3Name" value="">
-            <div class="dropdown">
-                <button onclick="myFunction()" class="dropbtn">Strategic Focus</button>
-                <div id="myDropdown3" class="dropdown-content">
-                    <a value="Raise Revenues by Getting More People to Pay">Raise Revenues by Getting More People to Pay</a>
-                    <a value="Raise Revenues by Getting More People to Pay More Often">Raise Revenues by Getting More People to Pay More Often</a>
-                    <a value="Raise Revenue by Getting More People to Pay More per Transaction">Raise Revenue by Getting More People to Pay More per Transaction</a>
-                    <a value="Reduce Variable Cost by Cost Reductions">Reduce Variable Cost by Cost Reductions</a>
-                    <a value="Reduce Variable Cost by Process Improvement">Reduce Variable Cost by Process Improvement</a>
-                    <a value="Reduce Overhead by Cost Reductions">Reduce Overhead by Cost Reductions</a>
-                    <a value="Reduce Overhead by Process Improvements">Reduce Overhead by Process Improvements</a>
-                    <a value="Reduce Risk">Reduce Risk</a>
-                    <a value="Personal Fulfillment">Personal Fulfillment</a>
-                    <a value="Improve Performance of Our People">Improve Performance of Our People</a>
-                    <a value="Other">Other</a>
-                </div>
-            </div>
         </div>
     </div>
+
+
     <div class="row">
         <div class="col-9">
             <hr>
             <div>
+                <div class="container col-3">
+                    <p><strong>Strategy 1 -</strong></p>
+                    <label for="strategy1">Select to add items</label>
+                    <input type="checkbox" id="strategy1">
+                    <ul id="strategyList1">
+                        <repeat group="{{ @strategyArray }}" value="{{ @item }}">
+                            <li>{{ @item }}</li>
+                        </repeat>
+                    </ul>
+
+                </div>
             </div>
-        </div>
 
-        <div class="col-3">
-            <div class="sidebar-item sticky-top">
-                <div class="make-me-sticky">
-                    <div class="row border rounded bg-light pt-5 mt-2">
-                        <h5>Theme List</h5>
-                        <ul id="itemList"></ul>
+            <div>
+                <div class="container col-3">
+                    <p><strong>Strategy 2 -</strong></p>
+                    <label for="strategy2">Select to add items</label>
+                    <input type="checkbox" id="strategy2">
+                    <ul id="strategyList2">
+                        <repeat group="{{ @strategyArray2 }}" value="{{ @item }}">
+                            <li>{{ @item }}</li>
+                        </repeat>
+                    </ul>
 
-                        <form class="form-group" id="theme" action="#" method="post">
-                            <!-- get theme name -->
-                            <div class="form-group">
-                                <label for="themeName">Theme Name:</label>
-                                <input type="text" class="form-control" id="themeName" name="themeName"
-                                       value="<check if='{{ !empty(@selectedName) }}'>{{ @selectedName }}</check>">
-                                <span class="err" id="errName"></span>
-                                <span>
-                                <check if="{{ isset(@errors['name']) }}">
-                                    <p>{{ @errors['name'] }}</p>
-                                </check>
-                            </span>
-                                <br>
-                                <label for="theme">Choose a theme</label>
-                                <select name="theme">
-                                    <option value="theme1">Theme1</option>
-                                    <option value="theme2">Theme2</option>
-                                    <option value="theme3">Theme3</option>
-                                </select>
+                </div>
+            </div>
 
-                            </div>
-                            <button id="btnSubmit" class="btn-primary rounded">Submit Theme</button>
+            <div>
+                <div class="container col-3">
+                    <p><strong>Strategy 3 -</strong></p>
+                    <label for="strategy3">Select to add items</label>
+                    <input type="checkbox" id="strategy3">
+                    <ul id="strategyList3">
+                        <repeat group="{{ @strategyArray3 }}" value="{{ @item }}">
+                            <li>{{ @item }}</li>
+                        </repeat>
+                    </ul>
 
-                            <!-- theme items hidden form field-->
-                            <div class="form-group hidden">
-                                <input type="text" class="form-control hidden" id="items" name="items">
-                            </div>
-                        </form>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- strategy items hidden form field-->
+    <form action="#" method="post" class="form-horizontal" id="strategies">
+        <div class="form-group hidden">
+            <input type="text" class="form-control" id="items1" name="items1">
+        </div>
+        <div class="form-group hidden">
+            <input type="text" class="form-control" id="items2" name="items2">
+        </div>
+        <div class="form-group hidden">
+            <input type="text" class="form-control" id="items3" name="items3">
+        </div>
+        <div class="text-right">
+            <button type="submit" class="btn">Save strategies</button>
+        </div>
+    </form>
 </div>
 
 <include href="includes/footer.html"></include>
 
-<script src="js/themes.js"></script>
+<script src="js/strategy.js"></script>
 </body>
 </html>

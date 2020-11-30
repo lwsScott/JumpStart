@@ -7,6 +7,7 @@
 // if not valid prevent default and do not post data
 let checkForm = function(e) {
     //let form = e.target;
+
     // Theme 1 additions
     let itemList = document.getElementById("itemList1").getElementsByTagName("li");
     console.log(itemList);
