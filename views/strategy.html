@@ -14,6 +14,7 @@
         <head>
             <title>Strategy</title>
             <include href="includes/header.html"></include>
+            <link rel="stylesheet" href="styles/combobox.css">
         </head>
 
 <body>
@@ -61,6 +62,21 @@
                         <li>{{ @item }}</li>
                     </repeat>
                 </ul>
+                <input class="form-control" type="text" name="themeName1" id="themeName1" placeholder="Theme Name">
+                <label>Select a Strategy:
+                    <input list="selectStrategy" name="myStrategy1" /></label>
+                <datalist id="selectStrategy">
+                    <option value="Raise Revenues by Getting More People to Pay">
+                    <option value="Raise Revenues by Getting More People to Pay More Often">
+                    <option value="Raise Revenue by Getting More People to Pay More per Transaction">
+                    <option value="Reduce Variable Cost by Cost Reductions">
+                    <option value="Reduce Variable Cost by Process Improvement">
+                    <option value="Reduce Overhead by Cost Reductions">
+                    <option value="Reduce Overhead by Process Improvements">
+                    <option value="Reduce Risk">
+                    <option value="Personal Fulfillment">
+                    <option value="Improve Performance of Our People">
+                </datalist>
             </div>
 
             <div class="container col-4">
@@ -72,6 +88,9 @@
                         <li>{{ @item }}</li>
                     </repeat>
                 </ul>
+                <input class="form-control" type="text" name="themeName2" id="themeName2" placeholder="Theme Name" value="">
+                <label>Select a Strategy:
+                    <input list="selectStrategy" name="myStrategy2" /></label>
             </div>
 
             <div class="container col-4">
@@ -83,6 +102,9 @@
                         <li>{{ @item }}</li>
                     </repeat>
                 </ul>
+                <input class="form-control" type="text" name="themeName3" id="themeName3" placeholder="Theme Name" value="">
+                <label>Select a Strategy:
+                    <input list="selectStrategy" name="myStrategy3" /></label>
             </div>
         </div>
     </div>
