@@ -719,26 +719,6 @@ class JumpStartController
                 $this->_f3->set($k, $v);
             }
         }
-        /*
-          $themes = $GLOBALS['db']->getThemes($_SESSION['userId']);
-          foreach ($themes as $k=>$v)
-          {
-              if ($k != 'themeID')
-              {
-                  $this->_f3->set($k, $v);
-              }
-          }
-
-          // store the themes in the hive as 'results'
-          $result = $GLOBALS['db']->getThemes($_SESSION['userId']);
-          $this->_f3->set('results', $result);
-          // decode the theme and set hive array
-          $themeName = $result['themeName'];
-          $this->_f3->set('themeName', $themeName);
-
-          $itemArray = json_decode($result['themeList']);
-          $this->_f3->set('itemArray', $itemArray);
-        */
 
         // store the themes in the hive as 'results'
         // theme 1
@@ -1082,6 +1062,36 @@ class JumpStartController
      */
     public function tactical()
     {
+        // strategy 1
+        $result = $GLOBALS['db']->getStrategies($_SESSION['userId'], 'strategy1');
+        //$this->_f3->set('results', $result);
+        // decode the theme and set hive array
+        $itemArray = json_decode($result['strategyList']);
+        $strategyName = $result['strategyName'];
+        $this->_f3->set('strategyArray', $itemArray);
+        $this->_f3->set('strategyName', $strategyName);
+
+
+        // strategy 2
+        $result = $GLOBALS['db']->getStrategies($_SESSION['userId'], 'strategy2');
+        $this->_f3->set('results', $result);
+        // decode the theme and set hive array
+        $itemArray = json_decode($result['strategyList']);
+        $strategyName2 = $result['strategyName'];
+        $this->_f3->set('strategyArray2', $itemArray);
+        $this->_f3->set('strategyName2', $strategyName2);
+
+
+        // strategy 3
+        $result = $GLOBALS['db']->getStrategies($_SESSION['userId'], 'strategy3');
+        $this->_f3->set('results', $result);
+        // decode the theme and set hive array
+        $itemArray = json_decode($result['strategyList']);
+        $strategyName3 = $result['strategyName'];
+        $this->_f3->set('strategyArray3', $itemArray);
+        $this->_f3->set('strategyName3', $strategyName3);
+
+
         $view = new Template();
         echo $view->render('views/tactical.html');
     }

@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Tactical tasks</title>
     <include href="includes/header.html"></include>
-    <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
 </head>
 <body>
 
@@ -12,10 +11,102 @@
 
 <h1>Tactical tasks</h1>
 
+<div class="container-fluid">
+    <div class="row">
+        <div class="container col-4">
+            <p><strong>Strategy 1 -</strong></p>
+            <ul id="strategyList1">
+                <repeat group="{{ @strategyArray }}" value="{{ @item }}">
+                    <li>{{ @item }}</li>
+                </repeat>
+            </ul>
+            <table class="table table-bordered" id="table1">
+                <thead class="thead-light">
+                <tr>
+                    <th scope="col">Task</th>
+                    <th scope="col">Quarter</th>
+                    <th scope="col">Date</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <repeat group="{{ @taskArray }}" value="{{ @item }}">
+                        <li>{{ @item }}</li>
+                    </repeat>
 
-<script src="//code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+                </tbody>
+            </table>
+            <div class="container">
+                <form action="#" method="post" class="form-horizontal" id="tacticalTask1">
+                    <div class="form-group">
+                        <label for="task1">Task</label>
+                        <input type="text" class="form-control"
+                               id="task1" name="task1" value="">
+                    </div>
+                    <div class="form-group">
+                        <label for="quarter1">Quarter</label>
+                        <input type="text" class="form-control"
+                               id="quarter1" name="quarter1" value="">
+                    </div>
+                    <div class="form-group">
+                        <label for="date1">Date</label>
+                        <input type="date" class="form-control"
+                               id="date1" name="date1" value="">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="container col-4">
+            <p><strong>Strategy 2 -</strong></p>
+            <ul id="strategyList2">
+                <repeat group="{{ @strategyArray2 }}" value="{{ @item }}">
+                    <li>{{ @item }}</li>
+                </repeat>
+            </ul>
+        </div>
+
+        <div class="container col-4">
+            <p><strong>Strategy 3 -</strong></p>
+            <ul id="strategyList3">
+                <repeat group="{{ @strategyArray3 }}" value="{{ @item }}">
+                    <li>{{ @item }}</li>
+                </repeat>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+
+
+
+        <div class="container col-4">
+
+        </div>
+
+        <div class="container col-4">
+
+        </div>
+
+
+    </div>
+    <!-- tactical items hidden form field-->
+    <form action="#" method="post" class="form-horizontal" id="tacticalTasks">
+        <div class="form-group hidden">
+            <input type="text" class="form-control" id="items1" name="items1">
+        </div>
+        <div class="form-group hidden">
+            <input type="text" class="form-control" id="items2" name="items2">
+        </div>
+        <div class="form-group hidden">
+            <input type="text" class="form-control" id="items3" name="items3">
+        </div>
+        <div class="text-right">
+            <button type="submit" class="btn">Save Tasks</button>
+        </div>
+    </form>
+</div>
+
+
 
 <include href="includes/footer.html"></include>
 

@@ -200,8 +200,35 @@ document.getElementById("itemList3").addEventListener("dblclick", function(e) {
         if (strategy3) {
             appendChild3(add);
         }
-
     }
 });
 
+// add event listener for strategy list items
+document.getElementById("strategyList1").addEventListener("dblclick", function(e) {
+    var tgt = e.target;
+    if (tgt.tagName.toUpperCase() == "LI") {
 
+        // remove the list item from the theme list
+        tgt.parentNode.removeChild(tgt); // or tgt.remove();
+    }
+});
+
+// add event listener for strategy list items
+document.getElementById("strategyList2").addEventListener("dblclick", function(e) {
+    var tgt = e.target;
+    if (tgt.tagName.toUpperCase() == "LI") {
+
+        // remove the list item from the theme list
+        tgt.parentNode.removeChild(tgt); // or tgt.remove();
+    }
+});
+
+// add event listener for strategy list items
+document.getElementById("strategyList3").addEventListener("dblclick", function(e) {
+    var tgt = e.target;
+    if (tgt.tagName.toUpperCase() == "LI") {
+
+        // remove the list item from the theme list
+        tgt.parentNode.removeChild(tgt); // or tgt.remove();
+    }
+});

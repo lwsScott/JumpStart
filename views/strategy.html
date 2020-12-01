@@ -20,6 +20,7 @@
 <include href="includes/navBar.html"></include>
 
 <div class="container-fluid">
+
     <div class="row">
         <div class="container col-4">
             <p><strong>Theme 1 -</strong></p>
@@ -51,48 +52,37 @@
 
 
     <div class="row">
-        <div class="col-9">
-            <hr>
-            <div>
-                <div class="container col-3">
-                    <p><strong>Strategy 1 -</strong></p>
-                    <label for="strategy1">Select to add items</label>
-                    <input type="checkbox" id="strategy1">
-                    <ul id="strategyList1">
-                        <repeat group="{{ @strategyArray }}" value="{{ @item }}">
-                            <li>{{ @item }}</li>
-                        </repeat>
-                    </ul>
-
-                </div>
+            <div class="container col-4">
+                <p><strong>Strategy 1 -</strong></p>
+                <label for="strategy1">Select to add items</label>
+                <input type="checkbox" id="strategy1">
+                <ul id="strategyList1">
+                    <repeat group="{{ @strategyArray }}" value="{{ @item }}">
+                        <li>{{ @item }}</li>
+                    </repeat>
+                </ul>
             </div>
 
-            <div>
-                <div class="container col-3">
-                    <p><strong>Strategy 2 -</strong></p>
-                    <label for="strategy2">Select to add items</label>
-                    <input type="checkbox" id="strategy2">
-                    <ul id="strategyList2">
-                        <repeat group="{{ @strategyArray2 }}" value="{{ @item }}">
-                            <li>{{ @item }}</li>
-                        </repeat>
-                    </ul>
-
-                </div>
+            <div class="container col-4">
+                <p><strong>Strategy 2 -</strong></p>
+                <label for="strategy2">Select to add items</label>
+                <input type="checkbox" id="strategy2">
+                <ul id="strategyList2">
+                    <repeat group="{{ @strategyArray2 }}" value="{{ @item }}">
+                        <li>{{ @item }}</li>
+                    </repeat>
+                </ul>
             </div>
 
-            <div>
-                <div class="container col-3">
-                    <p><strong>Strategy 3 -</strong></p>
-                    <label for="strategy3">Select to add items</label>
-                    <input type="checkbox" id="strategy3">
-                    <ul id="strategyList3">
-                        <repeat group="{{ @strategyArray3 }}" value="{{ @item }}">
-                            <li>{{ @item }}</li>
-                        </repeat>
-                    </ul>
-
-                </div>
+            <div class="container col-4">
+                <p><strong>Strategy 3 -</strong></p>
+                <label for="strategy3">Select to add items</label>
+                <input type="checkbox" id="strategy3">
+                <ul id="strategyList3">
+                    <repeat group="{{ @strategyArray3 }}" value="{{ @item }}">
+                        <li>{{ @item }}</li>
+                    </repeat>
+                </ul>
             </div>
         </div>
     </div>
@@ -111,7 +101,6 @@
             <button type="submit" class="btn">Save strategies</button>
         </div>
     </form>
-</div>
 
 <include href="includes/footer.html"></include>
 
