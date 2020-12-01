@@ -9,9 +9,11 @@
 
 <include href="includes/navBar.html"></include>
 
-<h1>Tactical tasks</h1>
 
-<div class="container-fluid">
+<div class="container">
+    <h1>Tactical tasks</h1>
+
+
     <div class="row">
         <div class="container col-4">
             <p><strong>Strategy 1 -</strong></p>
@@ -29,9 +31,21 @@
                 </tr>
                 </thead>
                 <tbody>
-                    <repeat group="{{ @taskArray }}" value="{{ @item }}">
-                        <li>{{ @item }}</li>
+                <check if="{{ isset(@results) }}" >
+                    <repeat group="{{ @results }}" value="{{ @row }}">
+                        <tr>
+                            <td><check if="{{ isset(@row) }}" >
+                                {{ $row['task'] }} </check></td>
+                            <td><check if="{{ isset(@row) }}" >
+                                {{ $row['quarter'] }}</check> </td>
+                            <td><check if="{{ isset(@row) }}">
+                                {{ $row['date'] }}</check> </td>
+                            <td class="hidden"><check if="{{ isset(@row) }}">
+                                {{ $row['userId'] }}</check></td>
+                        </tr>
                     </repeat>
+                </check>
+
 
                 </tbody>
             </table>
@@ -39,19 +53,22 @@
                 <form action="#" method="post" class="form-horizontal" id="tacticalTask1">
                     <div class="form-group">
                         <label for="task1">Task</label>
-                        <input type="text" class="form-control"
-                               id="task1" name="task1" value="">
+                        <input type="text" class="form-control" id="task1" name="task1">
                     </div>
                     <div class="form-group">
                         <label for="quarter1">Quarter</label>
-                        <input type="text" class="form-control"
-                               id="quarter1" name="quarter1" value="">
+                        <select class="form-control"id="quarter1" name="quarter1">
+                            <option>Q1</option>
+                            <option>Q2</option>
+                            <option>Q3</option>
+                            <option>Q4</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="date1">Date</label>
-                        <input type="date" class="form-control"
-                               id="date1" name="date1" value="">
+                        <input type="date" class="form-control" id="date1" name="date1">
                     </div>
+                    <button type="submit" class="btn">Add Task</button>
                 </form>
             </div>
         </div>

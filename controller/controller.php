@@ -722,11 +722,11 @@ class JumpStartController
 
         // store the themes in the hive as 'results'
         // theme 1
-        $result = $GLOBALS['db']->getThemes($_SESSION['userId'], 'theme1');
-        //$this->_f3->set('results', $result);
+        $theme1 = $GLOBALS['db']->getThemes($_SESSION['userId'], 'theme1');
+        $this->_f3->set('theme1', $theme1);
         // decode the theme and set hive array
-        $itemArray = json_decode($result['themeList']);
-        $themeName = $result['themeName'];
+        $itemArray = json_decode($theme1['themeList']);
+        $themeName = $theme1['themeName'];
         $this->_f3->set('itemArray', $itemArray);
         $this->_f3->set('themeName', $themeName);
 
@@ -1060,8 +1060,11 @@ class JumpStartController
     /**
      * Display the tactical route
      */
-    public function tactical()
+    public function tactical($f3)
     {
+
+        $this->checkLogin($f3);
+
         // strategy 1
         $result = $GLOBALS['db']->getStrategies($_SESSION['userId'], 'strategy1');
         //$this->_f3->set('results', $result);
@@ -1074,7 +1077,7 @@ class JumpStartController
 
         // strategy 2
         $result = $GLOBALS['db']->getStrategies($_SESSION['userId'], 'strategy2');
-        $this->_f3->set('results', $result);
+        //$this->_f3->set('results', $result);
         // decode the theme and set hive array
         $itemArray = json_decode($result['strategyList']);
         $strategyName2 = $result['strategyName'];
@@ -1084,12 +1087,42 @@ class JumpStartController
 
         // strategy 3
         $result = $GLOBALS['db']->getStrategies($_SESSION['userId'], 'strategy3');
-        $this->_f3->set('results', $result);
+        //$this->_f3->set('results', $result);
         // decode the theme and set hive array
         $itemArray = json_decode($result['strategyList']);
         $strategyName3 = $result['strategyName'];
         $this->_f3->set('strategyArray3', $itemArray);
         $this->_f3->set('strategyName3', $strategyName3);
+
+        $result = $GLOBALS['db']-> getTactics($_SESSION['userId'], 'tactic1');
+        $this->_f3->set('results', $result);
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            // validate the data and set hive variables
+            $task1 = $_POST['task1'];
+            $quarter1 = $_POST['quarter1'];
+            $date1 = $_POST['date1'];
+
+            $userId = $_SESSION['userId'];
+
+            // construct tactic objects
+            $tactic1 = new Tactic1($task1, $quarter1, $date1, $userId);
+            $this->_f3->set('tactic1', $tactic1, 'add');
+
+            // add the tactics to the database
+            $GLOBALS['db']->addTactic($tactic1, 'tactic1', 'add');
+            unset($_REQUEST);
+
+            //$f3->reroute("tactical");
+            header ('Location: ' . $_SERVER['REQUEST_URI']);
+
+            //$view = new Template();
+            //echo $view->render('views/tactical.html');
+        }
+
+        $result = $GLOBALS['db']-> getTactics($_SESSION['userId'], 'tactic1');
+        $this->_f3->set('results', $result);
 
 
         $view = new Template();
@@ -1099,8 +1132,11 @@ class JumpStartController
     /**
      * Display the strategy route
      */
-    public function strategy()
+    public function strategy($f3)
     {
+
+        $this->checkLogin($f3);
+
         // store the themes in the hive as 'results'
         // theme 1
         $result = $GLOBALS['db']->getThemes($_SESSION['userId'], 'theme1');

@@ -1054,8 +1054,8 @@ class Database
     }
 
     /**
-     * Inserts theme into the database
-     * @param $theme1 the theme to add
+     * Inserts strategy into the database
+     * @param $strategy the strategy to add
      */
     function addStrategy($strategy, $chooseStrategy, $change)
     {
@@ -1087,6 +1087,48 @@ class Database
         //Get the key of the last inserted row
         $strategyId = $this->_dbh->lastInsertId();
         $_SESSION['strategyId'] = $strategyId;
+        //echo $id;
+    }
+
+    /**
+     * Inserts strategy into the database
+     * @param $tactic the tactic to add
+     * @param $chooseTactic which tactic to add
+     * @param $change the update or add
+     */
+    function addTactic($tactic, $chooseTactic, $change)
+    {
+
+        $userId = $_SESSION['userId'];
+        //1. Define the query
+        if ($change == 'add') {
+            $sql = "INSERT INTO $chooseTactic (task, quarter, date, userId)
+                    VALUES (:task, :quarter, :date, :userId)";
+        } elseif ($change == 'update')
+            $sql = "UPDATE $chooseTactic SET task = :task, quarter = :quarter, date = :date
+                WHERE userId = :userId";
+
+        //2. Prepare the statement
+        $statement = $this->_dbh->prepare($sql);
+
+        $task = $tactic->getTask();
+        $quarter = $tactic->getQuarter();
+        $date = $tactic->getDate();
+
+        //3. Bind the parameters
+        $statement->bindParam(':task',$task, PDO::PARAM_STR);
+        $statement->bindParam(':quarter',$quarter, PDO::PARAM_STR);
+        $statement->bindParam(':date',$date, PDO::PARAM_STR);
+
+        $statement->bindParam(':userId',$userId, PDO::PARAM_STR);
+
+        //4. Execute the statement
+        $result = $statement->execute();
+        //echo "Result: " . $result;
+
+        //Get the key of the last inserted row
+        $tactic1Id = $this->_dbh->lastInsertId();
+        $_SESSION['tactic1Id'] = $tactic1Id;
         //echo $id;
     }
 
@@ -1160,6 +1202,28 @@ class Database
 
         //5. Get the result
         $result = $statement->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    /*
+* The user's themes
+*/
+    function getTactics($userId, $chooseTactic)
+    {
+        //1. Define the query
+        $sql = "SELECT * FROM $chooseTactic
+        WHERE userId = $userId";
+        //2. Prepare the statement
+        $statement = $this->_dbh->prepare($sql);
+
+        //3. Bind the parameters
+        $statement->bindParam(':userId', $userId);
+
+        //4. Execute the statement
+        $statement->execute();
+
+        //5. Get the result
+        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
 
