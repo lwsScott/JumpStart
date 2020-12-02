@@ -13,7 +13,6 @@
 <div class="container">
     <h1>Tactical tasks</h1>
 
-
     <div class="row">
         <div class="container col-4">
             <p><strong>Strategy 1 -</strong></p>
@@ -28,27 +27,34 @@
                     <th scope="col">Task</th>
                     <th scope="col">Quarter</th>
                     <th scope="col">Date</th>
+                    <th class="hidden"></th>
                 </tr>
                 </thead>
                 <tbody>
-                <check if="{{ isset(@results) }}" >
-                    <repeat group="{{ @results }}" value="{{ @row }}">
-                        <tr>
-                            <td><check if="{{ isset(@row) }}" >
-                                {{ $row['task'] }} </check></td>
-                            <td><check if="{{ isset(@row) }}" >
-                                {{ $row['quarter'] }}</check> </td>
-                            <td><check if="{{ isset(@row) }}">
-                                {{ $row['date'] }}</check> </td>
-                            <td class="hidden"><check if="{{ isset(@row) }}">
-                                {{ $row['userId'] }}</check></td>
-                        </tr>
-                    </repeat>
-                </check>
-
-
+                    <check if="{{ isset(@results) }}" >
+                        <repeat group="{{ @results }}" value="{{ @row }}">
+                            <tr>
+                                <td><check if="{{ isset(@row) }}" >
+                                    {{ $row['task'] }} </check></td>
+                                <td><check if="{{ isset(@row) }}" >
+                                    {{ $row['quarter'] }}</check> </td>
+                                <td><check if="{{ isset(@row) }}">
+                                    {{ $row['date'] }}</check> </td>
+                                <td class="hidden"><check if="{{ isset(@row) }}">
+                                    {{ $row['tacticID'] }}</check></td>
+                            </tr>
+                        </repeat>
+                    </check>
                 </tbody>
             </table>
+            <form action="#" method="post" class="form-horizontal" id="removeTask">
+                <div class="form-group hidden">
+                    <input type="text" class="form-control" id="tacticId" name="tacticId">
+                </div>
+                <button type="submit" class="btn">Delete selected Task</button>
+            </form>
+
+
             <div class="container">
                 <form action="#" method="post" class="form-horizontal" id="tacticalTask1">
                     <div class="form-group">
@@ -106,7 +112,7 @@
 
 
     </div>
-    <!-- tactical items hidden form field-->
+    <!-- tactical items hidden form field
     <form action="#" method="post" class="form-horizontal" id="tacticalTasks">
         <div class="form-group hidden">
             <input type="text" class="form-control" id="items1" name="items1">
@@ -121,11 +127,24 @@
             <button type="submit" class="btn">Save Tasks</button>
         </div>
     </form>
+    -->
 </div>
 
-
-
 <include href="includes/footer.html"></include>
+
+
+<!-- add data table scripts -->
+<script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css"/>
+<script>
+    $('.table').DataTable({
+        select: {
+            items: 'row'
+        },
+        "pageLength": 5
+    } );
+</script>
+<script src="js/tactics.js"></script>
 
 </body>
 </html>

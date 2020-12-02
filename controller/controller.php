@@ -1099,19 +1099,41 @@ class JumpStartController
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
+            $valid = true;
             // validate the data and set hive variables
-            $task1 = $_POST['task1'];
-            $quarter1 = $_POST['quarter1'];
-            $date1 = $_POST['date1'];
+            if (isset($_POST['task1'])) {
+                $task1 = $_POST['task1'];
+            } else {
+                $valid = false;
+            }
+            if (isset($_POST['quarter1'])) {
+                $quarter1 = $_POST['quarter1'];
+            } else {
+                $valid = false;
+            }
+            if (isset($_POST['date1'])) {
+                $date1 = $_POST['date1'];
+            } else {
+                $valid = false;
+            }
 
             $userId = $_SESSION['userId'];
 
             // construct tactic objects
-            $tactic1 = new Tactic1($task1, $quarter1, $date1, $userId);
-            $this->_f3->set('tactic1', $tactic1, 'add');
+            if ($valid) {
+                $tactic1 = new Tactic1($task1, $quarter1, $date1, $userId);
+                $this->_f3->set('tactic1', $tactic1, 'add');
+                // add the tactics to the database
+                $GLOBALS['db']->addTactic($tactic1, 'tactic1', 'add');
+            }
 
-            // add the tactics to the database
-            $GLOBALS['db']->addTactic($tactic1, 'tactic1', 'add');
+            // delete the tactic from the database
+            if (isset($_POST['tacticId'])) {
+                echo "deleting task";
+                $tacticId = $_POST['tacticId'];
+                $GLOBALS['db']->deleteTactic($tacticId, 'tactic1');
+            }
+
             unset($_REQUEST);
 
             //$f3->reroute("tactical");

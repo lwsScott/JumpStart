@@ -1132,6 +1132,25 @@ class Database
         //echo $id;
     }
 
+    /*
+    * Delete Tactical task
+    */
+    function deleteTactic($tacticId, $tactic)
+    {
+        //1. Define the query
+        $sql = "DELETE FROM $tactic
+        WHERE tacticID = $tacticId";
+        //2. Prepare the statement
+        $statement = $this->_dbh->prepare($sql);
+
+        //3. Bind the parameters
+        $statement->bindParam(':userId', $userId);
+
+        //4. Execute the statement
+        $statement->execute();
+
+    }
+
     /**
      * Insert a new user into the database
      * @param $newUser the user to add
