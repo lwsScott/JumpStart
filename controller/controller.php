@@ -1094,8 +1094,12 @@ class JumpStartController
         $this->_f3->set('strategyArray3', $itemArray);
         $this->_f3->set('strategyName3', $strategyName3);
 
-        $result = $GLOBALS['db']-> getTactics($_SESSION['userId'], 'tactic1');
-        $this->_f3->set('results', $result);
+        $result1 = $GLOBALS['db']-> getTactics($_SESSION['userId'], 'tactic1');
+        $this->_f3->set('results1', $result1);
+        $result2 = $GLOBALS['db']-> getTactics($_SESSION['userId'], 'tactic2');
+        $this->_f3->set('results2', $result2);
+        $result3 = $GLOBALS['db']-> getTactics($_SESSION['userId'], 'tactic3');
+        $this->_f3->set('results3', $result3);
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -1121,30 +1125,49 @@ class JumpStartController
 
             // construct tactic objects
             if ($valid) {
-                $tactic1 = new Tactic1($task1, $quarter1, $date1, $userId);
-                $this->_f3->set('tactic1', $tactic1, 'add');
-                // add the tactics to the database
-                $GLOBALS['db']->addTactic($tactic1, 'tactic1', 'add');
+                if ($_POST['strategy'] == "strategy1") {
+                    $tactic1 = new Tactic1($task1, $quarter1, $date1, $userId);
+                    $this->_f3->set('tactic1', $tactic1, 'add');
+                    // add the tactics to the database
+                    $GLOBALS['db']->addTactic($tactic1, 'tactic1', 'add');
+                }
+                if ($_POST['strategy'] == "strategy2") {
+                    $tactic2 = new Tactic2($task1, $quarter1, $date1, $userId);
+                    $this->_f3->set('tactic2', $tactic2, 'add');
+                    // add the tactics to the database
+                    $GLOBALS['db']->addTactic($tactic2, 'tactic2', 'add');
+                }
+                if ($_POST['strategy'] == "strategy3") {
+                    $tactic3 = new Tactic3($task1, $quarter1, $date1, $userId);
+                    $this->_f3->set('tactic3', $tactic3, 'add');
+                    // add the tactics to the database
+                    $GLOBALS['db']->addTactic($tactic3, 'tactic3', 'add');
+                }
             }
 
             // delete the tactic from the database
             if (isset($_POST['tacticId'])) {
-                echo "deleting task";
                 $tacticId = $_POST['tacticId'];
                 $GLOBALS['db']->deleteTactic($tacticId, 'tactic1');
             }
 
-            unset($_REQUEST);
+            //unset($_REQUEST);
 
             //$f3->reroute("tactical");
-            header ('Location: ' . $_SERVER['REQUEST_URI']);
+            //header ('Location: ' . $_SERVER['REQUEST_URI']);
 
             //$view = new Template();
             //echo $view->render('views/tactical.html');
         }
 
-        $result = $GLOBALS['db']-> getTactics($_SESSION['userId'], 'tactic1');
-        $this->_f3->set('results', $result);
+        $result1 = $GLOBALS['db']-> getTactics($_SESSION['userId'], 'tactic1');
+        $this->_f3->set('results1', $result1);
+
+        $result2 = $GLOBALS['db']-> getTactics($_SESSION['userId'], 'tactic2');
+        $this->_f3->set('results2', $result2);
+
+        $result3 = $GLOBALS['db']-> getTactics($_SESSION['userId'], 'tactic3');
+        $this->_f3->set('results3', $result3);
 
 
         $view = new Template();
@@ -1223,7 +1246,38 @@ class JumpStartController
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // validate the data and set hive variables
 
-            //$themeName = $_POST['themeName'];
+            if (isset($_POST['themeName1'])) {
+                $themeName1 = $_POST['themeName1'];
+            } else {
+                $themeName1 = "";
+            }
+            if (isset($_POST['themeName2'])) {
+                $themeName2 = $_POST['themeName2'];
+            } else {
+                $themeName2 = "";
+            }
+            if (isset($_POST['themeName3'])) {
+                $themeName3 = $_POST['themeName3'];
+            } else {
+                $themeName3 = "";
+            }
+
+            if (isset($_POST['myStrategy1'])) {
+                $myStrategy1 = $_POST['myStrategy1'];
+            } else {
+                $myStrategy1 = "";
+            }
+            if (isset($_POST['myStrategy2'])) {
+                $myStrategy2 = $_POST['myStrategy2'];
+            } else {
+                $myStrategy2 = "";
+            }
+            if (isset($_POST['myStrategy3'])) {
+                $myStrategy3 = $_POST['myStrategy3'];
+            } else {
+                $myStrategy3 = "";
+            }
+
             $strategyList1 = $_POST['items1'];
             $strategyList2 = $_POST['items2'];
             $strategyList3 = $_POST['items3'];
@@ -1232,11 +1286,11 @@ class JumpStartController
             //$chooseTheme = $_POST['theme'];
 
             // construct strategy objects
-            $strategy1 = new Strategy1($strategyName, $strategyList1, $userId);
+            $strategy1 = new Strategy1($myStrategy1, $strategyList1, $userId);
             $this->_f3->set('strategy1', $strategy1, 'update');
-            $strategy2 = new Strategy2($strategyName, $strategyList2, $userId);
+            $strategy2 = new Strategy2($myStrategy2, $strategyList2, $userId);
             $this->_f3->set('strategy2', $strategy2, 'update');
-            $strategy3 = new Strategy3($strategyName, $strategyList3, $userId);
+            $strategy3 = new Strategy3($myStrategy3, $strategyList3, $userId);
             $this->_f3->set('strategy3', $strategy3, 'update');
 
             // add the strategies to the database

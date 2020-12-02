@@ -37,19 +37,19 @@
                 <button type="submit" class="btn">Save themes</button>
             </div>
         </form>
+
         <div class="row">
 
-        <div class="container col-3">
-            <p><strong>Theme 1 -</strong></p>
-            <label for="theme1">Select to add items</label>
-            <input type="checkbox" id="theme1">
-            <ul id="itemList1">
-                <repeat group="{{ @itemArray }}" value="{{ @item }}">
-                    <li>{{ @item }}</li>
-                </repeat>
-            </ul>
-
-        </div>
+            <div class="container col-3">
+                <p><strong>Theme 1 -</strong></p>
+                <label for="theme1">Select to add items</label>
+                <input type="checkbox" id="theme1">
+                <ul id="itemList1">
+                    <repeat group="{{ @itemArray }}" value="{{ @item }}">
+                        <li>{{ @item }}</li>
+                    </repeat>
+                </ul>
+            </div>
 
             <div class="container col-3">
                 <p><strong>Theme 2 -</strong></p>
@@ -60,8 +60,7 @@
                         <li>{{ @item }}</li>
                     </repeat>
                 </ul>
-
-            </div>
+             </div>
 
             <div class="container col-3">
                 <p><strong>Theme 3 -</strong></p>
@@ -72,31 +71,10 @@
                         <li>{{ @item }}</li>
                     </repeat>
                 </ul>
-
-            </div>
-
-            <!--Old way of adding theme items
-            <div class="container col-3">
-                <div class="row border rounded bg-light">
-                    <h5>Add Theme items</h5>
-                    <p>Double click a cell to add</p>
-                    <ul id="itemList"></ul>
-
-                    <label>Choose a theme</label>
-                    <select name="theme" id="theme">
-                        <option value="theme1">Theme1</option>
-                        <option value="theme2">Theme2</option>
-                        <option value="theme3">Theme3</option>
-                    </select>
-                    <br>
-
-                    <button id="btnSubmit" class="btn-primary rounded">Add item to theme</button>
-
-                </div>
-                    -->
             </div>
         </div>
     </div>
+</div>
 
 <div class="container-fluid">
     <div class="row">

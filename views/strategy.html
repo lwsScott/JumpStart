@@ -51,65 +51,63 @@
         </div>
     </div>
 
+    <form action="#" method="post" class="form-horizontal" id="strategies">
 
     <div class="row">
-            <div class="container col-4">
-                <p><strong>Strategy 1 -</strong></p>
-                <label for="strategy1">Select to add items</label>
-                <input type="checkbox" id="strategy1">
-                <ul id="strategyList1">
-                    <repeat group="{{ @strategyArray }}" value="{{ @item }}">
-                        <li>{{ @item }}</li>
-                    </repeat>
-                </ul>
-                <input class="form-control" type="text" name="themeName1" id="themeName1" placeholder="Theme Name">
-                <label>Select a Strategy:
-                    <input list="selectStrategy" name="myStrategy1" /></label>
-                <datalist id="selectStrategy">
-                    <option value="Raise Revenues by Getting More People to Pay">
-                    <option value="Raise Revenues by Getting More People to Pay More Often">
-                    <option value="Raise Revenue by Getting More People to Pay More per Transaction">
-                    <option value="Reduce Variable Cost by Cost Reductions">
-                    <option value="Reduce Variable Cost by Process Improvement">
-                    <option value="Reduce Overhead by Cost Reductions">
-                    <option value="Reduce Overhead by Process Improvements">
-                    <option value="Reduce Risk">
-                    <option value="Personal Fulfillment">
-                    <option value="Improve Performance of Our People">
-                </datalist>
-            </div>
 
-            <div class="container col-4">
-                <p><strong>Strategy 2 -</strong></p>
-                <label for="strategy2">Select to add items</label>
-                <input type="checkbox" id="strategy2">
-                <ul id="strategyList2">
-                    <repeat group="{{ @strategyArray2 }}" value="{{ @item }}">
-                        <li>{{ @item }}</li>
-                    </repeat>
-                </ul>
-                <input class="form-control" type="text" name="themeName2" id="themeName2" placeholder="Theme Name" value="">
-                <label>Select a Strategy:
-                    <input list="selectStrategy" name="myStrategy2" /></label>
-            </div>
+        <div class="container col-4">
+            <p><strong>Strategy 1 - {{ @strategyName }}</strong></p>
+            <label>Select a Strategy Priority:
+                <input list="selectStrategy" name="myStrategy1" /></label>
+            <datalist id="selectStrategy">
+                <option value="Raise Revenues by Getting More People to Pay">
+                <option value="Raise Revenues by Getting More People to Pay More Often">
+                <option value="Raise Revenue by Getting More People to Pay More per Transaction">
+                <option value="Reduce Variable Cost by Cost Reductions">
+                <option value="Reduce Variable Cost by Process Improvement">
+                <option value="Reduce Overhead by Cost Reductions">
+                <option value="Reduce Overhead by Process Improvements">
+                <option value="Reduce Risk">
+                <option value="Personal Fulfillment">
+                <option value="Improve Performance of Our People">
+            </datalist>
+            <label for="strategy1">Select to add items</label>
+            <input type="checkbox" id="strategy1">
+            <ul id="strategyList1">
+                <repeat group="{{ @strategyArray }}" value="{{ @item }}">
+                    <li>{{ @item }}</li>
+                </repeat>
+            </ul>
+        </div>
 
-            <div class="container col-4">
-                <p><strong>Strategy 3 -</strong></p>
-                <label for="strategy3">Select to add items</label>
-                <input type="checkbox" id="strategy3">
-                <ul id="strategyList3">
-                    <repeat group="{{ @strategyArray3 }}" value="{{ @item }}">
-                        <li>{{ @item }}</li>
-                    </repeat>
-                </ul>
-                <input class="form-control" type="text" name="themeName3" id="themeName3" placeholder="Theme Name" value="">
-                <label>Select a Strategy:
-                    <input list="selectStrategy" name="myStrategy3" /></label>
-            </div>
+        <div class="container col-4">
+            <p><strong>Strategy 2 - {{ @strategyName2 }}</strong></p>
+            <label>Select a Strategy Priority:
+                <input list="selectStrategy" name="myStrategy2" /></label>
+            <label for="strategy2">Select to add items</label>
+            <input type="checkbox" id="strategy2">
+            <ul id="strategyList2">
+                <repeat group="{{ @strategyArray2 }}" value="{{ @item }}">
+                    <li>{{ @item }}</li>
+                </repeat>
+            </ul>
+        </div>
+
+        <div class="container col-4">
+            <p><strong>Strategy 3 - {{ @strategyName3 }}</strong></p>
+            <label>Select a Strategy Priority:
+                <input list="selectStrategy" name="myStrategy3" /></label>
+            <label for="strategy3">Select to add items</label>
+            <input type="checkbox" id="strategy3">
+            <ul id="strategyList3">
+                <repeat group="{{ @strategyArray3 }}" value="{{ @item }}">
+                    <li>{{ @item }}</li>
+                </repeat>
+            </ul>
         </div>
     </div>
     <!-- strategy items hidden form field-->
-    <form action="#" method="post" class="form-horizontal" id="strategies">
+
         <div class="form-group hidden">
             <input type="text" class="form-control" id="items1" name="items1">
         </div>
@@ -123,6 +121,9 @@
             <button type="submit" class="btn">Save strategies</button>
         </div>
     </form>
+
+
+</div>
 
 <include href="includes/footer.html"></include>
 

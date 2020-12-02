@@ -189,6 +189,7 @@ let table = $('#table').DataTable();
 $('#table').on( 'dblclick', 'td', function () {
     //alert( table.cell( this ).data() );
     let add = table.cell( this ).data();
+    console.log(add);
 
     let theme1 = document.getElementById("theme1").checked;
     console.log(theme1);
