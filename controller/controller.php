@@ -1150,6 +1150,14 @@ class JumpStartController
                 $tacticId = $_POST['tacticId'];
                 $GLOBALS['db']->deleteTactic($tacticId, 'tactic1');
             }
+            if (isset($_POST['tacticId2'])) {
+                $tacticId2 = $_POST['tacticId2'];
+                $GLOBALS['db']->deleteTactic($tacticId2, 'tactic2');
+            }
+            if (isset($_POST['tacticId3'])) {
+                $tacticId3 = $_POST['tacticId3'];
+                $GLOBALS['db']->deleteTactic($tacticId3, 'tactic3');
+            }
 
             //unset($_REQUEST);
 

@@ -2,6 +2,9 @@
 
 // allow the click of a table cell to add to the theme item list
 let table = $('#table1').DataTable();
+let table2 = $('#table2').DataTable();
+let table3 = $('#table3').DataTable();
+
 
 $('#table').on( 'dblclick', 'tr', function () {
     //alert( table.cell( this ).data() );
@@ -30,9 +33,9 @@ $('#table2 tbody').on( 'dblclick', 'tr', function () {
         $(this).removeClass('selected');
     }
     else {
-        table.$('tr.selected').removeClass('selected');
+        table2.$('tr.selected').removeClass('selected');
         $(this).addClass('selected');
-        let add = table.row( this ).data();
+        let add = table2.row( this ).data();
         console.log(add);
         let tacticId2 = add[3];
         console.log(tacticId);
@@ -45,9 +48,9 @@ $('#table3 tbody').on( 'dblclick', 'tr', function () {
         $(this).removeClass('selected');
     }
     else {
-        table.$('tr.selected').removeClass('selected');
+        table3.$('tr.selected').removeClass('selected');
         $(this).addClass('selected');
-        let add = table.row( this ).data();
+        let add = table3.row( this ).data();
         console.log(add);
         let tacticId3 = add[3];
         console.log(tacticId);
