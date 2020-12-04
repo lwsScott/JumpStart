@@ -143,3 +143,37 @@ a:active {
 
     padding: 0 15px;
 }
+
+
+/* strategy page */
+
+#quarter {
+    margin-left: 20px;
+}
+
+
+#quarter1 {
+    margin-left: 10px;
+}
+
+#date {
+    margin-left: 20px;
+}
+
+#date1 {
+    margin-left: 10px;
+}
+
+
+#strategy {
+    margin-left: 20px;
+}
+
+#taskSubmit {
+    margin-left:20px;
+}
+
+#task1 {
+    margin-left:15px;
+}
+
