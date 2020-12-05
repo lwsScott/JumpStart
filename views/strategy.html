@@ -21,44 +21,19 @@
 <include href="includes/navBar.html"></include>
 
 <div class="container-fluid">
-
-    <div class="row">
-        <div class="container col-4">
-            <p><strong>Theme 1 -</strong></p>
-            <ul id="itemList1">
-                <repeat group="{{ @itemArray }}" value="{{ @item }}">
-                    <li>{{ @item }}</li>
-                </repeat>
-            </ul>
-        </div>
-
-        <div class="container col-4">
-            <p><strong>Theme 2 -</strong></p>
-            <ul id="itemList2">
-                <repeat group="{{ @itemArray2 }}" value="{{ @item }}">
-                    <li>{{ @item }}</li>
-                </repeat>
-            </ul>
-        </div>
-
-        <div class="container col-4">
-            <p><strong>Theme 3 -</strong></p>
-            <ul id="itemList3">
-                <repeat group="{{ @itemArray3 }}" value="{{ @item }}">
-                    <li>{{ @item }}</li>
-                </repeat>
-            </ul>
-        </div>
-    </div>
-
     <form action="#" method="post" class="form-horizontal" id="strategies">
 
     <div class="row">
 
         <div class="container col-4">
-            <p><strong>Strategy 1 - {{ @strategyName }}</strong></p>
-            <label>Select a Strategy Priority:
-                <input list="selectStrategy" name="myStrategy1" /></label>
+            <p><strong>Theme 1 - {{ @themeName1 }}</strong></p>
+            <ul id="itemList1">
+                <repeat group="{{ @itemArray }}" value="{{ @item }}">
+                    <li>{{ @item }}</li>
+                </repeat>
+            </ul>
+            <label>Select a Theme Name:
+                <input list="selectStrategy" name="themeName1" /></label>
             <datalist id="selectStrategy">
                 <option value="Raise Revenues by Getting More People to Pay">
                 <option value="Raise Revenues by Getting More People to Pay More Often">
@@ -71,6 +46,36 @@
                 <option value="Personal Fulfillment">
                 <option value="Improve Performance of Our People">
             </datalist>
+        </div>
+
+        <div class="container col-4">
+            <p><strong>Theme 2 - {{ @themeName2 }}</strong></p>
+            <ul id="itemList2">
+                <repeat group="{{ @itemArray2 }}" value="{{ @item }}">
+                    <li>{{ @item }}</li>
+                </repeat>
+            </ul>
+            <label>Select a Theme Name:
+            <input list="selectStrategy" name="themeName2" /></label>
+        </div>
+
+        <div class="container col-4">
+            <p><strong>Theme 3 - {{ @themeName3 }}</strong></p>
+            <ul id="itemList3">
+                <repeat group="{{ @itemArray3 }}" value="{{ @item }}">
+                    <li>{{ @item }}</li>
+                </repeat>
+            </ul>
+            <label>Select a Theme Name:
+                <input list="selectStrategy" name="themeName3" /></label>
+        </div>
+    </div>
+
+
+    <div class="row">
+
+        <div class="container col-4">
+            <p><strong>Strategy 1 - {{ @strategyName }}</strong></p>
             <label for="strategy1">Select to add items</label>
             <input type="checkbox" id="strategy1">
             <ul id="strategyList1">
@@ -78,12 +83,12 @@
                     <li>{{ @item }}</li>
                 </repeat>
             </ul>
+            <label for="myStrategy1">Select a Stategic Priority Name:</label>
+                <input type="text" id="myStrategy1" name="myStrategy1">
         </div>
 
         <div class="container col-4">
             <p><strong>Strategy 2 - {{ @strategyName2 }}</strong></p>
-            <label>Select a Strategy Priority:
-                <input list="selectStrategy" name="myStrategy2" /></label>
             <label for="strategy2">Select to add items</label>
             <input type="checkbox" id="strategy2">
             <ul id="strategyList2">
@@ -91,12 +96,12 @@
                     <li>{{ @item }}</li>
                 </repeat>
             </ul>
+            <label for="myStrategy2">Select a Stategic Priority Name:</label>
+            <input type="text" id="myStrategy2" name="myStrategy2">
         </div>
 
         <div class="container col-4">
             <p><strong>Strategy 3 - {{ @strategyName3 }}</strong></p>
-            <label>Select a Strategy Priority:
-                <input list="selectStrategy" name="myStrategy3" /></label>
             <label for="strategy3">Select to add items</label>
             <input type="checkbox" id="strategy3">
             <ul id="strategyList3">
@@ -104,6 +109,8 @@
                     <li>{{ @item }}</li>
                 </repeat>
             </ul>
+            <label for="myStrategy3">Select a Stategic Priority Name:</label>
+            <input type="text" id="myStrategy3" name="myStrategy3">
         </div>
     </div>
     <!-- strategy items hidden form field-->

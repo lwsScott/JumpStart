@@ -182,6 +182,11 @@ document.getElementById("itemList3").addEventListener("dblclick", function(e) {
     }
 });
 
+function clearNbsp($str)
+{
+    $entities = str_replace('&nbsp;', ' ', htmlentities($str));
+    return html_entity_decode($entities);
+}
 
 // allow the click of a table cell to add to the theme item list
 let table = $('#table').DataTable();
@@ -189,6 +194,7 @@ let table = $('#table').DataTable();
 $('#table').on( 'dblclick', 'td', function () {
     //alert( table.cell( this ).data() );
     let add = table.cell( this ).data();
+    add = add.replaceAll('&nbsp;', ' ');
     console.log(add);
 
     let theme1 = document.getElementById("theme1").checked;
@@ -216,6 +222,7 @@ let table2 = $('#table2').DataTable();
 $('#table2').on( 'dblclick', 'td', function () {
     //alert( table2.cell( this ).data() );
     let add = table2.cell( this ).data();
+    add = add.replaceAll('&nbsp;', ' ');
 
     let theme1 = document.getElementById("theme1").checked;
     console.log(theme1);
@@ -242,6 +249,7 @@ let table3 = $('#table3').DataTable();
 $('#table3').on( 'dblclick', 'td', function () {
     //alert( table2.cell( this ).data() );
     let add = table3.cell( this ).data();
+    add = add.replaceAll('&nbsp;', ' ');
 
     let theme1 = document.getElementById("theme1").checked;
     if (theme1) {
@@ -266,6 +274,8 @@ let table4 = $('#table4').DataTable();
 $('#table4').on( 'dblclick', 'td', function () {
     //alert( table2.cell( this ).data() );
     let add = table4.cell( this ).data();
+    add = add.replaceAll('&nbsp;', ' ');
+
     let theme1 = document.getElementById("theme1").checked;
     console.log(theme1);
     if (theme1) {
@@ -292,6 +302,8 @@ let table5 = $('#table5').DataTable();
 $('#table5').on( 'dblclick', 'td', function () {
     //alert( table2.cell( this ).data() );
     let add = table5.cell( this ).data();
+    add = add.replaceAll('&nbsp;', ' ');
+
     let theme1 = document.getElementById("theme1").checked;
     console.log(theme1);
     if (theme1) {
@@ -318,6 +330,8 @@ let table6 = $('#table6').DataTable();
 $('#table6').on( 'dblclick', 'td', function () {
     //alert( table2.cell( this ).data() );
     let add = table6.cell( this ).data();
+    add = add.replaceAll('&nbsp;', ' ');
+
     let theme1 = document.getElementById("theme1").checked;
     console.log(theme1);
     if (theme1) {
@@ -344,6 +358,8 @@ let table7 = $('#table7').DataTable();
 $('#table7').on( 'dblclick', 'td', function () {
     //alert( table2.cell( this ).data() );
     let add = table7.cell( this ).data();
+    add = add.replaceAll('&nbsp;', ' ');
+
     let theme1 = document.getElementById("theme1").checked;
     console.log(theme1);
     if (theme1) {
@@ -369,6 +385,8 @@ let table8 = $('#table8').DataTable();
 $('#table8').on( 'dblclick', 'td', function () {
     //alert( table2.cell( this ).data() );
     let add = table8.cell( this ).data();
+    add = add.replaceAll('&nbsp;', ' ');
+
     let theme1 = document.getElementById("theme1").checked;
     console.log(theme1);
     if (theme1) {
@@ -395,6 +413,8 @@ let table9 = $('#table9').DataTable();
 $('#table9').on( 'dblclick', 'td', function () {
     //alert( table2.cell( this ).data() );
     let add = table9.cell( this ).data();
+    add = add.replaceAll('&nbsp;', ' ');
+
     let theme1 = document.getElementById("theme1").checked;
     console.log(theme1);
     if (theme1) {
@@ -420,6 +440,8 @@ let table10 = $('#table10').DataTable();
 $('#table10').on( 'dblclick', 'td', function () {
     //alert( table2.cell( this ).data() );
     let add = table10.cell( this ).data();
+    add = add.replaceAll('&nbsp;', ' ');
+
     let theme1 = document.getElementById("theme1").checked;
     console.log(theme1);
     if (theme1) {

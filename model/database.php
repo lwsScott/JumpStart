@@ -1017,9 +1017,9 @@ class Database
     }
 
     /**
-     * Inserts theme into the database
-     * @param $theme1 the theme to add
-     */
+ * Inserts theme into the database
+ * @param $theme1 the theme to add
+ */
     function addThemes($theme, $chooseTheme, $change)
     {
 
@@ -1029,7 +1029,7 @@ class Database
             $sql = "INSERT INTO $chooseTheme (themeName, themeList, userId)
                     VALUES (:themeName, :themeList, :userId)";
         } elseif ($change == 'update')
-        $sql = "UPDATE $chooseTheme SET themeName = :themeName, themeList = :themeList
+            $sql = "UPDATE $chooseTheme SET themeName = :themeName, themeList = :themeList
                 WHERE userId = :userId";
 
         //2. Prepare the statement
@@ -1041,6 +1041,34 @@ class Database
         $statement->bindParam(':themeName',$themeName, PDO::PARAM_STR);
         $statement->bindParam(':themeList',$themeList, PDO::PARAM_STR);
 
+        $statement->bindParam(':userId',$userId, PDO::PARAM_STR);
+
+        //4. Execute the statement
+        $result = $statement->execute();
+        //echo "Result: " . $result;
+
+        //Get the key of the last inserted row
+        $themeID = $this->_dbh->lastInsertId();
+        $_SESSION['themeID'] = $themeID;
+        //echo $id;
+    }
+
+    /**
+     * Inserts theme into the database
+     * @param $theme1 the theme to add
+     */
+    function addThemeName($themeName, $chooseTheme)
+    {
+        $userId = $_SESSION['userId'];
+        //1. Define the query
+            $sql = "UPDATE $chooseTheme SET themeName = :themeName
+                WHERE userId = :userId";
+
+        //2. Prepare the statement
+        $statement = $this->_dbh->prepare($sql);
+
+        //3. Bind the parameters
+        $statement->bindParam(':themeName',$themeName, PDO::PARAM_STR);
         $statement->bindParam(':userId',$userId, PDO::PARAM_STR);
 
         //4. Execute the statement
@@ -1102,20 +1130,22 @@ class Database
         $userId = $_SESSION['userId'];
         //1. Define the query
         if ($change == 'add') {
-            $sql = "INSERT INTO $chooseTactic (task, quarter, date, userId)
-                    VALUES (:task, :quarter, :date, :userId)";
+            $sql = "INSERT INTO $chooseTactic (goal, task, quarter, date, userId)
+                    VALUES (:goal, :task, :quarter, :date, :userId)";
         } elseif ($change == 'update')
-            $sql = "UPDATE $chooseTactic SET task = :task, quarter = :quarter, date = :date
+            $sql = "UPDATE $chooseTactic SET goal = :goal, task = :task, quarter = :quarter, date = :date
                 WHERE userId = :userId";
 
         //2. Prepare the statement
         $statement = $this->_dbh->prepare($sql);
 
+        $goal = $tactic->getGoal();
         $task = $tactic->getTask();
         $quarter = $tactic->getQuarter();
         $date = $tactic->getDate();
 
         //3. Bind the parameters
+        $statement->bindParam(':goal',$goal, PDO::PARAM_STR);
         $statement->bindParam(':task',$task, PDO::PARAM_STR);
         $statement->bindParam(':quarter',$quarter, PDO::PARAM_STR);
         $statement->bindParam(':date',$date, PDO::PARAM_STR);
@@ -1247,7 +1277,7 @@ class Database
     }
 
     /*
-* The user's themes
+* The user's strategies
 */
     function getStrategies($userId, $chooseStrategy)
     {

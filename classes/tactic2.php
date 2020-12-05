@@ -12,6 +12,7 @@ class Tactic2
 {
     //Declare instance variables
     private $_tactic2ID;
+    private $_goal;
     private $_task;
     private $_quarter;
     private $_date;
@@ -19,12 +20,21 @@ class Tactic2
     private $_userId;
 
     // constructor
-    function __construct($task, $quarter, $date, $userId)
+    function __construct($goal, $task, $quarter, $date, $userId)
     {
+        $this->_goal = $goal;
         $this->_task = $task;
         $this->_quarter = $quarter;
         $this->_date = $date;
         $this->_userId = $userId;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getGoal()
+    {
+        return $this->_goal;
     }
 
     /**

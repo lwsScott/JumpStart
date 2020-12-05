@@ -784,7 +784,7 @@ class JumpStartController
                 $theme3 = new Theme1($themeName, $themeList3, $userId);
                 $this->_f3->set('themes', $theme3, 'update');
 
-                // add the themse to the database
+                // add the themes to the database
                 $GLOBALS['db']->addThemes($theme1, 'theme1', 'update');
                 $GLOBALS['db']->addThemes($theme2, 'theme2', 'update');
                 $GLOBALS['db']->addThemes($theme3, 'theme3', 'update');
@@ -1105,6 +1105,11 @@ class JumpStartController
 
             $valid = true;
             // validate the data and set hive variables
+            if (isset($_POST['goal'])) {
+                $goal = $_POST['goal'];
+            } else {
+                $valid = false;
+            }
             if (isset($_POST['task1'])) {
                 $task1 = $_POST['task1'];
             } else {
@@ -1126,19 +1131,19 @@ class JumpStartController
             // construct tactic objects
             if ($valid) {
                 if ($_POST['strategy'] == "strategy1") {
-                    $tactic1 = new Tactic1($task1, $quarter1, $date1, $userId);
+                    $tactic1 = new Tactic1($goal, $task1, $quarter1, $date1, $userId);
                     $this->_f3->set('tactic1', $tactic1, 'add');
                     // add the tactics to the database
                     $GLOBALS['db']->addTactic($tactic1, 'tactic1', 'add');
                 }
                 if ($_POST['strategy'] == "strategy2") {
-                    $tactic2 = new Tactic2($task1, $quarter1, $date1, $userId);
+                    $tactic2 = new Tactic2($goal, $task1, $quarter1, $date1, $userId);
                     $this->_f3->set('tactic2', $tactic2, 'add');
                     // add the tactics to the database
                     $GLOBALS['db']->addTactic($tactic2, 'tactic2', 'add');
                 }
                 if ($_POST['strategy'] == "strategy3") {
-                    $tactic3 = new Tactic3($task1, $quarter1, $date1, $userId);
+                    $tactic3 = new Tactic3($goal, $task1, $quarter1, $date1, $userId);
                     $this->_f3->set('tactic3', $tactic3, 'add');
                     // add the tactics to the database
                     $GLOBALS['db']->addTactic($tactic3, 'tactic3', 'add');
@@ -1189,16 +1194,15 @@ class JumpStartController
     {
 
         $this->checkLogin($f3);
-
         // store the themes in the hive as 'results'
         // theme 1
         $result = $GLOBALS['db']->getThemes($_SESSION['userId'], 'theme1');
         //$this->_f3->set('results', $result);
         // decode the theme and set hive array
         $itemArray = json_decode($result['themeList']);
-        $themeName = $result['themeName'];
+        $themeName1 = $result['themeName'];
         $this->_f3->set('itemArray', $itemArray);
-        $this->_f3->set('themeName', $themeName);
+        $this->_f3->set('themeName1', $themeName1);
 
 
         // theme 2
@@ -1209,7 +1213,6 @@ class JumpStartController
         $themeName2 = $result['themeName'];
         $this->_f3->set('itemArray2', $itemArray);
         $this->_f3->set('themeName2', $themeName2);
-
 
         // theme 3
         $result = $GLOBALS['db']->getThemes($_SESSION['userId'], 'theme3');
@@ -1253,39 +1256,54 @@ class JumpStartController
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // validate the data and set hive variables
+            // store the themes in the hive as 'results'
+            // theme 1
+            $result = $GLOBALS['db']->getThemes($_SESSION['userId'], 'theme1');
+            //$this->_f3->set('results', $result);
+            // decode the theme and set hive array
+            $itemArray = json_decode($result['themeList']);
+            $themeName1 = $result['themeName'];
+            $this->_f3->set('itemArray', $itemArray);
+            $this->_f3->set('themeName1', $themeName1);
 
-            if (isset($_POST['themeName1'])) {
+            // theme 2
+            $result = $GLOBALS['db']->getThemes($_SESSION['userId'], 'theme2');
+            $this->_f3->set('results', $result);
+            // decode the theme and set hive array
+            $itemArray = json_decode($result['themeList']);
+            $themeName2 = $result['themeName'];
+            $this->_f3->set('itemArray2', $itemArray);
+            $this->_f3->set('themeName2', $themeName2);
+
+
+            // theme 3
+            $result = $GLOBALS['db']->getThemes($_SESSION['userId'], 'theme3');
+            $this->_f3->set('results', $result);
+            // decode the theme and set hive array
+            $itemArray = json_decode($result['themeList']);
+            $themeName3 = $result['themeName'];
+            $this->_f3->set('itemArray3', $itemArray);
+            $this->_f3->set('themeName3', $themeName3);
+
+            if (isset($_POST['themeName1']) && $_POST['themeName1'] != "") {
                 $themeName1 = $_POST['themeName1'];
-            } else {
-                $themeName1 = "";
             }
-            if (isset($_POST['themeName2'])) {
+            if (isset($_POST['themeName2']) && $_POST['themeName2'] != "") {
                 $themeName2 = $_POST['themeName2'];
-            } else {
-                $themeName2 = "";
             }
-            if (isset($_POST['themeName3'])) {
+            if (isset($_POST['themeName3']) && $_POST['themeName3'] != "") {
                 $themeName3 = $_POST['themeName3'];
-            } else {
-                $themeName3 = "";
             }
 
             if (isset($_POST['myStrategy1'])) {
-                $myStrategy1 = $_POST['myStrategy1'];
-            } else {
-                $myStrategy1 = "";
+                $strategyName = $_POST['myStrategy1'];
             }
             if (isset($_POST['myStrategy2'])) {
-                $myStrategy2 = $_POST['myStrategy2'];
-            } else {
-                $myStrategy2 = "";
+                $strategyName2 = $_POST['myStrategy2'];
             }
             if (isset($_POST['myStrategy3'])) {
-                $myStrategy3 = $_POST['myStrategy3'];
-            } else {
-                $myStrategy3 = "";
+                $strategyName3 = $_POST['myStrategy3'];
             }
-
             $strategyList1 = $_POST['items1'];
             $strategyList2 = $_POST['items2'];
             $strategyList3 = $_POST['items3'];
@@ -1294,18 +1312,24 @@ class JumpStartController
             //$chooseTheme = $_POST['theme'];
 
             // construct strategy objects
-            $strategy1 = new Strategy1($myStrategy1, $strategyList1, $userId);
+            $strategy1 = new Strategy1($strategyName, $strategyList1, $userId);
             $this->_f3->set('strategy1', $strategy1, 'update');
-            $strategy2 = new Strategy2($myStrategy2, $strategyList2, $userId);
+            $strategy2 = new Strategy2($strategyName2, $strategyList2, $userId);
             $this->_f3->set('strategy2', $strategy2, 'update');
-            $strategy3 = new Strategy3($myStrategy3, $strategyList3, $userId);
+            $strategy3 = new Strategy3($strategyName3, $strategyList3, $userId);
             $this->_f3->set('strategy3', $strategy3, 'update');
 
             // add the strategies to the database
             $GLOBALS['db']->addStrategy($strategy1, 'strategy1', 'update');
             $GLOBALS['db']->addStrategy($strategy2, 'strategy2', 'update');
             $GLOBALS['db']->addStrategy($strategy3, 'strategy3', 'update');
-            }
+
+            // update theme names
+            $GLOBALS['db']->addThemeName($themeName1, 'theme1');
+            $GLOBALS['db']->addThemeName($themeName2, 'theme2');
+            $GLOBALS['db']->addThemeName($themeName3, 'theme3');
+
+        }
 
             // store the themes in the hive as 'results'
             // theme 1
@@ -1313,9 +1337,9 @@ class JumpStartController
             $this->_f3->set('results', $result);
             // decode the theme and set hive array
             $itemArray = json_decode($result['themeList']);
-            $themeName = $result['themeName'];
+            $themeName1 = $result['themeName'];
             $this->_f3->set('itemArray', $itemArray);
-            $this->_f3->set('themeName', $themeName);
+            $this->_f3->set('themeName1', $themeName1);
 
 
             // theme 2
