@@ -13,8 +13,42 @@
 <div class="container">
     <h1>Tactical tasks</h1>
 
-    <div class="row">
-        <div class="container col-4">
+    <div class="row sticky-top pt-5 bg-white" id="bg-white">
+
+        <form action="#" method="post" class="form-inline" id="tacticalTask1">
+            <div class="form-group">
+                <hr>
+                <label for="task1">Task</label>
+                <input type="text" class="form-control" id="task1" name="task1">
+            </div>
+            <div class="form-group">
+                <label id = "quarter" for="quarter1">Quarter</label>
+                <select id = "quarter1" class="form-control"id="quarter1" name="quarter1">
+                    <option>Q1</option>
+                    <option>Q2</option>
+                    <option>Q3</option>
+                    <option>Q4</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label id = "date" for="date1">Date</label>
+                <input id = "date1" type="date" class="form-control" id="date1" name="date1">
+            </div>
+            <div class="form-group">
+                <select id = "strategy" name="strategy">
+                    <option value="strategy1">Strategy1</option>
+                    <option value="strategy2">Strategy2</option>
+                    <option value="strategy3">Strategy3</option>
+                </select>
+            </div>
+            <button id = "taskSubmit" type="submit" class="btn">Add Task</button>
+        </form>
+    </div>
+    <hr>
+
+        <div class="row">
+
+        <div class="col-6">
             <p><strong>Strategy 1 - {{ @strategyName }}</strong></p>
             <ul id="strategyList1">
                 <repeat group="{{ @strategyArray }}" value="{{ @item }}">
@@ -23,59 +57,7 @@
             </ul>
         </div>
 
-        <div class="container col-4">
-            <p><strong>Strategy 2 - {{ @strategyName2 }}</strong></p>
-            <ul id="strategyList2">
-                <repeat group="{{ @strategyArray2 }}" value="{{ @item }}">
-                    <li>{{ @item }}</li>
-                </repeat>
-            </ul>
-        </div>
-
-        <div class="container col-4">
-            <p><strong>Strategy 3 - {{ @strategyName3 }}</strong></p>
-            <ul id="strategyList3">
-                <repeat group="{{ @strategyArray3 }}" value="{{ @item }}">
-                    <li>{{ @item }}</li>
-                </repeat>
-            </ul>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="container">
-            <form action="#" method="post" class="form-inline" id="tacticalTask1">
-                <div class="form-group">
-                    <label for="task1">Task</label>
-                    <input type="text" class="form-control" id="task1" name="task1">
-                </div>
-                <div class="form-group">
-                    <label id = "quarter" for="quarter1">Quarter</label>
-                    <select id = "quarter1" class="form-control"id="quarter1" name="quarter1">
-                        <option>Q1</option>
-                        <option>Q2</option>
-                        <option>Q3</option>
-                        <option>Q4</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label id = "date" for="date1">Date</label>
-                    <input id = "date1" type="date" class="form-control" id="date1" name="date1">
-                </div>
-                <div class="form-group">
-                    <select id = "strategy" name="strategy">
-                        <option value="strategy1">Strategy1</option>
-                        <option value="strategy2">Strategy2</option>
-                        <option value="strategy3">Strategy3</option>
-                    </select>
-                </div>
-                <button id = "taskSubmit" type="submit" class="btn">Add Task</button>
-            </form>
-        </div>
-    </div>
-
-    <div class="container row">
-        <div class="col-4">
+        <div class="col-6">
             <table class="table table-bordered" id="table1">
                 <thead class="thead-light">
                 <tr>
@@ -109,8 +91,20 @@
                 <button type="submit" class="btn">Delete selected Task</button>
             </form>
         </div>
+    </div>
+    <hr>
 
-        <div class="col-4">
+
+    <div class="row">
+        <div class="col-6">
+                <p><strong>Strategy 2 - {{ @strategyName2 }}</strong></p>
+                <ul id="strategyList2">
+                    <repeat group="{{ @strategyArray2 }}" value="{{ @item }}">
+                        <li>{{ @item }}</li>
+                    </repeat>
+                </ul>
+            </div>
+        <div class="col-6">
             <table class="table table-bordered" id="table2">
                 <thead class="thead-light">
                 <tr>
@@ -144,8 +138,19 @@
                 <button type="submit" class="btn">Delete selected Task</button>
             </form>
         </div>
+    </div>
+    <hr>
 
-        <div class="col-4">
+    <div class="row">
+        <div class="col-6">
+            <p><strong>Strategy 3 - {{ @strategyName3 }}</strong></p>
+            <ul id="strategyList3">
+                <repeat group="{{ @strategyArray3 }}" value="{{ @item }}">
+                    <li>{{ @item }}</li>
+                </repeat>
+            </ul>
+        </div>
+        <div class="col-6">
             <table class="table table-bordered" id="table3">
                 <thead class="thead-light">
                 <tr>
@@ -180,6 +185,9 @@
             </form>
         </div>
     </div>
+
+
+
 </div>
 
 <include href="includes/footer.html"></include>
