@@ -23,8 +23,8 @@ function toggleVisibility()
     // make g8 through g12  visible if Yes checked, hidden otherwise
     if (document.getElementById('g7a').checked)
     {
-        document.getElementById('g7hi').style.visibility = "block";
-        document.getElementById('g7hi').style.display = "visible";
+        document.getElementById('g7hi').style.display = "block";
+        document.getElementById('g7hi').style.visibility = "visible";
     }
     else {
         document.getElementById('g7hi').style.display = "none";

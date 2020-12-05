@@ -23,8 +23,9 @@ function toggleVisibility()
     // make e4 through e8 visible if Yes checked, hidden otherwise
     if (document.getElementById('e3a').checked)
     {
-        document.getElementById('e3hi').style.visibility = "block";
-        document.getElementById('e3hi').style.display = "visible";
+        document.getElementById('e3hi').style.display = "block";
+        document.getElementById('e3hi').style.visibility = "visible";
+
     }
     else {
         document.getElementById('e3hi').style.display = "none";
