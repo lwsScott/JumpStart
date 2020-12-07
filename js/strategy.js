@@ -90,7 +90,6 @@ function appendChild2(add) {
     node.appendChild(textnode);                         // Append the text to <li>
 
     ul.appendChild(node); //
-    console.log(items);
 }
 
 function appendChild3(add) {
@@ -104,7 +103,6 @@ function appendChild3(add) {
     node.appendChild(textnode);                         // Append the text to <li>
 
     ul.appendChild(node); //
-    console.log(items);
 }
 
 

@@ -21,7 +21,7 @@ $('#table1 tbody').on( 'dblclick', 'tr', function () {
         $(this).addClass('selected');
         let add = table.row( this ).data();
         console.log(add);
-        let tacticId = add[3];
+        let tacticId = add[4];
         console.log(tacticId);
         document.getElementById('tacticId').value = tacticId;
         console.log(document.getElementById('tacticId').value);
@@ -37,7 +37,7 @@ $('#table2 tbody').on( 'dblclick', 'tr', function () {
         $(this).addClass('selected');
         let add = table2.row( this ).data();
         console.log(add);
-        let tacticId2 = add[3];
+        let tacticId2 = add[4];
         console.log(tacticId);
         document.getElementById('tacticId2').value = tacticId2;
     }
@@ -52,7 +52,7 @@ $('#table3 tbody').on( 'dblclick', 'tr', function () {
         $(this).addClass('selected');
         let add = table3.row( this ).data();
         console.log(add);
-        let tacticId3 = add[3];
+        let tacticId3 = add[4];
         console.log(tacticId);
         document.getElementById('tacticId3').value = tacticId3;
     }
