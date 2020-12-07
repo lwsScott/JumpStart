@@ -1285,6 +1285,36 @@ class JumpStartController
             $this->_f3->set('itemArray3', $itemArray);
             $this->_f3->set('themeName3', $themeName3);
 
+            // store the strategies in the hive as 'results'
+            // strategy 1
+            $result = $GLOBALS['db']->getStrategies($_SESSION['userId'], 'strategy1');
+            //$this->_f3->set('results', $result);
+            // decode the theme and set hive array
+            $itemArray = json_decode($result['strategyList']);
+            $strategyName = $result['strategyName'];
+            $this->_f3->set('strategyArray', $itemArray);
+            $this->_f3->set('strategyName', $strategyName);
+
+
+            // strategy 2
+            $result = $GLOBALS['db']->getStrategies($_SESSION['userId'], 'strategy2');
+            $this->_f3->set('results', $result);
+            // decode the theme and set hive array
+            $itemArray = json_decode($result['strategyList']);
+            $strategyName2 = $result['strategyName'];
+            $this->_f3->set('strategyArray2', $itemArray);
+            $this->_f3->set('strategyName2', $strategyName2);
+
+
+            // strategy 3
+            $result = $GLOBALS['db']->getStrategies($_SESSION['userId'], 'strategy3');
+            $this->_f3->set('results', $result);
+            // decode the theme and set hive array
+            $itemArray = json_decode($result['strategyList']);
+            $strategyName3 = $result['strategyName'];
+            $this->_f3->set('strategyArray3', $itemArray);
+            $this->_f3->set('strategyName3', $strategyName3);
+
             if (isset($_POST['themeName1']) && $_POST['themeName1'] != "") {
                 $themeName1 = $_POST['themeName1'];
             }
@@ -1295,13 +1325,13 @@ class JumpStartController
                 $themeName3 = $_POST['themeName3'];
             }
 
-            if (isset($_POST['myStrategy1'])) {
+            if (isset($_POST['myStrategy1']) && $_POST['myStrategy1'] != "") {
                 $strategyName = $_POST['myStrategy1'];
             }
-            if (isset($_POST['myStrategy2'])) {
+            if (isset($_POST['myStrategy2']) && $_POST['myStrategy2'] != "") {
                 $strategyName2 = $_POST['myStrategy2'];
             }
-            if (isset($_POST['myStrategy3'])) {
+            if (isset($_POST['myStrategy3']) && $_POST['myStrategy3'] != "") {
                 $strategyName3 = $_POST['myStrategy3'];
             }
             $strategyList1 = $_POST['items1'];
